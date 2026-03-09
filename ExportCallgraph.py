@@ -106,18 +106,18 @@ def export_call_graph():
         func_info = {
             "address": str(func.getEntryPoint()),
             "name": full_name,
-            "short_name": func.getName(),
-            "namespace": namespace_str,
-            "is_renamed": is_renamed(func),
-            "is_thunk": func.isThunk(),
-            "is_external": func.isExternal(),
-            "out_degree": len(called_names),
-            "in_degree": len(caller_names),
+            #"short_name": func.getName(),
+            #"namespace": namespace_str,
+            #"is_renamed": is_renamed(func),
+            #"is_thunk": func.isThunk(),
+            #"is_external": func.isExternal(),
+            #"out_degree": len(called_names),
+            #"in_degree": len(caller_names),
             "called_names": called_names,
             "caller_names": caller_names,
-            "signature": get_function_signature(func),
-            "strings": referenced_strings,
-            "strings_count": len(referenced_strings)
+            #"signature": get_function_signature(func),
+            #"strings": referenced_strings,
+            #"strings_count": len(referenced_strings)
         }
         result["functions"].append(func_info)
     output_path = str(askFile("Save Call Graph", "Save"))
