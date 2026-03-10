@@ -149,6 +149,9 @@ int main( int argc, char *argv[] )
 			return 0;
 		}
 
+		std::vector<std::pair<std::string, std::string>> sortedPairs;
+		sortedPairs.reserve( result.size() );
+
 		for( const auto &p : result )
 		{
 			auto unkName = g2[p.first].name;
@@ -156,8 +159,16 @@ int main( int argc, char *argv[] )
 
 			if( unkName.rfind( "FUN_", 0 ) == 0 && knownName.rfind( "FUN_", 0 ) != 0 )
 			{
-				file << "- " << removePrefix( unkName ) << " " << knownName << std::endl;
+				sortedPairs.emplace_back( removePrefix( unkName ), knownName );
 			}
+		}
+
+		std::sort( sortedPairs.begin(), sortedPairs.end(),
+				   []( const auto &a, const auto &b ) { return a.first < b.first; } );
+
+		for( const auto &item : sortedPairs )
+		{
+			file << "- " << item.first << " " << item.second << std::endl;
 		}
 	}
 	catch( const std::exception &e )
