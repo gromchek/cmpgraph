@@ -34,7 +34,6 @@
 - 00420aa0 DayNight::SetActiveDayNight
 - 004217a0 TSHashTable<SOUNDKITLOOKUP,HASHKEY_CONSTSTRI>::Ptr
 - 00421850 UpdateReadSize
-- 00422480 _read
 - 00422870 tact::StaticArchiveIndexGroup::Create
 - 00426ff0 CM2Cache::LogShared
 - 00427010 _mach_thread_self
@@ -238,6 +237,7 @@
 - 004c1600 SStrPrintf<260ul>
 - 004c1620 BlizzardContour::PickRandomInteriorPoint
 - 004c1cf0 CGUnit_C::GetCollisionScale
+- 004c1e20 World::ObjectUpdate
 - 004c1e60 CM2Model::CalcGroundMatrix
 - 004c2210 CHMMChunk::Query
 - 004c23a0 GLDevice::SetCullFace
@@ -630,7 +630,6 @@
 - 005ebf20 CGCooldown::InitVerts
 - 005ed020 FadingScreenCleanup
 - 005ed750 GxuSortDrawList
-- 005ed870 CGGuildInfo::ClientGuildResetHandler
 - 005edbc0 CGInputControl::Initialize
 - 005eefb0 EvaluateStance
 - 005ef040 EvaluateModifier
@@ -874,7 +873,6 @@
 - 007076f0 CGItem::CanGoIntoInvSlot
 - 0070b230 CGGameObject_C_TypeAnimated::UpdateDisplay
 - 0070b580 CGGameObject_C_Type_Transport::PostReenable
-- 0070b760 World::ObjectUpdate
 - 0070bde0 OnUpdateArtKit
 - 0070be30 ClientPageTextHandler
 - 0070be90 OnUpdateFlags
@@ -885,7 +883,7 @@
 - 0070c850 CGItemText::ItemTextCreatorCallback
 - 0070d010 CGGameObject_C_TypeAnimated::UpdateStateAnimKit
 - 0070d040 CGGameObject_C::UpdateDisplay
-- 0070da40 CGGameObject_C_Type_Transport::GetSequenceTimeFromRealTime
+- 0070da40 CGGameObject_C_Type_Transport::InitializeMovement
 - 0070f880 CUnitDisplay::AddWorldHonorGainText
 - 007119d0 CGGameObject_C_Type_Door::CanUseNow
 - 00711a10 CGGameObject_C_Type_WorldObj::CreateWorldObj
@@ -904,8 +902,7 @@
 - 00715a50 CUnitDisplayTransition_C::HandleAnimSwapEvent
 - 00715bf0 CGUnit_C::HandleTrackingPitch
 - 00715d00 PlayerCliSetSheathed::PlayerCliSetSheathed
-- 00715df0 CGUnit_C::UnitReaction
-- 00715f90 CGUnit_C::IsUnitInRaidGroup
+- 00715f90 CGUnit_C::UnitReaction
 - 00716110 CGUnit_C::ShouldPlayHoverAnim
 - 00716190 UnitCallbacks::JumpEndAnimKitStopCallback
 - 007161c0 SpellClutter::TreatAsPlayer
@@ -976,7 +973,6 @@
 - 00750a90 UnitCombatLogEnergize
 - 00750d40 UnitCombatLogInitialize
 - 00750ea0 ClientCombatEventFailedHandler
-- 00751ad0 SpellMissingItemsCallback
 - 00753000 CGPlayer_C::StopGhosting
 - 00753710 ClientClearTargetHandler
 - 00753730 ClientAttackSwingLandedLogHandler
@@ -1066,6 +1062,7 @@
 - 007917d0 TSFixedArray<CGxVertexPC>::ReallocData
 - 00791910 CGxDevice::ShaderRelease
 - 007927e0 CMapObjDef::UpdateLoaded
+- 00792fa0 CDetailDoodad::CreateChunk
 - 00793fd0 CWorldScene::DebugRenderFlightBounds
 - 00794190 GBuffer::IsActive
 - 0079b440 CMap::QueryGroundTypeTerrain
@@ -1100,18 +1097,19 @@
 - 007b25b0 TSList<CDetailDoodadBatch,TSGetExplicitLink<CDetailDoodadBatch>>::~TSList
 - 007b2ca0 FFX::SetupVB_PNC2T_TS
 - 007b47f0 World::GetTerrainTextureLod
+- 007b50b0 CWorldMap::PreloadCountMapObjGroupTextures
 - 007b5870 CWorldMap::LinkEntity
 - 007b74a0 PrepareAlphaShadowRow8888
 - 007b84a0 UnpackAlphaShadowBitsUnfixed4444Mip0Row
 - 007bdb10 CGGameObject_C::PostDisplayInfoUpdate
 - 007bdd80 CMapDoodadDef::DefaultBounds
 - 007be520 CMapObj::LodExists
-- 007be9d0 CMapObjDef::DoodadSetAdd
 - 007c0d10 TSHashTable<CMapDoodadDef,HASHKEY_DOODADDEF>::InternalNew
 - 007c0e00 TSHashTable<CMapObjDef,HASHKEY_DWORD>::InternalNew
 - 007c2040 CWorldMap::LinkObjectToMapExterior
 - 007c205c CMap::LinkObjectToExterior
 - 007c3e70 CMapArea::PurgeRenderChunk
+- 007c5440 CDetailDoodadChunk::CreateBatches
 - 007c6600 BspQuery_SegmentLink::operator()
 - 007c6710 CAaBsp_Query_Segment<BspQuery_SegmentLink>::GetFaceIndices
 - 007c71e0 BspQuery_Volume<CFrustum>::operator()
@@ -1407,7 +1405,6 @@
 - 0086bca0 RunSystemSurvey
 - 0086bd60 OsPathReplaceExtension
 - 0086cb00 CWowMouseMac::PopNextEventOffQueue
-- 0086d4c0 NOsSecureRandom::FallbackRandom
 - 0086e850 NetConnection::WRITEBLOCK::~WRITEBLOCK
 - 00870840 OsJoystickOpen
 - 00870890 OsJoystickGetName
@@ -1429,6 +1426,7 @@
 - 00878730 TSSimpleArray<TSExplicitList<SE3MemorySoundObject,-572662307>>::FatalArrayBounds
 - 008787e0 SE3::CaptureWork
 - 00878da0 SE3::ConnectDspToChannelGroup
+- 008792b0 GarrisonInfo::GenerateFollowerName
 - 00879760 SE3::SetDrivers
 - 00879840 SE3::GetFMODChannelFromSE3Handle
 - 008799e0 SE3::AddFeedbackError
@@ -1466,7 +1464,6 @@
 - 008c6350 BattlenetLogin::LogConnectionStatus
 - 008c6de0 BattlenetLogin::EventQueueUpdate
 - 008c6e60 BattlenetFileDownload::Initialize
-- 008c7030 NetConnection::DoRead
 - 008c7130 BattlenetLogin::BuildRealmListResult
 - 008c8730 _Curl_smtp_escape_eob
 - 008c8df0 SE3PreloadCallback
@@ -1554,11 +1551,11 @@
 - 009779b0 CSimpleButton_SetFormattedText
 - 00979250 CParticleBuffer::CParticleBuffer
 - 00979480 CParticleEmitter2::InterpolateColorTrack
-- 009799c0 CParticleEmitter2::CreateParticle
 - 0097a130 CDetailDoodadBatch::FillInstanceBuf
 - 0097aef0 TSCArray<CParticleEmitter2*,4>::FatalArrayBounds
 - 0097bb80 CharCreateInfo::~CharCreateInfo
 - 0097d7b0 C4Quaternion::FromRotationMatrix
+- 0097d820 CParticleEmitter2::CreateParticle
 - 0097df90 DayNight::CDayNightObjectInt::ResetOverrideSky
 - 0097e480 CParticleBuffer::SyncSize
 - 0097fe80 CRibbonEmitter::InitEdges
@@ -1569,7 +1566,6 @@
 - 009847d0 WowClientCompressedDB::WowClientCompressedDB
 - 00986080 SI3::GlueMusicUpdate
 - 009863f0 SI3::VoiceChat_StopPlayingLoopbackSound
-- 009865c0 SI3::VoiceChat_IsVoiceChatInitialized
 - 00986670 SI3::VoiceChat_GetCurrentMicrophoneSignalLevel
 - 009866e0 _MonitorDSPCallback
 - 00986990 SI3::VoiceChat_IsRecordingLoopbackSound
@@ -1582,6 +1578,7 @@
 - 009917f0 Stream::operator<<
 - 00992780 _FT_Set_Pixel_Sizes
 - 00993370 _FT_New_Memory_Face
+- 00993c00 GLShaderInput::UpdateLocation
 - 00994e20 _parse_subrs
 - 0099f520 _pcre_regerror
 - 009a7840 Chat::Process

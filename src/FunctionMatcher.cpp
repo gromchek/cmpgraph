@@ -147,12 +147,6 @@ std::vector<std::pair<int, double>> FunctionMatcher::findTargetFunction( const s
 		return results;
 	}
 
-	if( match_.count( targetIdx ) )
-	{
-		results.emplace_back( match_.at( targetIdx ), 1.0 );
-		return results;
-	}
-
 	auto [reqCallees, reqCallers] = getRequiredNeighbors( targetIdx );
 	auto candidates = findStructureCandidates( reqCallees, reqCallers );
 
@@ -199,7 +193,16 @@ void FunctionMatcher::matchExactNamesParallel()
 
 	unsigned int numThreads = std::max( 2u, std::thread::hardware_concurrency() );
 	std::vector<std::thread> threads;
+
+	if( g2_.empty() )
+	{
+		std::cout << "[LOG] Stage 1 completed. Matches found: " << match_.size() << std::endl;
+		return;
+	}
+
 	size_t blockSize = ( g2_.size() + numThreads - 1 ) / numThreads;
+
+	std::vector<std::vector<std::pair<int, int>>> threadMatches( numThreads );
 
 	for( unsigned int t = 0; t < numThreads; ++t )
 	{
@@ -210,7 +213,8 @@ void FunctionMatcher::matchExactNamesParallel()
 			break;
 		}
 
-		threads.emplace_back( [this, start, end]() {
+		threads.emplace_back( [this, start, end, t, &threadMatches]() {
+			auto &local = threadMatches[t];
 			for( size_t i = start; i < end; ++i )
 			{
 				if( isUnknownFunction( g2_[i].name ) )
@@ -224,11 +228,7 @@ void FunctionMatcher::matchExactNamesParallel()
 					continue;
 				}
 
-				std::lock_guard<std::mutex> lock( mtx_ );
-				if( usedG1_.count( it->second ) == 0 && match_.count( static_cast<int>( i ) ) == 0 )
-				{
-					addMatch( static_cast<int>( i ), it->second );
-				}
+				local.emplace_back( static_cast<int>( i ), it->second );
 			}
 		} );
 	}
@@ -236,6 +236,17 @@ void FunctionMatcher::matchExactNamesParallel()
 	for( auto &th : threads )
 	{
 		th.join();
+	}
+
+	for( const auto &vec : threadMatches )
+	{
+		for( const auto &[g2idx, g1idx] : vec )
+		{
+			if( usedG1_.count( g1idx ) == 0 && match_.count( g2idx ) == 0 )
+			{
+				addMatch( g2idx, g1idx );
+			}
+		}
 	}
 
 	std::cout << "[LOG] Stage 1 completed. Matches found: " << match_.size() << std::endl;
@@ -246,12 +257,15 @@ void FunctionMatcher::matchSimilarNamesParallel()
 	std::cout << "[LOG] Stage 2: Matching similar names (Parallel)..." << std::endl;
 
 	std::unordered_set<int> alreadyMatchedG2;
+	for( const auto &[g2idx, g1idx] : match_ )
 	{
-		std::lock_guard<std::mutex> lock( mtx_ );
-		for( const auto &[g2idx, g1idx] : match_ )
-		{
-			alreadyMatchedG2.insert( g2idx );
-		}
+		alreadyMatchedG2.insert( g2idx );
+	}
+
+	if( g2_.empty() )
+	{
+		std::cout << "[LOG] Stage 2 completed. New matches found: 0" << std::endl;
+		return;
 	}
 
 	unsigned int numThreads = std::max( 2u, std::thread::hardware_concurrency() );
@@ -308,9 +322,10 @@ void FunctionMatcher::matchSimilarNamesParallel()
 
 	std::vector<std::tuple<double, int, int>> allCandidates;
 	allCandidates.reserve( totalSize );
-	for( const auto &vec : threadCandidates )
+	for( auto &vec : threadCandidates )
 	{
-		allCandidates.insert( allCandidates.end(), vec.begin(), vec.end() );
+		allCandidates.insert( allCandidates.end(), std::make_move_iterator( vec.begin() ),
+							  std::make_move_iterator( vec.end() ) );
 	}
 
 	std::sort( allCandidates.begin(), allCandidates.end(),
@@ -319,7 +334,6 @@ void FunctionMatcher::matchSimilarNamesParallel()
 	size_t newMatches = 0;
 	for( const auto &[sim, g2idx, g1idx] : allCandidates )
 	{
-		std::lock_guard<std::mutex> lock( mtx_ );
 		if( match_.count( g2idx ) == 0 && usedG1_.count( g1idx ) == 0 )
 		{
 			addMatch( g2idx, g1idx );
@@ -437,7 +451,7 @@ void FunctionMatcher::matchIterativeParallel()
 		{
 			if( !res.is_unique )
 			{
-				if( !inQueue[res.g2_idx] )
+				if( res.g2_idx >= 0 && !inQueue[res.g2_idx] )
 				{
 					q.push( res.g2_idx );
 					inQueue[res.g2_idx] = true;
@@ -445,7 +459,6 @@ void FunctionMatcher::matchIterativeParallel()
 				continue;
 			}
 
-			std::lock_guard<std::mutex> lock( mtx_ );
 			if( usedG1_.count( res.g1_cand ) == 0 && match_.count( res.g2_idx ) == 0 )
 			{
 				addMatch( res.g2_idx, res.g1_cand );

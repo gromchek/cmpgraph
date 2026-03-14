@@ -101,9 +101,9 @@ int main()
 		{ "_SErrSetLastError", "SErrSetLastError" },
 		{ "_SErrSetLogCallback", "SErrSetLogCallback" },
 
-		{ "WowClientDB2<KeyChainRec_C>::WowClientDB2", "WowClientDB__KeyChainRec_C__constructor"},
-		{ "WowClientDB2<KeyChainRec_C>::GetRecordByIndex", "WowClientDB__KeyChainRec_C__GetRecordByIndex"},
-		{ "WowClientDB2<KeyChainRec_C>::IterateOverCache", "WowClientDB__KeyChainRec_C__IterateOverCache"}
+		{ "WowClientDB2<KeyChainRec_C>::WowClientDB2", "WowClientDB__KeyChainRec_C__constructor" },
+		{ "WowClientDB2<KeyChainRec_C>::GetRecordByIndex", "WowClientDB__KeyChainRec_C__GetRecordByIndex" },
+		{ "WowClientDB2<KeyChainRec_C>::IterateOverCache", "WowClientDB__KeyChainRec_C__IterateOverCache" }
 	};
 
 	std::cout << "=== Test Results ===\n";

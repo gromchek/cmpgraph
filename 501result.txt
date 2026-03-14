@@ -3,6 +3,7 @@
 - 004015e0 MouseSpeedCallback
 - 00401b40 ScreenshotQualityCallback
 - 004020e0 ScreenshotFormatCallback
+- 004021c0 StringToKeyCode
 - 00402530 SetDefaults
 - 00402a50 MacClient::LoadWindowBounds
 - 00403320 PatchCacheLimitInitialize
@@ -23,9 +24,9 @@
 - 00409880 InitializeSpline
 - 00409b10 LoadingScreenMiniPaint
 - 0040a160 LoadDynamicBackground
-- 0040ab20 CGGlyphInfo::InitializeGame
 - 0040ad50 LoadingScreenEnableShip
 - 0040b2b0 CGPlayer_C::GlobalInitialize
+- 0040b7f0 _exit
 - 00417a07 _match
 - 0041d0c0 GLObjectManager::BindObject
 - 0041d2a0 MusicPlayerInterface::Instance
@@ -261,6 +262,7 @@
 - 0049eb70 CSimplePathAnim_CreateControlPoint
 - 004a3740 CSimpleFont_SetShadowOffset
 - 004a38f0 CSimpleFont_GetFontObject
+- 004a3bc0 Script_ReforgeItem
 - 004a4040 CSimpleFont_GetSpacing
 - 004a4080 CSimpleAnimGroup::RunOnLoopScript
 - 004a40e0 CSimpleFont_GetIndentedWordWrap
@@ -277,7 +279,6 @@
 - 004ab540 GLShaderCompiler::SendToWorker
 - 004b4ff0 SysMsgPrintf
 - 004b50d0 Liquid::UpdateProceduralTextures
-- 004b5460 CTgaFile::Image
 - 004b54f0 TimeSyncQueue::DiscardAll
 - 004b5770 GxCalcTexelStrideInBytes
 - 004b5790 TextureUnloadBlob
@@ -303,6 +304,7 @@
 - 004bec40 MovementGetTransportMtxSafe
 - 004bec90 FrameTime::GetCurTimeMs
 - 004bf0f0 CameraGetLineSegment
+- 004bf450 CTgaFile::Image
 - 004c02f0 CTextureBlob::GetTexture
 - 004c0330 CTextureBlob::RemoveTextures
 - 004c0710 CTextureBlob::CreateTexture
@@ -361,7 +363,6 @@
 - 004d6a70 TSList<CGObject_C,TSGetExplicitLink<CGObject_C>>::~TSList
 - 004d6f10 LoadItemCacheCallback
 - 004d7890 CGlueMgr::ServerAlertURLCallback
-- 004d8630 CM2Model::SetWorldTransform
 - 004d8ba0 CGlueMgr::PollLoginServerLogin
 - 004da510 CCharacterCreation::Shutdown
 - 004da580 CWOWClientStatus::~CWOWClientStatus
@@ -400,7 +401,7 @@
 - 004f92a0 CGWorldFrame::~CGWorldFrame
 - 004f9410 CWorldMap::QueryHeight
 - 004fb0d0 NameCache::FullName
-- 004fb710 _memmove
+- 004fb710 CDataStore::Get
 - 004fb8f0 SendChatMessage
 - 004fb920 CGPlayer_C::GetLanguageSkillLevel
 - 004fcac0 BuildDisplayListMember
@@ -506,7 +507,6 @@
 - 005627c0 TSList<MODIFIEDCLICK,TSGetExplicitLink<MODIFIEDCLICK>>::~TSList
 - 00564a80 QSortMacrosByName
 - 005661c0 TSHashTable<MACRONODE,HASHKEY_NONE>::InternalNewNode
-- 00568380 CDataStore::Get
 - 005684b0 CGCommentator::Script_SetCamera
 - 0056c1c0 CGChatBubbleFrame::ParseRaidIcons
 - 0056cde0 CUnitDisplay::ChatBubbleRemove
@@ -669,7 +669,7 @@
 - 00615660 MarkRect
 - 00616060 SmartScreenRectShutdown
 - 00616950 CM2Scene::AddRef
-- 00616d10 SStrStrI
+- 00616c20 TSGrowableArray<AnimKitSegmentInst*>::Reserve
 - 00616d70 CM2Model::WaitUntilLoadedRecursive
 - 006171b0 ___tcf_0
 - 00617860 PortraitShutdown
@@ -732,13 +732,13 @@
 - 0068a170 CGxDevice::GLLAdapterFormats
 - 0068b030 CGxDevice::~CGxDevice
 - 0068b300 CMapObjRender::WaterResetCallback
-- 0068c670 std_terminate_handler
 - 0068c860 ProtocolHard::TypeInfoOf<Battlenet::Event::S2GameEngine::StartGameRequest>::Decode
 - 0068ce40 CGxDeviceGLL::Resize
 - 006920e0 CGxDeviceGLL::XformIsValidViewport
 - 00695fd0 CEffect::AddBlizzard
 - 0069f2d0 DayNight::DNClouds::Initialize
 - 006a7940 GLDevice::SetStencilTarget
+- 006aa820 CTgaFile::Image
 - 006ad440 Blit_DxtUnaligned<Dxt1Block,CRgb565>
 - 006ad660 Blit_DxtUnaligned<Dxt1Block,CArgb1555>
 - 006ad880 Blit_DxtUnaligned<Dxt1Block,CImVector>
@@ -828,6 +828,7 @@
 - 006fc210 CUnitDisplay::CorrectTrajectoryOfPendingMissiles
 - 006fc9b0 CMissileCollision::ComputeSegmentImpactTime
 - 006feca0 CVehicleCamera_C::ConvertFromRawOrOffsetToWorld
+- 006fed70 CObjectDisplay::DoFade
 - 006feff0 CEffect::AddSpecialByPosition
 - 006ff5c0 World::GetM2Scene
 - 006ff6c0 CMissile::SetReadyToFire
@@ -1006,6 +1007,7 @@
 - 0078dd40 CWorldParam::SetDefaults
 - 0078e950 CWorldParam::Destroy
 - 0078eeb0 AreaListUpdateSounds
+- 0078f480 NTempest::Intersect
 - 0078fb60 CWorldView::UpdateOcclusion
 - 00790520 CWorldView::CullChunkReflection
 - 00790570 Liquid::SetCamPos
@@ -1015,7 +1017,6 @@
 - 00791240 CWorldView::CullModel
 - 00791910 CWorldOccluder::Destroy
 - 00791f30 CMapObjDefGroup::ClearSceneMaterials
-- 00791f80 NTempest::Intersect
 - 00792010 GxXformViewProjNative
 - 007927e0 CMapObjDef::UpdateLoaded
 - 00793fd0 CWorldSceneRender::CWorldSceneRender
@@ -1055,7 +1056,6 @@
 - 007b47f0 World::GetTerrainTextureLod
 - 007b4fa0 CMapDoodadDef::UpdateParentBounds
 - 007b50b0 CWorldMap::PreloadCountMapObjGroupTextures
-- 007b5870 World::ObjectUpdate
 - 007b7420 FMOD::CodecMPEG::resetFrame
 - 007b75b0 CMapRenderChunk::RecreateAlphaBitsFixed8888Mip1
 - 007bd8a0 CMap::WdtSuccessCallback
@@ -1434,6 +1434,7 @@
 - 008c87b0 BattlenetApplication::WCPacketReady
 - 008c9310 BattlenetLogin::HandleInvoke
 - 008c9a40 BattlenetLogin::~BattlenetLogin
+- 008ca2f0 _memmove
 - 008ccf30 CDataStoreCache<1024>::InternalInitialize
 - 008cd220 Grunt::Command<Grunt::ClientLink>::Process
 - 008cf940 CGResearchFrame::PutWeightForSpell
@@ -1505,6 +1506,7 @@
 - 009691f0 CSimpleMessageScrollFrameDisplayNode::CSimpleMessageScrollFrameDisplayNode
 - 0096a6e0 CSimpleMessageScrollFrame::ScrollToTop
 - 0096a880 CSimpleMessageScrollFrame::OnLayerShow
+- 0096be10 CSimpleFrame::OnFrameSizeChanged
 - 0096dd80 CSimpleColorSelect::UpdateColor
 - 0096fb60 CSimpleButton::OnLayerMouseUp
 - 00970370 CSimpleButton::SetStateTexture
@@ -1524,11 +1526,11 @@
 - 00980ed0 CParticleEmitter2::CreateParticle
 - 00981d40 CSplineGenerator::CreateParticle
 - 00982a40 NTempest::Intersect
+- 00983d20 CFrustum::Cull
 - 009846b0 TexWaveCallback
 - 00986080 SI3::GlueMusicUpdate
 - 009863f0 SI3::VoiceChat_StopPlayingLoopbackSound
 - 00986420 CWorldParam::SunShaftsCallback
-- 009865c0 SI3::VoiceChat_IsVoiceChatInitialized
 - 00986670 SI3::VoiceChat_GetCurrentMicrophoneSignalLevel
 - 009866e0 _MonitorDSPCallback
 - 00986990 SI3::VoiceChat_IsRecordingLoopbackSound

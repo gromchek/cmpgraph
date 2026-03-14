@@ -5,6 +5,7 @@
 #include "StringTransformer.h"
 #include "FunctionMatcher.h"
 #include "StringFilter.h"
+#include "InlineAwareMatcher.h"
 
 StringTransformer transformer;
 StringFilter filter;
@@ -96,6 +97,8 @@ std::vector<Function> load_functions_from_json( const json &data )
 int main( int argc, char *argv[] )
 {
 	filter.addPartial( "std::" );
+	filter.addPartial( "CGReforge" );
+	filter.addPartial( "blz::" );
 
 	transformer.addRule( "__jump_table::_strcasecmp", "SStrCmp" );
 	transformer.addRule( "__jump_table::strchr", "SStrChr" );
@@ -156,6 +159,7 @@ int main( int argc, char *argv[] )
 		auto pathJSONRef = args.get( "ref" );
 		auto threshold = args.getFloat( "t", 0.8f );
 		auto output = args.get( "o", "result.txt" );
+		auto checkInline = args.getBool( "checkInline", false );
 		std::cout << "=== Function Matcher Started ===" << std::endl;
 
 		auto g1_json = load_json( pathJSONRef );
@@ -168,6 +172,14 @@ int main( int argc, char *argv[] )
 
 		FunctionMatcher matcher( g1, g2, threshold );
 		auto result = matcher.runFullMatch();
+
+		if( checkInline )
+		{
+			InlineAwareMatcher iam( g1, g2, 3, threshold );
+			auto extraMatches = iam.run( result );
+
+			result.insert( extraMatches.begin(), extraMatches.end() );
+		}
 
 		std::cout << "\n=== Matching Results ===" << std::endl;
 		std::cout << "Total pairs matched: " << result.size() << std::endl;

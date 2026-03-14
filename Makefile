@@ -8,12 +8,12 @@ TEST_FILTER_APP = test_filter
 
 SRC_DIR = src
 
-MAIN_SRC = $(SRC_DIR)/main.cpp $(SRC_DIR)/CliArgs.cpp $(SRC_DIR)/StringTransformer.cpp $(SRC_DIR)/FunctionMatcher.cpp $(SRC_DIR)/StringFilter.cpp
+MAIN_SRC = $(SRC_DIR)/main.cpp $(SRC_DIR)/CliArgs.cpp $(SRC_DIR)/StringTransformer.cpp $(SRC_DIR)/FunctionMatcher.cpp $(SRC_DIR)/InlineAwareMatcher.cpp $(SRC_DIR)/StringFilter.cpp
 
 TEST_SRC = $(SRC_DIR)/test_transform.cpp $(SRC_DIR)/StringTransformer.cpp
 TEST_FILTER_SRC = $(SRC_DIR)/test_filter.cpp $(SRC_DIR)/StringFilter.cpp
 
-GREP_FILTER = grep -vF -e '__jump' -e 'System_' -e 'JamGuildNewsEvent' -e 'DBCache' -e 'MpqSystemList' -e 'ComSat' -e 'CWowMouseMac' -e 'TSGrowableArray' -e 'Crypt' -e 'CDataStore' -e 'CGBlobFrame' -e 'WoWReport' -e 'TSFixedArray' -e 'MusicPlayerInterface' -e 'GLShaderCompiler' -e 'WDataStore' -e 'TSHashTable' -e 'CGxDevice' -e 'FMOD' -e 'BSN::' -e 'std::' -e 'FUN_' -e ' _' -e 'ProtocolHard' -e 'Blizzard' -e 'Battlenet' -e 'CAnimKitManager'
+GREP_FILTER = grep -vF -e '__jump' -e 'TSList' -e 'blz::' -e 'MacClient' -e 'TSCGrowableArray' -e 'JamCli' -e 'WowClientDB' -e 'System_' -e 'JamGuildNewsEvent' -e 'DBCache' -e 'MpqSystemList' -e 'ComSat' -e 'CWowMouseMac' -e 'TSGrowableArray' -e 'Crypt' -e 'CDataStore' -e 'CGBlobFrame' -e 'WoWReport' -e 'TSFixedArray' -e 'MusicPlayerInterface' -e 'GLShaderCompiler' -e 'WDataStore' -e 'TSHashTable' -e 'CGxDevice' -e 'FMOD' -e 'BSN::' -e 'std::' -e 'FUN_' -e ' _' -e 'ProtocolHard' -e 'Blizzard' -e 'Battlenet' -e 'CAnimKitManager'
 
 SRCS := $(shell find $(SRC_DIR) -name "*.cpp" -o -name "*.hpp" -o -name "*.c" -o -name "*.h")
 
@@ -35,7 +35,7 @@ test: $(TEST_APP) $(TEST_FILTER_APP)
 	./$(TEST_FILTER_APP)
 
 run_410: $(MAIN_APP)
-	./$(MAIN_APP) --base 335_call_graph.json --ref 410_call_graph.json -o 410result.txt
+	./$(MAIN_APP) --base 335_call_graph.json --ref 410_call_graph.json -o 410result.txt --checkInline 1
 
 run_501: $(MAIN_APP)
 	./$(MAIN_APP) --base 335_call_graph.json --ref 501_call_graph.json -o 501result.txt
@@ -44,7 +44,7 @@ run_601: $(MAIN_APP)
 	./$(MAIN_APP) --base 335_call_graph.json --ref 601_call_graph.json -o 601result.txt
 
 run_053: $(MAIN_APP)
-	./$(MAIN_APP) --base 335_call_graph.json --ref 053_call_graph.json -o 053result.txt
+	./$(MAIN_APP) --base 335_call_graph.json --ref 053_call_graph.json -o 053result.txt --checkInline 1
 
 run_all: run_410 run_501 run_601 run_053
 
