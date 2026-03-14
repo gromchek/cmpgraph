@@ -4,8 +4,10 @@
 #include <fstream>
 #include "StringTransformer.h"
 #include "FunctionMatcher.h"
+#include "StringFilter.h"
 
 StringTransformer transformer;
+StringFilter filter;
 
 using json = nlohmann::json;
 
@@ -50,14 +52,25 @@ std::vector<Function> load_functions_from_json( const json &data )
 	for( const auto &item : functions_array )
 	{
 		Function func;
-		func.name = transformer.transform( item.value( "name", "" ) );
 		func.baseName = item.value( "name", "" );
+
+		if( filter.match( func.baseName ) )
+		{
+			continue;
+		}
+
+		func.name = transformer.transform( func.baseName );
 
 		if( item.contains( "called_names" ) )
 		{
 			for( const auto &called : item["called_names"] )
 			{
-				func.callees.push_back( transformer.transform( called.get<std::string>() ) );
+				const auto name = transformer.transform( called.get<std::string>() );
+				if( filter.match( name ) )
+				{
+					continue;
+				}
+				func.callees.push_back( name );
 			}
 		}
 
@@ -65,7 +78,12 @@ std::vector<Function> load_functions_from_json( const json &data )
 		{
 			for( const auto &caller : item["caller_names"] )
 			{
-				func.callers.push_back( transformer.transform( caller.get<std::string>() ) );
+				const auto name = transformer.transform( caller.get<std::string>() );
+				if( filter.match( name ) )
+				{
+					continue;
+				}
+				func.callers.push_back( name );
 			}
 		}
 
@@ -77,9 +95,21 @@ std::vector<Function> load_functions_from_json( const json &data )
 
 int main( int argc, char *argv[] )
 {
+	filter.addPartial( "std::" );
+
+	transformer.addRule( "__jump_table::_strcasecmp", "SStrCmp" );
+	transformer.addRule( "__jump_table::strchr", "SStrChr" );
+	transformer.addRule( "__jump_table::strcpy", "SStrCopy" );
+	transformer.addRule( "__jump_table::strlen", "SStrLen" );
+	transformer.addRule( "__jump_table::strncasecmp", "SStrCmpI" );
+	transformer.addRule( "__jump_table::strrchr", "SStrChrR" );
+	transformer.addRule( "__jump_table::strstr", "SStrStr" );
+	transformer.addRule( "__jump_table::", "" );
+	transformer.addRule( "_SErr", "SErr" );
 	transformer.addRule( "SE3", "SE2" );
 	transformer.addRule( "SI3", "SI2" );
 	transformer.addRule( "CWorldMap", "CMap" );
+	transformer.addRule( "WowClientDB2", "WowClientDB" );
 	transformer.addRule( "::", "__" );
 	transformer.addRegexRule( R"(\b(struct|class)_)", "" );
 	transformer.addRegexRule( R"((\w+)<([^,>]+)[^>]*>)", "$1__$2" );

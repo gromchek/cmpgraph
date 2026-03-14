@@ -6,9 +6,19 @@ int main()
 {
 	StringTransformer transformer;
 
+	transformer.addRule( "__jump_table::_strcasecmp", "SStrCmp" );
+	transformer.addRule( "__jump_table::strchr", "SStrChr" );
+	transformer.addRule( "__jump_table::strcpy", "SStrCopy" );
+	transformer.addRule( "__jump_table::strlen", "SStrLen" );
+	transformer.addRule( "__jump_table::strncasecmp", "SStrCmpI" );
+	transformer.addRule( "__jump_table::strrchr", "SStrChrR" );
+	transformer.addRule( "__jump_table::strstr", "SStrStr" );
+	transformer.addRule( "__jump_table::", "" );
+	transformer.addRule( "_SErr", "SErr" );
 	transformer.addRule( "SE3", "SE2" );
 	transformer.addRule( "SI3", "SI2" );
 	transformer.addRule( "CWorldMap", "CMap" );
+	transformer.addRule( "WowClientDB2", "WowClientDB" );
 	transformer.addRule( "::", "__" );
 	transformer.addRegexRule( R"(\b(struct|class)_)", "" );
 	transformer.addRegexRule( R"((\w+)<([^,>]+)[^>]*>)", "$1__$2" );
@@ -76,8 +86,24 @@ int main()
 		{ "SE3::GetInputDriverName_Cached", "SE2__GetInputDriverName_Cached" },
 		{ "SE3::CacheEventCallback", "SE2__CacheEventCallback" },
 		{ "SE3CaptureCallbacks::~SE3CaptureCallbacks", "SE2CaptureCallbacks__destructor" },
-		{ "TSExplicitList<SE3SoundChunk,-572662307>::TSExplicitList", "TSExplicitList__SE2SoundChunk__constructor" }
+		{ "TSExplicitList<SE3SoundChunk,-572662307>::TSExplicitList", "TSExplicitList__SE2SoundChunk__constructor" },
 
+		{ "__jump_table::_strcasecmp", "SStrCmp" },
+		{ "__jump_table::strchr", "SStrChr" },
+		{ "__jump_table::strcpy", "SStrCopy" },
+		{ "__jump_table::strlen", "SStrLen" },
+		{ "__jump_table::strncasecmp", "SStrCmpI" },
+		{ "__jump_table::strrchr", "SStrChrR" },
+		{ "__jump_table::strstr", "SStrStr" },
+		{ "__jump_table::_memmove", "_memmove" },
+		{ "_SErrGetErrorStr", "SErrGetErrorStr" },
+		{ "_SErrGetLastError", "SErrGetLastError" },
+		{ "_SErrSetLastError", "SErrSetLastError" },
+		{ "_SErrSetLogCallback", "SErrSetLogCallback" },
+
+		{ "WowClientDB2<KeyChainRec_C>::WowClientDB2", "WowClientDB__KeyChainRec_C__constructor"},
+		{ "WowClientDB2<KeyChainRec_C>::GetRecordByIndex", "WowClientDB__KeyChainRec_C__GetRecordByIndex"},
+		{ "WowClientDB2<KeyChainRec_C>::IterateOverCache", "WowClientDB__KeyChainRec_C__IterateOverCache"}
 	};
 
 	std::cout << "=== Test Results ===\n";
