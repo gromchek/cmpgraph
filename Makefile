@@ -13,7 +13,7 @@ MAIN_SRC = $(SRC_DIR)/main.cpp $(SRC_DIR)/CliArgs.cpp $(SRC_DIR)/StringTransform
 TEST_SRC = $(SRC_DIR)/test_transform.cpp $(SRC_DIR)/StringTransformer.cpp
 TEST_FILTER_SRC = $(SRC_DIR)/test_filter.cpp $(SRC_DIR)/StringFilter.cpp
 
-GREP_FILTER = grep -vF -e '__jump' -e 'JamGuildNewsEvent' -e 'DBCache' -e 'MpqSystemList' -e 'ComSat' -e 'CWowMouseMac' -e 'TSGrowableArray' -e 'Crypt' -e 'CDataStore' -e 'CGBlobFrame' -e 'WoWReport' -e 'TSFixedArray' -e 'MusicPlayerInterface' -e 'System_StackCrawl' -e 'GLShaderCompiler' -e 'WDataStore' -e 'System_Mopaq' -e 'System_SFile' -e 'TSHashTable' -e 'CGxDevice' -e 'FMOD' -e 'BSN::' -e 'std::' -e 'FUN_' -e ' _' -e 'ProtocolHard' -e 'Blizzard' -e 'Battlenet' -e 'CAnimKitManager'
+GREP_FILTER = grep -vF -e '__jump' -e 'System_' -e 'JamGuildNewsEvent' -e 'DBCache' -e 'MpqSystemList' -e 'ComSat' -e 'CWowMouseMac' -e 'TSGrowableArray' -e 'Crypt' -e 'CDataStore' -e 'CGBlobFrame' -e 'WoWReport' -e 'TSFixedArray' -e 'MusicPlayerInterface' -e 'GLShaderCompiler' -e 'WDataStore' -e 'TSHashTable' -e 'CGxDevice' -e 'FMOD' -e 'BSN::' -e 'std::' -e 'FUN_' -e ' _' -e 'ProtocolHard' -e 'Blizzard' -e 'Battlenet' -e 'CAnimKitManager'
 
 SRCS := $(shell find $(SRC_DIR) -name "*.cpp" -o -name "*.hpp" -o -name "*.c" -o -name "*.h")
 
