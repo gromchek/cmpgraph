@@ -368,12 +368,12 @@
 - 004d8ba0 CGlueMgr::PollLoginServerLogin
 - 004da510 CCharacterCreation::Shutdown
 - 004da580 CWOWClientStatus::~CWOWClientStatus
-- 004dda50 Script_IsConnectedToServer
 - 004dfe90 CCharacterCreation::StartAnimation
 - 004e25c0 SetPortraitTextureFromDisplayID
 - 004e2730 DayNight::GetDeathLightInfo
 - 004e37e0 CharacterSelectionDisplay::~CharacterSelectionDisplay
 - 004e3ca0 CCharacterSelection::EnumerateCharactersCallback
+- 004e5880 CGlueMgr::IsScanDLLFinished
 - 004e59c0 ExportInterfaceFiles
 - 004e6360 QSortDictionary
 - 004e6f90 _strcpy
@@ -951,6 +951,7 @@
 - 0075e040 CMovementShared::CalcTimeFallen
 - 0075e9c0 CMovement_C::CalcFallObstaclePush
 - 0075ee00 CMovement_C::ShouldSimulateCollision
+- 00763c60 ConsoleGetActive
 - 00763c70 CGxDevice::RsSet
 - 00766860 CVarArrayWrapper::RawGetValue
 - 00767000 TSHashTable<CVar,HASHKEY_STRI>::InternalDelete

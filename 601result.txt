@@ -298,13 +298,13 @@
 - 004da2d0 CWOWClientStatus::~CWOWClientStatus
 - 004da510 CCharacterCreation::Shutdown
 - 004da580 GetAddOnByIndex
-- 004dda50 pushDungeonInfo
 - 004de520 TSFixedArray<RealmCategory*>::ReallocData
 - 004de860 CRealmList::SortRealms
 - 004dfe90 CCharacterCreation::StartAnimation
 - 004e0ec0 TSFixedArray<ChrClassesRec_const*>::ReallocData
 - 004e2730 DayNight::GetDeathLightInfo
 - 004e3ca0 CCharacterSelection::EnumerateCharactersCallback
+- 004e5880 CGlueMgr::IsScanDLLFinished
 - 004e6f90 CCharacterComponent::SetAllDirty
 - 004e6fb0 CCharacterComponent::CreateTexture
 - 004e7af0 CUnitDisplay::IsComponentPlayerCompatible
@@ -995,6 +995,7 @@
 - 0075ee00 CMovement_C::ShouldSimulateCollision
 - 00761b00 CMovement_C::AttemptStepUp
 - 007639d0 OnMouseMove
+- 00763c60 ConsoleGetActive
 - 00763c70 CGxDevice::RsSet
 - 00765700 ConsoleCommand_HighLightColor
 - 00766700 CVar::SetReadOnly

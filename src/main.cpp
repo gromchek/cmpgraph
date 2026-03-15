@@ -6,6 +6,7 @@
 #include "FunctionMatcher.h"
 #include "StringFilter.h"
 #include "InlineAwareMatcher.h"
+#include "ClassGroupWriter.h"
 
 StringTransformer transformer;
 StringFilter filter;
@@ -162,6 +163,7 @@ int main( int argc, char *argv[] )
 		auto threshold = args.getFloat( "t", 0.8f );
 		auto output = args.get( "o", "result.txt" );
 		auto checkInline = args.getBool( "checkInline", false );
+		auto groupFile = args.get( "group", "" );
 		std::cout << "=== Function Matcher Started ===" << std::endl;
 
 		auto g1_json = load_json( pathJSONRef );
@@ -213,6 +215,12 @@ int main( int argc, char *argv[] )
 		for( const auto &item : sortedPairs )
 		{
 			file << "- " << item.first << " " << item.second << std::endl;
+		}
+
+		if( !groupFile.empty() )
+		{
+			ClassGroupWriter groupWriter;
+			groupWriter.export_grouped( groupFile, sortedPairs );
 		}
 	}
 	catch( const std::exception &e )
