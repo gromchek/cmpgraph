@@ -99,6 +99,7 @@ int main( int argc, char *argv[] )
 	filter.addPartial( "std::" );
 	filter.addPartial( "CGReforge" );
 	filter.addPartial( "blz::" );
+	filter.addPartial( "CGResearchFrame" );
 
 	transformer.addRule( "__jump_table::_strcasecmp", "SStrCmp" );
 	transformer.addRule( "__jump_table::strchr", "SStrChr" );
@@ -114,6 +115,7 @@ int main( int argc, char *argv[] )
 	transformer.addRule( "CWorldMap", "CMap" );
 	transformer.addRule( "WowClientDB2", "WowClientDB" );
 	transformer.addRule( "::", "__" );
+	transformer.addRule( "___", "__" );
 	transformer.addRegexRule( R"(\b(struct|class)_)", "" );
 	transformer.addRegexRule( R"((\w+)<([^,>]+)[^>]*>)", "$1__$2" );
 	transformer.addRegexRule( R"((\w+)(.*?)(::|__)\1$)", "$1$2$3constructor" );
