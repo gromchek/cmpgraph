@@ -113,6 +113,8 @@ int main( int argc, char *argv[] )
 	transformer.addRule( "_SErr", "SErr" );
 	transformer.addRule( "SE3", "SE2" );
 	transformer.addRule( "SI3", "SI2" );
+	transformer.addRule( "BattlenetUI::Script", "Script" );
+	transformer.addRule( "CGCommentator::Script", "Script" );
 	transformer.addRule( "CWorldMap", "CMap" );
 	transformer.addRule( "WowClientDB2", "WowClientDB" );
 	transformer.addRule( "::", "__" );
