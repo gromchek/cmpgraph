@@ -52,17 +52,15 @@
 - 009376c0 BattlenetUI::OnlineTimeChangedCB
 
 [Blizzard]
-- 0041d4f0 Blizzard::Mopaq::SFileFileExists
-- 0041d770 Blizzard::Debug::VAssert
 - 0041e220 Blizzard::Mopaq::SFileOpenArchiveView
-- 0041ef90 Blizzard::Storage::StorageUnit::StorageUnit
+- 0041ef90 Blizzard::Thread::CreatePool
 - 00422330 Blizzard::Mopaq::SFileOpenFileEx
-- 004227e0 Blizzard::Thread::LocalObject<System_SFile::RawReadInfo>::New
-- 004236f0 Blizzard::Patch::Patch::GetPatch
 - 00426eb0 Blizzard::Mopaq::SFileSetFilePointer
 - 00426f70 Blizzard::Mopaq::SFileGetFileSize
 - 00427070 Blizzard::String::QuickFormat<1024>::QuickFormat
 - 004278b0 Blizzard::File::SetSparseFile
+- 00427a20 Blizzard::File::Write
+- 00427d60 Blizzard::Streaming::ManifestInfo::GetItemTag
 - 004283d0 Blizzard::Mopaq::SFileCloseFile
 - 00428450 Blizzard::Memory::Allocate
 - 004288a0 Blizzard::String::Translate
@@ -72,24 +70,24 @@
 - 0042d730 Blizzard::Streaming::Manifests::TimeslotItem::ParseTimestamp
 - 0042e3b0 Blizzard::Memory::Free
 - 0042e400 Blizzard::Mopaq::Enumerator::Enumerator
-- 00431860 Blizzard::Storage::Initialize
-- 00431b50 Blizzard::Jobs::WorkerPool::RunJob
+- 00431570 Blizzard::Mopaq::SFileGetArchiveFileHandle
 - 00432c70 Blizzard::Mopaq::SFileGetArchiveFullName
 - 00435e20 Blizzard::Time::Seconds
-- 00437c20 Blizzard::Streaming::Transport::ReadFile
+- 00437d70 Blizzard::Streaming::Manifests::FileItem::FileItem
 - 00438300 Blizzard::Time::Nanoseconds
+- 0043dd90 Blizzard::Streaming::ManifestInfo::ReadManifestFile
 - 00447810 Blizzard::File::Reopen
-- 0044c790 Blizzard::Streaming::ManifestInfo::ReadDirectFileFromBuffer
+- 0044b440 Blizzard::Streaming::Manifests::ServerItem::ServerItem
 - 0044efb0 Blizzard::Mopaq::SFileGetFileDetails
 - 0044f0d0 Blizzard::Mopaq::SFileGetArchiveName
-- 004500b0 Blizzard::Streaming::ManifestInfo::HandleBaseTag
 - 004508b0 Blizzard::Storage::PartialFile::Close
 - 00450970 Blizzard::File::Exists
-- 00450ef0 Blizzard::Streaming::ManifestInfo::ReadIndirectFile
 - 00451ee0 Blizzard::Streaming::ManifestInfo::Get
+- 00452b10 Blizzard::Streaming::ManifestInfo::GetRandomServerLocation
+- 00453770 Blizzard::Thread::LocalObject<System_SFile::RawReadInfo>::New
 - 00453860 Blizzard::Storage::PartialFile::ParseFileFromHeader
 - 0045a610 Blizzard::Streaming::IsLocal
-- 0045bfe0 Blizzard::Mopaq::SFileCreateFile
+- 0045adc0 Blizzard::Storage::Initialize
 - 0045f7d0 Blizzard::Mopaq::SFileSetBasePath
 - 00460f00 Blizzard::Streaming::IsStreamedFile
 - 004a9d30 Blizzard::Debug::DefaultCallback
@@ -217,8 +215,11 @@
 
 [CFramePoint]
 - 00488be0 CFramePoint::Y
+- 00489ff0 CFramePoint::GetRelativeRect
 - 0049c7b0 CFramePoint::SetRelative
-- 0049c830 CFramePoint::GetRelativeRect
+
+[CFrustum]
+- 00983d20 CFrustum::Cull
 
 [CFrustumExt]
 - 00607cb0 CFrustumExt::CalcPlanesFromParameters
@@ -229,6 +230,7 @@
 - 005b67f0 CGAchievementInfo::MarkCriteria
 
 [CGActionBar]
+- 005a7920 CGActionBar::GetFlyout
 - 005ae4f0 CGActionBar::PickupActionInternal
 
 [CGAreaTrigger_C]
@@ -297,9 +299,11 @@
 
 [CGCurrencyTypes]
 - 0042b9c0 CGCurrencyTypes::InitializeCurrency
+- 005afc80 CGCurrencyTypes::GetDisplayListInfo
 - 005b04f0 CGCurrencyTypes::GetTypeUnused
 
 [CGDressUpModelFrame]
+- 00597ba0 CGDressUpModelFrame::Undress
 - 009799c0 CGDressUpModelFrame::GetDuplicateUnitCharacterModel
 
 [CGEncounterJournal]
@@ -342,6 +346,7 @@
 - 0059b2a0 CGGameUI::GetWOWMONEYFromLua
 
 [CGGlyphInfo]
+- 0040ab20 CGGlyphInfo::InitializeGame
 - 00811f20 CGGlyphInfo::ListGlyphs
 
 [CGGuildInfo]
@@ -402,7 +407,6 @@
 - 00431ac0 CGPartyMemberStateRepository::CreateNewState
 
 [CGPetInfo]
-- 005d3060 CGPetInfo::GetPetActionTexture
 - 005d64a0 CGPetInfo::PutActionInSlot
 
 [CGPetJournalInfo]
@@ -415,6 +419,7 @@
 - 004fb920 CGPlayer_C::GetLanguageSkillLevel
 - 0053eaa0 CGPlayer_C::OnPassiveAdded
 - 00546150 CGPlayer_C::MatchesCondition
+- 00599470 CGPlayer_C::ApplyGuildTabard
 - 006e73b0 CGPlayer_C::GetTradeSkills
 - 007465e0 CGPlayer_C::HasItemPassiveSpell
 - 00848320 CGPlayer_C::GetEffectiveModDamageDonePct
@@ -566,11 +571,7 @@
 - 0095a6e0 CLCDConnection::CLCDConnection
 - 0095aca0 CLCDConnection::Update
 
-[CLCDGfxMono]
-- 0044b7b0 CLCDGfxMono::Initialize
-
 [CLayoutFrame]
-- 00482300 CLayoutFrame::AddToUnneededFontHandleList
 - 004826d0 CLayoutFrame::AnimData_StorePosition
 - 00483220 CLayoutFrame::AnimData_GetPositionPtr
 - 004879b0 CLayoutFrame::CanBeAnchorFor
@@ -623,7 +624,6 @@
 - 007ada80 CMap::GetHeightMapObjDef
 - 007bd8a0 CMap::WdtSuccessCallback
 - 007c0110 CMap::FreeAreaLow
-- 007cc0b0 CMap::Gather
 - 007d5610 CMap::TestQueryRender
 - 007d72a0 CMap::~CMap
 
@@ -721,7 +721,6 @@
 - 004884d0 CScriptRegion::GetLayoutFrameByName
 - 00488570 CScriptRegion::IsMouseOver
 - 00488ae0 CScriptRegion::RegisterAnimGroup
-- 0048f820 CScriptRegion::SetParent
 
 [CShaderEffect]
 - 0079e4b0 CShaderEffect::GetSSAOEnabled
@@ -740,11 +739,10 @@
 - 0049ad30 CSimpleAnimGroup::NotifyOrderChanged
 - 0049b0f0 CSimpleAnimGroup::Stop
 - 0049c310 CSimpleAnimGroup::UnregisterAnim
-- 004a4080 CSimpleAnimGroup::RunOnLoopScript
-- 0095eba0 CSimpleAnimGroup::Pause
 
 [CSimpleButton]
 - 0048fb80 CSimpleButton::OnClick
+- 0096f480 CSimpleButton::SetClickAction
 - 0096fb60 CSimpleButton::OnLayerMouseUp
 - 00970370 CSimpleButton::SetStateTexture
 
@@ -760,9 +758,17 @@
 
 [CSimpleEditBox]
 - 00494e60 CSimpleEditBox::Enable
+- 00962bb0 CSimpleEditBox::SetAutoFocus
+- 00962bd0 CSimpleEditBox::SetCountInvisibleLetters
+- 00962bf0 CSimpleEditBox::SetNumeric
+- 00962c10 CSimpleEditBox::SetPassword
+- 00962c30 CSimpleEditBox::SetAltArrowKeyMode
+- 00962c50 CSimpleEditBox::GetInputLanguageString
+- 00962c60 CSimpleEditBox::ToggleInputLanguage
 - 00963390 CSimpleEditBox::OnFocusChange
 - 00963cd0 CSimpleEditBox::Move
 - 00963d80 CSimpleEditBox::MoveLine
+- 00964720 CSimpleEditBox::ClearHistory
 - 00965580 CSimpleEditBox::GetEditTextInsets
 
 [CSimpleFont]
@@ -772,25 +778,31 @@
 [CSimpleFontString]
 - 004842a0 CSimpleFontString::PreOnAnimUpdate
 - 00484300 CSimpleFontString::AnimData_ResetPositionData
+- 00487130 CSimpleFontString::SetShadowColor
 
 [CSimpleFrame]
+- 0048eac0 CSimpleFrame::GetHitRectInsets
+- 0048ecf0 CSimpleFrame::AllowAttributeChanges
 - 0048ed30 CSimpleFrame::AttributeChangesAllowed
 - 0048f1b0 CSimpleFrame::OnDragStart
 - 00490680 CSimpleFrame::UnregisterRegion
 - 00493ce0 CSimpleFrame::DragBy
 - 0049ad80 CSimpleFrame::OnLayerShow
 - 00597210 CSimpleFrame::HideThis
-- 0096be10 CSimpleFrame::OnFrameSizeChanged
 
 [CSimpleHyperlinkedFrame]
+- 0058dfe0 CSimpleHyperlinkedFrame::RegisterScriptMethods
 - 006bd100 CSimpleHyperlinkedFrame::ClearHyperlinks
 
 [CSimpleMessageFrameLineNode]
 - 009680f0 CSimpleMessageFrameLineNode::CSimpleMessageFrameLineNode
 
 [CSimpleMessageScrollFrame]
-- 0096a6e0 CSimpleMessageScrollFrame::ScrollToTop
+- 009690c0 CSimpleMessageScrollFrame::GetCurrentScroll
+- 00969960 CSimpleMessageScrollFrame::Clear
+- 0096a6e0 CSimpleMessageScrollFrame::UpdateColorByID
 - 0096a880 CSimpleMessageScrollFrame::OnLayerShow
+- 0096a920 CSimpleMessageScrollFrame::ScrollToTop
 
 [CSimpleMessageScrollFrameDisplayNode]
 - 009691f0 CSimpleMessageScrollFrameDisplayNode::CSimpleMessageScrollFrameDisplayNode
@@ -799,8 +811,9 @@
 - 00403720 CSimpleModelFFX::~CSimpleModelFFX
 
 [CSimpleMovieFrame]
-- 00497e60 CSimpleMovieFrame::StopMovie
 - 0095ea90 CSimpleMovieFrame::CloseCaptions
+- 0095eb30 CSimpleMovieFrame::StartMovie
+- 0095eba0 CSimpleMovieFrame::StopMovie
 
 [CSimplePathAnim]
 - 00499cc0 CSimplePathAnim::CSimplePathAnim
@@ -815,10 +828,12 @@
 
 [CSimpleStatusBar]
 - 00497ac0 CSimpleStatusBar::SetValue
-- 00961d70 CSimpleStatusBar::OnLayerUpdate
+- 009617e0 CSimpleStatusBar::SetOrientation
+- 00961d70 CSimpleStatusBar::SetRotatesTexture
 
 [CSimpleTexture]
-- 00483460 CSimpleTexture::SetDesaturated
+- 004815e0 CSimpleTexture::GetTexture
+- 00481700 CSimpleTexture::SetDesaturated
 - 0057f5d0 CSimpleTexture::SetRotation
 
 [CSimpleTop]
@@ -836,16 +851,12 @@
 [CStatus]
 - 0047c0a0 CStatus::~CStatus
 
-[CTextureAtlas]
-- 004b5e80 CTextureAtlas::Reload
-
 [CTextureBlob]
 - 004c02f0 CTextureBlob::GetTexture
 - 004c0330 CTextureBlob::RemoveTextures
 
 [CTgaFile]
-- 004bf450 CTgaFile::Image
-- 006aa820 CTgaFile::Image
+- 004b56f0 CTgaFile::Image
 - 0076ee60 CTgaFile::SetToData
 
 [CUnitDisplay]
@@ -1058,7 +1069,6 @@
 - 004cb2d0 FMOD::Channel::set3DAttributes
 - 0077db10 FMOD::CodecPlaylist::openInternal
 - 007b7420 FMOD::CodecMPEG::resetFrame
-- 00864330 FMOD::Sample::lock
 - 00878730 FMOD::Channel::isPlaying
 - 008cfda0 FMOD::MemPool::alloc
 - 008d0850 FMOD::DSP::setActive
@@ -1098,6 +1108,11 @@
 [FrameScript_Object]
 - 00816870 FrameScript_Object::GetScriptTime
 - 00819e50 FrameScript_Object::~FrameScript_Object
+- 0081b330 FrameScript_Object::IsScriptEventRegistered
+- 0081b380 FrameScript_Object::RegisterScriptEvent
+- 0081b410 FrameScript_Object::UnregisterScriptEvent
+- 0081b470 FrameScript_Object::RegisterAllScriptEvents
+- 0081b4c0 FrameScript_Object::UnregisterAllScriptEvents
 
 [FrameTime]
 - 004bec90 FrameTime::GetCurTimeMs
@@ -1112,9 +1127,12 @@
 - 006a7940 GLDevice::SetStencilTarget
 
 [GLMipmap]
-- 0041e5f0 GLMipmap::GetAttachPoint
 - 0042acc0 GLMipmap::Map
+- 00441860 GLMipmap::GetAttachPoint
 - 00456f80 GLMipmap::Update
+
+[GLObjectManager]
+- 0041d0c0 GLObjectManager::BindObject
 
 [GLShader]
 - 00579b30 GLShader::BuildRegisterMapTable
@@ -1124,13 +1142,14 @@
 - 004ab540 GLShaderCompiler::SendToWorker
 
 [GLTexture]
-- 004525a0 GLTexture::Create
+- 00431860 GLTexture::SetupTexture
 
 [GLYPHBITMAPDATA]
 - 006c2570 GLYPHBITMAPDATA::~GLYPHBITMAPDATA
 
 [GameMovie]
 - 004c8d80 GameMovie::IsSupported
+- 00993c00 GameMovie::FindFileCallback
 
 [GeneralFunction]
 - 00531580 GeneralFunction::Arg::FreeData
@@ -1162,18 +1181,19 @@
 
 [JamCliRideTicket]
 - 0054b3f0 JamCliRideTicket::~JamCliRideTicket
+- 00552870 JamCliRideTicket::Clear
 
 [JamPetBattleEffect]
 - 0047c560 JamPetBattleEffect::~JamPetBattleEffect
 
+[LFGLIST]
+- 0055b1a0 LFGLIST::Copy
+
 [LFG_PARTY_INFO]
-- 00556f90 LFG_PARTY_INFO::Clear
+- 00556dc0 LFG_PARTY_INFO::Clear
 
 [LFG_SLOT_INFO]
-- 005589d0 LFG_SLOT_INFO::~LFG_SLOT_INFO
-
-[LFG_STATUS]
-- 00558a70 LFG_STATUS::Clear
+- 00558a70 LFG_SLOT_INFO::~LFG_SLOT_INFO
 
 [Liquid]
 - 004b50d0 Liquid::UpdateProceduralTextures
@@ -1228,7 +1248,6 @@
 - 0098d890 NPCText::Pack
 
 [NTempest]
-- 0078f480 NTempest::Intersect
 - 00982a40 NTempest::Intersect
 
 [NameCache]
@@ -1376,8 +1395,8 @@
 [System_File]
 - 004287b0 System_File::Stacked::PushStreaming
 - 0042ce40 System_File::Stacked::ProcessDirFast
-- 0043aca0 System_File::GetLocalPath
-- 0044b570 System_File::GetInode
+- 0044ba10 System_File::GetLocalPath
+- 0044fb90 System_File::GetInode
 
 [System_Log]
 - 00439fe0 System_Log::IVPrintf
@@ -1385,23 +1404,22 @@
 
 [System_Mopaq]
 - 0042b640 System_Mopaq::base_getfilesize
-- 00438260 System_Mopaq::cache_open
 - 004408b0 System_Mopaq::Cache::CleanCache
 - 004437d0 System_Mopaq::cache_write
-- 00455d40 System_Mopaq::ReadAndInitializeMetadata
-- 00457a00 System_Mopaq::cache_read
+- 00450ef0 System_Mopaq::OpenArchiveFile
+- 004572c0 System_Mopaq::SectorReadHandler::ProcessSectors
 - 00457e50 System_Mopaq::mopaq_read
 - 00459ce0 System_Mopaq::SectorReadWriteHandler::PrepareSector
-- 0045d900 System_Mopaq::DeltaData::PatchIntoBuffer
 - 008a1440 System_Mopaq::md5verify_open
 
 [System_SComp]
 - 004585f0 System_SComp::Decompress
 
 [System_SFile]
+- 00420d50 System_SFile::ARCHIVEREC::AcquireListfile
 - 00428310 System_SFile::ARCHIVEREC::RemoveInternalArchiveRef
 - 0043e6a0 System_SFile::ARCHIVEREC::ARCHIVEREC
-- 00462970 System_SFile::ARCHIVEREC::WriteArchiveHeader
+- 0045bfe0 System_SFile::s_OpenArchive
 
 [System_SFile2]
 - 00421cc0 System_SFile2::OldFindFile
@@ -1653,7 +1671,7 @@
 - 005e7020 WorldEffects::Update
 
 [WowClientDB2<ItemRecSparse_C>]
-- 0067a170 WowClientDB2<ItemRecSparse_C>::GetRecord
+- 00588210 WowClientDB2<ItemRecSparse_C>::GetRecord
 
 [WowClientDB2<ItemRec_C>]
 - 007eb1b0 WowClientDB2<ItemRec_C>::DBCACHE::~DBCACHE
@@ -1703,6 +1721,7 @@
 - 00409b10 LoadingScreenMiniPaint
 - 0040a160 LoadDynamicBackground
 - 0040ad50 LoadingScreenEnableShip
+- 0040b7f0 _exit
 - 00417a07 _match
 - 00420980 CharSelectIsStartRaceComplete
 - 00425850 Process
@@ -1712,19 +1731,19 @@
 - 0042aa50 _t1_get_index
 - 0042be30 RLEZeroDecompress
 - 0042e020 FrameXML_CompileXML_Region
-- 0042e200 _BZ2_bzDecompress
-- 00431570 SSignatureVerifyStream_Begin
 - 004337c0 _mach_timebase_info
 - 00433a90 GetToolVersion
 - 00434f20 ___tcf_16
+- 00435430 SSignatureVerifyStream_Begin
 - 00437470 _match_class
 - 00437a00 ___stack_chk_fail
+- 00437c20 GetComponentVersionData
+- 00438260 -[ClampedCursorView_awakeFromNib]
 - 0044ea50 _ps_hints_apply
+- 00451140 _FLAC__stream_decoder_finish
 - 00452810 RepairChunk
 - 004539a0 ZlibCompress
 - 00453b20 ZlibDecompress
-- 00461290 RepairCacheFile
-- 00461620 InitBasicQueue
 - 00463110 _gray_render_scanline
 - 00463440 _luaD_rawrunprotected
 - 004662b0 MovementNewForceList
@@ -1757,36 +1776,30 @@
 - 00481fc0 FrameScript_GetPluralIndex
 - 0048abd0 PlaceFrame
 - 0048b890 _GetOriginOffset
-- 0048be30 CSimpleFontString_IsObjectType
-- 0048c670 CSimpleTexture_GetTexture
-- 0048c6f0 CSimpleTexture_SetTexture
-- 0048cf30 CSimpleFontString_SetVertexColor
-- 0048d300 CSimpleFontString_GetFontObject
-- 0048d380 CSimpleFontString_SetFontObject
-- 0048d510 CSimpleFontString_GetFont
-- 0048d970 CSimpleFontString_SetTextColor
 - 00493b60 CalcWrapPoint
 - 00495810 PaintScreen
 - 00496390 _strcasecmp
-- 0049eb70 CSimplePathAnim_CreateControlPoint
-- 004a3740 CSimpleFont_SetShadowOffset
 - 004a38f0 CSimpleFont_GetFontObject
-- 004a3bc0 Script_ReforgeItem
-- 004a4040 CSimpleFont_GetSpacing
+- 004a3c50 CSimpleFont_SetTextColor
+- 004a3ca0 CSimpleFont_GetTextColor
+- 004a3dc0 CSimpleFont_GetShadowColor
 - 004a40e0 CSimpleFont_GetIndentedWordWrap
-- 004a4a50 CSimpleFont_SetIndentedWordWrap
 - 004a4ba0 _ReadOrigin
 - 004a5550 CSimpleScaleAnim_SetScale
 - 004a5660 CSimpleControlPoint_SetOrder
 - 004a5810 CSimpleAnim_GetSmoothing
 - 004a5a70 CSimpleAnim_GetRegionParent
+- 004a5af0 CSimpleAnim_HasScript
+- 004a5bb0 CSimplePathAnim_CreateControlPoint
 - 004a6cd0 CSimplePathAnim_GetCurve
 - 004a79d0 CSimplePathAnim_GetControlPoints
 - 004b4ff0 SysMsgPrintf
+- 004b5210 ReloadMips
 - 004b5770 GxCalcTexelStrideInBytes
 - 004b5790 TextureUnloadBlob
 - 004b57a0 TextureComputeLoadProgress
 - 004b5800 TextureIsBlob
+- 004b6d90 _strncasecmp
 - 004b9420 TextureCacheGetTexture
 - 004b9480 TextureCacheNewTexture
 - 004b9f40 NetQueuePromoteLocalFiles
@@ -1843,7 +1856,6 @@
 - 00531ad0 GxuFontSetTokenCallback
 - 00533130 _strtoll
 - 0053b600 GetLuaCompanionType
-- 0053b930 GetSpellIDFromLua
 - 0053ba40 QSortSpells
 - 0053bd10 GetSubTableRec<SpellCategoriesRec>
 - 0053c7c0 QSortCompanions
@@ -1855,6 +1867,7 @@
 - 005534e0 QSortLFGPlayer
 - 005536a0 QSortLFGDungeons
 - 00554e60 pushDungeonInfo
+- 00559050 ReceiveRealmName
 - 0055dab0 ValidateKeyString
 - 0055dce0 StringToMouseButton
 - 00564a80 QSortMacrosByName
@@ -1863,7 +1876,6 @@
 - 0056daa0 InboxAuctionItemQueryCallback
 - 005714d0 SStrToInt64
 - 005724e0 Script_SendUniqueSignals
-- 00576ae0 CapitalizeWord
 - 00577260 FillEnchantConditionsString
 - 00579980 SpellParserExpression
 - 00579d60 SpellParserVariables
@@ -1875,7 +1887,6 @@
 - 00590ae0 SignatureNameQueryCallback
 - 00594260 GetSubTableRec<SpellMiscRec>
 - 00597aa0 ObjectRenderProc
-- 00598800 Script_TryOn
 - 00599820 ___tcf_0
 - 0059b8e0 QSortOwned
 - 0059f5a0 FindSellItemsCallback
@@ -1927,6 +1938,7 @@
 - 00617860 PortraitShutdown
 - 00618180 SetPortraitTexture
 - 00618230 SetPortraitTexture
+- 0061b470 FindItemByGUID
 - 0061ddd0 TooltipUnitNameCallback
 - 0061de50 TooltipAchievementCallback
 - 0061f7f0 _lua_topointer
@@ -1938,7 +1950,6 @@
 - 006839f0 _floorf
 - 00684d70 _codearith
 - 0068a030 __static_initialization_and_destruction_0
-- 0068c670 std_terminate_handler
 - 00695ac0 ProjectTexRenderGetQuery2d
 - 006ad440 Blit_DxtUnaligned<Dxt1Block,CRgb565>
 - 006ad660 Blit_DxtUnaligned<Dxt1Block,CArgb1555>
@@ -2031,6 +2042,7 @@
 - 00778010 ZlibFree
 - 00778110 UploadAccountData
 - 00779370 _MD5Transform
+- 00779c30 CapitalizeWord
 - 0077d310 MacAssertFailed
 - 0077f2f0 Spell_C_GetSpellWorldObject
 - 0078eeb0 AreaListUpdateSounds
@@ -2120,7 +2132,6 @@
 - 0084d420 _luaO_rawequalObj
 - 0084d480 _luaO_str2d
 - 0084d860 _luaO_chunkid
-- 0084dc50 _lua_remove
 - 0084de50 _lua_pushvalue
 - 0084e3a0 _lua_pushvfstring
 - 0084e3d0 _lua_pushfstring
@@ -2141,7 +2152,6 @@
 - 0084ef90 _lua_concat
 - 0084f010 _lua_setdecimalconversion
 - 0084f030 _lua_convertdecimal
-- 0084f0d0 _lua_settaint
 - 0084fbd0 _getfunc
 - 0084fd20 _str_gsub
 - 0084fe40 _lua_getstack
@@ -2283,10 +2293,8 @@
 - 008d2400 _FMOD_strcmp
 - 008f64f0 _t1_decoder_init
 - 008f7990 FMOD_OS_Net_Connect
-- 00931460 dbghelp_enum_modules
 - 00951f30 _set_defaults_
 - 00951fb0 _read_frame_
-- 00953170 _FLAC__stream_decoder_finish
 - 00954390 _read_residual_partitioned_rice_
 - 00956350 _FLAC__format_entropy_coding_method_partitioned_rice_contents_init
 - 009565f0 _FLAC__bitreader_new
@@ -2295,9 +2303,6 @@
 - 00957d20 _FLAC__MD5Final
 - 0095aab0 OnStartLootRoll
 - 0095f370 AnimFinishedCallback
-- 00970660 CSimpleFontString_SetFont
-- 009719d0 CSimpleTexture_SetDesaturated
-- 00973470 CSimpleFontString_SetShadowColor
 - 009748f0 GetTextType
 - 009846b0 TexWaveCallback
 - 009866e0 _MonitorDSPCallback
