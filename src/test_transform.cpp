@@ -26,6 +26,7 @@ int main()
 	transformer.addRegexRule( R"((\w+)(.*?)(::|__)~\1$)", "$1$2$3destructor" );
 	transformer.addRegexRule( R"((\w+)<([^<>,]+)[^<>]*>)", "$1__$2" );
 	transformer.addRegexRule( R"((\w+)<([^<>,]+)[^<>]*>)", "$1__$2" );
+	transformer.addRule( "TSFixedArray_", "TSGrowableArray_" );
 	transformer.addRule( "__", "_" );
 
 	transformer.addRule( []( const std::string &input ) {
@@ -69,6 +70,8 @@ int main()
 		  "TSHashTable_OVERRIDE_SPELLCAST_BY_NAME_NODE_Ptr" },
 		{ "TSSimpleArray<TSExplicitList<SOUNDKITLOOKUP,-572662307>>::FatalArrayBounds",
 		  "TSSimpleArray_TSExplicitList_SOUNDKITLOOKUP_FatalArrayBounds" },
+		{ "TSFixedArray<TSExplicitList<SOUNDKITLOOKUP,-572662307>>::ReallocData",
+		  "TSGrowableArray_TSExplicitList_SOUNDKITLOOKUP_ReallocData" },
 		{ "TSHashTable<struct_FILEMAP,class_HASHKEY_STRI>::InternalClear", "TSHashTable_FILEMAP_InternalClear" },
 		{ "Battlenet::MatchMaker::MapSpec::MapSpec", "Battlenet_MatchMaker_MapSpec_constructor" },
 

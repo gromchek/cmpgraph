@@ -52,13 +52,15 @@
 
 [Blizzard]
 - 0041e220 Blizzard::Mopaq::SFileOpenArchiveView
-- 0041ef90 Blizzard::Thread::CreatePool
+- 0041ef90 Blizzard::Storage::StorageUnit::StorageUnit
 - 00422330 Blizzard::Mopaq::SFileOpenFileEx
+- 004227e0 Blizzard::Thread::LocalObject<System_SFile::RawReadInfo>::New
+- 004236f0 Blizzard::Patch::Patch::GetPatch
 - 00426eb0 Blizzard::Mopaq::SFileSetFilePointer
 - 00426f70 Blizzard::Mopaq::SFileGetFileSize
 - 00427070 Blizzard::String::QuickFormat<1024>::QuickFormat
 - 004278b0 Blizzard::File::SetSparseFile
-- 00427a20 Blizzard::File::Write
+- 00427a20 Blizzard::File::Read
 - 004283d0 Blizzard::Mopaq::SFileCloseFile
 - 00428450 Blizzard::Memory::Allocate
 - 004288a0 Blizzard::String::Translate
@@ -68,9 +70,9 @@
 - 0042d730 Blizzard::Streaming::Manifests::TimeslotItem::ParseTimestamp
 - 0042e3b0 Blizzard::Memory::Free
 - 0042e400 Blizzard::Mopaq::Enumerator::Enumerator
-- 00431570 Blizzard::Mopaq::SFileGetArchiveFileHandle
+- 00431860 Blizzard::Storage::Initialize
+- 00431b50 Blizzard::Jobs::WorkerPool::RunJob
 - 00432c70 Blizzard::Mopaq::SFileGetArchiveFullName
-- 00435fc0 Blizzard::File::Open
 - 00437d70 Blizzard::Streaming::Manifests::FileItem::FileItem
 - 0043dd90 Blizzard::Streaming::ManifestInfo::ReadManifestFile
 - 00447810 Blizzard::File::Reopen
@@ -81,10 +83,8 @@
 - 00450970 Blizzard::File::Exists
 - 00451ee0 Blizzard::Streaming::ManifestInfo::Get
 - 00452b10 Blizzard::Streaming::ManifestInfo::GetRandomServerLocation
-- 00453770 Blizzard::Thread::LocalObject<System_SFile::RawReadInfo>::New
 - 00453860 Blizzard::Storage::PartialFile::ParseFileFromHeader
 - 0045a610 Blizzard::Streaming::IsLocal
-- 0045adc0 Blizzard::Storage::Initialize
 - 0045f7d0 Blizzard::Mopaq::SFileSetBasePath
 - 00460f00 Blizzard::Streaming::IsStreamedFile
 - 004a9d30 Blizzard::Debug::DefaultCallback
@@ -210,6 +210,9 @@
 - 00489ff0 CFramePoint::GetRelativeRect
 - 0049c7b0 CFramePoint::SetRelative
 
+[CFrustum]
+- 00983d20 CFrustum::Cull
+
 [CFrustumExt]
 - 00607cb0 CFrustumExt::CalcPlanesFromParameters
 
@@ -329,7 +332,6 @@
 - 0059b2a0 CGGameUI::GetWOWMONEYFromLua
 
 [CGGlyphInfo]
-- 0040ab20 CGGlyphInfo::InitializeGame
 - 00811f20 CGGlyphInfo::ListGlyphs
 
 [CGGuildInfo]
@@ -353,7 +355,6 @@
 - 004c88b0 CGLFGuildInfo::SendBrowse
 
 [CGLookingForGroup]
-- 00556e60 CGLookingForGroup::OnLFGSearchResults
 - 00558350 CGLookingForGroup::UpdateLFREntries
 
 [CGLootDisplay]
@@ -372,7 +373,7 @@
 [CGMinimapFrame]
 - 0053d350 CGMinimapFrame::RefreshShapeshiftTrackingSpells
 - 0057c6a0 CGMinimapFrame::OnLayerUpdate
-- 0057ff70 CGMinimapFrame::RenderPings
+- 0057fea0 CGMinimapFrame::RenderPings
 - 007dc680 CGMinimapFrame::UpdateTrackingSpell
 
 [CGNamePlateFrame]
@@ -549,6 +550,9 @@
 - 0095a6e0 CLCDConnection::CLCDConnection
 - 0095aca0 CLCDConnection::Update
 
+[CLCDGfxMono]
+- 0044b7b0 CLCDGfxMono::Initialize
+
 [CLayoutFrame]
 - 004826d0 CLayoutFrame::AnimData_StorePosition
 - 00483220 CLayoutFrame::AnimData_GetPositionPtr
@@ -575,6 +579,7 @@
 - 006bbf40 CM2Light::GxLightSet
 
 [CM2Model]
+- 004d8630 CM2Model::SetWorldTransform
 - 00616d70 CM2Model::WaitUntilLoadedRecursive
 - 00716450 CM2Model::GetAttachmentPivot
 - 00823e40 CM2Model::CanUpdateNonReadyTextures
@@ -671,7 +676,6 @@
 
 [CObjectDisplay]
 - 006cf240 CObjectDisplay::PlaySpellVisualKit
-- 006fed70 CObjectDisplay::DoFade
 - 00717c20 CObjectDisplay::EffectDecayHandler
 - 007431e0 CObjectDisplay::RemoveModel
 
@@ -824,8 +828,7 @@
 - 004c0330 CTextureBlob::RemoveTextures
 
 [CTgaFile]
-- 004bf450 CTgaFile::Image
-- 006aa820 CTgaFile::Image
+- 004b6280 CTgaFile::Image
 - 0076ee60 CTgaFile::SetToData
 
 [CUnitDisplay]
@@ -867,7 +870,6 @@
 [CVehiclePassenger_C]
 - 00722640 CVehiclePassenger_C::ComputeTrainCarRawFacing
 - 00749060 CVehiclePassenger_C::StopMirroringVehicleAnims
-- 00749c20 CVehiclePassenger_C::AddPendingRescueTransition
 - 00749d50 CVehiclePassenger_C::StartWaitingForVehicleTransitionAnim
 - 007e6390 CVehiclePassenger_C::CheckForVehicleTransitionAnimTimeout
 
@@ -1099,12 +1101,9 @@
 - 006a7940 GLDevice::SetStencilTarget
 
 [GLMipmap]
+- 0041e5f0 GLMipmap::GetAttachPoint
 - 0042acc0 GLMipmap::Map
-- 00441860 GLMipmap::GetAttachPoint
 - 00456f80 GLMipmap::Update
-
-[GLObjectManager]
-- 0041d0c0 GLObjectManager::BindObject
 
 [GLShader]
 - 00579b30 GLShader::BuildRegisterMapTable
@@ -1113,15 +1112,11 @@
 [GLShaderCompiler]
 - 004ab540 GLShaderCompiler::SendToWorker
 
-[GLTexture]
-- 00431860 GLTexture::SetupTexture
-
 [GLYPHBITMAPDATA]
 - 006c2570 GLYPHBITMAPDATA::~GLYPHBITMAPDATA
 
 [GameMovie]
 - 004c8d80 GameMovie::IsSupported
-- 00993c00 GameMovie::FindFileCallback
 
 [GeneralFunction]
 - 00531580 GeneralFunction::Arg::FreeData
@@ -1153,16 +1148,18 @@
 
 [JamCliRideTicket]
 - 0054b3f0 JamCliRideTicket::~JamCliRideTicket
-- 00552870 JamCliRideTicket::Clear
 
 [JamPetBattleEffect]
 - 0047c560 JamPetBattleEffect::~JamPetBattleEffect
 
-[LFGLIST]
-- 0055b1a0 LFGLIST::Copy
+[LFG_PARTY_INFO]
+- 00556f90 LFG_PARTY_INFO::Clear
 
 [LFG_SLOT_INFO]
-- 00558a70 LFG_SLOT_INFO::~LFG_SLOT_INFO
+- 005589d0 LFG_SLOT_INFO::~LFG_SLOT_INFO
+
+[LFG_STATUS]
+- 00558a70 LFG_STATUS::Clear
 
 [Liquid]
 - 004b50d0 Liquid::UpdateProceduralTextures
@@ -1215,6 +1212,9 @@
 
 [NPCText]
 - 0098d890 NPCText::Pack
+
+[NTempest]
+- 00982a40 NTempest::Intersect
 
 [NameCache]
 - 004fb0d0 NameCache::FullName
@@ -1368,9 +1368,9 @@
 
 [System_Mopaq]
 - 0042b640 System_Mopaq::base_getfilesize
+- 00438260 System_Mopaq::cache_open
 - 004408b0 System_Mopaq::Cache::CleanCache
 - 004437d0 System_Mopaq::cache_write
-- 00450ef0 System_Mopaq::OpenArchiveFile
 - 004572c0 System_Mopaq::SectorReadHandler::ProcessSectors
 - 00457e50 System_Mopaq::mopaq_read
 - 00459ce0 System_Mopaq::SectorReadWriteHandler::PrepareSector
@@ -1380,9 +1380,9 @@
 - 004585f0 System_SComp::Decompress
 
 [System_SFile]
-- 00420d50 System_SFile::ARCHIVEREC::AcquireListfile
 - 00428310 System_SFile::ARCHIVEREC::RemoveInternalArchiveRef
 - 0043e6a0 System_SFile::ARCHIVEREC::ARCHIVEREC
+- 00462970 System_SFile::RebuildHashTable
 
 [System_SFile2]
 - 00421cc0 System_SFile2::OldFindFile
@@ -1441,9 +1441,6 @@
 [TSHashTable<CACHEENTRY,HASHKEY_NONE>]
 - 004f33f0 TSHashTable<CACHEENTRY,HASHKEY_NONE>::InternalDelete
 
-[TSHashTable<CGReputationInfo]
-- 005d1490 TSHashTable<CGReputationInfo::FACTION,HASHKEY_NONE>::InternalDelete
-
 [TSHashTable<CMapDoodadDef,HASHKEY_DOODADDEF>]
 - 007c0d10 TSHashTable<CMapDoodadDef,HASHKEY_DOODADDEF>::InternalNew
 
@@ -1491,6 +1488,9 @@
 
 [TSHashTable<SE3SoundChunk,HASHKEY_NONE>]
 - 0043d620 TSHashTable<SE3SoundChunk,HASHKEY_NONE>::InternalDelete
+
+[TSHashTable<TIMESTAMPSTRUCT,HASHKEY_NONE>]
+- 004c95b0 TSHashTable<TIMESTAMPSTRUCT,HASHKEY_NONE>::~TSHashTable
 
 [TSHashTable<UIADDON,HASHKEY_STRI>]
 - 005f7570 TSHashTable<UIADDON,HASHKEY_STRI>::Ptr
@@ -1563,6 +1563,7 @@
 - 0077f2a0 World::ObjectSetMoveable
 - 0077f320 World::GetFrustumCorners
 - 007b47f0 World::GetTerrainTextureLod
+- 007b5870 World::ObjectUpdate
 - 007c7710 World::GetEnables
 - 007cd4e0 World::AddAaBoxFacets
 
@@ -1581,9 +1582,6 @@
 
 [WowClientDB_RLE_Base]
 - 0065cb70 WowClientDB_RLE_Base::Decompress
-
-[WowConnection]
-- 00468d00 WowConnection::Connect
 
 [WowConnectionNet]
 - 00428ff0 WowConnectionNet::SignalWorker
@@ -1607,6 +1605,7 @@
 - 004015e0 MouseSpeedCallback
 - 00401b40 ScreenshotQualityCallback
 - 004020e0 ScreenshotFormatCallback
+- 004021c0 StringToKeyCode
 - 00402530 SetDefaults
 - 00403320 PatchCacheLimitInitialize
 - 00403760 IconListCustomCallback
@@ -1637,7 +1636,6 @@
 - 00437470 _match_class
 - 00437a00 ___stack_chk_fail
 - 00437c20 GetComponentVersionData
-- 00438260 -[ClampedCursorView_awakeFromNib]
 - 00438800 _FLAC__stream_decoder_finish
 - 0044ea50 _ps_hints_apply
 - 00452810 RepairChunk
@@ -1700,7 +1698,6 @@
 - 004c86f0 MaxStartRecoveryOffsetCallback
 - 004c87d0 _OkToQueryLiquidSounds
 - 004c9460 __static_initialization_and_destruction_0
-- 004c9850 IsDayTime
 - 004cf100 GetFootstepTerrain
 - 004d04e0 _GetDayProgressionCallback
 - 004d0910 BuildPerlinNoiseTex
@@ -1770,7 +1767,6 @@
 - 00594260 GetSubTableRec<SpellMiscRec>
 - 00597aa0 ObjectRenderProc
 - 00599820 ___tcf_0
-- 0059b8e0 QSortOwned
 - 0059f5a0 FindSellItemsCallback
 - 005a7cd0 ShapeShiftTempActionBarCallback
 - 005b23b0 _lua_pushboolean
@@ -1810,7 +1806,6 @@
 - 005ffde0 ClntObjMgrObjectDisplayPtr
 - 006057b0 CollideWithWorld
 - 00616060 SmartScreenRectShutdown
-- 00616d10 SStrStrI
 - 006171b0 ___tcf_0
 - 00617860 PortraitShutdown
 - 00618180 SetPortraitTexture
@@ -2163,6 +2158,7 @@
 - 008d2400 _FMOD_strcmp
 - 008f64f0 _t1_decoder_init
 - 008f7990 FMOD_OS_Net_Connect
+- 00931460 dbghelp_enum_modules
 - 00951f30 _set_defaults_
 - 00951fb0 _read_frame_
 - 00954390 _read_residual_partitioned_rice_

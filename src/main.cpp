@@ -101,6 +101,7 @@ int main( int argc, char *argv[] )
 	filter.addPartial( "CGReforge" );
 	filter.addPartial( "blz::" );
 	filter.addPartial( "CGResearchFrame" );
+	filter.addPartial( "TSSimpleArray" );
 
 	transformer.addRule( "__jump_table::_strcasecmp", "SStrCmp" );
 	transformer.addRule( "__jump_table::strchr", "SStrChr" );
@@ -125,6 +126,7 @@ int main( int argc, char *argv[] )
 	transformer.addRegexRule( R"((\w+)(.*?)(::|__)~\1$)", "$1$2$3destructor" );
 	transformer.addRegexRule( R"((\w+)<([^<>,]+)[^<>]*>)", "$1__$2" );
 	transformer.addRegexRule( R"((\w+)<([^<>,]+)[^<>]*>)", "$1__$2" );
+	transformer.addRule( "TSFixedArray_", "TSGrowableArray_" );
 	transformer.addRule( "__", "_" );
 
 	transformer.addRule( []( const std::string &input ) {
