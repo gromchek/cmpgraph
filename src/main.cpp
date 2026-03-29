@@ -125,6 +125,7 @@ int main( int argc, char *argv[] )
 	transformer.addRegexRule( R"((\w+)(.*?)(::|__)~\1$)", "$1$2$3destructor" );
 	transformer.addRegexRule( R"((\w+)<([^<>,]+)[^<>]*>)", "$1__$2" );
 	transformer.addRegexRule( R"((\w+)<([^<>,]+)[^<>]*>)", "$1__$2" );
+	transformer.addRule( "__", "_" );
 
 	transformer.addRule( []( const std::string &input ) {
 		static const std::vector<std::pair<std::string, std::string>> op_map = {

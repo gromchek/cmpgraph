@@ -26,6 +26,7 @@ int main()
 	transformer.addRegexRule( R"((\w+)(.*?)(::|__)~\1$)", "$1$2$3destructor" );
 	transformer.addRegexRule( R"((\w+)<([^<>,]+)[^<>]*>)", "$1__$2" );
 	transformer.addRegexRule( R"((\w+)<([^<>,]+)[^<>]*>)", "$1__$2" );
+	transformer.addRule( "__", "_" );
 
 	transformer.addRule( []( const std::string &input ) {
 		static const std::vector<std::pair<std::string, std::string>> op_map = {
@@ -59,34 +60,34 @@ int main()
 	} );
 
 	std::vector<std::pair<std::string, std::string>> tests = {
-		{ "GLWorker::GLWorker", "GLWorker__constructor" },
-		{ "CSplineParticleEmitter::~CSplineParticleEmitter", "CSplineParticleEmitter__destructor" },
-		{ "TSGrowableArray<CXMLAttribute>::SetCount", "TSGrowableArray__CXMLAttribute__SetCount" },
-		{ "DBCache<WardenCachedModule,CWardenKey,CWardenKey>::Save", "DBCache__WardenCachedModule__Save" },
-		{ "DBCache<PageTextCache_C,int,HASHKEY_INT>::AddItems", "DBCache__PageTextCache_C__AddItems" },
+		{ "GLWorker::GLWorker", "GLWorker_constructor" },
+		{ "CSplineParticleEmitter::~CSplineParticleEmitter", "CSplineParticleEmitter_destructor" },
+		{ "TSGrowableArray<CXMLAttribute>::SetCount", "TSGrowableArray_CXMLAttribute_SetCount" },
+		{ "DBCache<WardenCachedModule,CWardenKey,CWardenKey>::Save", "DBCache_WardenCachedModule_Save" },
+		{ "DBCache<PageTextCache_C,int,HASHKEY_INT>::AddItems", "DBCache_PageTextCache_C_AddItems" },
 		{ "TSHashTable<OVERRIDE_SPELLCAST_BY_NAME_NODE,HASHKEY_UTF8I>::Ptr",
-		  "TSHashTable__OVERRIDE_SPELLCAST_BY_NAME_NODE__Ptr" },
+		  "TSHashTable_OVERRIDE_SPELLCAST_BY_NAME_NODE_Ptr" },
 		{ "TSSimpleArray<TSExplicitList<SOUNDKITLOOKUP,-572662307>>::FatalArrayBounds",
-		  "TSSimpleArray__TSExplicitList__SOUNDKITLOOKUP__FatalArrayBounds" },
-		{ "TSHashTable<struct_FILEMAP,class_HASHKEY_STRI>::InternalClear", "TSHashTable__FILEMAP__InternalClear" },
-		{ "Battlenet::MatchMaker::MapSpec::MapSpec", "Battlenet__MatchMaker__MapSpec__constructor" },
+		  "TSSimpleArray_TSExplicitList_SOUNDKITLOOKUP_FatalArrayBounds" },
+		{ "TSHashTable<struct_FILEMAP,class_HASHKEY_STRI>::InternalClear", "TSHashTable_FILEMAP_InternalClear" },
+		{ "Battlenet::MatchMaker::MapSpec::MapSpec", "Battlenet_MatchMaker_MapSpec_constructor" },
 
-		{ "CDynamicString::operator=", "CDynamicString__operator_assign" },
-		{ "CDynamicString::operator+=", "CDynamicString__operator_add_on_assign" },
+		{ "CDynamicString::operator=", "CDynamicString_operator_assign" },
+		{ "CDynamicString::operator+=", "CDynamicString_operator_add_on_assign" },
 
-		{ "WowTime::operator<", "WowTime__operator_lt" },
-		{ "WowTime::operator>", "WowTime__operator_gt" },
-		{ "WowTime::operator==", "WowTime__operator_eq" },
-		{ "WowTime::operator>=", "WowTime__operator_ge" },
-		{ "WowTime::operator<=", "WowTime__operator_le" },
+		{ "WowTime::operator<", "WowTime_operator_lt" },
+		{ "WowTime::operator>", "WowTime_operator_gt" },
+		{ "WowTime::operator==", "WowTime_operator_eq" },
+		{ "WowTime::operator>=", "WowTime_operator_ge" },
+		{ "WowTime::operator<=", "WowTime_operator_le" },
 
-		{ "SI3::DSP_AttachCustomDspChain", "SI2__DSP_AttachCustomDspChain" },
-		{ "SI3::DSP_UpdateDsp", "SI2__DSP_UpdateDsp" },
-		{ "SI3DspChainHead::DestroyChain", "SI2DspChainHead__DestroyChain" },
-		{ "SE3::GetInputDriverName_Cached", "SE2__GetInputDriverName_Cached" },
-		{ "SE3::CacheEventCallback", "SE2__CacheEventCallback" },
-		{ "SE3CaptureCallbacks::~SE3CaptureCallbacks", "SE2CaptureCallbacks__destructor" },
-		{ "TSExplicitList<SE3SoundChunk,-572662307>::TSExplicitList", "TSExplicitList__SE2SoundChunk__constructor" },
+		{ "SI3::DSP_AttachCustomDspChain", "SI2_DSP_AttachCustomDspChain" },
+		{ "SI3::DSP_UpdateDsp", "SI2_DSP_UpdateDsp" },
+		{ "SI3DspChainHead::DestroyChain", "SI2DspChainHead_DestroyChain" },
+		{ "SE3::GetInputDriverName_Cached", "SE2_GetInputDriverName_Cached" },
+		{ "SE3::CacheEventCallback", "SE2_CacheEventCallback" },
+		{ "SE3CaptureCallbacks::~SE3CaptureCallbacks", "SE2CaptureCallbacks_destructor" },
+		{ "TSExplicitList<SE3SoundChunk,-572662307>::TSExplicitList", "TSExplicitList_SE2SoundChunk_constructor" },
 
 		{ "__jump_table::_strcasecmp", "SStrCmp" },
 		{ "__jump_table::strchr", "SStrChr" },
@@ -101,9 +102,9 @@ int main()
 		{ "_SErrSetLastError", "SErrSetLastError" },
 		{ "_SErrSetLogCallback", "SErrSetLogCallback" },
 
-		{ "WowClientDB2<KeyChainRec_C>::WowClientDB2", "WowClientDB__KeyChainRec_C__constructor" },
-		{ "WowClientDB2<KeyChainRec_C>::GetRecordByIndex", "WowClientDB__KeyChainRec_C__GetRecordByIndex" },
-		{ "WowClientDB2<KeyChainRec_C>::IterateOverCache", "WowClientDB__KeyChainRec_C__IterateOverCache" }
+		{ "WowClientDB2<KeyChainRec_C>::WowClientDB2", "WowClientDB_KeyChainRec_C_constructor" },
+		{ "WowClientDB2<KeyChainRec_C>::GetRecordByIndex", "WowClientDB_KeyChainRec_C_GetRecordByIndex" },
+		{ "WowClientDB2<KeyChainRec_C>::IterateOverCache", "WowClientDB_KeyChainRec_C_IterateOverCache" }
 	};
 
 	std::cout << "=== Test Results ===\n";
