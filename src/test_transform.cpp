@@ -36,7 +36,7 @@ int main()
 			{ ">=", "ge" },		{ "!=", "ne" },			{ "<<", "lshift" },
 			{ ">>", "rshift" }, { "-", "sub" },			{ "*", "mul" },
 			{ "+", "add" },		{ "<", "lt" },			{ ">", "gt" },
-			{ "=", "assign" }
+			{ "=", "assign" },	{ "[]", "subscript" },
 		};
 
 		const std::string keyword = "operator";
@@ -59,6 +59,8 @@ int main()
 
 		return input;
 	} );
+
+	// clang-format off
 
 	std::vector<std::pair<std::string, std::string>> tests = {
 		{ "GLWorker::GLWorker", "GLWorker_constructor" },
@@ -107,8 +109,13 @@ int main()
 
 		{ "WowClientDB2<KeyChainRec_C>::WowClientDB2", "WowClientDB_KeyChainRec_C_constructor" },
 		{ "WowClientDB2<KeyChainRec_C>::GetRecordByIndex", "WowClientDB_KeyChainRec_C_GetRecordByIndex" },
-		{ "WowClientDB2<KeyChainRec_C>::IterateOverCache", "WowClientDB_KeyChainRec_C_IterateOverCache" }
+		{ "WowClientDB2<KeyChainRec_C>::IterateOverCache", "WowClientDB_KeyChainRec_C_IterateOverCache" },
+		{ "CMoveSpline::~CMoveSpline", "CMoveSpline_destructor" },
+		{ "TSHashTable<DBCache<ItemTextCache_C, unsigned long long, CHashKeyGUID>::DBCACHEHASH, CHashKeyGUID>::New", "TSHashTable_DBCache_ItemTextCache_C_DBCACHEHASH_New" },
+		{ "MyClass::operator[]", "MyClass_operator_subscript" },
 	};
+
+	// clang-format on
 
 	std::cout << "=== Test Results ===\n";
 	for( const auto &[input, expected] : tests )

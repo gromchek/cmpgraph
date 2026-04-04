@@ -273,7 +273,7 @@
 
 [CGChallengeModeInfo]
 - 0076cba0 CGChallengeModeInfo::Script_RequestChallengeModeMapInfo
-- 00854c00 CGChallengeModeInfo::Script_GetChallengeModeMapTimes
+- 00854c4e CGChallengeModeInfo::Script_GetChallengeModeMapTimes
 
 [CGCharacterModelBase]
 - 005970b0 CGCharacterModelBase::~CGCharacterModelBase
@@ -717,6 +717,7 @@
 
 [CSimpleAnim]
 - 00497500 CSimpleAnim::GetScriptByName
+- 004975f0 CSimpleAnim::GetScriptTime
 - 00498d50 CSimpleAnim::Pause
 - 0049adc0 CSimpleAnim::Stop
 
@@ -760,6 +761,7 @@
 [CSimpleFrame]
 - 0048f1b0 CSimpleFrame::OnDragStart
 - 00490680 CSimpleFrame::UnregisterRegion
+- 00490d80 CSimpleFrame::GetScriptTime
 - 00493ce0 CSimpleFrame::DragBy
 - 00597210 CSimpleFrame::HideThis
 
@@ -1080,7 +1082,6 @@
 - 00780620 FrameBufferCache::Update
 
 [FrameScript_Object]
-- 00816870 FrameScript_Object::GetScriptTime
 - 00819e50 FrameScript_Object::~FrameScript_Object
 - 0081b330 FrameScript_Object::IsScriptEventRegistered
 - 0081b380 FrameScript_Object::RegisterScriptEvent
@@ -1965,7 +1966,7 @@
 - 008145d0 handle_body
 - 00816060 ParseVersion
 - 00816550 _SSignatureVerifyStream_ProvideData
-- 00816960 _gmatch
+- 00816960 strtrim
 - 00816a60 strsplit
 - 00816b60 strjoin
 - 00816d80 strconcat
@@ -1992,42 +1993,19 @@
 - 0083f190 _compile_regex
 - 00847610 _pcre_exec
 - 00848010 GetCurrentWowLocale
-- 0084d3d0 _luaO_fb2int
-- 0084d420 _luaO_rawequalObj
 - 0084d480 _luaO_str2d
-- 0084d860 _luaO_chunkid
-- 0084de50 _lua_pushvalue
-- 0084e3a0 _lua_pushvfstring
-- 0084e3d0 _lua_pushfstring
-- 0084e500 _lua_pushlightuserdata
-- 0084e730 _lua_getmetatable
-- 0084ea90 _lua_setmetatable
-- 0084ebf0 _lua_call
+- 0084d520 ___sprintf_chk
+- 0084db90 _lua_newthread
+- 0084df90 _lua_rawequal
 - 0084ec30 _f_call
-- 0084ec50 _lua_pcall
-- 0084ed50 _lua_gc
-- 0084ee50 _lua_gcupdatesizes
-- 0084ee60 _lua_gcgetsize
-- 0084ee70 _lua_gcupdatetimes
-- 0084ee80 _lua_gcgettime
-- 0084ee90 _lua_gcgetfunctiontime
-- 0084ef30 _lua_error
 - 0084ef50 _lua_next
-- 0084ef90 _lua_concat
-- 0084f010 _lua_setdecimalconversion
-- 0084f030 _lua_convertdecimal
-- 0084fbd0 _getfunc
-- 0084fd20 _str_gsub
-- 0084fe40 _lua_getstack
-- 00850000 _lua_getinfo
+- 0084f5c0 _luaL_pushresult
 - 008505a0 _getobjname
 - 00850f90 _bit_mod_safe
-- 00851010 _luaopen_bit
 - 00851260 _math_ceil
 - 00851310 _math_modf
 - 00851520 _math_ldexp
 - 00851640 _math_random
-- 00851760 _luaopen_math
 - 008517c0 _foreachi
 - 00851850 _foreach
 - 008518e0 _maxn
@@ -2038,21 +2016,25 @@
 - 00851b20 _tremovemulti
 - 00852120 _sort
 - 00852180 _wipe
-- 00852400 _str_sub
+- 00852430 _str_sub
 - 00852800 _str_byte
 - 008529a0 _luaB_setmetatable
 - 00852dd0 Script_EJ_SelectTier
 - 00853340 _push_onecapture
 - 00853410 _str_find_aux
 - 008535f0 _gmatch_aux
+- 00853710 _gmatch
+- 00853860 _str_gsub
 - 00854100 _luaB_tonumber
 - 00854210 _luaB_error
 - 00854270 _luaB_getmetatable
+- 00854340 _getfunc
 - 008543e0 _luaB_getfenv
 - 00854430 _luaB_setfenv
 - 008544d0 _luaB_rawequal
 - 00854510 _luaB_rawget
 - 00854550 _luaB_rawset
+- 00854590 _luaB_gcinfo
 - 008545c0 _luaB_collectgarbage
 - 00854660 _luaB_type
 - 00854690 _luaB_next
@@ -2069,56 +2051,55 @@
 - 00854cb0 _luaB_coresume
 - 00854d30 _luaB_auxwrap
 - 00854da0 _luaB_cocreate
+- 00854e00 _luaB_cowrap
 - 00854e30 _luaB_yield
+- 00854e50 _luaB_costatus
 - 00855120 _f_luaopen
 - 008551b0 _close_state
-- 00855240 _luaC_freeall
-- 00855370 _lua_newstate
-- 00855510 _lua_close
-- 00855740 _luaM_initPool
-- 008557d0 _luaM_freePool
+- 00855310 _luaE_freethread
+- 008554f0 _callallgcTM
 - 008558e0 _luaM_reallocPool
-- 00855af0 _setjmp
-- 00855bf0 _growCI
+- 00855af0 _luaD_rawrunprotected
+- 00855bf0 _luaD_growstack
 - 00855c50 _luaS_resize
-- 00855cd0 _luaD_growstack
 - 00855d00 _tryfuncTM
-- 00856550 _luaD_precall_profile
+- 00856190 _f_parser
+- 00856330 _growCI
 - 00856810 _resume
 - 008568f0 _luaD_protectedparser
+- 00856a90 _luaC_freeall
 - 00856bc0 _luaS_newlstr
 - 00856f10 _luaH_resizearray
 - 00856fa0 _callTMres
 - 00857780 _lessequal
 - 0085a960 ProcessHostDebugOverrideLine
 - 0085b300 _luaC_callGCTM
-- 0085b5a0 _luaC_gettime
-- 0085b950 _luaC_step
+- 0085b6a0 _markroot
+- 0085b850 _singlestep
 - 0085ba50 _luaC_barrierf
-- 0085ba90 _luaC_barrierback
+- 0085bb00 _luaC_linkupval
 - 0085bbe0 _luaT_gettm
-- 0085bc10 _luaT_gettmbyobj
 - 0085c200 _setnodevector
 - 0085c2e0 _luaH_new
+- 0085c690 _OsGetGetTickCount
 - 0085cab0 _newkey
 - 0085cc90 _luaF_newLclosure
 - 0085cd80 _luaF_findupval
-- 0085ce70 _luaF_close
-- 0085d0a0 _luaF_getlocalname
-- 0085d170 _luaZ_openspace
-- 0085d9e0 _luaX_syntaxerror
 - 0085da50 _new_localvar
 - 0085db70 SpellParserVerifyConditional
 - 0085ed90 _check_match
 - 0085ee20 _recfield
 - 0085ee80 _exp2reg
-- 0085f310 _codecomp
 - 0085f4e0 _resize
-- 0085faa0 _read_long_string
+- 0085fd50 _funcargs
+- 008601e0 _luaK_prefix
 - 00860570 _subexpr
-- 00860680 _f_parser
 - 00860760 _forbody
+- 00860890 _jumponcond
+- 00861d90 _luaK_patchlist
+- 00861f10 _luaK_reserveregs
 - 00861f80 _addk
+- 00862a80 _luaK_exp2anyreg
 - 008635c0 _adler32
 - 008639a0 _crc32
 - 008639c0 __tr_align

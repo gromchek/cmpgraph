@@ -7,9 +7,12 @@
 #include "StringFilter.h"
 #include "InlineAwareMatcher.h"
 #include "ClassGroupWriter.h"
+#include "NameDemangler.h"
+#include <optional>
 
 StringTransformer transformer;
 StringFilter filter;
+NameDemangler demangler;
 
 using json = nlohmann::json;
 
@@ -55,6 +58,46 @@ std::vector<Function> load_functions_from_json( const json &data )
 	{
 		Function func;
 		func.baseName = item.value( "name", "" );
+		func.name = item.value( "name", "" );
+
+		if( item.contains( "called_names" ) )
+		{
+			for( const auto &called : item["called_names"] )
+			{
+				func.callees.push_back( called.get<std::string>() );
+			}
+		}
+
+		if( item.contains( "caller_names" ) )
+		{
+			for( const auto &caller : item["caller_names"] )
+			{
+				func.callers.push_back( caller.get<std::string>() );
+			}
+		}
+
+		functions.push_back( std::move( func ) );
+	}
+
+	return functions;
+}
+
+std::vector<Function> load_functions_from_json_with_processing( const json &data )
+{
+	std::vector<Function> functions;
+
+	json functions_array = data;
+	if( data.is_object() && data.contains( "functions" ) )
+	{
+		functions_array = data["functions"];
+	}
+
+	functions.reserve( functions_array.size() );
+
+	for( const auto &item : functions_array )
+	{
+		Function func;
+		func.baseName = item.value( "name", "" );
 
 		if( filter.match( func.baseName ) )
 		{
@@ -62,12 +105,19 @@ std::vector<Function> load_functions_from_json( const json &data )
 		}
 
 		func.name = transformer.transform( func.baseName );
+		func.name = transformer.transform( demangler.demangle( func.name ) );
 
 		if( item.contains( "called_names" ) )
 		{
 			for( const auto &called : item["called_names"] )
 			{
-				const auto name = transformer.transform( called.get<std::string>() );
+				auto name = transformer.transform( called.get<std::string>() );
+				if( filter.match( name ) )
+				{
+					continue;
+				}
+
+				name = transformer.transform( demangler.demangle( name ) );
 				if( filter.match( name ) )
 				{
 					continue;
@@ -80,7 +130,13 @@ std::vector<Function> load_functions_from_json( const json &data )
 		{
 			for( const auto &caller : item["caller_names"] )
 			{
-				const auto name = transformer.transform( caller.get<std::string>() );
+				auto name = transformer.transform( caller.get<std::string>() );
+				if( filter.match( name ) )
+				{
+					continue;
+				}
+
+				name = transformer.transform( demangler.demangle( name ) );
 				if( filter.match( name ) )
 				{
 					continue;
@@ -98,8 +154,10 @@ std::vector<Function> load_functions_from_json( const json &data )
 int main( int argc, char *argv[] )
 {
 	filter.addPartial( "std::" );
+	filter.addPartial( "std_" );
 	filter.addPartial( "CGReforge" );
 	filter.addPartial( "blz::" );
+	filter.addPartial( "blz_" );
 	filter.addPartial( "CGResearchFrame" );
 	filter.addPartial( "TSSimpleArray" );
 
@@ -128,6 +186,23 @@ int main( int argc, char *argv[] )
 	transformer.addRegexRule( R"((\w+)<([^<>,]+)[^<>]*>)", "$1__$2" );
 	transformer.addRule( "TSFixedArray_", "TSGrowableArray_" );
 	transformer.addRule( "__", "_" );
+	transformer.addRule( ">_", "_" );
+	transformer.addRule( "*", "" );
+	transformer.addRule( "@lua", "_lua" );
+	transformer.addRule( "unsigned int", "uint32" );
+	transformer.addRule( "unsigned char", "uint8" );
+	transformer.addRule( "signed char", "int8" );
+	transformer.addRule( "unsigned short", "uint16" );
+	transformer.addRule( "signed short", "int16" );
+	transformer.addRule( "signed int", "int32" );
+	transformer.addRule( "unsigned long", "uint64" );
+	transformer.addRule( "signed long", "int64" );
+	transformer.addRule( "long long", "int64" );
+	transformer.addRule( "unsigned long long", "uint64" );
+	transformer.addRule( "unsigned long int", "uint64" );
+	transformer.addRule( "signed long int", "int64" );
+	transformer.addRule( "unsigned long long int", "uint64" );
+
 
 	transformer.addRule( []( const std::string &input ) {
 		static const std::vector<std::pair<std::string, std::string>> op_map = {
@@ -136,7 +211,7 @@ int main( int argc, char *argv[] )
 			{ ">=", "ge" },		{ "!=", "ne" },			{ "<<", "lshift" },
 			{ ">>", "rshift" }, { "-", "sub" },			{ "*", "mul" },
 			{ "+", "add" },		{ "<", "lt" },			{ ">", "gt" },
-			{ "=", "assign" }
+			{ "=", "assign" },	{ "[]", "subscript" },
 		};
 
 		const std::string keyword = "operator";
@@ -169,13 +244,14 @@ int main( int argc, char *argv[] )
 		auto output = args.get( "o", "result.txt" );
 		auto checkInline = args.getBool( "checkInline", false );
 		auto groupFile = args.get( "group", "" );
+
 		std::cout << "=== Function Matcher Started ===" << std::endl;
 
 		auto g1_json = load_json( pathJSONRef );
 		auto g2_json = load_json( pathJSON335 );
 
 		std::cout << "[LOG] Parsing JSON structures..." << std::endl;
-		auto g1 = load_functions_from_json( g1_json );
+		auto g1 = load_functions_from_json_with_processing( g1_json );
 		auto g2 = load_functions_from_json( g2_json );
 		std::cout << "[LOG] Graphs loaded. G1 size: " << g1.size() << ", G2 size: " << g2.size() << std::endl;
 
