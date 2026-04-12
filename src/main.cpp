@@ -160,6 +160,7 @@ int main( int argc, char *argv[] )
 	filter.addPartial( "blz_" );
 	filter.addPartial( "CGResearchFrame" );
 	filter.addPartial( "TSSimpleArray" );
+	filter.addPartial( "CPetBattleScene" );
 
 	transformer.addRule( "__jump_table::_strcasecmp", "SStrCmp" );
 	transformer.addRule( "__jump_table::strchr", "SStrChr" );
@@ -188,7 +189,7 @@ int main( int argc, char *argv[] )
 	transformer.addRule( "__", "_" );
 	transformer.addRule( ">_", "_" );
 	transformer.addRule( "*", "" );
-	transformer.addRule( "@lua", "_lua" );
+	transformer.addRule( "_lua", "lua" );
 	transformer.addRule( "unsigned int", "uint32" );
 	transformer.addRule( "unsigned char", "uint8" );
 	transformer.addRule( "signed char", "int8" );
