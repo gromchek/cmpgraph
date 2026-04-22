@@ -161,7 +161,12 @@ int main( int argc, char *argv[] )
 	filter.addPartial( "CGResearchFrame" );
 	filter.addPartial( "TSSimpleArray" );
 	filter.addPartial( "CPetBattleScene" );
-
+	filter.addPartial( "MemLineNo" );
+	filter.addPartial( "MemFileName" );
+	filter.addPartial( "CheckArrayBounds" );
+	filter.addPartial( "::CliPut" );
+	filter.addPartial( "JamCli" );
+	
 	transformer.addRule( "__jump_table::_strcasecmp", "SStrCmp" );
 	transformer.addRule( "__jump_table::strchr", "SStrChr" );
 	transformer.addRule( "__jump_table::strcpy", "SStrCopy" );
@@ -177,7 +182,9 @@ int main( int argc, char *argv[] )
 	transformer.addRule( "CGCommentator::Script", "Script" );
 	transformer.addRule( "CWorldMap", "CMap" );
 	transformer.addRule( "WowClientDB2", "WowClientDB" );
+	transformer.addRule( "CUnitDisplay", "CGUnit_C" );
 	transformer.addRule( "::", "__" );
+	transformer.addRule( "_ptr_", "_" );
 	transformer.addRule( "___", "__" );
 	transformer.addRegexRule( R"(\b(struct|class)_)", "" );
 	transformer.addRegexRule( R"((\w+)<([^,>]+)[^>]*>)", "$1__$2" );

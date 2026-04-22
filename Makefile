@@ -41,10 +41,10 @@ test: $(TEST_APP) $(TEST_FILTER_APP) $(TEST_DEMANGLER_APP)
 	./$(TEST_DEMANGLER_APP)
 
 run_410: $(MAIN_APP)
-	./$(MAIN_APP) --base 335_call_graph.json --ref 410_call_graph.json -o 410result.txt --checkInline 1 --group 410group.txt
+	./$(MAIN_APP) --base 335_call_graph.json --ref 410_call_graph.json -o 410result.txt --group 410group.txt
 
 run_501: $(MAIN_APP)
-	./$(MAIN_APP) --base 335_call_graph.json --ref 501_call_graph.json -o 501result.txt --group 501group.txt
+	./$(MAIN_APP) --base 335_call_graph.json --ref 501_call_graph.json -o 501result.txt --checkInline 1 --group 501group.txt
 
 run_601: $(MAIN_APP)
 	./$(MAIN_APP) --base 335_call_graph.json --ref 601_call_graph.json -o 601result.txt --group 601group.txt
