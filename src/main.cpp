@@ -174,6 +174,7 @@ int main( int argc, char *argv[] )
 	transformer.addRule( "__jump_table::strncasecmp", "SStrCmpI" );
 	transformer.addRule( "__jump_table::strrchr", "SStrChrR" );
 	transformer.addRule( "__jump_table::strstr", "SStrStr" );
+	transformer.addRule( "__jump_table::_gl", "gl" );
 	transformer.addRule( "__jump_table::", "" );
 	transformer.addRule( "_SErr", "SErr" );
 	transformer.addRule( "SE3", "SE2" );
