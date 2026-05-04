@@ -166,6 +166,7 @@ int main( int argc, char *argv[] )
 	filter.addPartial( "CheckArrayBounds" );
 	filter.addPartial( "::CliPut" );
 	filter.addPartial( "JamCli" );
+	filter.addPartial( "AnimData_" );
 	
 	transformer.addRule( "__jump_table::_strcasecmp", "SStrCmp" );
 	transformer.addRule( "__jump_table::strchr", "SStrChr" );
