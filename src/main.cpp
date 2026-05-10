@@ -167,6 +167,7 @@ int main( int argc, char *argv[] )
 	filter.addPartial( "::CliPut" );
 	filter.addPartial( "JamCli" );
 	filter.addPartial( "AnimData_" );
+	filter.addPartial( "CGTransmogrify" );
 	
 	transformer.addRule( "__jump_table::_strcasecmp", "SStrCmp" );
 	transformer.addRule( "__jump_table::strchr", "SStrChr" );
@@ -195,6 +196,8 @@ int main( int argc, char *argv[] )
 	transformer.addRegexRule( R"((\w+)<([^<>,]+)[^<>]*>)", "$1__$2" );
 	transformer.addRegexRule( R"((\w+)<([^<>,]+)[^<>]*>)", "$1__$2" );
 	transformer.addRule( "TSFixedArray_", "TSGrowableArray_" );
+	transformer.addRule( "`scalar_deleting_destructor'", "destructor" );
+	transformer.addRule( "`vector_deleting_destructor'", "destructor" );
 	transformer.addRule( "__", "_" );
 	transformer.addRule( ">_", "_" );
 	transformer.addRule( "*", "" );
@@ -212,6 +215,8 @@ int main( int argc, char *argv[] )
 	transformer.addRule( "unsigned long int", "uint64" );
 	transformer.addRule( "signed long int", "int64" );
 	transformer.addRule( "unsigned long long int", "uint64" );
+	transformer.addRule( "FrameTime_GetCurTimeMs", "OsGetAsyncTimeMs" );
+	transformer.addRule( "FID_conflict:", "" );
 
 
 	transformer.addRule( []( const std::string &input ) {
