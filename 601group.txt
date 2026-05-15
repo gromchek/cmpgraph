@@ -39,6 +39,7 @@
 - 00433a90 Battlenet::TumorManager::Create
 - 00558d70 Battlenet::Client::S2GameDefines::GamePhaseInfo::Release
 - 00636120 Battlenet::Event::S2Maps::S2MapInfo::~S2MapInfo
+- 0086c090 Battlenet::Attribute::WorkingSet::operator=
 - 008c4250 Battlenet::Event::Creep::Invoke::S2Map::ListFileDependencies::Link::operator=
 - 008c6f70 Battlenet::TumorManager::SendEvent<Battlenet::Event::Creep::Invoke>
 - 008c6fd0 Battlenet::Event::Creep::Invoke::Authentication::SetModule
@@ -69,6 +70,9 @@
 [BspQuery_Volume<CFrustum>]
 - 007c71e0 BspQuery_Volume<CFrustum>::operator()
 
+[C2Vector]
+- 0075b480 C2Vector::C2Vector
+
 [C3Spline]
 - 00408270 C3Spline::Point
 - 004c39d0 C3Spline::Evaluate
@@ -78,9 +82,8 @@
 - 004c41c0 C3Spline_CatmullRom::IValidateCache
 - 004c42c0 C3Spline_CatmullRom::IVelArclength
 
-[C3Vector]
-- 005fe950 C3Vector::SafeNormalize
-- 007e6590 C3Vector::C3Vector
+[C44Matrix]
+- 006cb930 C44Matrix::AffineInverse
 
 [CAaBsp_Query_AaBox<BspQuery_Volume<CFrustum>>]
 - 007ca440 CAaBsp_Query_AaBox<BspQuery_Volume<CFrustum>>::GetFaceIndices
@@ -127,7 +130,6 @@
 - 004ea880 CCharacterComponent::UpdateItem
 - 004eefa0 CCharacterComponent::ComposeHelmModelFilePath
 - 004ef300 CCharacterComponent::BuildBeltBuckleModelPath
-- 004ef970 CCharacterComponent::RemoveItemByType
 - 004efab0 CCharacterComponent::ComputeLoadProgress
 - 004f01a0 CCharacterComponent::CreateRequestEX
 
@@ -149,11 +151,14 @@
 [CDataStore]
 - 004bc1c0 CDataStore::PutArray
 
+[CDetailDoodad]
+- 00792fa0 CDetailDoodad::CreateChunk
+
 [CDetailDoodadBatch]
 - 0097a130 CDetailDoodadBatch::FillInstanceBuf
 
 [CDetailDoodadChunk]
-- 007d06a0 CDetailDoodadChunk::CreateBatches
+- 007c5440 CDetailDoodadChunk::CreateBatches
 
 [CEffect]
 - 004cfb70 CEffect::DestroyLightning
@@ -166,9 +171,6 @@
 [CEzLcdPage]
 - 0095ae00 CEzLcdPage::SetBitmap
 
-[CFlyout]
-- 00682a40 CFlyout::InitializeGame
-
 [CFramePoint]
 - 00488ed0 CFramePoint::X
 - 0049c830 CFramePoint::GetRelativeRect
@@ -177,9 +179,6 @@
 - 00494c80 CFrameStrata::GetToplevelFrame
 - 00494d20 CFrameStrata::FrameOccluded
 - 00495bd0 CFrameStrata::AddFrame
-
-[CFrustum]
-- 00683a80 CFrustum::Cull
 
 [CGAchievementInfo]
 - 004cbe70 CGAchievementInfo::IsAchievementWorldstateEligible
@@ -238,9 +237,6 @@
 
 [CGCharacterModelBase]
 - 005970b0 CGCharacterModelBase::~CGCharacterModelBase
-
-[CGChat]
-- 004bd440 CGChat::RegisterAddonMessagePrefix
 
 [CGChatBubbleFrame]
 - 0056c1c0 CGChatBubbleFrame::ParseRaidIcons
@@ -362,7 +358,6 @@
 
 [CGParty]
 - 00714a80 CGParty::HasSubgroupMemberPet
-- 00715440 CGParty::HasMemberPet
 
 [CGPartyMember]
 - 00549600 CGPartyMember::GetName
@@ -417,13 +412,15 @@
 - 0061e0d0 CGTooltip::~CGTooltip
 
 [CGTradeInfo]
-- 00586390 CGTradeInfo::DenyPlayerItem
+- 00586410 CGTradeInfo::DenyPlayerItem
 - 00586520 CGTradeInfo::HandleTradeMessage
+
+[CGUIMacros]
+- 00566dc0 CGUIMacros::RunMacro
 
 [CGUnit_C]
 - 004089c0 CGUnit_C::SetDebugPathPoints
 - 004c1cf0 CGUnit_C::GetCollisionScale
-- 004c8830 CGUnit_C::SetEmoteQueue
 - 004f5290 CGUnit_C::IsEnteringOrExitingVehicle
 - 004f5300 CGUnit_C::GetPowerSlot
 - 004f5f80 CGUnit_C::CanLocalPlayerRideByInteraction
@@ -440,7 +437,8 @@
 - 006cf3a0 CGUnit_C::OnSetPitchLocal
 - 006d6660 CGUnit_C::LookupAbilities
 - 006e6ee0 CGUnit_C::GetObjectName
-- 00715f90 CGUnit_C::UnitReaction
+- 00715440 CGUnit_C::UnitReaction
+- 00715f90 CGUnit_C::IsUnitInRaidGroup
 - 00719660 CGUnit_C::ChaseDisplayFacing
 - 0071c600 CGUnit_C::MaybeDeferTeleport
 - 0071df30 CGUnit_C::SyncLandingAnimation
@@ -450,6 +448,7 @@
 - 00735ef0 CGUnit_C::UpdatePassengerSmoothFacing
 - 0073adc0 CGUnit_C::ProcessEmoteQueue
 - 0074b900 CGUnit_C::IsVehiclePreventingTurning
+- 007598f0 CGUnit_C::OnVehicleCameraNoLongerInUse
 - 0076bf80 CGUnit_C::GetEndVehicleGUIDAsPassenger
 - 007e6390 CGUnit_C::UpdateAttackIndicatorList
 - 007fcc70 CGUnit_C::SpellHasteCooldowns
@@ -478,12 +477,14 @@
 [CGlueMgr]
 - 004c87d0 CGlueMgr::PollAccountLogin
 - 004c8d80 CGlueMgr::LogToCVar
+- 007fc010 CGlueMgr::CharacterEmoteKitFinished
 - 008c6c90 CGlueMgr::WasEverLauncherLogin
 
 [CGxDevice]
 - 00401260 CGxDevice::FrameBufferGet
 - 00636270 CGxDevice::ShaderRelease
 - 00681890 CGxDevice::XformSetViewport
+- 00687fd0 CGxDevice::~CGxDevice
 - 0069f6a0 CGxDevice::ShaderReloadAll
 
 [CGxDeviceGLL]
@@ -531,7 +532,7 @@
 - 006c0270 CLightning::UpdateJointCount
 - 0077efe0 CLightning::ApplyWaveToPosition
 - 009a8e80 CLightning::RandomizeJoint
-- 009a9b30 CLightning::UpdatePulse
+- 009a9860 CLightning::~CLightning
 
 [CLoadingScreenShipInfo<TaxiPathNodeRec>]
 - 00408cd0 CLoadingScreenShipInfo<TaxiPathNodeRec>::GetStartingLeg
@@ -556,7 +557,6 @@
 - 00616950 CM2Scene::AddRef
 - 0081cc50 CM2Scene::PostAnimateThread
 - 0081d510 CM2Scene::HitTestFacets
-- 008c2ce0 CM2Scene::InitCustomEffects
 
 [CM2SceneRender]
 - 00823070 CM2SceneRender::BeginFixed
@@ -584,8 +584,10 @@
 [CMapDoodadDef]
 - 007bdd80 CMapDoodadDef::DefaultBounds
 
+[CMapMem]
+- 00636200 CMapMem::HeapFree
+
 [CMapObj]
-- 007a6b60 CMapObj::GetGroupMaterial
 - 007a7f60 CMapObj::RenderGroupDebug
 - 007b0560 CMapObj::DestroyMaterial
 
@@ -621,22 +623,22 @@
 - 006e97d0 CMovementShared::CanActivateMovementForces
 - 006eac00 CMovementShared::BothLogWrite
 - 00717050 CMovementShared::AdjustSplineDuration
-- 0075b480 CMovementShared::RelDistanceFallen
 - 0075de40 CMovementShared::TimeToJumpPeak
 - 0075e040 CMovementShared::CalcTimeFallen
+- 00987050 CMovementShared::RelDistanceFallen
 - 009876b0 CMovementShared::PlotVertCircularPosition
 - 0098b9a0 CMovementShared::RemoveFromTransportFinish
 
 [CMovement_C]
 - 006cb900 CMovement_C::SetCollisionBoxHeight
 - 006e9600 CMovement_C::UpdateCollisionHeight
-- 006ee810 CMovement_C::OnSetCollisionHeight
 - 00714c10 CMovement_C::OnSetPitchLocal
 - 0075b690 CMovement_C::CancelModSpeedControlDisabledAuras
 - 0075cfe0 CMovement_C::IsFacetOverhead
 - 0075d340 CMovement_C::AttemptLanding
 - 0075ee00 CMovement_C::ShouldSimulateCollision
 - 00761b00 CMovement_C::AttemptStepUp
+- 007ad700 CMovement_C::PushOffObstacleEdge
 
 [CObjectDisplay]
 - 006f7a00 CObjectDisplay::LinkToEffectList
@@ -668,7 +670,6 @@
 [CPassenger]
 - 005f97f0 CPassenger::GetFacing
 - 00786560 CPassenger::BuildMatrix
-- 007a8b10 CPassenger::BuildMatrixFromRotation
 
 [CPerfDisplay]
 - 00432d90 CPerfDisplay::ShowPerf
@@ -715,12 +716,10 @@
 - 00497e60 CSimpleAnim::Pause
 
 [CSimpleBrowser]
-- 008c3b10 CSimpleBrowser::~CSimpleBrowser
 - 0095e1c0 CSimpleBrowser::OnBrowserUpdateRect
 
 [CSimpleButton]
 - 0096f150 CSimpleButton::RunOnDoubleClickScript
-- 0096f190 CSimpleButton::~CSimpleButton
 - 00970370 CSimpleButton::SetStateTexture
 
 [CSimpleCheckbox]
@@ -738,10 +737,10 @@
 
 [CSimpleFontString]
 - 004826b0 CSimpleFontString::OnScreenSizeChanged
-- 004826d0 CSimpleFontString::OnFrameSizeChanged
 - 004842a0 CSimpleFontString::PreOnAnimUpdate
 - 00484300 CSimpleFontString::SetLayoutDepth
 - 00487090 CSimpleFontString::FlushRefreshOnFontLoadList
+- 004882e0 CSimpleFontString::~CSimpleFontString
 
 [CSimpleFontStringAttributes]
 - 00482dc0 CSimpleFontStringAttributes::SetFont
@@ -756,6 +755,7 @@
 
 [CSimpleHTML]
 - 0096c950 CSimpleHTML::~CSimpleHTML
+- 00978750 CSimpleHTML::~CSimpleHTML
 
 [CSimpleHyperlinkedFrame]
 - 009785d0 CSimpleHyperlinkedFrame::~CSimpleHyperlinkedFrame
@@ -764,16 +764,14 @@
 - 009681c0 CSimpleMessageFrame::~CSimpleMessageFrame
 - 00968630 CSimpleMessageFrame::~CSimpleMessageFrame
 
-[CSimpleMessageScrollFrame]
-- 00978750 CSimpleMessageScrollFrame::~CSimpleMessageScrollFrame
-
 [CSimpleModel]
 - 00403720 CSimpleModel::~CSimpleModel
-- 007fc010 CSimpleModel::~CSimpleModel
-- 0095f670 CSimpleModel::~CSimpleModel
 
 [CSimpleModelFFX]
 - 004e5f50 CSimpleModelFFX::OnLayerShow
+
+[CSimplePathAnim]
+- 00498ae0 CSimplePathAnim::~CSimplePathAnim
 
 [CSimpleRegion]
 - 004816a0 CSimpleRegion::OnDelayedLoad
@@ -793,7 +791,6 @@
 - 00481740 CSimpleTexture::OnColorChanged
 - 00483220 CSimpleTexture::OnFrameSizeChanged
 - 00483460 CSimpleTexture::PreOnAnimUpdate
-- 004882e0 CSimpleTexture::~CSimpleTexture
 - 0095c190 CSimpleTexture::DumpInfo
 
 [CSimpleTop]
@@ -807,9 +804,6 @@
 - 004c02f0 CTextureBlob::GetTexture
 - 004c0e60 CTextureBlob::RemoveTextures
 
-[CTgaFile]
-- 004bf450 CTgaFile::Image
-
 [CUnitDisplay]
 - 006e1290 CUnitDisplay::ShowRangedWeapon
 - 006fc210 CUnitDisplay::CorrectTrajectoryOfPendingMissiles
@@ -819,6 +813,7 @@
 - 00718a20 CUnitDisplay::UpdateBreathFlags
 - 0071a860 CUnitDisplay::GetAttachmentPositionForEffect
 - 0071c110 CUnitDisplay::GetPCScale
+- 0071da60 CUnitDisplay::ReleaseMissilesOnNextUpdate
 - 007224d0 CUnitDisplay::CreateMissile
 - 00726090 CUnitDisplay::UpdateWeaponVisibilityFromAnimChange
 - 00756040 CUnitDisplay::PlayRangedItemPull
@@ -851,8 +846,9 @@
 - 00794ad0 CWorldMap::UpdateMapObjDef
 - 0079f100 CWorldMap::DestroyOccluders
 - 007a2c60 CWorldMap::SetHitTestDebug
-- 007b5870 CWorldMap::LinkEntity
+- 007b5630 CWorldMap::ShadowQueryEntitys
 - 007c2040 CWorldMap::LinkObjectToMapExterior
+- 008a2aa0 CWorldMap::QueryLiquidTerrain
 - 009dc510 CWorldMap::~CWorldMap
 
 [CWorldMath]
@@ -860,6 +856,7 @@
 
 [CWorldParam]
 - 0078dd40 CWorldParam::SetDefaults
+- 0078e950 CWorldParam::Destroy
 
 [CWorldScene]
 - 007bea70 CWorldScene::LoadModel
@@ -893,14 +890,8 @@
 - 005019d0 ChatWindowInfo::Clear
 - 00501a70 ChatWindowInfo::AddChannel
 
-[ClientConnection]
-- 006b15c0 ClientConnection::HandleCharacterDelete
-
 [ClientRealmResponseAdapter]
 - 006b1f80 ClientRealmResponseAdapter::HandleAuthResponse
-
-[ClientServices]
-- 0054a430 ClientServices::Send
 
 [ClntObjMgr]
 - 004d5950 ClntObjMgr::~ClntObjMgr
@@ -927,6 +918,7 @@
 - 004480b0 Creep::Layer::Profile::OnProfileReadResponse
 - 00689a70 Creep::ClientSideCache::VerifyFileContext::VerifyNextChunk
 - 00871d20 Creep::ClientSideCache::IndexComplete
+- 0087f5e0 Creep::Initialize
 - 008c4380 Creep::ClientSideCache::~ClientSideCache
 
 [DBCache<CreatureStats_C,int,HASHKEY_DWORD,NullXInfo>]
@@ -970,16 +962,15 @@
 [DayNight]
 - 00420aa0 DayNight::SetActiveDayNight
 - 00431800 DayNight::DNClouds::UpdateLOD
-- 004e2730 DayNight::GetDeathLightInfo
 - 004e60b0 DayNight::CDayNightObjectInt::ShouldRenderProcedural
 - 00597e10 DayNight::DNStars::Initialize
+- 007ebf30 DayNight::GetDeathLightInfo
 - 007ecf20 DayNight::SyncSkyAnimWithTime
 - 007ed2d0 DayNight::InterpColor
 - 007ee750 DayNight::CDayNightObjectInt::SetLightColors
 - 007efa30 DayNight::DNClouds::GetDensity
 - 007f08c0 DayNight::DrawSky
 - 007f9e10 DayNight::CDayNightObject::SetEclipse
-- 0097df90 DayNight::CDayNightObjectInt::ResetOverrideSky
 - 009abd50 DayNight::DNStars::Render
 - 009abe00 DayNight::DNGlare::Render
 - 009acb00 DayNight::DNClouds::Render
@@ -990,7 +981,7 @@
 
 [DefaultShaders]
 - 007a8940 DefaultShaders::SetDefaultPixelShader
-- 008a32f0 DefaultShaders::SetWorldViewProj
+- 007a8b10 DefaultShaders::SetWorldViewProj
 
 [DefaultTextureCache]
 - 007e2c80 DefaultTextureCache::Destroy
@@ -1074,14 +1065,8 @@
 [GLDevice]
 - 004c23a0 GLDevice::SetCullFace
 
-[GLKeyFrame]
-- 008fb560 GLKeyFrame::RecordGLBuffer
-
 [GLObjectMule]
 - 004ab540 GLObjectMule::SendToWorker
-
-[GLShaderInput]
-- 00993c00 GLShaderInput::UpdateLocation
 
 [GameMovie]
 - 004c86f0 GameMovie::IsCursorRecordingSupported
@@ -1146,20 +1131,15 @@
 [MapObjGroupLiquidQuery]
 - 0079b590 MapObjGroupLiquidQuery::QueryCircle
 
-[NETEVENTQUEUE]
-- 00633630 NETEVENTQUEUE::Clear
-
-[NETEVENTQUEUENODE]
-- 00633470 NETEVENTQUEUENODE::~NETEVENTQUEUENODE
+[MovementForces]
+- 0075cf80 MovementForces::CollideMovementForce
 
 [NTempest]
 - 0078f480 NTempest::IntersectCull
+- 00790900 NTempest::Intersect
 
 [NameCache]
 - 0067b600 NameCache::ValidatingUnpack
-
-[NetClient]
-- 006331b0 NetClient::~NetClient
 
 [NetConnection]
 - 0086e850 NetConnection::WRITEBLOCK::~WRITEBLOCK
@@ -1183,7 +1163,7 @@
 - 00783b10 PacketList<Packet<Snow::Flake,6144u,1u>>::Realize
 
 [PassDeath]
-- 007e86a0 PassDeath::PassDeath
+- 007e8920 PassDeath::PassDeath
 
 [PassNetherBlur]
 - 007e9b10 PassNetherBlur::Execute
@@ -1201,6 +1181,9 @@
 - 0041d2a0 Physics::Update
 - 008240f0 Physics::Physicalize
 - 00831e20 Physics::DePhysicalize
+
+[PlayerCliAuctionListItems]
+- 0047aef0 PlayerCliAuctionListItems::PlayerCliAuctionListItems
 
 [PlayerCliAuctionPlaceBid]
 - 0059b2a0 PlayerCliAuctionPlaceBid::PlayerCliAuctionPlaceBid
@@ -1262,6 +1245,7 @@
 - 004079c0 RangedMemManager::GetActiveHeap
 
 [RealmConnection]
+- 004652a0 RealmConnection::~RealmConnection
 - 008a34b0 RealmConnection::GetSecondsUntilParentalControlsKick
 
 [RecordLoopbackCallbacksClass]
@@ -1277,6 +1261,7 @@
 - 008786e0 SE3::PlaySoundKitInternal
 - 008787e0 SE3::CaptureWork
 - 00878da0 SE3::ConnectDspToChannelGroup
+- 00879840 SE3::GetFMODChannelFromSE3Handle
 - 00879f70 SE3::ProcessMemorySoundEndedMessageQueue
 - 0087acc0 SE3::CleanUpFMODGameSystem
 - 0087b300 SE3::MemorySoundEndedCallback
@@ -1293,7 +1278,6 @@
 
 [SI3]
 - 004c9bd0 SI3::InitZoneSoundsHandler
-- 004c9d50 SI3::StopZoneMusic
 - 004cdd40 SI3::DSP_ShutDown
 - 004ceb70 SI3::GetTextEmoteSoundIndex
 - 004cfb50 SI3::VoiceChat_SetFrequencyScale
@@ -1376,9 +1360,6 @@
 [TSCArray<float,64>]
 - 00786880 TSCArray<float,64>::FatalArraySize
 
-[TSCArray<unsigned_int,4>]
-- 008a2aa0 TSCArray<unsigned_int,4>::FatalArrayBounds
-
 [TSCArray<unsigned_int,9>]
 - 0070c8c0 TSCArray<unsigned_int,9>::FatalArraySize
 
@@ -1437,9 +1418,6 @@
 
 [TSFixedArray<int>]
 - 00408d80 TSFixedArray<int>::ReallocData
-
-[TSFixedArray<unsigned_long_long>]
-- 00636490 TSFixedArray<unsigned_long_long>::ReallocData
 
 [TSFixedArray<void(*)()>]
 - 004b9990 TSFixedArray<void(*)()>::ReallocData
@@ -1505,7 +1483,7 @@
 - 004fb8f0 TSHashTable<CHATTHROTTLE,HASHKEY_STR>::Ptr
 
 [TSHashTable<CMapObj,HASHKEY_NONE>]
-- 008764d0 TSHashTable<CMapObj,HASHKEY_NONE>::Unlink
+- 00685230 TSHashTable<CMapObj,HASHKEY_NONE>::Unlink
 
 [TSHashTable<CTexture,HASHKEY_TEXTUREFILE>]
 - 004b6d90 TSHashTable<CTexture,HASHKEY_TEXTUREFILE>::Ptr
@@ -1658,6 +1636,7 @@
 [WDataStore]
 - 004662f0 WDataStore::InternalFetchWrite
 - 00466510 WDataStore::AllocBuffer
+- 00636490 WDataStore::InternalDestroy
 
 [WTOBJECT]
 - 007f10a0 WTOBJECT::SetDrawTrail
@@ -1679,6 +1658,9 @@
 - 007819c0 World::QueryObjectParentParam64
 - 007c7710 World::GetEnables
 - 009dac90 World::FacetData::~FacetData
+
+[WowBrowser]
+- 004021c0 WowBrowser::CBrowserController::OnCVarEnable
 
 [WowClientDB2<ItemRecSparse_C>]
 - 0067a170 WowClientDB2<ItemRecSparse_C>::GetRecord
@@ -1707,6 +1689,7 @@
 
 [WowConnectionNet]
 - 00428ff0 WowConnectionNet::SignalWorker
+- 00458880 WowConnectionNet::PlatformRun
 
 [casc]
 - 0077ce70 casc::KeyMappingTable::KeyMappingTable
@@ -1723,6 +1706,7 @@
 - 008f0a60 tact::SegmentedStorage::SegmentedStorage
 
 [unnamed namespace]
+- 00401140 operator>>
 - 00401fd0 PollNet
 - 00402530 SetDefaults
 - 00402a50 OsMailConnect
@@ -1740,16 +1724,19 @@
 - 00417a07 _imap_perform_authenticate
 - 00420980 CharSelectIsStartRaceComplete
 - 00421850 UpdateReadSize
+- 00422480 _read
 - 00427010 _mach_thread_self
 - 00429a60 _extend_plane
 - 0042aa50 _t1_get_index
 - 0042be30 _LZ4_compressHCctx
+- 0042d5c0 _match
 - 0042ed70 CASCloseFile
 - 00432f00 SetAppCommand
 - 0044b7b0 _Curl_pp_vsendf
 - 0044c4d0 _Curl_input_digest
 - 00450b80 _Curl_add_bufferf
 - 00451ee0 CCommand_LagTest
+- 004669a0 s_GetLocalizedWdbDir
 - 00469060 MainProc
 - 00469300 WorkerProc
 - 0046a170 __fetch_headers
@@ -1763,6 +1750,7 @@
 - 00473240 _FMOD_oggpack_readinit
 - 00473340 _FMOD_oggpack_read
 - 00474a00 _png_chunk_warning
+- 0047af90 ___stack_chk_fail
 - 0047cc70 PropCreateContext
 - 0047d950 ShutdownThreadProc
 - 0047dc90 _SErrIsDisplayingError
@@ -1789,7 +1777,7 @@
 - 004d3bf0 GetObjectMirrorHandlers
 - 004d43f0 GetDataBaseOffset
 - 004d49e0 CCommand_ObjUsage
-- 004d6f40 ObjectUpdateHandlerInternal
+- 004d7100 ObjectUpdateHandlerInternal
 - 004dc050 Script_QuitGame
 - 004dc060 Script_QuitGameAndRunLauncher
 - 004dc130 Script_StopGlueAmbience
@@ -1861,7 +1849,6 @@
 - 005b7910 CalendarGameTimeCallback
 - 005b7a80 GameCalendarGetMaxCreateDate
 - 005b8080 NameCacheCallback
-- 005caa40 FreeDivxCompatibleMemory
 - 005cebf0 SignatureNameQueryCallback
 - 005d9f80 TradeSkillListItemCallback
 - 005de9e0 ObjectQueryCallback
@@ -1877,6 +1864,7 @@
 - 005f85d0 LoadAddOnMetadata
 - 005f9830 Spell_C_GetDelayedMissileTrajectoryCast
 - 005fe800 QSort<MissileCollisionWorkingUnit,MissileCollisionWorkingUnit>
+- 005fe950 _atan2f
 - 005ff000 Script_MoveViewStart
 - 005ff8e0 FixedTimeStepCallback
 - 005ffd20 _sinf
@@ -1893,7 +1881,6 @@
 - 006237c0 CheckFirstDeltaLine
 - 006276e0 CheckItemSetMatch
 - 00631d10 InitializePropContext
-- 00632690 PacketUtils_LogSent
 - 006337c0 ClientDBGetUnarmedWeapon
 - 006351d0 ClientInvalidatePlayerHandler
 - 00682130 GxXformViewProj
@@ -2088,7 +2075,6 @@
 - 009c4f84 _lgLcdDisconnect
 - 009c4fb6 _lgLcdClose
 - 009c4fe8 _lgLcdSetAsLCDForegroundApp
-- 009c56e0 QSortMute
 - 009c77d0 __GLOBAL__I_a
 - 009c8c30 GetNumDwordBlocks
 - 009cd880 __GLOBAL__I_a
