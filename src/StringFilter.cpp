@@ -7,7 +7,7 @@ void StringFilter::addExact( const std::string &str )
 
 void StringFilter::addPartial( const std::string &str )
 {
-	m_partialMatches.push_back( str );
+	m_partialMatches.emplace( str );
 }
 
 bool StringFilter::match( const std::string &input ) const

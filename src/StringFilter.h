@@ -1,14 +1,14 @@
 #pragma once
 
 #include <string>
-#include <vector>
+#include <set>
 #include <unordered_set>
 
 class StringFilter
 {
 private:
 	std::unordered_set<std::string> m_exactMatches;
-	std::vector<std::string> m_partialMatches;
+	std::set<std::string> m_partialMatches;
 
 public:
 	void addExact( const std::string &str );
