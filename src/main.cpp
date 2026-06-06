@@ -357,7 +357,15 @@ int main( int argc, char *argv[] )
 	filter.addPartial( "GGCP" );
 	filter.addPartial( "FileNotification" );
 	filter.addPartial( "Archaeology" );
-
+	filter.addPartial( "UpdateCamouflage" );
+	filter.addPartial( "Script_CagePetByID" );
+	filter.addPartial( "UserClientCommentatorGetPartyInfo" );
+	filter.addPartial( "UserClientRequestPartyJoinUpdates" );
+	filter.addPartial( "___tcf_" );
+	filter.addPartial( "Transmog" );
+	filter.addPartial( "Reforge" );
+	filter.addPartial( "VoidStorage" );
+	
 
 	
 	transformer.addRule( "__jump_table::_strcasecmp", "SStrCmp" );
@@ -388,6 +396,7 @@ int main( int argc, char *argv[] )
 	transformer.addRegexRule( R"((\w+)<([^<>,]+)[^<>]*>)", "$1__$2" );
 	transformer.addRegexRule( R"((\w+)<([^<>,]+)[^<>]*>)", "$1__$2" );
 	transformer.addRule( "TSFixedArray_", "TSGrowableArray_" );
+	transformer.addRule( "TSBaseArray_", "TSGrowableArray_" );
 	transformer.addRule( "`scalar_deleting_destructor'", "destructor" );
 	transformer.addRule( "`vector_deleting_destructor'", "destructor" );
 	transformer.addRule( "__", "_" );
@@ -410,6 +419,20 @@ int main( int argc, char *argv[] )
 	transformer.addRule( "FrameTime_GetCurTimeMs", "OsGetAsyncTimeMs" );
 	transformer.addRule( "FID_conflict:", "" );
 	transformer.addRule( "CMovement_C", "CMovement" );
+	transformer.addRule( "_zlib_uncompress@16", "_zlib_uncompress" );
+	transformer.addRule( "_zlib_compress@20", "_zlib_compress" );
+	transformer.addRule( "@z_inflateEnd@4", "_inflateEnd" );
+	transformer.addRule( "@z_inflateInit2_@16", "_inflateInit2_" );
+	transformer.addRule( "@z_inflateInit_@12", "_inflateInit_" );
+	transformer.addRule( "@z_inflate@8", "_inflate" );
+	transformer.addRule( "@z_inflateSetDictionary@12", "_inflateSetDictionary" );
+	transformer.addRule( "@z_inflateSync@4", "_inflateSync" );
+	transformer.addRule( "@z_deflateInit_@16", "_deflateInit_" );
+	transformer.addRule( "@z_deflateInit2_@32", "_deflateInit2_" );
+	transformer.addRule( "@z_deflate@8", "_deflate" );
+	transformer.addRule( "@z_deflateEnd@4", "_deflateEnd" );
+	transformer.addRule( "@zcalloc@12", "_zcalloc" );
+	transformer.addRule( "_SCrcBuffer@16", "_SCrcBuffer" );
 
 
 	transformer.addRule( []( const std::string &input ) {
