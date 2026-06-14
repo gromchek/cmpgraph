@@ -16,6 +16,28 @@ NameDemangler demangler;
 
 using json = nlohmann::json;
 
+void printFunctions( const std::vector<Function> &baseFuncs, const std::vector<Function> &refFuncs,
+					 const std::string &fileName )
+{
+	std::ofstream out( fileName );
+	for( const auto &refFunc : refFuncs )
+	{
+		if( refFunc.baseName.rfind( "FUN_", 0 ) == 0 )
+		{
+			continue;
+		}
+
+		auto it = std::find_if( baseFuncs.begin(), baseFuncs.end(),
+								[&refFunc]( const Function &f ) { return f.name == refFunc.name; } );
+		if( it != baseFuncs.end() )
+		{
+			continue;
+		}
+
+		out << refFunc.baseName << ' ' << refFunc.name << '\n';
+	}
+}
+
 json load_json( const std::string &filepath )
 {
 	std::cout << "[LOG] Loading JSON file: " << filepath << "..." << std::endl;
@@ -94,6 +116,19 @@ std::vector<Function> load_functions_from_json_with_processing( const json &data
 
 	functions.reserve( functions_array.size() );
 
+	std::unordered_map<std::string, std::string> transform_cache;
+
+	auto cached_transform = [&]( const std::string &input ) -> std::string {
+		auto it = transform_cache.find( input );
+		if( it != transform_cache.end() )
+		{
+			return it->second;
+		}
+		std::string result = transformer.transform( input );
+		transform_cache[input] = result;
+		return result;
+	};
+
 	for( const auto &item : functions_array )
 	{
 		Function func;
@@ -104,20 +139,20 @@ std::vector<Function> load_functions_from_json_with_processing( const json &data
 			continue;
 		}
 
-		func.name = transformer.transform( func.baseName );
-		func.name = transformer.transform( demangler.demangle( func.name ) );
+		func.name = cached_transform( func.baseName );
+		func.name = cached_transform( demangler.demangle( func.name ) );
 
 		if( item.contains( "called_names" ) )
 		{
 			for( const auto &called : item["called_names"] )
 			{
-				auto name = transformer.transform( called.get<std::string>() );
+				auto name = cached_transform( called.get<std::string>() );
 				if( filter.match( name ) )
 				{
 					continue;
 				}
 
-				name = transformer.transform( demangler.demangle( name ) );
+				name = cached_transform( demangler.demangle( name ) );
 				if( filter.match( name ) )
 				{
 					continue;
@@ -130,13 +165,13 @@ std::vector<Function> load_functions_from_json_with_processing( const json &data
 		{
 			for( const auto &caller : item["caller_names"] )
 			{
-				auto name = transformer.transform( caller.get<std::string>() );
+				auto name = cached_transform( caller.get<std::string>() );
 				if( filter.match( name ) )
 				{
 					continue;
 				}
 
-				name = transformer.transform( demangler.demangle( name ) );
+				name = cached_transform( demangler.demangle( name ) );
 				if( filter.match( name ) )
 				{
 					continue;
@@ -365,9 +400,73 @@ int main( int argc, char *argv[] )
 	filter.addPartial( "Transmog" );
 	filter.addPartial( "Reforge" );
 	filter.addPartial( "VoidStorage" );
-	
+	filter.addPartial( "__static_initialization_and_destruction" );
+	filter.addPartial( "ClientAllAccountCriteria" );
+	filter.addPartial( "ClientAuthResponse" );
+	filter.addPartial( "ClientBattlePetError" );
+	filter.addPartial( "ClientChallegeModeRewards" );
+	filter.addPartial( "ClientChallengeModeAllMapStats" );
+	filter.addPartial( "ClientCommentatorPartyInfo" );
+	filter.addPartial( "RealmCache" );
+	filter.addPartial( "$E" );
+	filter.addPartial( "__GLOBAL__I_a" );
+	filter.addPartial( "BattlePet" );
+	filter.addPartial( "VoidWithdraw" );
+	filter.addPartial( "VoidDeposit" );
+	filter.addPartial( "Artifac" );
+	filter.addPartial( "GLApplicationCommandLine" );
+	filter.addPartial( "GLApplicationLoad" );
+	filter.addPartial( "GLApplicationUnload" );
+	filter.addPartial( "GLBaseCommand" );
+	filter.addPartial( "GLBuffer" );
+	filter.addPartial( "GLBufferData" );
+	filter.addPartial( "GLBufferPool" );
+	filter.addPartial( "GLClientStorageBufferAllocCmdType" );
+	filter.addPartial( "GLCustomCommandsInit" );
+	filter.addPartial( "GLDebugMipmap2D" );
+	filter.addPartial( "GLDeleteCommandCmdType" );
+	filter.addPartial( "GLDevice" );
+	filter.addPartial( "GLDisplayGetCurrentDisplayMode" );
+	filter.addPartial( "GLDisplayGetDesktopDisplayMode" );
+	filter.addPartial( "GLDisplayGetDisplayModes" );
+	filter.addPartial( "GLDisplayModeEqual" );
+	filter.addPartial( "GLDisplayModeLessThan" );
+	filter.addPartial( "GLDisplaySwitchDisplayMode" );
+	filter.addPartial( "GLDisplaySwitchToDesktopMode" );
+	filter.addPartial( "GLFlush" );
+	filter.addPartial( "GLGetImageSize" );
+	filter.addPartial( "GLGetNSViewFrame" );
+	filter.addPartial( "GLLayerYUV420Buffer" );
+	filter.addPartial( "GLNSViewAddExecute" );
+	filter.addPartial( "GLNSViewRemoveExecute" );
+	filter.addPartial( "GLNSViewUpdateExecute" );
+	filter.addPartial( "GLObject" );
+	filter.addPartial( "GLParamParser" );
+	filter.addPartial( "GLPixelFormatAllocExecute" );
+	filter.addPartial( "GLPixelFormatReleaseExecute" );
+	filter.addPartial( "GLPool" );
+	filter.addPartial( "GLPoolAddName" );
+	filter.addPartial( "GLPoolGetNextGLName" );
+	filter.addPartial( "GLPoolRemoveName" );
+	filter.addPartial( "GLReclyclableObject" );
+	filter.addPartial( "GLRendererInfo" );
+	filter.addPartial( "GLScopedAutoreleasePool" );
+	filter.addPartial( "GLStates" );
+	filter.addPartial( "GLTexDeleteGL" );
+	filter.addPartial( "GLTexDestroy" );
+	filter.addPartial( "GLTexUnmap" );
+	filter.addPartial( "GLTransform" );
+	filter.addPartial( "GLVertexFormat" );
+	filter.addPartial( "GLZipFile" );
+	filter.addPartial( "GLZippedFile" );
+	filter.addPartial( "GLAbstractWindow" );
+	filter.addPartial( "_vp8_" );
+	filter.addPartial( "_vp9_" );
+	filter.addPartial( "_vpx_" );
+	filter.addPartial( "tact::" );
+	filter.addPartial( "Borg::" );
+	filter.addPartial( "_Curl_" );
 
-	
 	transformer.addRule( "__jump_table::_strcasecmp", "SStrCmp" );
 	transformer.addRule( "__jump_table::strchr", "SStrChr" );
 	transformer.addRule( "__jump_table::strcpy", "SStrCopy" );
@@ -379,6 +478,7 @@ int main( int argc, char *argv[] )
 	transformer.addRule( "__jump_table::", "" );
 	transformer.addRule( "_SErr", "SErr" );
 	transformer.addRule( "NTempest::", "" );
+	transformer.addRule( "(anonymous_namespace)::", "" );
 	transformer.addRule( "SE3", "SE2" );
 	transformer.addRule( "SI3", "SI2" );
 	transformer.addRule( "BattlenetUI::Script", "Script" );
@@ -389,6 +489,7 @@ int main( int argc, char *argv[] )
 	transformer.addRule( "::", "__" );
 	transformer.addRule( "_ptr_", "_" );
 	transformer.addRule( "___", "__" );
+	transformer.addRule( "_MD5", "MD5" );
 	transformer.addRegexRule( R"(\b(struct|class)_)", "" );
 	transformer.addRegexRule( R"((\w+)<([^,>]+)[^>]*>)", "$1__$2" );
 	transformer.addRegexRule( R"((\w+)(.*?)(::|__)\1$)", "$1$2$3constructor" );
@@ -416,6 +517,19 @@ int main( int argc, char *argv[] )
 	transformer.addRule( "unsigned long int", "uint64" );
 	transformer.addRule( "signed long int", "int64" );
 	transformer.addRule( "unsigned long long int", "uint64" );
+	transformer.addRule( "unsigned_int", "uint32" );
+	transformer.addRule( "unsigned_char", "uint8" );
+	transformer.addRule( "signed_char", "int8" );
+	transformer.addRule( "unsigned_short", "uint16" );
+	transformer.addRule( "signed_short", "int16" );
+	transformer.addRule( "signed_int", "int32" );
+	transformer.addRule( "unsigned_long", "uint64" );
+	transformer.addRule( "signed_long", "int64" );
+	transformer.addRule( "long_long", "int64" );
+	transformer.addRule( "unsigned_long_long", "uint64" );
+	transformer.addRule( "unsigned_long_int", "uint64" );
+	transformer.addRule( "signed_long_int", "int64" );
+	transformer.addRule( "unsigned_long_long_int", "uint64" );
 	transformer.addRule( "FrameTime_GetCurTimeMs", "OsGetAsyncTimeMs" );
 	transformer.addRule( "FID_conflict:", "" );
 	transformer.addRule( "CMovement_C", "CMovement" );
@@ -474,6 +588,7 @@ int main( int argc, char *argv[] )
 		auto threshold = args.getFloat( "t", 0.8f );
 		auto output = args.get( "o", "result.txt" );
 		auto checkInline = args.getBool( "checkInline", false );
+		auto onlyPrintFuncs = args.getBool( "onlyPrintFuncs", false );
 		auto groupFile = args.get( "group", "" );
 
 		std::cout << "=== Function Matcher Started ===" << std::endl;
@@ -485,6 +600,12 @@ int main( int argc, char *argv[] )
 		auto g1 = load_functions_from_json_with_processing( g1_json );
 		auto g2 = load_functions_from_json( g2_json );
 		std::cout << "[LOG] Graphs loaded. G1 size: " << g1.size() << ", G2 size: " << g2.size() << std::endl;
+
+		if( onlyPrintFuncs )
+		{
+			printFunctions( g2, g1, pathJSONRef + ".formated.txt" );
+			return 0;
+		}
 
 		FunctionMatcher matcher( g1, g2, threshold );
 		auto result = matcher.runFullMatch();

@@ -60,6 +60,12 @@ to_proc:
 	$(GREP_FILTER) 601result.txt > 601_to_process.txt
 	$(GREP_FILTER) 053result.txt > 053_to_process.txt
 
+print_format:
+	./$(MAIN_APP) --base 335_call_graph.json --ref 410_call_graph.json --onlyPrintFuncs 1
+	./$(MAIN_APP) --base 335_call_graph.json --ref 501_call_graph.json --onlyPrintFuncs 1
+	./$(MAIN_APP) --base 335_call_graph.json --ref 601_call_graph.json --onlyPrintFuncs 1
+	./$(MAIN_APP) --base 335_call_graph.json --ref 053_call_graph.json --onlyPrintFuncs 1
+
 format:
 	clang-format -i $(SRCS)
 

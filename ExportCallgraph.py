@@ -1,5 +1,6 @@
 import json
 import io
+import re
 from ghidra.program.model.symbol import SourceType
 from ghidra.program.model.listing import Function
 
@@ -12,8 +13,10 @@ def get_full_function_name(func):
         namespace = namespace.getParentNamespace()
     if parts:
         parts.reverse()
-        return "::".join(parts) + "::" + name
-    return name
+        result = "::".join(parts) + "::" + name
+    else:
+        result = name
+    return re.sub(r'_{2,}', '_', result)
 
 def is_renamed(func):
     source = func.getSymbol().getSource()
