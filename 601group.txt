@@ -47,7 +47,6 @@
 [Battlenet]
 - 00430c10 Battlenet::Event::S2Maps::S2MapInfo::~S2MapInfo
 - 00558d70 Battlenet::Client::S2GameDefines::GamePhaseInfo::Release
-- 0086c090 Battlenet::Attribute::WorkingSet::operator=
 - 008c4250 Battlenet::Event::Creep::Invoke::S2Map::ListFileDependencies::Link::operator=
 - 008c6f70 Battlenet::TumorManager::SendEvent<Battlenet::Event::Creep::Invoke>
 - 008c6fd0 Battlenet::Event::Creep::Invoke::Authentication::SetModule
@@ -152,8 +151,14 @@
 [CDataStore]
 - 004bc1c0 CDataStore::PutArray
 
+[CDetailDoodad]
+- 00792fa0 CDetailDoodad::CreateChunk
+
 [CDetailDoodadBatch]
 - 0097a130 CDetailDoodadBatch::FillInstanceBuf
+
+[CDetailDoodadChunk]
+- 007c5440 CDetailDoodadChunk::CreateBatches
 
 [CEffect]
 - 004cfb70 CEffect::DestroyLightning
@@ -395,7 +400,6 @@
 [CGTooltip]
 - 0045cb20 CGTooltip::DumpSpellsToXML
 - 0061a650 CGTooltip::GetScalingStatArmor
-- 0061e0d0 CGTooltip::~CGTooltip
 
 [CGTradeInfo]
 - 00586390 CGTradeInfo::DenyPlayerItem
@@ -412,7 +416,6 @@
 - 004fd0e0 CGUnit_C::GetUnitNameExposed
 - 005140a0 CGUnit_C::GetVehicleUnitAsPassenger
 - 00519d50 CGUnit_C::GetAttackerThreatSituation
-- 0052c9a0 CGUnit_C::UnitReaction
 - 0053eaa0 CGUnit_C::UpdateAuraEffectMask
 - 00568680 CGUnit_C::IsUsingVehicleCamera
 - 0057c660 CGUnit_C::CanInteractWhileDead
@@ -424,6 +427,7 @@
 - 006d6660 CGUnit_C::LookupAbilities
 - 006e9a70 CGUnit_C::MoveEventJumped
 - 00715dd0 CGUnit_C::ShowFactionTooltip
+- 00715f90 CGUnit_C::UnitReaction
 - 00716160 CGUnit_C::CheckStealthRules
 - 007167c0 CGUnit_C::GetControllingPlayer
 - 0071df30 CGUnit_C::SyncLandingAnimation
@@ -734,9 +738,6 @@
 - 0048f1b0 CSimpleFrame::RunOnKeyUpScript
 - 009653a0 CSimpleFrame::RunOnCharScript
 
-[CSimpleHyperlinkedFrame]
-- 009785d0 CSimpleHyperlinkedFrame::~CSimpleHyperlinkedFrame
-
 [CSimpleMessageFrame]
 - 009681c0 CSimpleMessageFrame::~CSimpleMessageFrame
 
@@ -780,9 +781,6 @@
 - 004c02f0 CTextureBlob::GetTexture
 - 004c0330 CTextureBlob::RemoveTextures
 - 004c1030 CTextureBlob::RebuildHashTable
-
-[CTgaFile]
-- 004bf450 CTgaFile::ImageBGRA32Pixel
 
 [CUnitDisplay]
 - 006e1290 CUnitDisplay::ShowRangedWeapon
@@ -858,26 +856,22 @@
 - 004d5950 ClntObjMgr::~ClntObjMgr
 
 [ComSat]
-- 00880450 ComSat::Manager::LocalChatDataReady
 - 00880eb0 ComSat::Sound::Manager::RegisterLocalTalkerForSession
-- 00880ef0 ComSat::Sound::Manager::SessionCreate
 - 00881ca0 ComSat::Map<ComSat::MapKey<unsigned_char>,ComSat::Sound::Manager::LocalPlayer*>::Insert
 - 008825d0 ComSat::Sound::Manager::PlayVoiceDataForLocalPlayer
-- 00882810 ComSat::Sound::Manager::TransferEncodedVoiceDataForLocalPlayer
-- 00882950 ComSat::Sound::Manager::AssignTalkersToChannelsForLocalPlayer
 - 008834c0 ComSat::Map<ComSat::MapKey<unsigned_long_long>,unsigned_char>::operator[]
+- 008835e0 ComSat::Map<ComSat::MapKey<unsigned_long_long>,ComSat::Sound::Manager::Session*>::Insert
 - 00883680 ComSat::Map<ComSat::MapKey<unsigned_long_long>,unsigned_char>::Remove
 - 00883770 ComSat::Map<ComSat::MapKey<unsigned_long_long>,float>::Remove
 - 00883860 ComSat::Map<ComSat::MapKey<unsigned_long_long>,ComSat::Sound::Manager::RemoteTalker*>::Remove
 - 00883db0 ComSat::Sound::Manager::RegisterRemoteTalkerForSession
-- 00884850 ComSat::Sound::Manager::PlayScheduledVoiceData
-- 00884ca0 ComSat::Sound::Manager::EncodeAvailableVoiceDataForLocalPlayer
+- 00884ca0 ComSat::Sound::Manager::PlayScheduledVoiceData
 - 00884de0 ComSat::Sound::Manager::SessionDestroy
-- 00885ad0 ComSat::Session::SetNetworkSession
 - 00885e80 ComSat::Network::Session::SetTalkerNetworkIdLocal
 - 00885ed0 ComSat::Network::Session::SetTalkerNetworkIdRemote
+- 00886d10 ComSat::Sound::CODECILBC30MS::DecompressEncodedData
+- 00886f10 ComSat::Sound::CODECILBC30MS::GetThreshold
 - 00887010 ComSat::Map<ComSat::MapKey<unsigned_char>,ComSat::Sound::Manager::LocalPlayer*>::Remove
-- 008871a0 ComSat::Sound::CODECILBC30MS::InitLocalPlayer
 
 [CombatLogEntry]
 - 00750210 CombatLogEntry::GetItemName
@@ -951,7 +945,6 @@
 - 008c15f0 FFX::AllocTex
 
 [FMOD]
-- 0046c470 FMOD::CodecOggVorbis::readInternal
 - 004ab4e0 FMOD::OutputWavWriter::unlock
 - 004cb2d0 FMOD::Channel::set3DAttributes
 - 0077cca0 FMOD::CodecIT::openInternal
@@ -977,6 +970,7 @@
 - 008fbd90 FMOD::CodecMIDITrack::process
 - 0090d340 FMOD::CodecFLAC::openInternal
 - 0090d700 FMOD::ConvertFromIeeeExtended
+- 0090e490 FMOD::CodecOggVorbis::readInternal
 - 00915320 FMOD::OutputWavWriter_NRT::startCallback
 - 00915370 FMOD::OutputWavWriter_NRT::stopCallback
 - 009153b0 FMOD::OutputWavWriter_NRT::updateCallback
@@ -1059,9 +1053,6 @@
 
 [MovementForces]
 - 0075cf80 MovementForces::CollideMovementForce
-
-[NOsSecureRandom]
-- 0086d4c0 NOsSecureRandom::FallbackRandom
 
 [NTempest]
 - 00790900 NTempest::Intersect
@@ -1413,9 +1404,6 @@
 [TSHashTable<SOUNDKITLOOKUP,HASHKEY_CONSTSTRI>]
 - 004217a0 TSHashTable<SOUNDKITLOOKUP,HASHKEY_CONSTSTRI>::Ptr
 
-[TSHashTable<TALENT,HASHKEY_NONE>]
-- 009d49c0 TSHashTable<TALENT,HASHKEY_NONE>::~TSHashTable
-
 [TSHashTableReuse<CLightList,HASHKEY_DWORD>]
 - 006bc830 TSHashTableReuse<CLightList,HASHKEY_DWORD>::~TSHashTableReuse
 
@@ -1515,7 +1503,6 @@
 [World]
 - 0057e780 World::ObjectIsLinked
 - 005fed80 World::AddAaBoxFacets
-- 0070b760 World::ObjectUpdate
 - 00714b60 World::DNIntersect
 - 0071dd80 World::GetM2Scene
 - 007b47f0 World::GetTerrainTextureLod
@@ -1533,7 +1520,7 @@
 - 00723490 WowClientCompressedDBCache<SpellEffectRec>::Discard
 
 [WowClientDB2<CreatureRec_C>]
-- 00635e00 WowClientDB2<CreatureRec_C>::DBCACHE::~DBCACHE
+- 00636570 WowClientDB2<CreatureRec_C>::DBCACHE::~DBCACHE
 
 [WowClientDB2<ItemBonusRec_C>]
 - 00636c90 WowClientDB2<ItemBonusRec_C>::DBCACHE::~DBCACHE
@@ -1555,8 +1542,8 @@
 [WowClientDB2<LocationRec_C>]
 - 00636190 WowClientDB2<LocationRec_C>::DBCACHE::~DBCACHE
 
-[WowClientDB2<MountRec_C>]
-- 00636a10 WowClientDB2<MountRec_C>::DBCACHE::~DBCACHE
+[WowClientDB2<SpellPowerRec_C>]
+- 007eb1b0 WowClientDB2<SpellPowerRec_C>::DBCACHE::~DBCACHE
 
 [WowClientDB2<SpellReagentsRec_C>]
 - 005c5b00 WowClientDB2<SpellReagentsRec_C>::GetRecord
@@ -1579,9 +1566,6 @@
 
 [WowConnectionNet]
 - 00428ff0 WowConnectionNet::SignalWorker
-
-[WowDownload]
-- 004284e0 WowDownload::~WowDownload
 
 [WowDownloadManager]
 - 0041d770 WowDownloadManager::StartDownload
@@ -1610,7 +1594,6 @@
 - 0040a160 LoadDynamicBackground
 - 0040ba9b _main
 - 0040bc70 MacAssert_HandleFailure
-- 00417a07 _imap_statemach_act
 - 0041dda0 _FNT_Face_Init
 - 00420980 CharSelectIsStartRaceComplete
 - 00421850 UpdateReadSize
@@ -1618,27 +1601,24 @@
 - 00427010 _mach_thread_self
 - 00428800 ParseHex
 - 0042aa50 _t1_get_index
+- 0042bac0 _inflateSetDictionary
 - 0042e250 _ft_ansi_stream_close
 - 0042ed70 CASCloseFile
+- 00430cf0 _deflateResetKeep
 - 00438800 _FLAC__stream_decoder_finish
-- 0044b860 _read_metadata_
-- 0044dee0 _ftp_state_type_resp
 - 00450b80 _imap_sendf
 - 00451ee0 CCommand_LagTest
 - 00453ab0 SendAccountDataToServer
 - 004669a0 s_GetLocalizedWdbDir
 - 00469060 MainProc
 - 00469300 WorkerProc
-- 00469b80 __get_next_page
+- 00469c30 __get_prev_page_serial
+- 00469ed0 __bisect_forward_serialno
 - 0046a170 __fetch_headers
-- 0046a7a0 _FMOD_vorbis_block_init
 - 0046ad20 _FMOD_ov_raw_seek
-- 0046c5a0 _FMOD_vorbis_synthesis_headerin
 - 0046e430 __FMOD_book_unquantize
 - 004723f0 __OutputValue<char>
 - 004726f0 _FMOD_ogg_page_serialno
-- 004730e0 __packetout
-- 00474a00 _png_chunk_warning
 - 0047c0a0 CASUnloadFile
 - 0047cbe0 PropDestroy
 - 0047d950 ShutdownThreadProc
@@ -1660,7 +1640,6 @@
 - 004d0bc0 _EnableReverb_CVarCallback
 - 004d3bf0 GetObjectMirrorHandlers
 - 004d43f0 GetDataBaseOffset
-- 004d49e0 CCommand_ObjUsage
 - 004d6fc0 HandleObjectOutOfRangePass2
 - 004d7100 ObjectUpdateHandlerInternal
 - 004d9fe0 ClientXPGainAbortedHandler
@@ -1774,6 +1753,8 @@
 - 0076f930 _pow
 - 00771960 _SErrGetLogLastPath
 - 007733d0 _SCmdDestroy
+- 00773a40 _initEncode
+- 00773e10 _create_conn
 - 00775550 _pthread_getspecific
 - 00776140 FragmentSourceRectangles
 - 007787a0 _SCompDestroy
@@ -1817,12 +1798,9 @@
 - 0082b270 M2AnimateTrack<unsigned_char,unsigned_char>
 - 0082b340 M2AnimateTrack<float,float>
 - 0083f190 _compile_regex
-- 008639c0 __tr_align
-- 00864330 _deflate_stored
+- 00847610 _AddFormDataf
 - 00865020 _inflateReset2
 - 00865170 _updatewindow
-- 00867a90 _deflateResetKeep
-- 00867e60 __tr_stored_block
 - 00868c70 CocoaToQuartzScreenPointInPoints
 - 0086bca0 RunSystemSurvey
 - 0086bd60 OsPathReplaceExtension
@@ -1837,7 +1815,6 @@
 - 008c0740 ConsoleDeviceShaderModelOutdated
 - 008cd610 PacketUtils_SendFormatted
 - 008d0220 _FMOD_OggVorbis_Malloc
-- 008d0250 _FMOD_OggVorbis_Calloc
 - 008d0280 _FMOD_OggVorbis_ReAlloc
 - 008d02b0 _FMOD_OggVorbis_Free
 - 008d0750 _FMOD_Debug_SetLevel
