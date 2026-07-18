@@ -18,6 +18,7 @@
 - 0040a160 LoadDynamicBackground
 - 0040ba9b _main
 - 0040bc70 MacAssert_HandleFailure
+- 00417a07 _imap_statemach_act
 - 0041d770 WowDownloadManager::StartDownload
 - 0041dda0 _FNT_Face_Init
 - 00420980 CharSelectIsStartRaceComplete
@@ -29,7 +30,6 @@
 - 00426ff0 CM2Cache::LogShared
 - 00427010 _mach_thread_self
 - 004283d0 Error::Error
-- 004284e0 WowDownload::~WowDownload
 - 00428800 ParseHex
 - 0042aa50 _t1_get_index
 - 0042b450 CGItemSetSpellTable::Initialize
@@ -52,6 +52,8 @@
 - 004443e0 CCaptions::Open
 - 004480b0 Creep::Layer::Profile::OnProfileReadResponse
 - 0044b860 _read_metadata_
+- 0044dee0 _ftp_state_type_resp
+- 0044ea50 _jinit_master_decompress
 - 00450b80 _imap_sendf
 - 00451ee0 CCommand_LagTest
 - 00452190 TSHashTable<SE3ChatSound,HASHKEY_NONE>::InternalDelete
@@ -90,6 +92,7 @@
 - 0047c0a0 CASUnloadFile
 - 0047cbe0 PropDestroy
 - 0047ccc0 TSFixedArray<void*>::ReallocData
+- 0047d7b0 TInstanceIdTable<EvtContext,8>::~TInstanceIdTable
 - 0047d840 AgentConnection::AgentConnection
 - 0047d950 ShutdownThreadProc
 - 0047dc90 _SErrIsDisplayingError
@@ -131,9 +134,7 @@
 - 0049c830 CFramePoint::GetRelativeRect
 - 004a8f40 WritePNGImage
 - 004a93b0 GetNextScreenshotInfo
-- 004a9d30 CGCompilerCache::GetResult
 - 004ab4e0 FMOD::OutputWavWriter::unlock
-- 004acd00 _jinit_memory_mgr
 - 004b5430 TextureGetObjectName
 - 004b5770 CCharacterComponent::GxLatch
 - 004b6300 TextureCalcApproxSize
@@ -207,6 +208,7 @@
 - 004d5900 TSList<CMirrorHandler,TSGetLink<CMirrorHandler>>::DeleteNode
 - 004d5950 ClntObjMgr::~ClntObjMgr
 - 004d6f10 ItemBonusInstanceDB::GetItemRecSparse
+- 004d6fc0 HandleObjectOutOfRangePass2
 - 004d7100 ObjectUpdateHandlerInternal
 - 004d7890 UIAtlas::Initialize
 - 004d8580 WowClientDB_Base::GetRecordDataUnsafe
@@ -441,7 +443,6 @@
 - 005e8290 CGItem_C::GetEnchantmentTimeLeft
 - 005e8bc0 CGCharacterInfo::SocketItem
 - 005eb130 CGCooldown::InitSwipeVerts
-- 005ebe60 CGCooldown::~CGCooldown
 - 005ebf20 CGCooldown::InitVerts
 - 005ed020 FadingScreenCleanup
 - 005edb70 CGInstanceEncounter_C::ClearExpiredTimers
@@ -492,16 +493,18 @@
 - 00635d90 LossOfControl::CVarSetCallback
 - 00635e70 WowClientDB2<ItemExtendedCostRec_C>::DBCACHE::~DBCACHE
 - 00636190 WowClientDB2<LocationRec_C>::DBCACHE::~DBCACHE
-- 00636410 WowClientDB2<ItemEffectRec_C>::DBCACHE::~DBCACHE
+- 00636410 WowClientDB2<ItemRec_C>::DBCACHE::~DBCACHE
+- 00636570 WowClientDB2<CreatureRec_C>::DBCACHE::~DBCACHE
 - 006366c0 WowClientDB2<LocaleRec_C>::DBCACHE::~DBCACHE
 - 00636910 WowClientDB2<SpellVisualKitRec_C>::DBCACHE::~DBCACHE
 - 00636990 WowClientDB2<SpellVisualRec_C>::DBCACHE::~DBCACHE
-- 00636a10 WowClientDB2<MountRec_C>::DBCACHE::~DBCACHE
+- 00636c90 WowClientDB2<ItemBonusRec_C>::DBCACHE::~DBCACHE
 - 00668590 PetNameCache::operator=
 - 0066a310 DBCache<GameObjectStats_C,int,HASHKEY_DWORD,NullXInfo>::ClearPending
 - 00679d90 DBCache<CreatureStats_C,int,HASHKEY_DWORD,NullXInfo>::Invalidate
 - 0067a170 WowClientDB2<ItemRecSparse_C>::GetRecord
 - 0067c3e0 WowClientDB2<ItemExtendedCostRec_C>::GetRecord
+- 0067c570 ObjectUpdateSecondPass
 - 0067fc90 DBCache<WardenCachedModule,CWardenKey,CWardenKey,NullXInfo>::GetRecordBase
 - 00681890 CGxDevice::XformSetViewport
 - 00682130 GxXformViewProj
@@ -511,6 +514,7 @@
 - 00689a70 Creep::ClientSideCache::VerifyFileContext::VerifyNextChunk
 - 00689b60 CGxShader::~CGxShader
 - 0068ce40 CGxDeviceGLL::Resize
+- 0068df60 DayNight::CDayNightObjectInt::SetColors
 - 0069b949 CEffect::AddBlizzard
 - 0069de60 CGxDeviceGLL::TexCreateImmutable2D
 - 0069f6a0 CGxDevice::ShaderReloadAll
@@ -699,7 +703,6 @@
 - 00771960 _SErrGetLogLastPath
 - 007733d0 _SCmdDestroy
 - 00773a40 _initEncode
-- 00773e10 _create_conn
 - 00775550 _pthread_getspecific
 - 00776070 TSExportTableSyncReuse<RGN,HSRGN__*,HLOCKEDRGN__*,CCritSect>::Lock
 - 00776140 FragmentSourceRectangles
@@ -731,7 +734,6 @@
 - 00791240 CWorldView::CullModel
 - 00791910 CGxDevice::ShaderRelease
 - 007927e0 CMapObjDef::UpdateLoaded
-- 00799310 CMapObj::UpdateSceneMaterials
 - 0079b440 CMap::QueryGroundTypeTerrain
 - 0079b590 MapObjGroupLiquidQuery::QueryCircle
 - 0079c110 WaterRippleInst::~WaterRippleInst
@@ -757,7 +759,6 @@
 - 007b0690 TSCArray<CMapObjGroup*,512>::FatalArraySize
 - 007b30d0 CWorldMap::UpdateEntityLinks
 - 007b47f0 World::GetTerrainTextureLod
-- 007b50b0 CWorldMap::PreloadCountMapObjGroupTextures
 - 007b5870 CWorldMap::LinkEntity
 - 007b74a0 PrepareAlphaShadowRow8888
 - 007b84a0 UnpackAlphaShadowBitsUnfixed4444Mip0Row
@@ -767,7 +768,6 @@
 - 007c3e70 CMapArea::PurgeRenderChunk
 - 007c6710 CAaBsp_Query_Segment<BspQuery_SegmentLink>::GetFaceIndices
 - 007c7710 World::GetEnables
-- 007c7790 CFrustum::Cull
 - 007c78e0 CAaBsp_Query_Segment<BspQuery_Segment>::GetFaceIndices
 - 007c8b90 CMapObjGroup::FillIndexVB
 - 007ca920 CAaBsp_Query_AaBox<BspQuery_Volume<CAaBox>>::GetFaceIndices
@@ -851,7 +851,6 @@
 - 0082e0c0 CM2Model::HasDeferredSequenceOnBone
 - 00831e20 CM2Model::DeactivateModel
 - 0083f190 _compile_regex
-- 00847610 _AddFormDataf
 - 00848320 CGPlayer_C::GetEffectiveModDamageDonePct
 - 0084a730 TSFixedArray<CHATMESSAGE>::ReallocData
 - 00865020 _inflateReset2
@@ -973,6 +972,7 @@
 - 00917ef0 _jpeg_make_d_derived_tbl
 - 0091fca0 FMOD::NetFile::openAsHTTP
 - 0092c780 _fast_s_mp_mul_digs
+- 0094da80 FMOD::Codec::defaultGetWaveFormat
 - 00951fb0 _read_frame_
 - 009526e0 _LZ4_compressHC
 - 00954390 _read_residual_partitioned_rice_
@@ -991,12 +991,16 @@
 - 0095e1c0 CSimpleBrowser::OnBrowserUpdateRect
 - 009615c0 CSimpleStatusBar::~CSimpleStatusBar
 - 00962660 CSimpleCheckbox::SetCheckedTexture
+- 00962720 CSimpleCheckbox::SetDisabledCheckedTexture
 - 009633c0 TSFixedArray<CSimpleEditBox::EditHistory>::ReallocData
 - 00963b10 CSimpleEditBox::DeleteBackwardWord
 - 00963cd0 CSimpleEditBox::Move
 - 00963d80 CSimpleEditBox::MoveLine
+- 00965260 CSimpleEditBox::~CSimpleEditBox
 - 009653a0 CSimpleFrame::RunOnCharScript
+- 009681c0 CSimpleMessageFrame::~CSimpleMessageFrame
 - 009691f0 TSGrowableArray<CSimpleMessageFrameLine>::SetCount
+- 00969c30 CSimpleMessageScrollFrame::~CSimpleMessageScrollFrame
 - 00970370 CSimpleButton::SetStateTexture
 - 009748f0 GetTextType
 - 009785d0 CSimpleHyperlinkedFrame::~CSimpleHyperlinkedFrame
@@ -1027,6 +1031,7 @@
 - 009c4fe8 _lgLcdSetAsLCDForegroundApp
 - 009c8c30 GetNumDwordBlocks
 - 009d3830 ___cxx_global_array_dtor
+- 009d49c0 TSHashTable<TALENT,HASHKEY_NONE>::~TSHashTable
 - 009d5a10 TSFixedArray<CArgb>::~TSFixedArray
 - 009d5ef0 EventListInfo::~EventListInfo
 - 009d66d0 World::FacetData::~FacetData

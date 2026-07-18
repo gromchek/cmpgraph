@@ -176,9 +176,6 @@
 - 004957b0 CFrameStrata::AddFrame
 - 00496100 CFrameStrata::~CFrameStrata
 
-[CFrustum]
-- 007c7790 CFrustum::Cull
-
 [CGAchievementInfo]
 - 00589a30 CGAchievementInfo::ClientGuildAchievementEarnedHandler
 - 005b2170 CGAchievementInfo::ResetCriteriaTreeEffects
@@ -240,12 +237,8 @@
 - 005684b0 CGCommentator::Script_SetCamera
 - 0056b750 CGCommentator::InstanceInfo::InstanceInfo
 
-[CGCompilerCache]
-- 004a9d30 CGCompilerCache::GetResult
-
 [CGCooldown]
 - 005eb130 CGCooldown::InitSwipeVerts
-- 005ebe60 CGCooldown::~CGCooldown
 - 005ebf20 CGCooldown::InitVerts
 
 [CGCorpse_C]
@@ -567,7 +560,6 @@
 - 005ae760 CMapMem::FreeAreaLow
 
 [CMapObj]
-- 00799310 CMapObj::UpdateSceneMaterials
 - 007b0560 CMapObj::DestroyMaterial
 
 [CMapObjDef]
@@ -710,11 +702,13 @@
 
 [CSimpleCheckbox]
 - 00962660 CSimpleCheckbox::SetCheckedTexture
+- 00962720 CSimpleCheckbox::SetDisabledCheckedTexture
 
 [CSimpleEditBox]
 - 00963b10 CSimpleEditBox::DeleteBackwardWord
 - 00963cd0 CSimpleEditBox::Move
 - 00963d80 CSimpleEditBox::MoveLine
+- 00965260 CSimpleEditBox::~CSimpleEditBox
 
 [CSimpleFont]
 - 004964d0 CSimpleFont::~CSimpleFont
@@ -739,6 +733,12 @@
 
 [CSimpleHyperlinkedFrame]
 - 009785d0 CSimpleHyperlinkedFrame::~CSimpleHyperlinkedFrame
+
+[CSimpleMessageFrame]
+- 009681c0 CSimpleMessageFrame::~CSimpleMessageFrame
+
+[CSimpleMessageScrollFrame]
+- 00969c30 CSimpleMessageScrollFrame::~CSimpleMessageScrollFrame
 
 [CSimpleModel]
 - 009dc770 CSimpleModel::~CSimpleModel
@@ -810,7 +810,6 @@
 - 0079f100 CWorldMap::DestroyOccluders
 - 007a2c60 CWorldMap::SetHitTestDebug
 - 007b30d0 CWorldMap::UpdateEntityLinks
-- 007b50b0 CWorldMap::PreloadCountMapObjGroupTextures
 - 007b5870 CWorldMap::LinkEntity
 - 007c2040 CWorldMap::LinkObjectToMapExterior
 - 009dc510 CWorldMap::~CWorldMap
@@ -885,6 +884,7 @@
 - 004e2730 DayNight::GetDeathLightInfo
 - 004e60b0 DayNight::CDayNightObjectInt::ShouldRenderProcedural
 - 00597e10 DayNight::DNStars::Initialize
+- 0068df60 DayNight::CDayNightObjectInt::SetColors
 - 007ed2d0 DayNight::InterpColor
 - 007ee750 DayNight::CDayNightObjectInt::SetLightColors
 - 007f9e10 DayNight::CDayNightObject::SetEclipse
@@ -955,6 +955,7 @@
 - 00915e40 FMOD::OutputWavWriter::closeCallback
 - 009175c0 FMOD::CodecTag::readID3v1
 - 0091fca0 FMOD::NetFile::openAsHTTP
+- 0094da80 FMOD::Codec::defaultGetWaveFormat
 
 [FOOTSTEPSNDCACHE]
 - 004cee80 FOOTSTEPSNDCACHE::~FOOTSTEPSNDCACHE
@@ -1186,6 +1187,9 @@
 [THROTTLEDCHAT]
 - 005016b0 THROTTLEDCHAT::~THROTTLEDCHAT
 
+[TInstanceIdTable<EvtContext,8>]
+- 0047d7b0 TInstanceIdTable<EvtContext,8>::~TInstanceIdTable
+
 [TObjectAlloc<CGxTex>]
 - 00685dc0 TObjectAlloc<CGxTex>::Delete
 
@@ -1357,6 +1361,9 @@
 [TSHashTable<SOUNDKITLOOKUP,HASHKEY_CONSTSTRI>]
 - 004217a0 TSHashTable<SOUNDKITLOOKUP,HASHKEY_CONSTSTRI>::Ptr
 
+[TSHashTable<TALENT,HASHKEY_NONE>]
+- 009d49c0 TSHashTable<TALENT,HASHKEY_NONE>::~TSHashTable
+
 [TSHashTableReuse<CLightList,HASHKEY_DWORD>]
 - 006bc830 TSHashTableReuse<CLightList,HASHKEY_DWORD>::~TSHashTableReuse
 
@@ -1472,8 +1479,11 @@
 [WowClientCompressedDBCache<SpellEffectRec>]
 - 00723490 WowClientCompressedDBCache<SpellEffectRec>::Discard
 
-[WowClientDB2<ItemEffectRec_C>]
-- 00636410 WowClientDB2<ItemEffectRec_C>::DBCACHE::~DBCACHE
+[WowClientDB2<CreatureRec_C>]
+- 00636570 WowClientDB2<CreatureRec_C>::DBCACHE::~DBCACHE
+
+[WowClientDB2<ItemBonusRec_C>]
+- 00636c90 WowClientDB2<ItemBonusRec_C>::DBCACHE::~DBCACHE
 
 [WowClientDB2<ItemExtendedCostRec_C>]
 - 00635e70 WowClientDB2<ItemExtendedCostRec_C>::DBCACHE::~DBCACHE
@@ -1483,14 +1493,14 @@
 - 0067a170 WowClientDB2<ItemRecSparse_C>::GetRecord
 - 0074f5c0 WowClientDB2<ItemRecSparse_C>::CancelCallback
 
+[WowClientDB2<ItemRec_C>]
+- 00636410 WowClientDB2<ItemRec_C>::DBCACHE::~DBCACHE
+
 [WowClientDB2<LocaleRec_C>]
 - 006366c0 WowClientDB2<LocaleRec_C>::DBCACHE::~DBCACHE
 
 [WowClientDB2<LocationRec_C>]
 - 00636190 WowClientDB2<LocationRec_C>::DBCACHE::~DBCACHE
-
-[WowClientDB2<MountRec_C>]
-- 00636a10 WowClientDB2<MountRec_C>::DBCACHE::~DBCACHE
 
 [WowClientDB2<SpellPowerRec_C>]
 - 007eb1b0 WowClientDB2<SpellPowerRec_C>::DBCACHE::~DBCACHE
@@ -1520,9 +1530,6 @@
 [WowConnectionNet]
 - 00469220 WowConnectionNet::SignalWorker
 
-[WowDownload]
-- 004284e0 WowDownload::~WowDownload
-
 [WowDownloadManager]
 - 0041d770 WowDownloadManager::StartDownload
 - 00469860 WowDownloadManager::CurlMultiSocketCB
@@ -1551,6 +1558,7 @@
 - 0040a160 LoadDynamicBackground
 - 0040ba9b _main
 - 0040bc70 MacAssert_HandleFailure
+- 00417a07 _imap_statemach_act
 - 0041dda0 _FNT_Face_Init
 - 00420980 CharSelectIsStartRaceComplete
 - 00421850 UpdateReadSize
@@ -1564,6 +1572,8 @@
 - 00430cf0 _deflateResetKeep
 - 00438800 _FLAC__stream_decoder_finish
 - 0044b860 _read_metadata_
+- 0044dee0 _ftp_state_type_resp
+- 0044ea50 _jinit_master_decompress
 - 00450b80 _imap_sendf
 - 00451ee0 CCommand_LagTest
 - 00453ab0 SendAccountDataToServer
@@ -1586,7 +1596,6 @@
 - 00495810 PaintScreen
 - 004a8f40 WritePNGImage
 - 004a93b0 GetNextScreenshotInfo
-- 004acd00 _jinit_memory_mgr
 - 004b5430 TextureGetObjectName
 - 004b6300 TextureCalcApproxSize
 - 004b6550 AsyncAllocCallback
@@ -1600,6 +1609,7 @@
 - 004d0bc0 _EnableReverb_CVarCallback
 - 004d3bf0 GetObjectMirrorHandlers
 - 004d43f0 GetDataBaseOffset
+- 004d6fc0 HandleObjectOutOfRangePass2
 - 004d7100 ObjectUpdateHandlerInternal
 - 004d9fe0 ClientXPGainAbortedHandler
 - 004ea050 GetConditionalGeoset
@@ -1656,6 +1666,7 @@
 - 00634a80 UsesInstanceLock
 - 00634ab0 GetMapAdjustedMaxPlayers
 - 006351d0 ClientRealmQueryResponseHandler
+- 0067c570 ObjectUpdateSecondPass
 - 00682130 GxXformViewProj
 - 006a1ce0 _decode_partition
 - 006abc20 ConvertTexels3216
@@ -1711,7 +1722,6 @@
 - 00771960 _SErrGetLogLastPath
 - 007733d0 _SCmdDestroy
 - 00773a40 _initEncode
-- 00773e10 _create_conn
 - 00775550 _pthread_getspecific
 - 00776140 FragmentSourceRectangles
 - 007787a0 _SCompDestroy
@@ -1755,7 +1765,6 @@
 - 0082b270 M2AnimateTrack<unsigned_char,unsigned_char>
 - 0082b340 M2AnimateTrack<float,float>
 - 0083f190 _compile_regex
-- 00847610 _AddFormDataf
 - 00865020 _inflateReset2
 - 00865170 _updatewindow
 - 00868c70 CocoaToQuartzScreenPointInPoints

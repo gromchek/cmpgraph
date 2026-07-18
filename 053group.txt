@@ -1,46 +1,53 @@
 [ASYNCLOADER]
 - 0083d370 ASYNCLOADER::Clear
-- 00887590 ASYNCLOADER::~ASYNCLOADER
+- 008876f0 ASYNCLOADER::~ASYNCLOADER
 
 [ATTACKROUNDINFO]
-- 00716040 ATTACKROUNDINFO::ATTACKROUNDINFO
+- 007161c0 ATTACKROUNDINFO::ATTACKROUNDINFO
+- 008d5f10 ATTACKROUNDINFO::ATTACKROUNDINFO
+
+[BLOODSPLATNODE]
+- 00879840 BLOODSPLATNODE::~BLOODSPLATNODE
 
 [BigNum]
 - 0077c9e0 BigNum::ToBinaryBuffer
 
-[BspQuery_Volume<class_NTempest]
-- 007c6d50 BspQuery_Volume<class_NTempest::CAaBox>::operator()
+[BspQuery_Segment]
+- 007c6d50 BspQuery_Segment::operator()
 
-[CAaBsp]
-- 0088ab10 CAaBsp::operator=
-- 0092a610 CAaBsp::Create
+[BspQuery_Volume<class_NTempest]
+- 007c7230 BspQuery_Volume<class_NTempest::CAaBox>::operator()
 
 [CAaBsp_Query_AaBox<class_BspQuery_Volume<class_NTempest]
 - 007c7610 CAaBsp_Query_AaBox<class_BspQuery_Volume<class_NTempest::CAaBox>_>::GetFaceIndices
 
 [CAngle]
-- 008ef590 CAngle::Set_
+- 00927740 CAngle::Set_
+
+[CAnim]
+- 00681730 CAnim::`scalar_deleting_destructor'
 
 [CAnimData]
-- 00897190 CAnimData::Moves
+- 0089c020 CAnimData::Moves
 
 [CAnimLayerStatus]
-- 008989b0 CAnimLayerStatus::CAnimLayerStatus
+- 0089bfa0 CAnimLayerStatus::CAnimLayerStatus
 
 [CAnimMaterialLayer]
-- 0089db90 CAnimMaterialLayer::CAnimMaterialLayer
+- 0089e260 CAnimMaterialLayer::CAnimMaterialLayer
 
 [CAnimObjBlendStatus]
-- 00898450 CAnimObjBlendStatus::~CAnimObjBlendStatus
-- 0089bfa0 CAnimObjBlendStatus::CAnimObjBlendStatus
+- 008972b0 CAnimObjBlendStatus::~CAnimObjBlendStatus
+- 0089d9d0 CAnimObjBlendStatus::CAnimObjBlendStatus
 
 [CAnimObjStatus]
-- 0089b200 CAnimObjStatus::CAnimObjStatus
+- 0089dac0 CAnimObjStatus::CAnimObjStatus
 
 [CAnimSequence]
-- 0089d9d0 CAnimSequence::~CAnimSequence
+- 00898540 CAnimSequence::~CAnimSequence
 
 [CBLPFile]
+- 004b58d0 CBLPFile::SharedInit
 - 004b7770 CBLPFile::HasMips
 
 [CBaseManaged]
@@ -48,11 +55,9 @@
 
 [CCharCreateInfo]
 - 004e2e70 CCharCreateInfo::SetCharFacing
-- 00771800 CCharCreateInfo::GetRaceNameByIndex
+- 0054ba00 CCharCreateInfo::SetCharCustomizeFrame
 
 [CCharSelectInfo]
-- 00564d70 CCharSelectInfo::SetModelFrame
-- 006b0870 CCharSelectInfo::UpdateCharacterList
 - 00848320 CCharSelectInfo::Initialize
 
 [CCombat]
@@ -61,16 +66,15 @@
 [CDataStore]
 - 004669a0 CDataStore::Get
 - 0047af90 CDataStore::Set
+- 004d4ea0 CDataStore::Get
 - 0053eaa0 CDataStore::Get
 - 00668600 CDataStore::Get
-- 00681690 CDataStore::Put
-- 00681730 CDataStore::Set
-- 0076ee60 CDataStore::Set
-- 0079b1f0 CDataStore::Put
-- 00871790 CDataStore::GetArray
-- 008c8050 CDataStore::Set
-- 008e52a0 CDataStore::PutArray
-- 0092b700 CDataStore::PutArray
+- 00779250 CDataStore::GetArray
+- 0079ae80 CDataStore::Set
+- 00878110 CDataStore::PutArray
+- 00911ef0 CDataStore::Set
+- 00912ec0 CDataStore::PutArray
+- 0092c780 CDataStore::PutArray
 
 [CDbgHelpDll]
 - 0089b120 CDbgHelpDll::Unload
@@ -80,7 +84,12 @@
 - 008879f0 CDebugSCritSect::~CDebugSCritSect
 
 [CDebugSRWLock]
+- 0043e030 CDebugSRWLock::Leave
+- 00444ce0 CDebugSRWLock::Enter
 - 009dd530 CDebugSRWLock::~CDebugSRWLock
+
+[CDetailDoodadGeom]
+- 008c0c90 CDetailDoodadGeom::FillGxBufIndex
 
 [CDetailDoodadInst]
 - 007e9080 CDetailDoodadInst::Render
@@ -96,15 +105,16 @@
 [CGBuffBar]
 - 004215d0 CGBuffBar::InitializeGame
 - 00527b00 CGBuffBar::LeaveWorld
+- 005b04f0 CGBuffBar::GetBuffByFilter
 - 0087bf00 CGBuffBar::UpdateDuration
 
 [CGCamera]
 - 00482940 CGCamera::SetSmoothingAngle
 - 004c55b0 CGCamera::CalcFirstPerson
 - 005fe510 CGCamera::CCommand_CameraClip
+- 005fecf0 CGCamera::GetSmoothedYawAngle
 - 005ff530 CGCamera::ClampAngles
-- 005fffd0 CGCamera::GetSmoothedYawAngle
-- 00932940 CGCamera::CycleView
+- 008ebac0 CGCamera::CycleView
 
 [CGCharacterInfo]
 - 005cc990 CGCharacterInfo::UpdateAllSkillLines
@@ -117,21 +127,20 @@
 [CGChat]
 - 00538dd0 CGChat::ChatHandler
 
+[CGContainer_C]
+- 0088ab10 CGContainer_C::SetBlock
+
 [CGCorpse_C]
 - 004e0fd0 CGCorpse_C::AddComponent
 
 [CGCraftInfo]
 - 0050f4d0 CGCraftInfo::SetCraftType
 
-[CGDynamicObject_C]
-- 00786560 CGDynamicObject_C::UpdateModelLoadStatus
-
 [CGGameObject_C]
 - 004c1e20 CGGameObject_C::UpdateMatrix
 - 006f7d60 CGGameObject_C::PostPostInit
 - 0070bd20 CGGameObject_C::LoadBaseObject
 - 0070cb10 CGGameObject_C::SetMirrorHandlers
-- 007c6790 CGGameObject_C::SetBlock
 
 [CGGameObject_C_Type_Door]
 - 0070eef0 CGGameObject_C_Type_Door::IsAtRest
@@ -141,14 +150,14 @@
 
 [CGGameUI]
 - 005143f0 CGGameUI::UpdateObjectHighlightColor
-- 00519d50 CGGameUI::OnTargetContextAction
 - 00552100 CGGameUI::CancelGuildInvite
+- 00552870 CGGameUI::ScaleUI
+
+[CGGuildRegistrar]
+- 005c5b00 CGGuildRegistrar::GetGuildCharterCost
 
 [CGInputControl]
 - 004f7290 CGInputControl::SetReleaseAction
-
-[CGItemText]
-- 00557260 CGItemText::EnterWorld
 
 [CGItem_C]
 - 004d6f10 CGItem_C::InstallItemIDMirrorHandler
@@ -160,40 +169,38 @@
 - 00408010 CGMinimapFrame::UpdateGeometry
 - 0057c250 CGMinimapFrame::`vector_deleting_destructor'`adjustor{16}'
 - 0057e540 CGMinimapFrame::RenderObjectBlips
-- 0071acf0 CGMinimapFrame::WorldPosToMinimapFrameCoords
+- 0070f850 CGMinimapFrame::WorldPosToMinimapFrameCoords
 
 [CGObject_C]
-- 0071a430 CGObject_C::ObjectSetNotRendering
+- 007478f0 CGObject_C::IsPostInited
+- 0079f820 CGObject_C::ObjectSetNotRendering
 
 [CGPetInfo]
 - 005d64a0 CGPetInfo::PutActionInSlot
 
 [CGPlayer_C]
 - 004cb4e0 CGPlayer_C::UnsetPlayerMirrorHandlers
-- 0052a1a0 CGPlayer_C::OnDismount
+- 004d98a0 CGPlayer_C::GetCraftSkills
 - 00537d40 CGPlayer_C::OnBadAttackFacing
 - 0053d680 CGPlayer_C::OnAttackIconPressed
-- 0057b630 CGPlayer_C::HandleDismountResult
-- 0057e020 CGPlayer_C::DropItemInCursor
-- 005af460 CGPlayer_C::GetCraftSkillActivator
+- 00564d70 CGPlayer_C::GetCraftSkillActivator
+- 0057b630 CGPlayer_C::HandleMountResult
 - 006337c0 CGPlayer_C::GetWeaponSpell
+- 006816c0 CGPlayer_C::CancelQuest
 - 006ce470 CGPlayer_C::OnDeathAnimate
 - 006de7e0 CGPlayer_C::AttachObjComponent
 - 006e6250 CGPlayer_C::UpdatePendingItemExpiration
 - 006e73b0 CGPlayer_C::GetTradeSkills
-- 0074bb30 CGPlayer_C::BotMove
-- 00753a10 CGPlayer_C::GetCraftSkills
-- 007ffde0 CGPlayer_C::SetLastWeaponModeSent
-- 00878110 CGPlayer_C::SwapInventorySlots
-- 008793c0 CGPlayer_C::IsQuestUnit
-- 00879a60 CGPlayer_C::HandleMountResult
-- 008a4170 CGPlayer_C::ReinitializeUnitArtwork
-- 008cbfb0 CGPlayer_C::InstallGMHandlers
-- 009d5530 CGPlayer_C::PostReinitializeArtwork
-- 009da720 CGPlayer_C::CommitTexture
+- 00715c70 CGPlayer_C::CheckKillerFeedback
+- 00879390 CGPlayer_C::IsQuestUnit
+- 008cbf10 CGPlayer_C::InstallGMHandlers
+- 009467c0 CGPlayer_C::ReinitializeUnitArtwork
+- 009c1e40 CGPlayer_C::OnItemDelete
+- 009d4720 CGPlayer_C::PostReinitializeArtwork
+- 009d5530 CGPlayer_C::CommitTexture
 
 [CGQuestLog]
-- 00530dc0 CGQuestLog::AbandonQuest
+- 00519d50 CGQuestLog::AbandonQuest
 - 005decc0 CGQuestLog::GetQuestTag
 - 005edb10 CGQuestLog::LeaveWorld
 
@@ -204,11 +211,11 @@
 - 00528690 CGSpellBook::ShutdownGame
 
 [CGTaxiMap]
-- 0056d240 CGTaxiMap::EnterWorld
+- 005be220 CGTaxiMap::ShutdownGame
 
 [CGTooltip]
-- 005a7920 CGTooltip::ClearLines
-- 005dec40 CGTooltip::AddLine
+- 005a7920 CGTooltip::AddLine
+- 005b7e20 CGTooltip::ClearLines
 - 0061e0d0 CGTooltip::`vector_deleting_destructor'`adjustor{16}'
 
 [CGTradeSkillInfo]
@@ -218,10 +225,10 @@
 - 0041e4f0 CGTutorial::InitializeGame
 
 [CGUnit_C]
-- 004cfd20 CGUnit_C::SetDebugHitRolls
+- 004cfbb0 CGUnit_C::SetDebugHitRolls
 - 004e26f0 CGUnit_C::SetTempCharModel
 - 004e6940 CGUnit_C::CreateFadeOutMount
-- 004f72e0 CGUnit_C::BaseAnimLocksHead
+- 004f72e0 CGUnit_C::GetCurrentTorsoAnim
 - 005328e0 CGUnit_C::SheatheOrUnsheatheItems
 - 0053b540 CGUnit_C::ShouldDelayLevelupAnim
 - 0053bd10 CGUnit_C::PendingPrecastInterrupt
@@ -229,6 +236,8 @@
 - 005f97f0 CGUnit_C::OnSetPitchLocal
 - 005fa0d0 CGUnit_C::IsInStandSitTransition
 - 006ceb10 CGUnit_C::SetWeaponMode
+- 006cf2e0 CGUnit_C::BaseAnimLocksHead
+- 006cf2f0 CGUnit_C::TorsoAnimLocksHead
 - 006d1de0 CGUnit_C::SheatheAnimPlaying
 - 006ef5a0 CGUnit_C::OnDisableCollisionLocalNoUpdate
 - 0070f880 CGUnit_C::AddWorldCritText
@@ -240,25 +249,27 @@
 - 0071ab80 CGUnit_C::RemoveSpellProcAuraEffect
 - 0071ae80 CGUnit_C::StopMoveHeartbeatTimer
 - 0071c320 CGUnit_C::AddBloodPool
-- 0071d510 CGUnit_C::GetRunSequence
+- 0071d510 CGUnit_C::PerformLevelUpAnim
 - 0071dcc0 CGUnit_C::CheckRendering
-- 0071dd80 CGUnit_C::GetDisplayTextureName
 - 00721290 CGUnit_C::OnSwimStop
 - 00733e20 CGUnit_C::SetTorsoSequence
 - 00735dd0 CGUnit_C::CheckPendingMissileRelease
 - 0073b050 CGUnit_C::ShowHandArrow
 - 00747a30 CGUnit_C::AddDeathHold
 - 00756040 CGUnit_C::SetRangedWeaponPullAnim
-- 007d6210 CGUnit_C::OnStrafeStopLocalNoUpdate
-- 007ffac0 CGUnit_C::SaveTrackingTarget
+- 0076e4e0 CGUnit_C::SaveQuestAddItemMessage
+- 00786560 CGUnit_C::UpdateModelLoadStatus
+- 007ddff0 CGUnit_C::ProcessDiscardedAnim
+- 007fd830 CGUnit_C::SaveTrackingTarget
 - 008783b0 CGUnit_C::AddWorldText
-- 00878cb0 CGUnit_C::OnBadAttackFacing
+- 008793c0 CGUnit_C::OnBadAttackFacing
 - 008992e0 CGUnit_C::RenderDebugPathing
+- 008a4170 CGUnit_C::UpdateAttachmentLoadStatus
+- 008ec5c0 CGUnit_C::ProcessAnim
 - 008f64f0 CGUnit_C::PlayDeathThudCameraShake
-- 00918d70 CGUnit_C::ProcessAnim
+- 00916c8e CGUnit_C::PreRender
 - 00945260 CGUnit_C::ObjectPostAnimate
 - 009469e0 CGUnit_C::OnStrafeStartLocalNoUpdate
-- 009c1db0 CGUnit_C::UpdatePlayerName
 - 009d3910 CGUnit_C::CommitTexture
 
 [CGWorldFrame]
@@ -266,13 +277,14 @@
 - 004f7180 CGWorldFrame::AddModelToScene
 - 004f77c0 CGWorldFrame::SetSpriteClickButtons
 - 0052c860 CGWorldFrame::HideObstructingModels
+- 0056cf00 CGWorldFrame::HandleUnitFade
 - 005b79b0 CGWorldFrame::GetSkyProgress
 - 00801b10 CGWorldFrame::VolumeTestModels
 
 [CGWorldMap]
 - 00513a80 CGWorldMap::RunNearestPortLoc
 - 00546100 CGWorldMap::GetPortLocPosition
-- 005b04f0 CGWorldMap::GetContinentName
+- 005af460 CGWorldMap::GetContinentName
 
 [CGameTime]
 - 005b7a10 CGameTime::GameTimeSync
@@ -286,44 +298,42 @@
 [CGxDevice]
 - 0057c4a0 CGxDevice::XformTranslate
 - 0057c4f0 CGxDevice::XformScale
-- 00681b50 CGxDevice::RsStackOffset
 - 0068a170 CGxDevice::D3dEnumFormats
-- 00692240 CGxDevice::EnableState
-- 00786a90 CGxDevice::XformProjection
-- 00786b10 CGxDevice::XformView
-- 00887520 CGxDevice::VertexShaderCreate
-- 008a2aa0 CGxDevice::XformViewport
-- 008c0c90 CGxDevice::IMatAlphaRef
+- 00691870 CGxDevice::EnableState
+- 0069e140 CGxDevice::ISetShaderParameters
+- 006a7940 CGxDevice::DeviceSetCurWindow
+- 00786b10 CGxDevice::XformProjection
+- 00792f80 CGxDevice::XformView
+- 00887860 CGxDevice::VertexShaderCreate
 
 [CGxDeviceD3d]
 - 006a19d0 CGxDeviceD3d::~CGxDeviceD3d
-- 008f5230 CGxDeviceD3d::TexCreate
+- 008ec240 CGxDeviceD3d::TexCreate
 
 [CGxDeviceOpenGl]
-- 005256a0 CGxDeviceOpenGl::ITexMarkAsUpdated
 - 0068c670 CGxDeviceOpenGl::IDevAttachGlContext
 - 0068c860 CGxDeviceOpenGl::IDevRemoveGlContext
 - 0068d050 CGxDeviceOpenGl::DeviceWM
 - 00693020 CGxDeviceOpenGl::IStateSetContextDefaults
 - 00693e40 CGxDeviceOpenGl::IRsSendToHw
 - 00695640 CGxDeviceOpenGl::IStateSyncLights
+- 00695960 CGxDeviceOpenGl::IXformGLModelView
 - 0069785d CGxDeviceOpenGl::IPixelShaderBind
+- 0069793e CGxDeviceOpenGl::DeviceSetRenderTarget
 - 00698e36 CGxDeviceOpenGl::ISetTexLodBias
-- 0069b883 CGxDeviceOpenGl::DeviceSetRenderTarget
+- 0069a359 CGxDeviceOpenGl::ITexMarkAsUpdated
+- 0069a423 CGxDeviceOpenGl::PrimLockAndProcessVertexPtrs
 - 0069d550 CGxDeviceOpenGl::IStateSync
 - 0069d750 CGxDeviceOpenGl::ITexMarkAsUpdated
 - 0069d920 CGxDeviceOpenGl::ITexDownload
-- 0069e140 CGxDeviceOpenGl::DeviceCreatePbuffer
 - 0069e4a0 CGxDeviceOpenGl::IXformSetModelView
-- 0069e560 CGxDeviceOpenGl::CapsWindowSize
-- 0069e7d0 CGxDeviceOpenGl::IXformGLModelView
 - 0069f2d0 CGxDeviceOpenGl::PixelShaderCreate
 - 0069f370 CGxDeviceOpenGl::PixelShaderDestroy
 - 0069f760 CGxDeviceOpenGl::ISetTexGen
-- 0069f8d0 CGxDeviceOpenGl::PrimLockAndProcessVertexPtrs
-- 0069fbc0 CGxDeviceOpenGl::CapsIsWindowVisible
-- 00927950 CGxDeviceOpenGl::TexCreate
-- 0093cd10 CGxDeviceOpenGl::XformSetViewport
+- 006a77c0 CGxDeviceOpenGl::CapsWindowSize
+- 006a7a00 CGxDeviceOpenGl::CapsIsWindowVisible
+- 0091633d CGxDeviceOpenGl::XformSetViewport
+- 00933970 CGxDeviceOpenGl::TexCreate
 
 [CGxFont]
 - 006c0af0 CGxFont::GetCharAdvance
@@ -333,12 +343,6 @@
 [CGxFormat]
 - 00683f60 CGxFormat::CGxFormat
 
-[CGxIndexBuffer_D3d]
-- 006a1ce0 CGxIndexBuffer_D3d::~CGxIndexBuffer_D3d
-
-[CGxMatrixStack]
-- 007845f0 CGxMatrixStack::Top
-
 [CGxMemBuffer]
 - 00683210 CGxMemBuffer::~CGxMemBuffer
 - 007a7920 CGxMemBuffer::Discard
@@ -347,8 +351,11 @@
 - 006c60c0 CGxString::InitializeViewportOffsets
 - 00927810 CGxString::AddShadowFixedGeometry
 
+[CGxVertexBuffer_D3d]
+- 006a1ce0 CGxVertexBuffer_D3d::~CGxVertexBuffer_D3d
+
 [CGxVertexPC]
-- 00784a30 CGxVertexPC::~CGxVertexPC
+- 00792bd0 CGxVertexPC::~CGxVertexPC
 
 [CHARACTERSEXVARIATIONS]
 - 004dffe0 CHARACTERSEXVARIATIONS::GetNumVariations
@@ -363,25 +370,28 @@
 - 004e27c0 CHARINFO::UpdateTabardTexture
 
 [CInputObserver]
-- 00811c90 CInputObserver::UnregisterMouseMove
-- 008a3de0 CInputObserver::UnregisterWindowSize
-- 008a3f30 CInputObserver::UnregisterMouseModeChanged
-- 008a3f50 CInputObserver::UnregisterMouseWheel
-- 008a4150 CInputObserver::UnregisterMouseDown
-- 008a4260 CInputObserver::UnregisterKeyDownRepeating
+- 0076ee60 CInputObserver::RegisterWindowSize
+- 007d6210 CInputObserver::UnregisterChar
+- 00811c90 CInputObserver::UnregisterMouseModeChanged
+- 008a3de0 CInputObserver::UnregisterMouseMove
+- 008a3f30 CInputObserver::UnregisterMouseUp
+- 008a3f50 CInputObserver::UnregisterMouseDown
+- 008a4150 CInputObserver::UnregisterKeyDownRepeating
+- 008a4260 CInputObserver::UnregisterWindowSize
 
 [CKeyFrameTrack<class_NTempest]
 - 00438300 CKeyFrameTrack<class_NTempest::C4QuaternionCompressed,class_NTempest::C4Quaternion>::AddKey
 - 00828680 CKeyFrameTrack<class_NTempest::C4QuaternionCompressed,class_NTempest::C4Quaternion>::InterpolateLinear
 
 [CKeyFrameTrackBase]
-- 0089c020 CKeyFrameTrackBase::NextKey
-- 0089e260 CKeyFrameTrackBase::CKeyFrameTrackBase
+- 0089b090 CKeyFrameTrackBase::NextKey
+- 0089baa0 CKeyFrameTrackBase::CKeyFrameTrackBase
 
 [CLayoutFrame]
 - 00488ed0 CLayoutFrame::GetFirstPointX
 - 00489a60 CLayoutFrame::CageMouseInFrame
 - 0048a200 CLayoutFrame::FreePoints
+- 0095c450 CLayoutFrame::FRAMENODE::`scalar_deleting_destructor'
 
 [CLightning]
 - 006c0270 CLightning::BuildStroke
@@ -389,7 +399,10 @@
 [CMap]
 - 00408260 CMap::GetPlane
 - 0040afe0 CMap::TestQueryAdd
+- 004b9950 CMap::LoadMapObjNames
+- 004b9970 CMap::LoadDoodadNames
 - 004cb1d0 CMap::PurgeDoodadDef
+- 00530dc7 CMap::QueryLiquidFishable
 - 006bbdb0 CMap::AllocCacheLight
 - 00763c70 CMap::SelectLight
 - 00790440 CMap::ProjectLights
@@ -400,9 +413,9 @@
 - 007b4960 CMap::PrepareChunks
 - 007b5870 CMap::UpdateDoodadDef
 - 007bda70 CMap::LoadDoodadModel
+- 00879350 CMap::GetCounts
 - 008a2ac0 CMap::CreateAreaLowDetailVertices
 - 008a2bf0 CMap::WaterInitialize
-- 008d0e00 CMap::GetCounts
 - 009db560 CMap::GetFacets
 
 [CMapArea]
@@ -417,7 +430,8 @@
 - 004b54f0 CMapObj::RenderGroupColorTex_Int
 - 00795d20 CMapObj::RTransformPortal
 - 007a2aa0 CMapObj::QueryLiquidFishable
-- 007c15f0 CMapObj::RenderAlways
+- 007a6b60 CMapObj::RenderAlways
+- 007c15f0 CMapObj::GetTris
 
 [CMapObjGroup]
 - 007ae1f0 CMapObjGroup::QueryMinimap
@@ -433,7 +447,6 @@
 
 [CMoveSpline]
 - 00743ba0 CMoveSpline::SplineFaceData::SplineFaceData
-- 007478f0 CMoveSpline::CMoveSpline
 
 [CMovement]
 - 004f4ae0 CMovement::GetHandoffData
@@ -442,38 +455,40 @@
 - 006e6ea0 CMovement::FallFromTransport
 - 006e9ad0 CMovement::CollideWithWaterSurface
 - 006ebf90 CMovement::StopAllLogging
-- 006eea50 CMovement::BothLogWrite
+- 006eeb20 CMovement::BothLogWrite
 - 006ef6a0 CMovement::StartSwimLocal
 - 006f13e0 CMovement::MoversOnList
+- 0074bb30 CMovement::OnCollideRedirServer
 - 0075c0b0 CMovement::FindObstacles
-- 0075c5a0 CMovement::ExtrudeFlyBoxDown
+- 0075c5a0 CMovement::ExtrudeFlyBoxUp
 - 0075cf80 CMovement::ProcessFallReset
-- 0075de40 CMovement::ExtrudeDownNegYFacet
 - 0075ee00 CMovement::RestoreMoveState
 - 0075ee60 CMovement::SetOrientation
-- 008ec900 CMovement::MoveUnit
+- 008cd220 CMovement::SkipHandoffData
 
 [CMovementData]
 - 004f5f80 CMovementData::GetPosition
 - 00986f00 CMovementData::GetFacing
 
 [CMsgBuffer]
-- 00779250 CMsgBuffer::GetDwordArray
-- 0090d040 CMsgBuffer::GetChar
+- 0090d040 CMsgBuffer::GetLong
+- 0093cb10 CMsgBuffer::GetWord
+
+[CNullStatus]
+- 009dd190 CNullStatus::`vector_deleting_destructor'
 
 [CObjectHeap]
 - 004d3410 CObjectHeap::CObjectHeap
-
-[CObserver]
-- 00887860 CObserver::RegisterEvent
 
 [COsDialog]
 - 0086c590 COsDialog::HasFlag
 - 0086c840 COsDialog::GetParentWindow
 - 0086c9c0 COsDialog::ProcessMessage
+- 00871790 COsDialog::SetContextMenu
 
-[COsStaticText]
-- 0095c6a0 COsStaticText::SetJustification
+[COsTreeView]
+- 0086c900 COsTreeView::GetEditControl
+- 0095c6a0 COsTreeView::EnableDragDrop
 
 [CParticle]
 - 0079c110 CParticle::Destroy
@@ -489,33 +504,29 @@
 [CParticleStack]
 - 0097d820 CParticleStack::Push
 
-[CRibbonEmitter]
-- 00911ef0 CRibbonEmitter::SetMats
-
 [CSRWLock]
+- 00774550 CSRWLock::Enter
 - 007745b0 CSRWLock::Leave
-- 00774e80 CSRWLock::Enter
 
 [CSeqInfo]
-- 0089f0b0 CSeqInfo::CSeqInfo
+- 0089db90 CSeqInfo::CSeqInfo
 
 [CSimpleButton]
 - 0096f8d0 CSimpleButton::SetPressedOffset
 - 0096f920 CSimpleButton::SetStateTexture
 
 [CSimpleEditBox]
-- 006816f0 CSimpleEditBox::`vector_deleting_destructor'`adjustor{16}'
 - 00963260 CSimpleEditBox::DeleteHighlight
-- 00963a10 CSimpleEditBox::DeleteForwardWord
-- 00963b10 CSimpleEditBox::DeleteBackwardWord
+- 00963b10 CSimpleEditBox::DeleteForwardWord
+- 00963b60 CSimpleEditBox::DeleteBackwardWord
 - 00963cd0 CSimpleEditBox::Move
-- 00963d80 CSimpleEditBox::MoveBackwardLine
-- 00964000 CSimpleEditBox::MoveForward
-- 00964200 CSimpleEditBox::MoveForwardLine
-- 009642e0 CSimpleEditBox::MoveLine
-- 009643c0 CSimpleEditBox::MoveBackward
-- 00964480 CSimpleEditBox::MoveToStart
-- 00964550 CSimpleEditBox::MoveToEnd
+- 00963d80 CSimpleEditBox::MoveForwardLine
+- 00964000 CSimpleEditBox::MoveForwardWord
+- 00964200 CSimpleEditBox::MoveBackwardLine
+- 009642e0 CSimpleEditBox::MoveForward
+- 009643c0 CSimpleEditBox::MoveToEnd
+- 00964480 CSimpleEditBox::MoveLine
+- 00964550 CSimpleEditBox::MoveToStart
 - 009653a0 CSimpleEditBox::PrevCharOffset
 
 [CSimpleFontString]
@@ -529,24 +540,19 @@
 - 0055e130 CSimpleFontStringAttributes::CSimpleFontStringAttributes
 
 [CSimpleFrame]
+- 00489710 CSimpleFrame::GetToplevelFrame
 - 0049cab0 CSimpleFrame::OnUpdateBatch
-- 004bfee0 CSimpleFrame::GetToplevelFrame
 - 00819810 CSimpleFrame::AddToFrameRegistry
-
-[CSimpleHyperlinkedFrame]
-- 0088a470 CSimpleHyperlinkedFrame::LoadXML_Scripts
 
 [CSimpleMessageScrollFrameDisplayNode]
 - 009691f0 CSimpleMessageScrollFrameDisplayNode::CSimpleMessageScrollFrameDisplayNode
 
 [CSimpleModel]
-- 006816c0 CSimpleModel::LoadXML_Scripts
-- 00939c6e CSimpleModel::SetAlpha
 - 0095f370 CSimpleModel::FinishLoadingModel
 
 [CSimpleTexture]
 - 00483220 CSimpleTexture::TexCorrectRect
-- 00927740 CSimpleTexture::`vector_deleting_destructor'`adjustor{16}'
+- 00932940 CSimpleTexture::`vector_deleting_destructor'`adjustor{16}'
 
 [CSortEntry]
 - 009ce4c0 CSortEntry::~CSortEntry
@@ -555,11 +561,10 @@
 - 007bb670 CSortTable::Clear
 
 [CStatus]
-- 007eb210 CStatus::GetHighestSeverity
-- 009d4720 CStatus::`vector_deleting_destructor'
+- 007e8bd0 CStatus::GetHighestSeverity
 
 [CStringManager]
-- 0042e6b0 CStringManager::DestroyManager
+- 0044ad00 CStringManager::DestroyManager
 - 0047cf00 CStringManager::Get
 - 007e0250 CStringManager::Find
 
@@ -575,27 +580,20 @@
 
 [CWFrustum]
 - 00791240 CWFrustum::Cull
-- 007bd450 CWFrustum::Cull
-
-[CWOWClientStatus]
-- 009dd190 CWOWClientStatus::`scalar_deleting_destructor'
 
 [CWalkableSurface]
-- 004c35d0 CWalkableSurface::CWalkableSurface
+- 0075de80 CWalkableSurface::CWalkableSurface
 
 [CWorld]
 - 0048ed60 CWorld::SceneCamLiquidStatus
-- 004ca143 CWorld::ConsoleCommand_DetailDoodadTest
-- 006bad70 CWorld::ConsoleCommand_GroupOnly
-- 00746280 CWorld::CalcFPS
-- 0077ecb0 CWorld::ConsoleCommand_MaxLOD
+- 004ca143 CWorld::ConsoleCommand_GroupOnly
 - 0077eed0 CWorld::UpdateDayNight
 - 0077f9a0 CWorld::SetObjectHandler
-- 00780620 CWorld::SetObjectCollisionHandler
-- 00784040 CWorld::ConsoleCommand_EnumTextures
-- 008742e0 CWorld::ConsoleCommand_WaterMaxLOD
+- 00780620 CWorld::SetUpdateTime
+- 00784040 CWorld::ConsoleCommand_ShowSimpleDoodads
+- 007daf30 CWorld::ConsoleCommand_DebugZones
+- 008742e0 CWorld::ConsoleCommand_WaterWaves
 - 008a38b0 CWorld::ConsoleCommand_Proj
-- 008ceec0 CWorld::ConsoleCommand_ShowQuery
 
 [CWorldMath]
 - 005fec70 CWorldMath::VectorIntersectAABox2
@@ -607,7 +605,7 @@
 - 004b6230 CWorldParam::PixelShadersCallback
 
 [CWorldScene]
-- 00783fe0 CWorldScene::ClipBufferClear
+- 00784a30 CWorldScene::ClipBufferClear
 - 0078fc40 CWorldScene::ClipBufferCull
 - 00793760 CWorldScene::CullDoodads
 - 007a6d70 CWorldScene::CullMapObjDefs
@@ -620,147 +618,153 @@
 [ClientConnection]
 - 004652a0 ClientConnection::Destroy
 - 00465ac0 ClientConnection::RealmEnumCallback
-- 005c98a0 ClientConnection::Initialize
 
 [CurrentLight]
 - 007eb180 CurrentLight::CurrentLight
 
 [D3DXCore]
 - 0041d2a0 D3DXCore::CBuffer::Create
-- 004297d0 D3DXCore::CResource::~CResource
+- 00423750 D3DXCore::CStringBuffer::Init
 - 004381e0 D3DXCore::CBuffer::CBuffer
 - 00438260 D3DXCore::CBufferA16::Create
-- 004422b0 D3DXCore::CStringBuffer::Init
 - 0094e720 D3DXCore::CStringBuffer::AddString
-- 009c6974 D3DXCore::CFile::CFile
-- 009c7ae0 D3DXCore::CBuffer::Grow
 
 [D3DXShader]
 - 0041d0c0 D3DXShader::CBaseProgram::AddInstruction
 - 004206b0 D3DXShader::CProgram::Warning
-- 00423750 D3DXShader::CNodeArray::Copy
-- 00423c00 D3DXShader::CNodeScope::Copy
-- 00428060 D3DXShader::CInstruction::IsMOV
-- 00429540 D3DXShader::CPreProcessor::GetBufferPointer
+- 00423c00 D3DXShader::CNodeDecl::Copy
+- 00429540 D3DXShader::compare
+- 004297d0 D3DXShader::CTokenize::Initialize
 - 0042aa50 D3DXShader::GetUsageAndIndex
 - 0042ac00 D3DXShader::CParse::Stmt
-- 0042ebb0 D3DXShader::CNodeExpression::Copy
+- 0042ebb0 D3DXShader::CPSLegacyProgram::EmitVersion
 - 0042ed70 D3DXShader::CShaderProgram::EmitInst
 - 0042ee90 D3DXShader::CCommentBlock::~CCommentBlock
-- 0042f3f0 D3DXShader::CCommentBlock::WriteComment
-- 00436680 D3DXShader::CNodeToken::CNodeToken
+- 0042f3f0 D3DXShader::CTErrors::GetErrorCount
+- 00436680 D3DXShader::CTokenize::SkipToEOL
 - 00437590 D3DXShader::CPSLegacyProgram::~CPSLegacyProgram
 - 004395d0 D3DXShader::HeapSort
 - 00439e50 D3DXShader::CProgram::SimplifyAddresses
-- 0043a5a0 D3DXShader::CParse::CastToFloat
-- 0043e120 D3DXShader::CNodeValue::Copy
-- 0043e930 D3DXShader::CPreProcessor::Begin
+- 0043a5a0 D3DXShader::CNode::IsEqual
+- 0043e120 D3DXShader::CVSProgram::PatternMatch
+- 0043e2d0 D3DXShader::CConstantTable::GetConstantElement
 - 00441510 D3DXShader::CTAlloc::Alloc
-- 00441950 D3DXShader::CPreProcessor::CallDefine
-- 00441ad0 D3DXShader::CPSProgram::PatternMatch
-- 004421f0 D3DXShader::CPreProcessor::DoError
-- 004423a0 D3DXShader::CPreProcessor::DoElse
-- 00442490 D3DXShader::CVSProgram::PatternMatch
-- 00444550 D3DXShader::CTErrors::PreformattedError
-- 00444aa0 D3DXShader::CShaderProgram::TempRegister
-- 00444b20 D3DXShader::CTErrors::GetErrorCount
-- 00444ce0 D3DXShader::CNodeToken::Copy
-- 00444eb0 D3DXShader::CNodeAsmRegister::Copy
-- 00445ca0 D3DXShader::CVSProgram::EmitVersion
+- 00441950 D3DXShader::CTokenize::GetToken
+- 00441ad0 D3DXShader::CNodeRegister::Copy
+- 004421f0 D3DXShader::CTokenize::LexString
+- 004422b0 D3DXShader::CNodeArray::Copy
+- 004423a0 D3DXShader::CPreProcessor::DoError
+- 00442490 D3DXShader::CShaderProgram::TempRegister
+- 00444550 D3DXShader::CPreProcessor::Begin
+- 00444aa0 D3DXShader::CNodeUsage::Copy
+- 00444b20 D3DXShader::CCommentBlock::CCommentBlock
+- 00445ca0 D3DXShader::CNodeStatement::Copy
+- 00446260 D3DXShader::CProgram::RemapArguments
 - 004464f0 D3DXShader::CProgram::IdentityRemap
 - 004475b0 D3DXShader::CPSLegacyProgram::PatternMatch
-- 004487f0 D3DXShader::CParse::Expr
-- 00448970 D3DXShader::CTErrors::Warning
-- 00448b60 D3DXShader::CParse::FatalError
-- 00448db0 D3DXShader::CParse::Error
-- 00448f30 D3DXShader::CTErrors::Error
-- 00449180 D3DXShader::CParse::Warning
+- 004487f0 D3DXShader::CParse::AddDecl
+- 00448b60 D3DXShader::CTErrors::Push
+- 00448f30 D3DXShader::CParse::FatalError
+- 00449180 D3DXShader::CParse::Error
+- 00449ea0 D3DXShader::CTErrors::PreformattedError
+- 0044a1f0 D3DXShader::CTErrors::Warning
+- 0044a3e0 D3DXShader::CParse::Warning
+- 0044a5d0 D3DXShader::CTErrors::Error
+- 0044b1c0 D3DXShader::CNodeList::Copy
 - 0044b2b0 D3DXShader::CProgram::RemoveDuplicateInstructions
-- 0044be50 D3DXShader::CParse::EvalUint
+- 0044be50 D3DXShader::CParse::Eval
 - 0044be80 D3DXShader::CProgram::ReadWriteInfo
-- 0044c2e0 D3DXShader::CNodeFunction::Copy
-- 0044d170 D3DXShader::CInstruction::IsNEG
-- 0044d220 D3DXShader::CPPInclude::InitializeFromFile
-- 0044e0c0 D3DXShader::CTErrors::Push
+- 0044c2e0 D3DXShader::CVSProgram::EmitVersion
+- 0044d170 D3DXShader::CInstruction::IsMOV
+- 0044d220 D3DXShader::CTokenize::LexVersion
 - 0044f560 D3DXShader::CAssembler::Assemble
 - 004537e0 D3DXShader::CInstruction::Initialize
 - 004572c0 D3DXShader::CTErrors::SetWarningSpecifier
 - 0045ae90 D3DXShader::CPreProcessor::Production
-- 0045bed0 D3DXShader::CPSLegacyProgram::`scalar_deleting_destructor'
+- 0045c880 D3DXShader::CPSLegacyProgram::`scalar_deleting_destructor'
 - 00462660 D3DXShader::GatherFragments
-- 004ac040 D3DXShader::CVSProgram::EmitDEF
+- 004e95b0 D3DXShader::CConstantTable::SetVectorArray
 - 006e9360 D3DXShader::CParse::EvalIntrinsic
+- 007c6790 D3DXShader::CPSProgram::DestMask
 - 00816770 D3DXShader::CProgram::SimplifyUnary
-- 0086f960 D3DXShader::CPSProgram::ValidateOutput
-- 00882950 D3DXShader::CPSProgram::GenerateCode
-- 00882a70 D3DXShader::CVSProgram::GenerateCode
-- 008d0250 D3DXShader::compare
-- 008d02b0 D3DXShader::CCommentBlock::CCommentBlock
-- 008d2680 D3DXShader::CInstruction::IsSpecial
-- 008e7ee0 D3DXShader::CConstantTable::SetBoolArray
-- 008eaf20 D3DXShader::CConstantTable::SetVectorArray
-- 008efd60 D3DXShader::CConstantTable::SetMatrixPointerArray
-- 008fae00 D3DXShader::CBaseProgram::GetNumArguments
-- 008fb010 D3DXShader::CProgram::Optimize
+- 00880ad0 D3DXShader::CPSProgram::GenerateCode
+- 0088a470 D3DXShader::CPSProgram::ValidateOutput
+- 008c5f60 D3DXShader::CTAlloc::Free
+- 008d0250 D3DXShader::CFragmentRegisterAllocator::GetElements
+- 008d02b0 D3DXShader::CCommentBlock::WriteComment
+- 008d44c0 D3DXShader::CConstantTable::SetMatrixArray
+- 008e7b10 D3DXShader::CConstantTable::SetBool
+- 008e9c80 D3DXShader::CConstantTable::SetInt
+- 008efca0 D3DXShader::CConstantTable::SetIntArray
+- 008f9fe0 D3DXShader::CBaseProgram::GetNumArguments
+- 008fae00 D3DXShader::CInstruction::IsSpecial
 - 008fb560 D3DXShader::CCompiler::EvalArg
-- 00910570 D3DXShader::CConstantTable::SetInt
-- 009168bc D3DXShader::CConstantTable::SetMatrixTransposePointerArray
-- 009190a0 D3DXShader::CConstantTable::SetMatrix
-- 00933970 D3DXShader::CConstantTable::SetMatrixTranspose
-- 00934fb0 D3DXShader::CConstantTable::SetMatrixTransposeArray
-- 009371d0 D3DXShader::CConstantTable::SetFloatArray
-- 00939a00 D3DXShader::CConstantTable::SetMatrixArray
+- 00900e50 D3DXShader::CProgram::Optimize
+- 009287f0 D3DXShader::CConstantTable::SetMatrixTransposeArray
+- 00931460 D3DXShader::CPSLegacyProgram::SrcSwizzle
+- 00934cd0 D3DXShader::CConstantTable::SetFloatArray
+- 00935520 D3DXShader::CConstantTable::SetFloat
+- 00939a00 D3DXShader::CConstantTable::SetBoolArray
 - 0093aca0 D3DXShader::CFXLProgram::IndexSemantic
-- 0093b8d0 D3DXShader::CConstantTable::SetFloat
+- 0093b8d0 D3DXShader::CConstantTable::SetMatrixPointerArray
 - 00946cb0 D3DXShader::CConstantTable::SetValue
-- 00948d30 D3DXShader::CConstantTable::SetBool
 - 009512c0 D3DXShader::CPSProgram::IndexSemantic
-- 0095ae70 D3DXShader::CConstantTable::SetIntArray
-- 009c1e40 D3DXShader::CPSProgram::EmitInstructions
-- 009c6031 D3DXShader::CInstruction::IsDOT
-- 009c60a8 D3DXShader::CProgram::RemapArguments
-- 009c60e9 D3DXShader::CInstruction::IsBinary
-- 009c61a0 D3DXShader::CArgument::Initialize
-- 009c61c8 D3DXShader::CArgument::Instance
-- 009c62b1 D3DXShader::CArgument::CArgument
-- 009c64e2 D3DXShader::CNode::CNode
-- 009c6548 D3DXShader::CNodeType::CNodeType
-- 009c6629 D3DXShader::CNodeValue::CNodeValue
-- 009c66f8 D3DXShader::CInstruction::IsTrinary
-- 009c6720 D3DXShader::CNodeList::CNodeList
+- 0095ae70 D3DXShader::CConstantTable::SetMatrix
+- 009c6031 D3DXShader::CInstruction::CInstruction
+- 009c60a8 D3DXShader::CInstruction::IsBinary
+- 009c60e9 D3DXShader::CInstruction::IsDOT
+- 009c61a0 D3DXShader::CArgument::CArgument
+- 009c61c8 D3DXShader::CInstruction::IsNEG
+- 009c62b1 D3DXShader::CInstruction::IsTrinary
+- 009c64e2 D3DXShader::CNodeType::CNodeType
+- 009c6548 D3DXShader::CNodeVariable::CNodeVariable
+- 009c6629 D3DXShader::CNodeList::CNodeList
+- 009c66f8 D3DXShader::CInstruction::IsSymetric
 - 009c67a0 D3DXShader::CInstruction::IsNOP
-- 009c6863 D3DXShader::CNodeValue::CNodeValue
-- 009c6883 D3DXShader::CParse::GetComponentType
-- 009c6ad8 D3DXShader::CTokenize::SkipToEOL
-- 009c6b06 D3DXShader::CNodeType::CNodeType
-- 009c6b26 D3DXShader::CNodeVariable::CNodeVariable
-- 009c6c1c D3DXShader::CNode::Copy
+- 009c6863 D3DXShader::CNodeType::CNodeType
+- 009c6883 D3DXShader::CNode::CNode
+- 009c68a0 D3DXShader::CNode::Copy
+- 009c6974 D3DXShader::CNodeToken::CNodeToken
+- 009c6ad8 D3DXShader::CCommentBlock::SizeInDwords
+- 009c6b06 D3DXShader::CNodeValue::CNodeValue
+- 009c6b26 D3DXShader::CNodeValue::CNodeValue
+- 009c6c1c D3DXShader::CParse::GetComponentType
 - 009c6d13 D3DXShader::CInstruction::Instance
-- 009c6da1 D3DXShader::CInstruction::IsUnary
-- 009c6e33 D3DXShader::CInstruction::IsSymetric
-- 009c70b4 D3DXShader::CInstruction::CInstruction
-- 009c74f6 D3DXShader::CNodeStatement::CNodeStatement
+- 009c6da1 D3DXShader::CArgument::Instance
+- 009c6e33 D3DXShader::CArgument::Initialize
+- 009c70b4 D3DXShader::CInstruction::IsUnary
+- 009c70cb D3DXShader::CParse::GetUsageType
+- 009c74f6 D3DXShader::CParse::IsScalar
+
+[DAMAGELOGBASE]
+- 004cfd20 DAMAGELOGBASE::DAMAGELOGBASE
 
 [DBCache<class_CGPetition,int,class_HASHKEY_INT>]
 - 008cf940 DBCache<class_CGPetition,int,class_HASHKEY_INT>::~DBCache<class_CGPetition,int,class_HASHKEY_INT>
 
 [DBCache<class_GuildStats_C,int,class_HASHKEY_INT>]
-- 0086bf10 DBCache<class_GuildStats_C,int,class_HASHKEY_INT>::~DBCache<class_GuildStats_C,int,class_HASHKEY_INT>
+- 004e58d0 DBCache<class_GuildStats_C,int,class_HASHKEY_INT>::~DBCache<class_GuildStats_C,int,class_HASHKEY_INT>
+- 008cbfb0 DBCache<class_GuildStats_C,int,class_HASHKEY_INT>::AddItems
 
 [DBCache<class_ItemStats_C,int,class_HASHKEY_INT>]
 - 005f3750 DBCache<class_ItemStats_C,int,class_HASHKEY_INT>::~DBCache<class_ItemStats_C,int,class_HASHKEY_INT>
-- 00986c90 DBCache<class_ItemStats_C,int,class_HASHKEY_INT>::VerifyCache
 
 [DBCache<class_NPCText,int,class_HASHKEY_INT>]
-- 004e58d0 DBCache<class_NPCText,int,class_HASHKEY_INT>::~DBCache<class_NPCText,int,class_HASHKEY_INT>
+- 0067a260 DBCache<class_NPCText,int,class_HASHKEY_INT>::~DBCache<class_NPCText,int,class_HASHKEY_INT>
 - 0067b520 DBCache<class_NPCText,int,class_HASHKEY_INT>::AddItem
 
 [DBCache<class_NameCache,unsigned___int64,class_CHashKeyGUID>]
 - 0067a360 DBCache<class_NameCache,unsigned___int64,class_CHashKeyGUID>::SetTemporary
 
 [DBCache<class_PageTextCache_C,int,class_HASHKEY_INT>]
-- 004bf450 DBCache<class_PageTextCache_C,int,class_HASHKEY_INT>::CancelCallback
 - 0067b570 DBCache<class_PageTextCache_C,int,class_HASHKEY_INT>::~DBCache<class_PageTextCache_C,int,class_HASHKEY_INT>
+
+[DBCache<class_PetNameCache,int,class_HASHKEY_INT>]
+- 0086bf10 DBCache<class_PetNameCache,int,class_HASHKEY_INT>::~DBCache<class_PetNameCache,int,class_HASHKEY_INT>
+
+[DBCache<class_QuestCache,int,class_HASHKEY_INT>]
+- 004bf450 DBCache<class_QuestCache,int,class_HASHKEY_INT>::CancelCallback
+- 008f5ee0 DBCache<class_QuestCache,int,class_HASHKEY_INT>::~DBCache<class_QuestCache,int,class_HASHKEY_INT>
 
 [DNClouds]
 - 007f1220 DNClouds::SetLOD
@@ -772,7 +776,7 @@
 - 009abc60 DNGlare::IsVisible
 
 [DNMoonGlare]
-- 008ef6a0 DNMoonGlare::GetCloudDensityFade
+- 00939c6e DNMoonGlare::GetCloudDensityFade
 
 [DNPlanet]
 - 007ee150 DNPlanet::Initialize
@@ -791,7 +795,7 @@
 - 007db600 EventReg::UnregisterCallback
 
 [EventRegistry]
-- 007daf30 EventRegistry::InternalDelete
+- 009c1d20 EventRegistry::InternalDelete
 
 [FACEDATA]
 - 006c81c0 FACEDATA::`vector_deleting_destructor'
@@ -802,10 +806,13 @@
 [FONTHASHOBJ]
 - 004be500 FONTHASHOBJ::`vector_deleting_destructor'
 
+[FREENAMEPLATE]
+- 00767000 FREENAMEPLATE::~FREENAMEPLATE
+
 [Flags]
-- 008e70e0 Flags::IsSet
-- 008e7a20 Flags::Set
-- 009c5cce Flags::Clear
+- 008d1880 Flags::Set
+- 008d19f0 Flags::IsSet
+- 008d4de0 Flags::Clear
 
 [FrameScript_Object]
 - 0048f380 FrameScript_Object::SetEventScript
@@ -831,24 +838,26 @@
 - 007fbc20 LightningObject::DelRef
 
 [MDL]
+- 006b2000 MDL::WriteModelGlobals
+- 0077e230 MDL::WriteBinTextures
 - 0081bf50 MDL::DestroyTokenText
-- 0086bf80 MDL::WriteBinLights
-- 008ec240 MDL::WriteBinEventObjects
-- 008f5090 MDL::WriteBinHelpers
-- 009448f0 MDL::WriteBinHitTests
+- 008eb9b0 MDL::WriteBinHelpers
+- 008f5230 MDL::WriteBinHitTests
+- 00922990 MDL::WriteBinTextureAnims
+- 0093cd10 MDL::WriteBinEventObjects
 
 [MISSILENODE]
 - 004d48c0 MISSILENODE::CheckModelLoadStatus
-- 00758390 MISSILENODE::MISSILENODE
+- 0076c070 MISSILENODE::MISSILENODE
 
 [NTempest]
 - 00406da0 NTempest::operator<<
-- 0048b860 NTempest::C2Vector::~C2Vector
 - 0048ede0 NTempest::CRect::CRect
 - 004c1590 NTempest::operator*
 - 004c15c0 NTempest::CRandom::uint32_
 - 004c1680 NTempest::CRandom::C3Vector_
 - 004c35a0 NTempest::C4Plane::`default_constructor_closure'
+- 004c35d0 NTempest::C3Vector::operator-
 - 004c4140 NTempest::C3Spline_CatmullRom::ParametricSegT
 - 004c41c0 NTempest::C3Spline_CatmullRom::IValidateCache
 - 004c42c0 NTempest::C3Spline_CatmullRom::ArclengthSegT
@@ -857,70 +866,78 @@
 - 004c5340 NTempest::operator*
 - 00530be0 NTempest::CMath::split_
 - 00530c60 NTempest::CMath::fuint_n
+- 00530dc0 NTempest::CRandom::array_
 - 005fed80 NTempest::CFacet::CFacet
 - 005fff80 NTempest::operator*
 - 00603cf0 NTempest::C4Plane::~C4Plane
-- 006ad0e0 NTempest::CArgb1555::From565
-- 006ad380 NTempest::CImVector::operator=
-- 006ad7d0 NTempest::CArgb1555::CArgb1555
+- 006ac200 NTempest::CArgb1555::CArgb1555
+- 006aca10 NTempest::CImVector::From565
+- 006ad380 NTempest::CArgb4444::From565
 - 006e9a70 NTempest::C2Vector::SquaredMag
+- 006feae0 NTempest::operator-
 - 00756ca0 NTempest::C3Spline::ValidateCache
-- 0075b690 NTempest::C3Vector::operator-
-- 0075e040 NTempest::C4Plane::C4Plane
-- 00790ab0 NTempest::operator*
+- 0075b690 NTempest::C4Plane::C4Plane
+- 0075e040 NTempest::C3Vector::Set
+- 00790ad0 NTempest::operator*
 - 007927e0 NTempest::operator>=
-- 00792bd0 NTempest::CRect::CRect
+- 0079b1f0 NTempest::CRandom::arraye_
 - 007a0f50 NTempest::CDynTable<class_FogQ>::Grow
 - 007a7210 NTempest::Intersect
 - 007ae810 NTempest::operator*=
+- 007bd450 NTempest::C3Vector::Dot
+- 007bd8a0 NTempest::CAaBox::CAaBox
 - 007bdd80 NTempest::C44Matrix::operator*=
-- 007c6c30 NTempest::operator-
+- 007c6c30 NTempest::operator*
 - 007c7710 NTempest::CImVector::CImVector
-- 007d5240 NTempest::C3Vector::Dot
 - 007e8380 NTempest::C4Quaternion::ToAngleAxis
 - 007e8990 NTempest::CRandom::crypt_
-- 007ed0a0 NTempest::CImVector::Blend255_
-- 007ed2d0 NTempest::CImVector::BlendRGB255_
-- 007ed4c0 NTempest::CImVector::Set
-- 007ed910 NTempest::CImVector::SetRGB
-- 007ee510 NTempest::CImVector::~CImVector
-- 007ee5d0 NTempest::CImVector::`default_constructor_closure'
-- 007ee6b0 NTempest::CImVector::Scale255_
+- 007eb160 NTempest::CImVector::SetRGB
+- 007ebf90 NTempest::CImVector::Set
+- 007ec220 NTempest::CImVector::Scale255_
+- 007ecd80 NTempest::CImVector::`default_constructor_closure'
+- 007ee510 NTempest::CImVector::Blend255_
+- 007ee5d0 NTempest::CImVector::~CImVector
+- 007ee6b0 NTempest::CImVector::BlendRGB255_
 - 007f3ce0 NTempest::CAaBox::~CAaBox
 - 00804d20 NTempest::operator!=
 - 0081f620 NTempest::C44Matrix::AffineInverse
+- 0086bf30 NTempest::Intersect
+- 0086f960 NTempest::CRandom::shuffle_
 - 00872698 NTempest::operator*
 - 00896210 NTempest::CRandom::noise_
 - 00896ab0 NTempest::CMath::splitr_
-- 008971f0 NTempest::operator+
+- 008971f0 NTempest::CImVector::CImVector
+- 0089c400 NTempest::C4Vector::C4Vector
 - 0089c670 NTempest::CMath::bias_
-- 0089d860 NTempest::C4Vector::C4Vector
-- 0089e0b0 NTempest::CImVector::CImVector
-- 0089f6e0 NTempest::operator*
-- 008a1d60 NTempest::CMath::split_
-- 008a3070 NTempest::CRndSeed::SetSeed
+- 008a31e0 NTempest::CRndSeed::SetSeed
+- 008c2350 NTempest::CMath::split_
 - 008e5f10 NTempest::CMath::gammai_
-- 008e6220 NTempest::CRandom::turbulence_
-- 008e9c80 NTempest::CMath::sinoid_
-- 008eb2c0 NTempest::CMath::spline_
-- 008ec300 NTempest::CRandom::noise_
-- 00900e50 NTempest::CMath::gamma_
-- 0090108c NTempest::CMath::gain_
-- 00911210 NTempest::CRandom::array_
-- 00916c8e NTempest::CMath::cosoid_
-- 00922990 NTempest::CMath::spline_
-- 009274c0 NTempest::CMath::splitr_
-- 0092c780 NTempest::CMemBlock::Compare_
-- 00979110 NTempest::operator*=
+- 008e9770 NTempest::CMath::splitr_
+- 008efd60 NTempest::CRandom::turbulence_
+- 008f0530 NTempest::CMath::sinoid_
+- 008f08a0 NTempest::CRandom::noise_
+- 00900f50 NTempest::CMath::gain_
+- 0090108c NTempest::CMath::gamma_
+- 009103d0 NTempest::CRandom::noise_
+- 00927400 NTempest::CMath::cosoid_
+- 0092b700 NTempest::Intersect
+- 009371d0 NTempest::CMath::spline_
+- 0093bd00 NTempest::CMath::spline_
+- 0093cb50 NTempest::CRandom::arrayp_
 - 009793b0 NTempest::operator*
 - 009794f0 NTempest::C34Matrix::operator*=
 - 009827b0 NTempest::C4Quaternion::FromRotationMatrixInv
+- 009828b0 NTempest::operator*=
+
+[NULLSTATUS]
+- 009da720 NULLSTATUS::`scalar_deleting_destructor'
 
 [NetClient]
 - 00633300 NetClient::`scalar_deleting_destructor'
 
 [NetClientRedirect]
-- 008ce6d0 NetClientRedirect::`vector_deleting_destructor'
+- 0087a170 NetClientRedirect::`vector_deleting_destructor'
+- 008879b0 NetClientRedirect::WCDisconnected
 
 [NoPaqCompHdr]
 - 00426e60 NoPaqCompHdr::NoPaqCompHdr
@@ -935,13 +952,16 @@
 - 0086ebd0 OsNet::IOTCPCONN::IOTCPCONN
 - 0086ed30 OsNet::TCPNET::TcpMakeConn
 - 0086ee00 OsNet::TCPNET::CompleteAcceptEx
-- 008c6390 OsNet::TCPNET::LockedFindHostAddrInfo
+- 009c58c0 OsNet::LOOPCONN::CloseAndUnlock
 
 [PARTYKILLLOG]
 - 00754ff0 PARTYKILLLOG::UI
 
 [POIINFO]
-- 0057e780 POIINFO::~POIINFO
+- 0057c260 POIINFO::~POIINFO
+
+[Particulate]
+- 0077ecb0 Particulate::SetSize
 
 [Private]
 - 009c5ebb Private::Save
@@ -965,25 +985,21 @@
 - 009810e0 RibbonManager::~RibbonManager
 
 [SCritSect]
-- 009d3f40 SCritSect::`vector_deleting_destructor'
+- 008ce6d0 SCritSect::`vector_deleting_destructor'
 
 [SFile]
 - 00422480 SFile::QueueReadRequest
 - 00469220 SFile::Destroy
 - 0047d7b0 SFile::~SFile
 - 005f4a30 SFile::List
-- 0076e4e0 SFile::CreateOverlapped
 - 008787e0 SFile::ReadProc
+- 00911210 SFile::GetMD5
 
 [SMutex]
 - 004c9460 SMutex::SMutex
 
-[SOUNDDEFINITION]
-- 0076bf80 SOUNDDEFINITION::GetOsFlags
-
 [SRWLock]
 - 007744f0 SRWLock::IAllocEventOrIncRefCount
-- 00774550 SRWLock::SUNNLockEnter
 - 00774da0 SRWLock::SURWLockEnter
 
 [STypeCache]
@@ -992,15 +1008,16 @@
 [SWING]
 - 007e4c30 SWING::SWING
 
-[Sha1]
-- 009c71e8 Sha1::Initialize
+[SkillLineTable]
+- 005c76fb SkillLineTable::LookupPet
 
 [Sound]
 - 004c5b20 Sound::SetListenerAttributes
 - 004c8830 Sound::SetFadeIn
 - 004e6ae0 Sound::Stop
-- 009103d0 Sound::SetFadeIn
-- 0092b3f0 Sound::SetPositionMs
+- 00918d70 Sound::SetFadeIn
+- 0092a610 Sound::SetPositionMs
+- 009c1db0 Sound::GetOutputSystemName
 
 [SoundFileCache]
 - 0087b300 SoundFileCache::Open
@@ -1010,20 +1027,17 @@
 
 [SpellVisualRec]
 - 006cf240 SpellVisualRec::SpellVisualRec
-- 00715a80 SpellVisualRec::~SpellVisualRec
+- 0071c390 SpellVisualRec::~SpellVisualRec
 
 [Storm]
 - 004599a0 Storm::SFile::ArchivePtr::ArchivePtr
-- 008d19a0 Storm::SFile::FilePtr::operator_struct_Storm::SFile::FILEREC*
-- 008d4de0 Storm::SFile::UseGlob::operator->
 
 [TEXTURECACHE]
 - 006c8e70 TEXTURECACHE::TextureCallback
-- 006c9420 TEXTURECACHE::TextureCallbackHandler
 
 [TSBaseArray<class_FrameScript_EventObject>]
-- 005c70d0 TSBaseArray<class_FrameScript_EventObject>::Constructor
-- 00801120 TSBaseArray<class_FrameScript_EventObject>::operator[]
+- 005c5be0 TSBaseArray<class_FrameScript_EventObject>::Constructor
+- 00783b30 TSBaseArray<class_FrameScript_EventObject>::operator[]
 - 00848010 TSBaseArray<class_FrameScript_EventObject>::Count
 
 [TSBaseArray<class_FrameScript_Object*>]
@@ -1031,20 +1045,20 @@
 - 00531e70 TSBaseArray<class_FrameScript_Object*>::Count
 
 [TSBaseArray<class_TSExplicitList<struct_FILEMAP,-572662307>_>]
-- 00422800 TSBaseArray<class_TSExplicitList<struct_FILEMAP,-572662307>_>::Count
 - 0042e5d0 TSBaseArray<class_TSExplicitList<struct_FILEMAP,-572662307>_>::operator[]
 
 [TSBaseArray<struct__SOURCE>]
 - 00776070 TSBaseArray<struct__SOURCE>::Ptr
 
 [TSBaseArray<unsigned_short>]
-- 0089dfb0 TSBaseArray<unsigned_short>::Ptr
+- 00897300 TSBaseArray<unsigned_short>::Ptr
+- 00897560 TSBaseArray<unsigned_short>::Count
 
 [TSFixedArray<class_CObjectHeap>]
 - 004d33c0 TSFixedArray<class_CObjectHeap>::~TSFixedArray<class_CObjectHeap>
 
 [TSFixedArray<class_CParticleEmitter*>]
-- 0078fbd0 TSFixedArray<class_CParticleEmitter*>::TSFixedArray<class_CParticleEmitter*>
+- 007462a0 TSFixedArray<class_CParticleEmitter*>::TSFixedArray<class_CParticleEmitter*>
 
 [TSFixedArray<class_CSimpleMessageFrameLine>]
 - 009681c0 TSFixedArray<class_CSimpleMessageFrameLine>::~TSFixedArray<class_CSimpleMessageFrameLine>
@@ -1056,32 +1070,35 @@
 - 004096d0 TSFixedArray<class_NTempest::C3Vector>::ReallocAndClearData
 
 [TSFixedArray<class_SThread*>]
-- 0044ad00 TSFixedArray<class_SThread*>::TSFixedArray<class_SThread*>
+- 0044ff20 TSFixedArray<class_SThread*>::TSFixedArray<class_SThread*>
+
+[TSFixedArray<class_TSExplicitList<struct_ProfileInternal]
+- 00773a60 TSFixedArray<class_TSExplicitList<struct_ProfileInternal::KEYVALUE,-572662307>_>::TSFixedArray<class_TSExplicitList<struct_ProfileInternal::KEYVALUE,-572662307>_>
 
 [TSFixedArray<float>]
 - 006ebe80 TSFixedArray<float>::ReallocAndClearData
 - 006f1240 TSFixedArray<float>::operator=
 
+[TSFixedArray<int>]
+- 004c92b0 TSFixedArray<int>::TSFixedArray<int>
+
 [TSFixedArray<struct_CCustomGeoset>]
-- 0082a4e0 TSFixedArray<struct_CCustomGeoset>::TSFixedArray<struct_CCustomGeoset>
+- 0082a210 TSFixedArray<struct_CCustomGeoset>::TSFixedArray<struct_CCustomGeoset>
 
 [TSFixedArray<struct_CGeosetColor>]
-- 0082ac10 TSFixedArray<struct_CGeosetColor>::TSFixedArray<struct_CGeosetColor>
-
-[TSFixedArray<struct_CGeosetShared>]
-- 0082a210 TSFixedArray<struct_CGeosetShared>::TSFixedArray<struct_CGeosetShared>
+- 0081ce60 TSFixedArray<struct_CGeosetColor>::TSFixedArray<struct_CGeosetColor>
 
 [TSFixedArray<struct_CHANCES>]
 - 005b4910 TSFixedArray<struct_CHANCES>::~TSFixedArray<struct_CHANCES>
 
 [TSFixedArray<struct_CModelTexture>]
-- 0081ce60 TSFixedArray<struct_CModelTexture>::TSFixedArray<struct_CModelTexture>
+- 0082a600 TSFixedArray<struct_CModelTexture>::TSFixedArray<struct_CModelTexture>
 
-[TSFixedArray<struct_CWalkableSurface>]
-- 0075de80 TSFixedArray<struct_CWalkableSurface>::TSFixedArray<struct_CWalkableSurface>
+[TSFixedArray<struct_CPrimitive>]
+- 0089dfb0 TSFixedArray<struct_CPrimitive>::TSFixedArray<struct_CPrimitive>
 
 [TSFixedArray<struct_HMATERIAL__*>]
-- 0082a600 TSFixedArray<struct_HMATERIAL__*>::TSFixedArray<struct_HMATERIAL__*>
+- 0082a4e0 TSFixedArray<struct_HMATERIAL__*>::TSFixedArray<struct_HMATERIAL__*>
 
 [TSFixedArray<struct_TEXTLINETEXTURE*>]
 - 006c59b0 TSFixedArray<struct_TEXTLINETEXTURE*>::~TSFixedArray<struct_TEXTLINETEXTURE*>
@@ -1093,11 +1110,10 @@
 - 00547e20 TSFixedArray<struct_WorldMapContinentInfo>::`scalar_deleting_destructor'
 
 [TSFixedArray<unsigned_char>]
-- 008248b0 TSFixedArray<unsigned_char>::TSFixedArray<unsigned_char>
+- 0082ac10 TSFixedArray<unsigned_char>::TSFixedArray<unsigned_char>
 
 [TSFixedArray<unsigned_short>]
 - 007f1f20 TSFixedArray<unsigned_short>::`scalar_deleting_destructor'
-- 00899b80 TSFixedArray<unsigned_short>::TSFixedArray<unsigned_short>
 
 [TSFixedArray<void_(__fastcall*)(void)>]
 - 004b9990 TSFixedArray<void_(__fastcall*)(void)>::ReallocData
@@ -1108,67 +1124,59 @@
 [TSGrowableArray<char*>]
 - 004bc290 TSGrowableArray<char*>::Reserve
 
-[TSGrowableArray<class_CDetailDoodadData*>]
-- 00773a60 TSGrowableArray<class_CDetailDoodadData*>::RoundToChunk
-
 [TSGrowableArray<class_CGxTex*>]
 - 00685dc0 TSGrowableArray<class_CGxTex*>::RoundToChunk
 
 [TSGrowableArray<class_CParticleEmitter2*>]
-- 007462a0 TSGrowableArray<class_CParticleEmitter2*>::TSGrowableArray<class_CParticleEmitter2*>
+- 004c1d20 TSGrowableArray<class_CParticleEmitter2*>::TSGrowableArray<class_CParticleEmitter2*>
+- 00746280 TSGrowableArray<class_CParticleEmitter2*>::CalcChunkSize
 
 [TSGrowableArray<class_CSimpleMessageFrameLine>]
 - 00484ab0 TSGrowableArray<class_CSimpleMessageFrameLine>::CalcChunkSize
 
 [TSGrowableArray<class_LanguageWordsRec_const*>]
-- 004c92b0 TSGrowableArray<class_LanguageWordsRec_const*>::RoundToChunk
-- 00505480 TSGrowableArray<class_LanguageWordsRec_const*>::CalcChunkSize
+- 00771800 TSGrowableArray<class_LanguageWordsRec_const*>::RoundToChunk
 
 [TSGrowableArray<class_NTempest]
 - 004c4b10 TSGrowableArray<class_NTempest::C3Vector>::CalcChunkSize
 
-[TSGrowableArray<class_TSExplicitList<struct_C_OBJECTHASH,-572662307>_>]
-- 00532650 TSGrowableArray<class_TSExplicitList<struct_C_OBJECTHASH,-572662307>_>::TSGrowableArray<class_TSExplicitList<struct_C_OBJECTHASH,-572662307>_>
-
 [TSGrowableArray<enum_EGxRenderState>]
-- 008978a0 TSGrowableArray<enum_EGxRenderState>::CalcChunkSize
-- 0089f760 TSGrowableArray<enum_EGxRenderState>::RoundToChunk
+- 00897840 TSGrowableArray<enum_EGxRenderState>::CalcChunkSize
+- 0089e0b0 TSGrowableArray<enum_EGxRenderState>::RoundToChunk
 
 [TSGrowableArray<float>]
 - 00683a20 TSGrowableArray<float>::RoundToChunk
 
 [TSGrowableArray<struct_CGxPushedRenderState>]
 - 0077e940 TSGrowableArray<struct_CGxPushedRenderState>::CalcChunkSize
-- 00897300 TSGrowableArray<struct_CGxPushedRenderState>::RoundToChunk
+- 0089f760 TSGrowableArray<struct_CGxPushedRenderState>::RoundToChunk
 
 [TSGrowableArray<struct_CSimpleBatchedTexture>]
-- 00487cc0 TSGrowableArray<struct_CSimpleBatchedTexture>::CalcChunkSize
-- 004d4820 TSGrowableArray<struct_CSimpleBatchedTexture>::RoundToChunk
+- 004bfee0 TSGrowableArray<struct_CSimpleBatchedTexture>::RoundToChunk
+- 004d4820 TSGrowableArray<struct_CSimpleBatchedTexture>::CalcChunkSize
 
 [TSGrowableArray<struct_CWalkableSurface>]
-- 0075b480 TSGrowableArray<struct_CWalkableSurface>::CalcChunkSize
-- 0075b4f0 TSGrowableArray<struct_CWalkableSurface>::RoundToChunk
+- 0075b480 TSGrowableArray<struct_CWalkableSurface>::RoundToChunk
+- 0075b4f0 TSGrowableArray<struct_CWalkableSurface>::CalcChunkSize
 
 [TSGrowableArray<struct_ENCHANTMENTLOGDESC>]
 - 00532700 TSGrowableArray<struct_ENCHANTMENTLOGDESC>::CalcChunkSize
 
-[TSGrowableArray<struct_MACRODESC>]
-- 0054ba00 TSGrowableArray<struct_MACRODESC>::CalcChunkSize
-
 [TSGrowableArray<struct_OBJINFO>]
-- 0070f850 TSGrowableArray<struct_OBJINFO>::RoundToChunk
-- 00715e30 TSGrowableArray<struct_OBJINFO>::CalcChunkSize
+- 00715e30 TSGrowableArray<struct_OBJINFO>::RoundToChunk
+- 0071acf0 TSGrowableArray<struct_OBJINFO>::CalcChunkSize
+
+[TSGrowableArray<struct_PERSISTENTTEXTURE>]
+- 00727e70 TSGrowableArray<struct_PERSISTENTTEXTURE>::RoundToChunk
 
 [TSGrowableArray<struct_POIDIRECTIONDATA>]
-- 0057e630 TSGrowableArray<struct_POIDIRECTIONDATA>::CalcChunkSize
+- 0057d5f0 TSGrowableArray<struct_POIDIRECTIONDATA>::CalcChunkSize
 
 [TSGrowableArray<struct_SMMapObjDef>]
 - 008a3050 TSGrowableArray<struct_SMMapObjDef>::RoundToChunk
 
-[TSGrowableArray<struct_TIMEDTEXTURE>]
-- 00727e70 TSGrowableArray<struct_TIMEDTEXTURE>::CalcChunkSize
-
 [TSGrowableArray<struct__SOURCE>]
+- 004bbe20 TSGrowableArray<struct__SOURCE>::Reserve
 - 00776260 TSGrowableArray<struct__SOURCE>::NewElement
 
 [TSGrowableArray<union_NETADDR>]
@@ -1176,14 +1184,14 @@
 - 008c63c0 TSGrowableArray<union_NETADDR>::CalcChunkSize
 
 [TSGrowableArray<unsigned_char>]
-- 00728c10 TSGrowableArray<unsigned_char>::Add
+- 0069ec10 TSGrowableArray<unsigned_char>::RoundToChunk
 - 008c6b90 TSGrowableArray<unsigned_char>::TSGrowableArray<unsigned_char>
 
 [TSGrowableArray<unsigned_int>]
-- 0089db40 TSGrowableArray<unsigned_int>::RoundToChunk
+- 0089bc30 TSGrowableArray<unsigned_int>::RoundToChunk
 
 [TSGrowableArray<unsigned_long>]
-- 00897560 TSGrowableArray<unsigned_long>::RoundToChunk
+- 00899b80 TSGrowableArray<unsigned_long>::RoundToChunk
 
 [TSHashObject<struct_DBCache<class_NameCache,unsigned___int64,class_CHashKeyGUID>]
 - 00673b10 TSHashObject<struct_DBCache<class_NameCache,unsigned___int64,class_CHashKeyGUID>::DBCACHEHASH,class_CHashKeyGUID>::~TSHashObject<struct_DBCache<class_NameCache,unsigned___int64,class_CHashKeyGUID>::DBCACHEHASH,class_CHashKeyGUID>
@@ -1191,22 +1199,27 @@
 [TSHashObject<struct_DBCache<class_PetNameCache,int,class_HASHKEY_INT>]
 - 006745c0 TSHashObject<struct_DBCache<class_PetNameCache,int,class_HASHKEY_INT>::DBCACHEHASH,class_HASHKEY_INT>::~TSHashObject<struct_DBCache<class_PetNameCache,int,class_HASHKEY_INT>::DBCACHEHASH,class_HASHKEY_INT>
 
+[TSHashObject<struct_TIMESTAMPSTRUCT,class_HASHKEY_NONE>]
+- 005c6800 TSHashObject<struct_TIMESTAMPSTRUCT,class_HASHKEY_NONE>::~TSHashObject<struct_TIMESTAMPSTRUCT,class_HASHKEY_NONE>
+
+[TSHashTable<struct_CModelHash,class_CHashKeyFilePath>]
+- 007701c0 TSHashTable<struct_CModelHash,class_CHashKeyFilePath>::Destroy
+
 [TSHashTable<struct_FADEOUTHASHOBJ,class_CHashKeyGUID>]
 - 004f92a0 TSHashTable<struct_FADEOUTHASHOBJ,class_CHashKeyGUID>::InternalClear
 - 0057c400 TSHashTable<struct_FADEOUTHASHOBJ,class_CHashKeyGUID>::Unlink
 
 [TSHashTable<struct_FILEMAP,class_HASHKEY_STRI>]
 - 00423cb0 TSHashTable<struct_FILEMAP,class_HASHKEY_STRI>::Clear
-- 0042aae0 TSHashTable<struct_FILEMAP,class_HASHKEY_STRI>::Initialized
 
 [TSHashTable<struct_HashedNode,class_HASHKEY_STRI>]
 - 00814650 TSHashTable<struct_HashedNode,class_HASHKEY_STRI>::New
 
-[TSHashTable<struct_SIMPLECONTEXTHASHOBJ,class_HASHKEY_NONE>]
-- 004bf5d0 TSHashTable<struct_SIMPLECONTEXTHASHOBJ,class_HASHKEY_NONE>::Destroy
+[TSHashTable<struct_SIMPLETEXTUREREGHASH,class_HASHKEY_STR>]
+- 004bf5d0 TSHashTable<struct_SIMPLETEXTUREREGHASH,class_HASHKEY_STR>::`scalar_deleting_destructor'
 
-[TSHashTable<struct_SIMPLEFRAMEREGHASH,class_HASHKEY_STR>]
-- 00558160 TSHashTable<struct_SIMPLEFRAMEREGHASH,class_HASHKEY_STR>::Destroy
+[TSHashTableReuse<class_CGxVertexShader,class_HASHKEY_STRI,1>]
+- 00470630 TSHashTableReuse<class_CGxVertexShader,class_HASHKEY_STRI,1>::InternalNew
 
 [TSHashTableReuse<struct_CLightList,class_HASHKEY_DWORD,1>]
 - 006bc6f0 TSHashTableReuse<struct_CLightList,class_HASHKEY_DWORD,1>::InternalNew
@@ -1214,13 +1227,6 @@
 
 [TSHashTableReuse<struct_RGN,class_HASHKEY_NONE,1>]
 - 00776f30 TSHashTableReuse<struct_RGN,class_HASHKEY_NONE,1>::TSHashTableReuse<struct_RGN,class_HASHKEY_NONE,1>
-
-[TSHashTableReuse<struct_SoundFileDataCacheBlock,class_HASHKEY_LONGLONG,1>]
-- 00931460 TSHashTableReuse<struct_SoundFileDataCacheBlock,class_HASHKEY_LONGLONG,1>::InternalNew
-
-[TSLink<class_ASYNCREAD>]
-- 008d1880 TSLink<class_ASYNCREAD>::Next
-- 008d19f0 TSLink<class_ASYNCREAD>::NextLink
 
 [TSLink<class_CAsyncObject>]
 - 004b9ab0 TSLink<class_CAsyncObject>::Unlink
@@ -1230,17 +1236,17 @@
 
 [TSLink<class_CGxPixelShader>]
 - 00689b60 TSLink<class_CGxPixelShader>::NextLink
-- 0069ec10 TSLink<class_CGxPixelShader>::Unlink
 
 [TSLink<class_CGxuLightLink>]
-- 00462350 TSLink<class_CGxuLightLink>::Unlink
+- 004bbd40 TSLink<class_CGxuLightLink>::Unlink
 
 [TSLink<class_CMapAreaLow>]
+- 00783fe0 TSLink<class_CMapAreaLow>::NextLink
 - 00790020 TSLink<class_CMapAreaLow>::Unlink
-- 007d4360 TSLink<class_CMapAreaLow>::NextLink
 
 [TSLink<class_CMapBaseObjLink>]
 - 0077f290 TSLink<class_CMapBaseObjLink>::Unlink
+- 008a30e0 TSLink<class_CMapBaseObjLink>::NextLink
 
 [TSLink<class_CMapChunk>]
 - 00790620 TSLink<class_CMapChunk>::NextLink
@@ -1253,15 +1259,15 @@
 - 0079e6a0 TSLink<class_CMapObjDef>::NextLink
 
 [TSLink<class_CMapObjDefGroup>]
-- 007d4370 TSLink<class_CMapObjDefGroup>::NextLink
-- 007d5150 TSLink<class_CMapObjDefGroup>::Unlink
+- 007a8430 TSLink<class_CMapObjDefGroup>::NextLink
+- 007d5240 TSLink<class_CMapObjDefGroup>::Unlink
 
-[TSLink<class_CRenderBatch>]
-- 004964c0 TSLink<class_CRenderBatch>::Unlink
+[TSLink<class_CMapStaticEntity>]
+- 007d5150 TSLink<class_CMapStaticEntity>::NextLink
 
 [TSLink<class_CWFrustum>]
 - 00601650 TSLink<class_CWFrustum>::Unlink
-- 007d43e0 TSLink<class_CWFrustum>::NextLink
+- 008a2aa0 TSLink<class_CWFrustum>::NextLink
 
 [TSLink<struct_AuraDecayNode>]
 - 004b5800 TSLink<struct_AuraDecayNode>::Unlink
@@ -1275,22 +1281,19 @@
 [TSLink<struct_CHARCODEDESC>]
 - 006c4380 TSLink<struct_CHARCODEDESC>::Unlink
 
-[TSLink<struct_CLayoutFrame]
-- 004830a0 TSLink<struct_CLayoutFrame::FRAMENODE>::NextLink
-
 [TSLink<struct_CMapEntity>]
+- 007ccd20 TSLink<struct_CMapEntity>::Unlink
 - 007d5de0 TSLink<struct_CMapEntity>::NextLink
-- 007f9650 TSLink<struct_CMapEntity>::Unlink
 
 [TSLink<struct_CModelModItem>]
 - 007f6cc0 TSLink<struct_CModelModItem>::NextLink
 
 [TSLink<struct_CONSOLELINE>]
-- 008d1e80 TSLink<struct_CONSOLELINE>::Unlink
-- 008d24c0 TSLink<struct_CONSOLELINE>::NextLink
+- 008d22c0 TSLink<struct_CONSOLELINE>::NextLink
+- 008d2340 TSLink<struct_CONSOLELINE>::Unlink
 
 [TSLink<struct_CTextureItem>]
-- 00897840 TSLink<struct_CTextureItem>::NextLink
+- 009c5bb8 TSLink<struct_CTextureItem>::NextLink
 
 [TSLink<struct_CameraShake>]
 - 00565030 TSLink<struct_CameraShake>::Unlink
@@ -1307,9 +1310,7 @@
 
 [TSLink<struct_DBCache<class_CreatureStats_C,int,class_HASHKEY_INT>]
 - 00679d90 TSLink<struct_DBCache<class_CreatureStats_C,int,class_HASHKEY_INT>::DBCACHEHASH>::Unlink
-
-[TSLink<struct_DBCache<class_ItemStats_C,int,class_HASHKEY_INT>]
-- 005c76fb TSLink<struct_DBCache<class_ItemStats_C,int,class_HASHKEY_INT>::DBCACHEHASH>::Unlink
+- 007554f0 TSLink<struct_DBCache<class_CreatureStats_C,int,class_HASHKEY_INT>::DBCACHEHASH>::NextLink
 
 [TSLink<struct_DBCache<class_NPCText,int,class_HASHKEY_INT>]
 - 0067a1e0 TSLink<struct_DBCache<class_NPCText,int,class_HASHKEY_INT>::DBCACHEHASH>::Unlink
@@ -1320,9 +1321,6 @@
 [TSLink<struct_DBCache<class_PageTextCache_C,int,class_HASHKEY_INT>]
 - 00671030 TSLink<struct_DBCache<class_PageTextCache_C,int,class_HASHKEY_INT>::DBCACHEHASH>::NextLink
 - 0067a750 TSLink<struct_DBCache<class_PageTextCache_C,int,class_HASHKEY_INT>::DBCACHEHASH>::Unlink
-
-[TSLink<struct_DBCache<class_QuestCache,int,class_HASHKEY_INT>]
-- 007554f0 TSLink<struct_DBCache<class_QuestCache,int,class_HASHKEY_INT>::DBCACHEHASH>::Unlink
 
 [TSLink<struct_DIRTYFACE>]
 - 007462c0 TSLink<struct_DIRTYFACE>::NextLink
@@ -1335,7 +1333,11 @@
 - 008d0c40 TSLink<struct_EvtMessage>::Unlink
 
 [TSLink<struct_FADEOUTHASHOBJ>]
-- 007e8bd0 TSLink<struct_FADEOUTHASHOBJ>::Unlink
+- 007e80b0 TSLink<struct_FADEOUTHASHOBJ>::Unlink
+
+[TSLink<struct_FILEMAP>]
+- 00422800 TSLink<struct_FILEMAP>::Next
+- 0042aae0 TSLink<struct_FILEMAP>::RawNext
 
 [TSLink<struct_FONTHASHOBJ>]
 - 00723270 TSLink<struct_FONTHASHOBJ>::NextLink
@@ -1355,7 +1357,7 @@
 - 00519cf0 TSLink<struct_MISSILENODE>::Unlink
 
 [TSLink<struct_NAMEPLATEDESC>]
-- 007e80b0 TSLink<struct_NAMEPLATEDESC>::Unlink
+- 0078fbd0 TSLink<struct_NAMEPLATEDESC>::Unlink
 
 [TSLink<struct_NETCLIENTNODE>]
 - 00633130 TSLink<struct_NETCLIENTNODE>::Unlink
@@ -1364,13 +1366,13 @@
 - 004d3d40 TSLink<struct_OBJHANDLERREQUEST>::NextLink
 
 [TSLink<struct_PENDINGCHAT>]
-- 005edd10 TSLink<struct_PENDINGCHAT>::Unlink
+- 005edd10 TSLink<struct_PENDINGCHAT>::NextLink
 
 [TSLink<struct_PENDINGTEXTEMOTE>]
 - 005017a0 TSLink<struct_PENDINGTEXTEMOTE>::Unlink
 
 [TSLink<struct_PrefetchNode>]
-- 007685c0 TSLink<struct_PrefetchNode>::Unlink
+- 0042e6b0 TSLink<struct_PrefetchNode>::Unlink
 
 [TSLink<struct_RENDERCALLBACKNODE>]
 - 00482ec0 TSLink<struct_RENDERCALLBACKNODE>::NextLink
@@ -1378,8 +1380,8 @@
 [TSLink<struct_SPELLEFFECTDESC>]
 - 00710780 TSLink<struct_SPELLEFFECTDESC>::NextLink
 
-[TSLink<struct_SPELLHISTORY>]
-- 00728500 TSLink<struct_SPELLHISTORY>::NextLink
+[TSLink<struct_TRADESKILLLINE>]
+- 007fe1a0 TSLink<struct_TRADESKILLLINE>::Unlink
 
 [TSLink<struct_ThreadData>]
 - 005b1f40 TSLink<struct_ThreadData>::NextLink
@@ -1388,19 +1390,23 @@
 - 004ca080 TSLink<struct_UISOUNDLOOKUP>::NextLink
 
 [TSLink<struct_UncachableNode>]
-- 009c6e07 TSLink<struct_UncachableNode>::Unlink
+- 008d07f0 TSLink<struct_UncachableNode>::Unlink
+
+[TSLink<struct_WORDLIST>]
+- 004fb7e0 TSLink<struct_WORDLIST>::Unlink
 
 [TSLink<struct_WaterRadWave>]
 - 008a2980 TSLink<struct_WaterRadWave>::Unlink
 
-[TSLinkedNode<struct_CGxuLight>]
-- 004bbd40 TSLinkedNode<struct_CGxuLight>::~TSLinkedNode<struct_CGxuLight>
+[TSLinkedNode<struct_ACTIVEAURAINFO>]
+- 00878580 TSLinkedNode<struct_ACTIVEAURAINFO>::~TSLinkedNode<struct_ACTIVEAURAINFO>
 
 [TSLinkedNode<struct_CameraShake>]
 - 004f5290 TSLinkedNode<struct_CameraShake>::~TSLinkedNode<struct_CameraShake>
 
 [TSLinkedNode<struct_DBCACHECALLBACK>]
 - 0067ae60 TSLinkedNode<struct_DBCACHECALLBACK>::~TSLinkedNode<struct_DBCACHECALLBACK>
+- 009c56cc TSLinkedNode<struct_DBCACHECALLBACK>::TSLinkedNode<struct_DBCACHECALLBACK>
 
 [TSLinkedNode<struct_DIRTYFACE>]
 - 00617210 TSLinkedNode<struct_DIRTYFACE>::~TSLinkedNode<struct_DIRTYFACE>
@@ -1416,53 +1422,60 @@
 
 [TSList<class_CGxuLightLink,class_TSGetExplicitLink<class_CGxuLightLink>_>]
 - 006bba50 TSList<class_CGxuLightLink,class_TSGetExplicitLink<class_CGxuLightLink>_>::Link
-- 007e2c80 TSList<class_CGxuLightLink,class_TSGetExplicitLink<class_CGxuLightLink>_>::~TSList<class_CGxuLightLink,class_TSGetExplicitLink<class_CGxuLightLink>_>
 
 [TSList<class_CMapBaseObjLink,class_TSGetExplicitLink<class_CMapBaseObjLink>_>]
-- 008a3060 TSList<class_CMapBaseObjLink,class_TSGetExplicitLink<class_CMapBaseObjLink>_>::Link
+- 008a3110 TSList<class_CMapBaseObjLink,class_TSGetExplicitLink<class_CMapBaseObjLink>_>::Link
 
 [TSList<class_CMapObj,class_TSGetExplicitLink<class_CMapObj>_>]
 - 007b0690 TSList<class_CMapObj,class_TSGetExplicitLink<class_CMapObj>_>::ChangeLinkOffset
 - 007b0c60 TSList<class_CMapObj,class_TSGetExplicitLink<class_CMapObj>_>::LinkNode
 
 [TSList<class_CMapObjDef,class_TSGetExplicitLink<class_CMapObjDef>_>]
-- 007ccd20 TSList<class_CMapObjDef,class_TSGetExplicitLink<class_CMapObjDef>_>::Link
+- 007f9650 TSList<class_CMapObjDef,class_TSGetExplicitLink<class_CMapObjDef>_>::Link
 
-[TSList<class_TSHashObjectChunk<class_CGxPixelShader,class_HASHKEY_STRI>,class_TSGetExplicitLink<class_TSHashObjectChunk<class_CGxPixelShader,class_HASHKEY_STRI>_>_>]
-- 00687740 TSList<class_TSHashObjectChunk<class_CGxPixelShader,class_HASHKEY_STRI>,class_TSGetExplicitLink<class_TSHashObjectChunk<class_CGxPixelShader,class_HASHKEY_STRI>_>_>::~TSList<class_TSHashObjectChunk<class_CGxPixelShader,class_HASHKEY_STRI>,class_TSGetExplicitLink<class_TSHashObjectChunk<class_CGxPixelShader,class_HASHKEY_STRI>_>_>
+[TSList<class_CRenderBatch,class_TSGetExplicitLink<class_CRenderBatch>_>]
+- 004964c0 TSList<class_CRenderBatch,class_TSGetExplicitLink<class_CRenderBatch>_>::~TSList<class_CRenderBatch,class_TSGetExplicitLink<class_CRenderBatch>_>
+
+[TSList<class_CSimpleFrame,class_TSGetExplicitLink<class_CSimpleFrame>_>]
+- 004830a0 TSList<class_CSimpleFrame,class_TSGetExplicitLink<class_CSimpleFrame>_>::~TSList<class_CSimpleFrame,class_TSGetExplicitLink<class_CSimpleFrame>_>
+
+[TSList<class_TSHashObjectChunk<class_CGxVertexShader,class_HASHKEY_STRI>,class_TSGetExplicitLink<class_TSHashObjectChunk<class_CGxVertexShader,class_HASHKEY_STRI>_>_>]
+- 00687740 TSList<class_TSHashObjectChunk<class_CGxVertexShader,class_HASHKEY_STRI>,class_TSGetExplicitLink<class_TSHashObjectChunk<class_CGxVertexShader,class_HASHKEY_STRI>_>_>::~TSList<class_TSHashObjectChunk<class_CGxVertexShader,class_HASHKEY_STRI>,class_TSGetExplicitLink<class_TSHashObjectChunk<class_CGxVertexShader,class_HASHKEY_STRI>_>_>
+
+[TSList<struct_ACTIVEAURAINFO,class_TSGetLink<struct_ACTIVEAURAINFO>_>]
+- 008799e0 TSList<struct_ACTIVEAURAINFO,class_TSGetLink<struct_ACTIVEAURAINFO>_>::Link
 
 [TSList<struct_ANIMKIT,class_TSGetExplicitLink<struct_ANIMKIT>_>]
 - 00715930 TSList<struct_ANIMKIT,class_TSGetExplicitLink<struct_ANIMKIT>_>::ChangeLinkOffset
-
-[TSList<struct_ANIMQUEUENODE,class_TSGetLink<struct_ANIMQUEUENODE>_>]
-- 00878580 TSList<struct_ANIMQUEUENODE,class_TSGetLink<struct_ANIMQUEUENODE>_>::Link
 
 [TSList<struct_CGxBuf,class_TSGetExplicitLink<struct_CGxBuf>_>]
 - 00685c00 TSList<struct_CGxBuf,class_TSGetExplicitLink<struct_CGxBuf>_>::~TSList<struct_CGxBuf,class_TSGetExplicitLink<struct_CGxBuf>_>
 
 [TSList<struct_CHARCODEDESC,class_TSGetExplicitLink<struct_CHARCODEDESC>_>]
 - 006c4420 TSList<struct_CHARCODEDESC,class_TSGetExplicitLink<struct_CHARCODEDESC>_>::Link
-- 007cecd0 TSList<struct_CHARCODEDESC,class_TSGetExplicitLink<struct_CHARCODEDESC>_>::~TSList<struct_CHARCODEDESC,class_TSGetExplicitLink<struct_CHARCODEDESC>_>
 
 [TSList<struct_CMDDEF,class_TSGetLink<struct_CMDDEF>_>]
 - 00407900 TSList<struct_CMDDEF,class_TSGetLink<struct_CMDDEF>_>::RawNext
 
 [TSList<struct_CONSOLECOMMAND,class_TSGetExplicitLink<struct_CONSOLECOMMAND>_>]
 - 007baaa0 TSList<struct_CONSOLECOMMAND,class_TSGetExplicitLink<struct_CONSOLECOMMAND>_>::InitializeTerminator
-- 00832dd0 TSList<struct_CONSOLECOMMAND,class_TSGetExplicitLink<struct_CONSOLECOMMAND>_>::TSList<struct_CONSOLECOMMAND,class_TSGetExplicitLink<struct_CONSOLECOMMAND>_>
+- 00832dd0 TSList<struct_CONSOLECOMMAND,class_TSGetExplicitLink<struct_CONSOLECOMMAND>_>::UnlinkAll
 
 [TSList<struct_CPlayerMoveEvent,class_TSGetLink<struct_CPlayerMoveEvent>_>]
 - 006e9050 TSList<struct_CPlayerMoveEvent,class_TSGetLink<struct_CPlayerMoveEvent>_>::LinkNode
 
 [TSList<struct_CSolidTextureHash,class_TSGetExplicitLink<struct_CSolidTextureHash>_>]
-- 009c5bb8 TSList<struct_CSolidTextureHash,class_TSGetExplicitLink<struct_CSolidTextureHash>_>::ChangeLinkOffset
+- 0089f6e0 TSList<struct_CSolidTextureHash,class_TSGetExplicitLink<struct_CSolidTextureHash>_>::ChangeLinkOffset
 
 [TSList<struct_CStatus]
+- 00557260 TSList<struct_CStatus::STATUSENTRY,class_TSGetExplicitLink<struct_CStatus::STATUSENTRY>_>::TSList<struct_CStatus::STATUSENTRY,class_TSGetExplicitLink<struct_CStatus::STATUSENTRY>_>
 - 007eb070 TSList<struct_CStatus::STATUSENTRY,class_TSGetExplicitLink<struct_CStatus::STATUSENTRY>_>::InitializeTerminator
 
+[TSList<struct_C_OBJECTHASH,class_TSGetExplicitLink<struct_C_OBJECTHASH>_>]
+- 00532650 TSList<struct_C_OBJECTHASH,class_TSGetExplicitLink<struct_C_OBJECTHASH>_>::InitializeTerminator
+
 [TSList<struct_DBCACHECALLBACK,class_TSGetLink<struct_DBCACHECALLBACK>_>]
-- 00549600 TSList<struct_DBCACHECALLBACK,class_TSGetLink<struct_DBCACHECALLBACK>_>::Link
-- 005c6800 TSList<struct_DBCACHECALLBACK,class_TSGetLink<struct_DBCACHECALLBACK>_>::UnlinkAll
+- 00572420 TSList<struct_DBCACHECALLBACK,class_TSGetLink<struct_DBCACHECALLBACK>_>::Link
 
 [TSList<struct_EvtHandler,class_TSGetExplicitLink<struct_EvtHandler>_>]
 - 0047dc90 TSList<struct_EvtHandler,class_TSGetExplicitLink<struct_EvtHandler>_>::Link
@@ -1479,49 +1492,51 @@
 [TSList<struct_GLYPHBITMAPDATA,class_TSGetExplicitLink<struct_GLYPHBITMAPDATA>_>]
 - 006c2a50 TSList<struct_GLYPHBITMAPDATA,class_TSGetExplicitLink<struct_GLYPHBITMAPDATA>_>::Link
 
-[TSList<struct_IMPACTEFFECTDESC,class_TSGetLink<struct_IMPACTEFFECTDESC>_>]
-- 00879840 TSList<struct_IMPACTEFFECTDESC,class_TSGetLink<struct_IMPACTEFFECTDESC>_>::Link
-
 [TSList<struct_INVENTORYART,class_TSGetExplicitLink<struct_INVENTORYART>_>]
 - 004cfd90 TSList<struct_INVENTORYART,class_TSGetExplicitLink<struct_INVENTORYART>_>::ChangeLinkOffset
 
 [TSList<struct_ITEMCOOLDOWNHASHNODE,class_TSGetExplicitLink<struct_ITEMCOOLDOWNHASHNODE>_>]
-- 007fe470 TSList<struct_ITEMCOOLDOWNHASHNODE,class_TSGetExplicitLink<struct_ITEMCOOLDOWNHASHNODE>_>::ChangeLinkOffset
+- 007fe470 TSList<struct_ITEMCOOLDOWNHASHNODE,class_TSGetExplicitLink<struct_ITEMCOOLDOWNHASHNODE>_>::Link
+- 00801120 TSList<struct_ITEMCOOLDOWNHASHNODE,class_TSGetExplicitLink<struct_ITEMCOOLDOWNHASHNODE>_>::ChangeLinkOffset
+
+[TSList<struct_OBJHANDLERREQUEST,class_TSGetLink<struct_OBJHANDLERREQUEST>_>]
+- 004d6170 TSList<struct_OBJHANDLERREQUEST,class_TSGetLink<struct_OBJHANDLERREQUEST>_>::InitializeTerminator
 
 [TSList<struct_PENDINGUSERLIST,class_TSGetLink<struct_PENDINGUSERLIST>_>]
 - 00501600 TSList<struct_PENDINGUSERLIST,class_TSGetLink<struct_PENDINGUSERLIST>_>::Link
 - 005019d0 TSList<struct_PENDINGUSERLIST,class_TSGetLink<struct_PENDINGUSERLIST>_>::Clear
-- 005be220 TSList<struct_PENDINGUSERLIST,class_TSGetLink<struct_PENDINGUSERLIST>_>::~TSList<struct_PENDINGUSERLIST,class_TSGetLink<struct_PENDINGUSERLIST>_>
+
+[TSList<struct_ProfileInternal]
+- 007cecd0 TSList<struct_ProfileInternal::KEYVALUE,class_TSGetExplicitLink<struct_ProfileInternal::KEYVALUE>_>::TSList<struct_ProfileInternal::KEYVALUE,class_TSGetExplicitLink<struct_ProfileInternal::KEYVALUE>_>
 
 [TSList<struct_SIMPLEFRAMEREGHASH,class_TSGetExplicitLink<struct_SIMPLEFRAMEREGHASH>_>]
-- 005c5be0 TSList<struct_SIMPLEFRAMEREGHASH,class_TSGetExplicitLink<struct_SIMPLEFRAMEREGHASH>_>::Link
-
-[TSList<struct_SPELLEFFECTDESC,class_TSGetLink<struct_SPELLEFFECTDESC>_>]
-- 008799e0 TSList<struct_SPELLEFFECTDESC,class_TSGetLink<struct_SPELLEFFECTDESC>_>::UnlinkAll
+- 005c70d0 TSList<struct_SIMPLEFRAMEREGHASH,class_TSGetExplicitLink<struct_SIMPLEFRAMEREGHASH>_>::Link
 
 [TSList<struct_Storm]
 - 00428300 TSList<struct_Storm::SFile::ARCHIVEREC,class_TSGetLink<struct_Storm::SFile::ARCHIVEREC>_>::Head
 - 00438c40 TSList<struct_Storm::SFile::ARCHIVEREC,class_TSGetLink<struct_Storm::SFile::ARCHIVEREC>_>::RawNext
-- 004541b0 TSList<struct_Storm::SFile::ARCHIVEREC,class_TSGetLink<struct_Storm::SFile::ARCHIVEREC>_>::~TSList<struct_Storm::SFile::ARCHIVEREC,class_TSGetLink<struct_Storm::SFile::ARCHIVEREC>_>
+- 0043e6a0 TSList<struct_Storm::SFile::ARCHIVEREC,class_TSGetLink<struct_Storm::SFile::ARCHIVEREC>_>::NewNode
+- 00451e80 TSList<struct_Storm::SFile::ARCHIVEREC,class_TSGetLink<struct_Storm::SFile::ARCHIVEREC>_>::~TSList<struct_Storm::SFile::ARCHIVEREC,class_TSGetLink<struct_Storm::SFile::ARCHIVEREC>_>
 
 [TSList<struct_TRADESKILLLINE,class_TSGetExplicitLink<struct_TRADESKILLLINE>_>]
-- 007161c0 TSList<struct_TRADESKILLLINE,class_TSGetExplicitLink<struct_TRADESKILLLINE>_>::TSList<struct_TRADESKILLLINE,class_TSGetExplicitLink<struct_TRADESKILLLINE>_>
-- 007fe1a0 TSList<struct_TRADESKILLLINE,class_TSGetExplicitLink<struct_TRADESKILLLINE>_>::Link
-- 007fe510 TSList<struct_TRADESKILLLINE,class_TSGetExplicitLink<struct_TRADESKILLLINE>_>::InitializeTerminator
+- 00716040 TSList<struct_TRADESKILLLINE,class_TSGetExplicitLink<struct_TRADESKILLLINE>_>::TSList<struct_TRADESKILLLINE,class_TSGetExplicitLink<struct_TRADESKILLLINE>_>
+- 007fe510 TSList<struct_TRADESKILLLINE,class_TSGetExplicitLink<struct_TRADESKILLLINE>_>::ChangeLinkOffset
 
 [TSList<struct_UncachableNode,class_TSGetExplicitLink<struct_UncachableNode>_>]
-- 008d0760 TSList<struct_UncachableNode,class_TSGetExplicitLink<struct_UncachableNode>_>::Link
-- 008d07f0 TSList<struct_UncachableNode,class_TSGetExplicitLink<struct_UncachableNode>_>::TSList<struct_UncachableNode,class_TSGetExplicitLink<struct_UncachableNode>_>
-- 008d16b0 TSList<struct_UncachableNode,class_TSGetExplicitLink<struct_UncachableNode>_>::UnlinkAll
-- 008d6000 TSList<struct_UncachableNode,class_TSGetExplicitLink<struct_UncachableNode>_>::InitializeTerminator
+- 008d0760 TSList<struct_UncachableNode,class_TSGetExplicitLink<struct_UncachableNode>_>::UnlinkAll
+- 008d16b0 TSList<struct_UncachableNode,class_TSGetExplicitLink<struct_UncachableNode>_>::InitializeTerminator
+- 008d6000 TSList<struct_UncachableNode,class_TSGetExplicitLink<struct_UncachableNode>_>::TSList<struct_UncachableNode,class_TSGetExplicitLink<struct_UncachableNode>_>
 
 [TSList<struct_WORDLIST,class_TSGetExplicitLink<struct_WORDLIST>_>]
-- 004fb7e0 TSList<struct_WORDLIST,class_TSGetExplicitLink<struct_WORDLIST>_>::TSList<struct_WORDLIST,class_TSGetExplicitLink<struct_WORDLIST>_>
 - 00502360 TSList<struct_WORDLIST,class_TSGetExplicitLink<struct_WORDLIST>_>::Link
-- 009c6128 TSList<struct_WORDLIST,class_TSGetExplicitLink<struct_WORDLIST>_>::InitializeTerminator
+- 00848140 TSList<struct_WORDLIST,class_TSGetExplicitLink<struct_WORDLIST>_>::InitializeTerminator
+- 009c6128 TSList<struct_WORDLIST,class_TSGetExplicitLink<struct_WORDLIST>_>::UnlinkAll
 
-[TSStackArray<unsigned_int>]
-- 004cfbb0 TSStackArray<unsigned_int>::~TSStackArray<unsigned_int>
+[TSPriorityQueue<struct_EvtTimer>]
+- 00462350 TSPriorityQueue<struct_EvtTimer>::TSPriorityQueue<struct_EvtTimer>
+
+[TSStackArray<int>]
+- 007dc680 TSStackArray<int>::~TSStackArray<int>
 
 [VideoHardwareRec]
 - 0077f8f0 VideoHardwareRec::VideoHardwareRec
@@ -1540,9 +1555,12 @@
 - 00715720 WORLDTEXTSTRING::CalculateNewPosition
 - 007e66b0 WORLDTEXTSTRING::`scalar_deleting_destructor'
 
+[WTOBJECT]
+- 008a4050 WTOBJECT::Recycle
+
 [WaveTrain]
-- 0093bd00 WaveTrain::Phase
-- 009467c0 WaveTrain::Init
+- 008ef590 WaveTrain::Phase
+- 00936970 WaveTrain::Init
 
 [WorldMapContinentInfo]
 - 00546fe0 WorldMapContinentInfo::`scalar_deleting_destructor'
@@ -1550,40 +1568,41 @@
 [WowConnection]
 - 004665b0 WowConnection::NewSendNode
 - 00466750 WowConnection::AcquireResponseRef
+- 008ceec0 WowConnection::Listen
 
 [WowConnectionNet]
 - 00469860 WowConnectionNet::PlatformRun
 
 [WowTime]
-- 004bf500 WowTime::CompareMonth
-- 0076c5e0 WowTime::CompareMinute
-- 0076c610 WowTime::CompareYear
+- 004bf500 WowTime::CompareHour
+- 004d20b0 WowTime::CompareMinute
+- 005c2350 WowTime::operator!=
+- 0076c610 WowTime::CompareMonth
 - 0076c640 WowTime::CompareDay
 - 0076c670 WowTime::CompareWeekday
-- 0076c6a0 WowTime::CompareHour
+- 0076c6a0 WowTime::CompareYear
 
 [XMLNode]
 - 00496390 XMLNode::GetChild
-- 004963c0 XMLNode::GetName
+- 004963c0 XMLNode::GetSibling
 - 00814910 XMLNode::`scalar_deleting_destructor'
 
 [`public:_void___thiscall_CGUnit_C]
 - 008d4c20 `public:_void___thiscall_CGUnit_C::AddWorldText(enum_WORLDTEXTMISSTYPE)'::`2'::WORLDTEXTINFO::WORLDTEXTINFO
 
-[type_info]
-- 009c6f88 type_info::internal_raw_name
-
 [unnamed namespace]
-- 00401190 Spell_C_Initialize
+- 00401170 TradeExtendedStatusHandler
+- 00401190 OnUnitMoveEventActive
 - 00401220 SpellTableDestroy
 - 00401b20 Warning
+- 004020e0 GxDevWindow
 - 00402760 RegisterCVars
 - 00402a40 DrawingLoadingScreen
 - 004042c0 UnitCombatLogFactionChanged
 - 00404930 OpenArchives
 - 00404ad0 ShutdownFileAccess
 - 00405dd0 SysMsgDisableFileLog
-- 00407c50 _FSOUND_SetHWND@4
+- 00407c50 _FSOUND_SetMixer@4
 - 00408050 DDCToNDC
 - 004089c0 GetSpellEffectDescScale
 - 0040a160 SetupQuad
@@ -1593,21 +1612,22 @@
 - 0041c654 _kernel32_GetProcAddress_Thunk@0
 - 0041c679 _kernel32_FindResourceW_Thunk@0
 - 0041c69e _user32_SetWindowLongA_Thunk@0
-- 0041c6c3 _GodotFailEnumPropsA@8
-- 0041c6e8 _GodotFailIsClipboardFormatAvailable@4
-- 0041c70d _GodotFailMessageBoxW@16
+- 0041c6c3 _GodotFailDdeQueryConvInfo@12
+- 0041c6e8 _GodotFailEnumPropsA@8
+- 0041c70d _GodotFailIsClipboardFormatAvailable@4
 - 0041c732 _kernel32_MultiByteToWideChar_Thunk@0
 - 0041c77c _GodotFailGetCPInfo@8
-- 0041c7c6 _GodotFreeContextBuffer@4
-- 0041c7eb _GodotFaillstrlenW@4
+- 0041c7c6 _GodotFailExtTextOutW@32
+- 0041c7eb _GodotFaillstrcpyW@8
 - 0041cdac _strcmpiC@8
 - 0041e790 GetTextureFlags
 - 004208d0 ProcessTextures
 - 00420930 BaseDestroyGlobal
 - 00420a10 _SMemFree@16
-- 00422420 GxDevCreate
+- 00422420 DestroyHandlerPlayer
 - 00423900 ZipFileOpenFile
 - 00426d30 TaxiNodeGetNodeType
+- 00426fd0 _SMemInitialize@0
 - 00427010 UnloadMachineStateSymbols
 - 00427de0 Int64ToString
 - 00428000 ProfileClose
@@ -1616,50 +1636,40 @@
 - 004294c0 _SCmdRegisterArgument@32
 - 0042e400 GetBlockEntry
 - 0042ea40 _SFileAuthenticateArchiveEx@24
-- 0042ecc0 OsTimeToLocalSystemTime
 - 00431380 @SSignatureVerifyStream_Finish@12
-- 004321b0 ?colorTable@?1??DxtDecompress@@YIXPBUDxt1Block@@PAPAVCArgb1555@NTempest@@ABUDxtRect@@@Z@$APAV23@A
+- 004321b0 ?colorTable@?1??DxtDecompress@@YIXPBUDxt1Block@@PAPAVCRgb565@NTempest@@ABUDxtRect@@@Z@$APAV23@A
 - 00437370 CharCustomizationShutdown
-- 0043e030 _SMsgRegisterSysCommand@12
-- 0043e2d0 _SFileCancelRequestEx@4
-- 0043e6a0 ReadAdditionalAttributes
-- 00440120 _SMsgRegisterCommand@12
+- 00440120 _SFileOpenPathAsArchive@20
+- 00444eb0 _SMsgBreakHandlerChain@4
 - 00446420 SStrHash64
-- 0044b1c0 _SFileCancelRequest@4
-- 0044ff20 ResetAsyncState
-- 00451e80 _SFileOpenPathAsArchive@20
-- 004541d0 _SFileGetArchiveInfo@12
+- 004541b0 _SFileGetArchiveName@12
+- 004541d0 _SFileOpenFile@8
 - 0045bfe0 AnimBuild
 - 004662b0 AllocNewObj
 - 00469300 WorkerProc
 - 0046f5a0 round
-- 00470630 Script_PromoteByName
 - 0047bf20 _SErrDisplayErrorFmt
 - 0047c600 BaseFileDestroy
 - 0047cbe0 PropDestroy
 - 0047db70 IEvtQueueDispatchNext
-- 0047edf0 PostClose
+- 0047edf0 PutContext
 - 0047f02f OsNetPump
 - 0047f950 ConfirmClose
 - 0047fde0 CheckMouseModeState
 - 0047fe30 PostMouseMove
-- 0047fea0 PostMouseWheel
-- 0047ffb0 PostMouseDown
+- 0047fea0 PostMouseDown
+- 0047ffb0 PostMouseWheel
 - 004826d0 TextBlockAnimate
 - 004887f0 FrameScript_Execute
 - 00488be0 SynthesizeSide
 - 00488c60 SynthesizeCenter
 - 00495810 PaintScreen
-- 00497ac0 FrameScript_SetVariable
-- 004982e0 Script_PitchUpStart
-- 00498330 Script_PitchUpStop
 - 004a8420 GxDevReadScreenShot
 - 004a8480 CheckValidBlock
 - 004aa580 _GodotFailCreateDirectoryW@8
 - 004aae50 _GodotFailDeleteFileW@4
 - 004b5170 FileError
 - 004b61c0 GxCaps
-- 004b6280 CheckInitialized
 - 004b6300 GxDevBaseMipLevel
 - 004b6550 AsyncTextureWait
 - 004b69e0 AsyncTextureHandler
@@ -1667,17 +1677,14 @@
 - 004b73e0 TextureGxCacheFlush
 - 004b7e80 AsyncCreateBlpTextureCallback
 - 004b8830 TexComponentRemove
-- 004b9950 LoadLightsAndFog
-- 004b9970 ConsoleCommand_SkyShow
 - 004bba70 GetAnim
 - 004bfe70 CalcLevelSize
 - 004c0f20 ProfileSectionExists
-- 004c1180 ModelGetCamera
+- 004c1180 ModelAnimateCameras
 - 004c11f0 DataMgrGetFloat
+- 004c1220 ModelGetCamera
 - 004c1600 ExtractLowPartSx
-- 004c1d20 ProjectTex2dGetFade
 - 004c3e00 EvaluatePolynomial
-- 004c5c80 SetLocalPlayerInGame
 - 004c5d60 SoundPositionCallback
 - 004c5dc0 StartAmbience
 - 004c5fb0 Script_SetDoodadAnim
@@ -1697,50 +1704,46 @@
 - 004d0bc0 EnableMusicHandler
 - 004d13e0 EnableSoundHandler
 - 004d1530 EnableAmbienceHandler
-- 004d20b0 GxDevWindow
-- 004d3870 TradeExtendedStatusHandler
 - 004d3df0 ZoneDebugIsInCurrentZone
 - 004d44f0 GetSectionId
-- 004d4850 MirrorHandlerAdvanceBlock
-- 004d5350 IsMaskBitSet
+- 004d4850 IsMaskBitSet
+- 004d5350 MirrorHandlerAdvanceBlock
 - 004d5550 CallMirrorHandlers
 - 004d5900 UnassignMirrorHandler
-- 004d6170 ClientServices_SetCurrent
 - 004d6fc0 ClntObjMgrFreeObject
 - 004d85a0 ProfileGetValue
-- 004d98a0 ?Link@?$TSList@UDBCACHEHASH@?$DBCache@VItemStats_C@@HVHASHKEY_INT@@@@V?$TSGetExplicitLink@UDBCACHEHASH@?$DBCache@VItemStats_C@@HVHASHKEY_INT@@@@@@@@ABEPAV?$TSLink@UDBCACHEHASH@?$DBCache@VItemStats_C@@HVHASHKEY_INT@@@@@@PBUDBCACHEHASH@?$DBCache@VIt68e027a0
 - 004da580 BaseFileDumpStats
 - 004dfd50 StripQuotes
 - 004dfda0 CharCustomizationCommitItemGeosets
 - 004e454c Script_GetCharacterListUpdate
 - 004e6fb0 ConsoleCommand_AppendExec
-- 004e95b0 Script_Jump
-- 004ee200 IEvtQueueHasMessages
-- 004f0400 _FSOUND_SetMixer@4
+- 004ee200 BaseFilePrefetch
+- 004f0400 _FSOUND_SetOutput@4
 - 004f4a50 SkipSetOfObjects
 - 004fb8f0 StringToLanguage
 - 004fcf40 @regexec@20
-- 004fe260 SndInterfaceInitializeVocalUISounds
+- 004fe260 SetLocalPlayerInGame
 - 00509720 UpdateSubComponentPathNames
+- 0050f470 Spell_C_GetModalSpell
 - 00513190 ClosestObjectMatchProc
-- 00530dc7 ProfileAddValue
+- 0052a1a0 CCommand_ResetMonsterAnim
 - 00532890 ViolenceLevelsShutdown
 - 00537c60 LogThreads
-- 00539a20 ProfileGetValueIndex
 - 005499c0 OnLFGResponse
 - 0054b1c0 OnGroupList
+- 00558160 CCommand_ForceMonsterAnim
 - 0055e610 GxDevSetBaseMipLevel
-- 005682c0 CCommand_AcceptRes
+- 005682c0 CCommand_ForceActionOnOtherUnset
 - 005684b0 GetSpellChainEffectSource
 - 0056c1c0 OutputReturn
-- 00572420 ?Link@?$TSList@UDBCACHEHASH@?$DBCache@VPetNameCache@@HVHASHKEY_INT@@@@V?$TSGetExplicitLink@UDBCACHEHASH@?$DBCache@VPetNameCache@@HVHASHKEY_INT@@@@@@@@ABEPAV?$TSLink@UDBCACHEHASH@?$DBCache@VPetNameCache@@HVHASHKEY_INT@@@@@@PBUDBCACHEHASH@?$DBCache@0c965d2f
+- 0056d390 ?Link@?$TSList@UDBCACHEHASH@?$DBCache@VItemStats_C@@HVHASHKEY_INT@@@@V?$TSGetExplicitLink@UDBCACHEHASH@?$DBCache@VItemStats_C@@HVHASHKEY_INT@@@@@@@@ABEPAV?$TSLink@UDBCACHEHASH@?$DBCache@VItemStats_C@@HVHASHKEY_INT@@@@@@PBUDBCACHEHASH@?$DBCache@VIt68e027a0
 - 00576ff0 SStrChr
 - 00577370 Spell_C_GetManaCost
 - 00584150 ?empty@?4??GetEnchantment@CGItem@@QBEPBUItemEnchantment@@H@Z@$AU2@A
 - 00594ae0 GetSkillLineFromService
 - 005c4470 ButtonIDToSlotID
-- 005c5b00 TaxiMapGetTexture
 - 005c9740 SkipPartialObjectUpdate
+- 005c98a0 OnFactionUpdate
 - 005dea60 OsGetTime
 - 005e7c00 GetSlotFromLua
 - 005f23f0 Spell_C_CancelAura
@@ -1755,86 +1758,89 @@
 - 00616af0 GxMasterEnable
 - 00618180 SetPortraitTexture
 - 00619300 SetPortraitTexture
-- 0061a1c0 TooltipItemStatsCallback
-- 0061a1f0 TooltipItemPetitionCallback
+- 0061a1c0 TooltipItemCreatorCallback
+- 0061a1f0 TooltipItemStatsCallback
 - 006237c0 CGTooltip_SetPlayerBuff
 - 006348b0 InitSoundProviderPreferences
 - 00634ba0 InitTerrainSoundTypeIDs
-- 00668720 ?Link@?$TSList@UDBCACHEHASH@?$DBCache@VCGPetition@@HVHASHKEY_INT@@@@V?$TSGetExplicitLink@UDBCACHEHASH@?$DBCache@VCGPetition@@HVHASHKEY_INT@@@@@@@@ABEPAV?$TSLink@UDBCACHEHASH@?$DBCache@VCGPetition@@HVHASHKEY_INT@@@@@@PBUDBCACHEHASH@?$DBCache@VCGPetfc4d21e6
-- 00668800 ?Link@?$TSList@UDBCACHEHASH@?$DBCache@VCreatureStats_C@@HVHASHKEY_INT@@@@V?$TSGetExplicitLink@UDBCACHEHASH@?$DBCache@VCreatureStats_C@@HVHASHKEY_INT@@@@@@@@ABEPAV?$TSLink@UDBCACHEHASH@?$DBCache@VCreatureStats_C@@HVHASHKEY_INT@@@@@@PBUDBCACHEHASH@?ab7474ce
-- 00679350 ?Link@?$TSList@UDBCACHEHASH@?$DBCache@VGuildStats_C@@HVHASHKEY_INT@@@@V?$TSGetExplicitLink@UDBCACHEHASH@?$DBCache@VGuildStats_C@@HVHASHKEY_INT@@@@@@@@ABEPAV?$TSLink@UDBCACHEHASH@?$DBCache@VGuildStats_C@@HVHASHKEY_INT@@@@@@PBUDBCACHEHASH@?$DBCache@853029e0
-- 00679f80 ?Link@?$TSList@UDBCACHEHASH@?$DBCache@VQuestCache@@HVHASHKEY_INT@@@@V?$TSGetExplicitLink@UDBCACHEHASH@?$DBCache@VQuestCache@@HVHASHKEY_INT@@@@@@@@ABEPAV?$TSLink@UDBCACHEHASH@?$DBCache@VQuestCache@@HVHASHKEY_INT@@@@@@PBUDBCACHEHASH@?$DBCache@VQuestecebe4d8
-- 0067b660 ?Link@?$TSList@UDBCACHEHASH@?$DBCache@VNPCText@@HVHASHKEY_INT@@@@V?$TSGetExplicitLink@UDBCACHEHASH@?$DBCache@VNPCText@@HVHASHKEY_INT@@@@@@@@ABEPAV?$TSLink@UDBCACHEHASH@?$DBCache@VNPCText@@HVHASHKEY_INT@@@@@@PBUDBCACHEHASH@?$DBCache@VNPCText@@HVHASc047dde0
-- 00681530 GxRsSet
+- 00668720 ?Link@?$TSList@UDBCACHEHASH@?$DBCache@VQuestCache@@HVHASHKEY_INT@@@@V?$TSGetExplicitLink@UDBCACHEHASH@?$DBCache@VQuestCache@@HVHASHKEY_INT@@@@@@@@ABEPAV?$TSLink@UDBCACHEHASH@?$DBCache@VQuestCache@@HVHASHKEY_INT@@@@@@PBUDBCACHEHASH@?$DBCache@VQuestecebe4d8
+- 00668800 ?Link@?$TSList@UDBCACHEHASH@?$DBCache@VCGPetition@@HVHASHKEY_INT@@@@V?$TSGetExplicitLink@UDBCACHEHASH@?$DBCache@VCGPetition@@HVHASHKEY_INT@@@@@@@@ABEPAV?$TSLink@UDBCACHEHASH@?$DBCache@VCGPetition@@HVHASHKEY_INT@@@@@@PBUDBCACHEHASH@?$DBCache@VCGPetfc4d21e6
+- 00679350 ?Link@?$TSList@UDBCACHEHASH@?$DBCache@VNPCText@@HVHASHKEY_INT@@@@V?$TSGetExplicitLink@UDBCACHEHASH@?$DBCache@VNPCText@@HVHASHKEY_INT@@@@@@@@ABEPAV?$TSLink@UDBCACHEHASH@?$DBCache@VNPCText@@HVHASHKEY_INT@@@@@@PBUDBCACHEHASH@?$DBCache@VNPCText@@HVHASc047dde0
+- 00679f80 ?Link@?$TSList@UDBCACHEHASH@?$DBCache@VCreatureStats_C@@HVHASHKEY_INT@@@@V?$TSGetExplicitLink@UDBCACHEHASH@?$DBCache@VCreatureStats_C@@HVHASHKEY_INT@@@@@@@@ABEPAV?$TSLink@UDBCACHEHASH@?$DBCache@VCreatureStats_C@@HVHASHKEY_INT@@@@@@PBUDBCACHEHASH@?ab7474ce
+- 0067b660 ?Link@?$TSList@UDBCACHEHASH@?$DBCache@VGuildStats_C@@HVHASHKEY_INT@@@@V?$TSGetExplicitLink@UDBCACHEHASH@?$DBCache@VGuildStats_C@@HVHASHKEY_INT@@@@@@@@ABEPAV?$TSLink@UDBCACHEHASH@?$DBCache@VGuildStats_C@@HVHASHKEY_INT@@@@@@PBUDBCACHEHASH@?$DBCache@853029e0
+- 00681530 ShadowRender
+- 00681690 _SFileCalcFileCrc@4
+- 006816f0 Script_InviteToParty
+- 00681b50 ProjectTex2dGetFade
 - 00682130 ModelSceneCalcFrustumPlanes
+- 0068b820 WindowDestroy
 - 0068da10 WindowClassCreate
 - 006908a0 WindowClassDestroy
 - 00695ac0 Project2d
-- 0069f9b0 WindowCreate
 - 006a0aa0 SetupPixelFormat
-- 006a2660 WindowDestroy
-- 006abc00 DxtMakeTableAlpha
-- 006ac190 ?table@?1??Blit_DxtUnaligned@@YIXABVC2iVector@NTempest@@PBUDxt1Block@@IPAVCArgb1555@2@I@Z@$APAV42@A
-- 006ac200 DxtMakeTableAlpha
-- 006ac780 DxtMakeTableAlpha
-- 006aca10 ?colorTable@?1??DxtDecompress@@YIXPBUDxt1Block@@PAPAVCImVector@NTempest@@ABUDxtRect@@@Z@$APAV23@A
-- 006acf90 ?table@?1??Blit_Dxt@@YIXABVC2iVector@NTempest@@PBUDxt1Block@@IPAVCImVector@2@I@Z@$APAV42@A
+- 006abc00 ?table@?1??Blit_Dxt@@YIXABVC2iVector@NTempest@@PBUDxt1Block@@IPAVCArgb1555@2@I@Z@$APAV42@A
+- 006ac190 DxtMakeTableAlpha
+- 006ac780 ?table@?1??Blit_DxtUnaligned@@YIXABVC2iVector@NTempest@@PBUDxt1Block@@IPAVCArgb1555@2@I@Z@$APAV42@A
+- 006acf90 DxtMakeTableAlpha
+- 006ad0e0 ?table@?1??Blit_DxtUnaligned@@YIXABVC2iVector@NTempest@@PBUDxt3Block@@IPAVCArgb4444@2@I@Z@$APAV42@A
+- 006ad2d0 DxtMakeTableAlpha
 - 006ad440 DxtDecompress
-- 006ad5b0 ?table@?1??Blit_DxtUnaligned@@YIXABVC2iVector@NTempest@@PBUDxt1Block@@IPAVCRgb565@2@I@Z@$APAV42@A
-- 006ad660 ?table@?1??Blit_Dxt@@YIXABVC2iVector@NTempest@@PBUDxt1Block@@IPAVCArgb1555@2@I@Z@$APAV42@A
-- 006ad880 ?table@?1??Blit_DxtUnaligned@@YIXABVC2iVector@NTempest@@PBUDxt1Block@@IPAVCImVector@2@I@Z@$APAV42@A
+- 006ad5b0 ?table@?1??Blit_Dxt@@YIXABVC2iVector@NTempest@@PBUDxt1Block@@IPAVCRgb565@2@I@Z@$APAV42@A
+- 006ada10 ?table@?1??Blit_DxtUnaligned@@YIXABVC2iVector@NTempest@@PBUDxt1Block@@IPAVCImVector@2@I@Z@$APAV42@A
 - 006adae0 DxtDecompress
-- 006adc60 ?table@?1??Blit_DxtUnaligned@@YIXABVC2iVector@NTempest@@PBUDxt3Block@@IPAVCArgb4444@2@I@Z@$APAV42@A
+- 006adc60 ?table@?1??Blit_Dxt@@YIXABVC2iVector@NTempest@@PBUDxt3Block@@IPAVCArgb4444@2@I@Z@$APAV42@A
 - 006add20 DxtDecompress
 - 006adeb0 ?table@?1??Blit_DxtUnaligned@@YIXABVC2iVector@NTempest@@PBUDxt3Block@@IPAVCImVector@2@I@Z@$APAV42@A
-- 006adf90 ?table@?1??Blit_Dxt@@YIXABVC2iVector@NTempest@@PBUDxt3Block@@IPAVCImVector@2@I@Z@$APAV42@A
-- 006ae110 ?table@?1??Blit_Dxt@@YIXABVC2iVector@NTempest@@PBUDxt3Block@@IPAVCArgb4444@2@I@Z@$APAV42@A
-- 006ae1d0 ?table@?1??Blit_Dxt@@YIXABVC2iVector@NTempest@@PBUDxt1Block@@IPAVCRgb565@2@I@Z@$APAV42@A
-- 006ae360 Dxt3A8
+- 006adf90 ?colorTable@?1??DxtDecompress@@YIXPBUDxt1Block@@PAPAVCImVector@NTempest@@ABUDxtRect@@@Z@$APAV23@A
+- 006ae110 ?table@?1??Blit_Dxt@@YIXABVC2iVector@NTempest@@PBUDxt1Block@@IPAVCImVector@2@I@Z@$APAV42@A
+- 006ae1d0 ?table@?1??Blit_DxtUnaligned@@YIXABVC2iVector@NTempest@@PBUDxt1Block@@IPAVCRgb565@2@I@Z@$APAV42@A
+- 006ae360 ?table@?1??Blit_Dxt@@YIXABVC2iVector@NTempest@@PBUDxt3Block@@IPAVCImVector@2@I@Z@$APAV42@A
 - 006af660 GetBlitFormat
 - 006b0810 NotifyHandler
-- 006b1460 CCommand_GuildCreate
-- 006b15c0 CCommand_ForceActionUnset
-- 006b1a10 ConsoleWriteV
-- 006b2000 OsFileAssocSetValue
-- 006ba9d0 EventSetTimerAbsolute
+- 006b0870 ClientServices_CharacterLogin
+- 006b1460 CCommand_ForceActionUnset
+- 006b15c0 CCommand_GuildCreate
+- 006b1a10 CCommand_SetFaction
+- 006ba9d0 CCommand_ForceActionOnOtherSet
+- 006bad70 BaseFileIsFetched
 - 006bb550 IGxuLightEnable
 - 006bb5b0 IGxuLightInitialize
-- 006bcd60 GxDevTakeScreenShot
+- 006bcd60 GxCapsIsWindowVisible
 - 006bd160 IGxuStringInitialize
 - 006bddc0 IGxuStringShutdown
 - 006c2280 SignOf
 - 006c5e10 GxuFontAddToInternalBatch
 - 006c8c60 CalculateYOffset
-- 006ca240 SInterlockedDecrement
-- 006cc300 UpdateOutOfRangeObjects
+- 006c9420 LogMachineState
+- 006ca240 sGetPathLeaf
+- 006cc300 ReceiveObjectRotation
 - 006cc3b0 OnGuildInvite
 - 006cf2a0 SndDebugShutdown
 - 006d3010 FindFirstSetBit
-- 006d3ef0 OnUnitMoveEvent
+- 006d3ef0 ClientChannelListHandler
 - 006d49c0 BotClientAddKnownSpell
-- 006d8030 CCommand_PLightDirIntens
-- 006d84f0 CCommand_PLightEnable
+- 006d8030 CCommand_PLightOmni
+- 006d84f0 CCommand_PLightDirIntens
 - 006defa0 OnVendorEvent
 - 006e7d60 OnLearnedSpell
 - 006e97d0 MovementNotifyZoneMgr
-- 006f1820 _FSOUND_SetDriver@4
+- 006f1820 InitializeGlueMusic
 - 006f66b0 SndInterfaceInitialize
-- 006feae0 FreeBlizzard
 - 00703cc0 Trade_C_GetTargetTradeGold
-- 00703e70 Trade_C_CancelTrade
-- 00703ee0 CCommand_TradeGold
-- 00703f50 Trade_C_UnacceptTrade
+- 00703e70 CCommand_TradeGold
+- 00703ee0 Trade_C_UnacceptTrade
 - 00703fd0 Trade_C_AcceptTrade
 - 007040b0 Trade_C_AddItem
 - 007041a0 Trade_C_RemoveItem
-- 007089b0 TooltipItemCreatorCallback
+- 007089b0 TooltipItemPetitionCallback
 - 0070ec10 DrawCursorShadow
 - 00710820 SpellProcScaleHandler
 - 00716160 IsMountSpell
 - 007165d0 InitTalkEmotes
 - 00716ad0 ResequenceEmoteAnims
+- 00716cd0 OnSpecialMountAnim
 - 0071c660 UpdateLocalPlayerFallState
+- 0071dd80 GetHelmGeosetHideData
 - 0071de90 ObjComponentBuildAmmoModel
 - 0071fbf0 GetNewStringMatrix
 - 00724d90 UnitCombatLogPartyKill
@@ -1844,64 +1850,59 @@
 - 007435e0 s_BlobFadeTex
 - 00747760 SndInterfaceSetPositionCallback
 - 007484e0 SheatheTypeToSheathePoint
-- 0074d3d0 IsSpellQuiet
+- 0074d3d0 IsSpellAura
 - 0074d430 WriteMessage
+- 0074d980 IsSpellQuiet
 - 0074da00 GetLogDistance
+- 00753a10 SInterlockedCompareExchange
 - 00755630 UnitCombatLogXPGain
+- 00758390 GetObjAnimFlags
 - 0075bb00 ClipPolygonToPolyhedron
 - 0075d340 ProcessLocalMoveEvent
+- 0075de40 AddNormal
 - 00766320 s_CreatePathDirectories
-- 0076c070 _FSOUND_Stream_PlayEx@16
-- 0076e490 StormRtlInitialize
+- 0076bf80 _FSOUND_SetMute@8
+- 0076e490 CheckInitialized
 - 0076fe20 _StormGetOption@12
 - 0076ff30 SCreateThread
-- 007701c0 GodmodeHandler
 - 00770fa0 _SFileReadFileEx2@28
 - 00770ff0 CreateErrorLog
-- 00771130 _SErrDisplayAppFatal
 - 007717f0 _SErrIsDisplayingError@0
 - 00771960 _SErrGetLogLastPath@8
 - 00771c20 UnregisterAllThreads
-- 00776140 IsNullRect
-- 00777080 GxCapsIsWindowVisible
-- 007792d0 DataMgrSetColor
+- 00777080 IsNullRect
+- 007792d0 CSimpleTexture_SetWidth
 - 00779c30 OsFileFreeSpace
+- 0077d630 _SErrDisplayAppFatal
 - 0077d690 sLogExeFile
 - 0077d860 sLogDbgHelpStackTrace
-- 0077de10 LogMiniDumpIsAvailable
 - 0077df40 LoadMachineStateSymbols
 - 0077e040 _SErrGetErrorStr@12
-- 0077e230 CCommand_Disband
+- 0077e0e0 LogMiniDumpIsAvailable
 - 0077e2b0 WriteLine
 - 0077e9d0 @inflate_codes_free@8
-- 0077ec30 sLogUserName
+- 0077ec30 sLogDateTimeString
 - 0077f2f0 Spell_C_WorldObjectCursor
-- 00783b30 SndSetObstructionCallback
 - 0078d130 ClntObjMgrSetNet
 - 0078ec70 HandleIndoorZoneChange
 - 0078ee30 SendZoneUpdate
-- 00793450 IModelSimpleAddToScene
 - 00794250 GxRsSet
-- 0079ae80 snoprintf
 - 0079e4f0 GxPixelShaderCreate
-- 0079f820 _FSOUND_Stream_Close@4
 - 0079f860 GxPixelShaderDestroy
 - 007a6e00 UnitEffectCreateWorldModelAura
 - 007a84d0 GxXform
 - 007b10e0 ModelShowModel
-- 007b2ca0 CollisionInfoReset
 - 007bfe80 SndInterfaceHandleDoodadLoopStop
-- 007c7230 LogMachineState
 - 007cf9e0 DayNightDestroy
 - 007d6640 SpellVisualsFishingLineCreate
-- 007dc680 _FSOUND_SetOutput@4
-- 007ddff0 OnGroupDestroy
+- 007dc5c0 SndSetObstructionCallback
 - 007e01b0 CameraDestroy
+- 007e2c80 OsSetFilePointer
 - 007e36e0 s_BlobFadeTex
 - 007e5080 WeaponTrailSetDrawing
 - 007eaf60 ResetLightPos
-- 007eb160 InterpTable
-- 007ee360 Interp
+- 007ebff0 Interp
+- 007ed910 InterpTable
 - 007ee750 SetLightColors
 - 007f3b70 MinimapGetPOI
 - 007f4b60 MinimapGetDistantPOI
@@ -1909,44 +1910,41 @@
 - 007f9320 TransformAABox
 - 007fa4d0 OsGetAsyncTimeMsPrecise
 - 007fb4b0 AllocBlizzard
-- 007fd830 SpellVisualsHandleSpellStartMisses
-- 007fdc60 NPC_C_Initialize
-- 00801020 IsSpellOpenLock
+- 007fdc60 OnUnitMoveEvent
+- 00801020 IsSpellHarmful
 - 00805100 CursorSetCursorMode
-- 00805f30 Spell_C_GetModalSpell
+- 00805f30 Spell_C_GetModalItem
 - 00806440 Spell_C_CancelCombatSpell
 - 008073a0 Spell_C_Destroy
 - 00808de0 ItemStatsCooldownCallback
 - 008091b0 Spell_C_NeedsCooldownEvent
 - 00816060 Bind_CommandHandler
 - 00816550 IWriteParticleOptions
-- 00817d00 SetDefaults
+- 00817d00 BaseFileInitialize
 - 0081f6a0 GxRsPop
 - 00823070 GxRsPush
+- 008248b0 GetInvalidMatrixId
 - 0083de90 HandleClose
-- 0083e4a0 dofwd
-- 0083e750 samesets
-- 0083e870 @regfree@4
-- 0083e900 isinsets
-- 0083f010 findmust
-- 0083f0f0 pluscount
-- 00841580 seterr
+- 0083e270 seterr
+- 0083e870 findmust
+- 0083e900 pluscount
+- 0083f0f0 samesets
+- 008414b0 @regfree@4
+- 00841580 dofwd
+- 008416c0 isinsets
 - 00847d00 operator>>
-- 00848140 GxCapsScreenSize
 - 00864890 @_tr_flush_block@16
 - 00865020 @inflate_blocks_new@12
 - 00865170 @inflate_blocks_reset@12
 - 00868c10 OsGuiIsModifierKeyDown
-- 00869930 SaveMouse
-- 00869970 ConvertKeyCode
-- 00869a70 OsInputGetCodePage
-- 0086bdb0 _SUniConvertUTF16ToWin@12
-- 0086bec0 GxAllocVertexMem
-- 0086bf30 OnFactionUpdate
-- 0086c320 GxXformTranslate
-- 0086c3c0 GxXformPush
+- 00869a70 SaveMouse
+- 0086bdb0 _SUniConvertUTF16ToDos@12
+- 0086bec0 IModelComplexAddToScene
+- 0086bf80 GxuFontGetStringHeight
+- 0086c320 AnimIsAttachmentEnabled
+- 0086c3c0 IModelSimpleAddToScene
+- 0086c600 OsGuiBeep
 - 0086c7d0 ConvertButton
-- 0086c900 OsGuiBeep
 - 0086cb00 OsGuiProcessMessage
 - 00870840 OsCloseJoystick
 - 00870890 OsOpenJoystick
@@ -1955,137 +1953,137 @@
 - 00874fb0 ShadowRender_LOD1
 - 00877480 _FSOUND_StopSound@4
 - 00878290 _FSOUND_SetVolume@8
-- 00878660 _SBigFindPrime@16
+- 00878660 _SBigToStrPtr@8
 - 00879060 QSortServices_Talent
 - 00879320 _FSOUND_3D_Listener_SetAttributes@32
-- 00879350 __CIfmod
-- 0087a170 BaseFileLoad
 - 0087a210 IPerfRemoteQueueOnRingBuffer
 - 0087a2f0 IEvtTimerGetRemaining
 - 0087bc80 IEvtQueueScan
 - 0087e010 StopWorldIdleHandler
-- 00882ce0 EventInputSetMousePosition
-- 00885aa0 _D3DXCompileShaderFromFileA@36
-- 00886790 _D3DXCompileShaderFromResourceA@40
-- 00887680 EventSetTimer
-- 008876f0 CCommand_SetFaction
-- 00887840 EventQueueScan
-- 008879b0 BaseFileUnregisterUncachable
+- 0087f900 _D3DXCompileShaderFromFileW@36
+- 00882ce0 Script_GetPlayerBuffTimeLeft
+- 00887520 EventSetTimerAbsolute
+- 00887590 EventSetTimer
+- 00887680 CCommand_ForceActionSet
+- 00887840 EventSetTimerAbsolute
 - 00889490 _SBigDiv@12
-- 00889ad0 ActivityGetTime
-- 0088a4e0 CCommand_DeclineRes
-- 0088ab80 tan
+- 00889ad0 tan
+- 0088a4e0 ModelGetVertexAlpha
+- 0088ab80 OsTimeToLocalSystemTime
 - 0088abd0 Script_ReportNote
 - 00895deb _kernel32_CreateProcessW_Thunk@0
 - 00895ea4 _GodotFailIsValidCodePage@4
 - 00895fa7 _GodotFailGetClipboardData@4
-- 00896060 _GodotFaillstrcpyW@8
-- 00896085 _GodotFailDdeQueryConvInfo@12
-- 00898540 IncrementAllocCount
+- 00896060 _GodotFreeContextBuffer@4
+- 00896085 _GodotFailEnumClipboardFormats@4
+- 00897190 IncrementFreeCount
+- 00897220 IncrementAllocCount
+- 00897330 MakeDirectory
+- 008978a0 HandleDereference
+- 00897c90 UnlockHeap
+- 00898450 InternalLeaveCriticalSection
+- 008989b0 GetBlockSize
 - 0089ab30 AnimBuild
-- 0089b090 IncrementFreeCount
+- 0089b200 _SErrSuppressErrors@4
 - 0089b390 Breakpoint
-- 0089b450 MakeDirectory
-- 0089baa0 LockHeapByBlockPtr
+- 0089b450 CloseErrorLog
 - 0089bb70 _SMsgGetDefaultWindow@0
-- 0089bc30 InternalLeaveCriticalSection
-- 0089c400 CloseErrorLog
-- 0089d840 GetBlockSize
-- 0089dac0 GetBlockPtrByPtr
-- 0089ede0 IAnimGetCurrTimeMs
-- 0089f3b0 _SErrSuppressErrors@4
-- 0089f470 SetTransformationFlags
-- 0089f580 FreeHeap
-- 0089f5e0 GetSlotByHandle
-- 0089f870 UnlockHeap
-- 0089fae0 `vector_constructor_iterator'
+- 0089d840 SetTransformationFlags
+- 0089d860 IAnimGetCurrTimeMs
+- 0089db40 LockHeapByBlockPtr
+- 0089de80 GetSlotByHandle
+- 0089ede0 GetBlockPtrByPtr
+- 0089f0b0 FreeHeap
 - 008a09b4 WindowClassDestroy
 - 008a1770 CreateErrorLogFile
-- 008a4050 SpellProcEclipseHandler
 - 008affd0 SFileReadTyped
-- 008c36d0 Unwind@00800950
-- 008c3830 Unwind@00801020
-- 008c3cf0 _D3DXCompileShaderFromResourceW@40
-- 008c49c0 _D3DXCompileShaderFromFileW@36
-- 008c5f60 Unwind@00800f40
-- 008cbf10 OnInspectNotify
-- 008d09c0 FixUpLongLongFormatSpecifier
-- 008d0b00 ParseFormatSpecifier
-- 008d0b40 _SBigToStrBuffer@12
-- 008d0e30 RemoveOrderingFromFormatSpecifier
-- 008d1cd0 _DirectCall_GetPropA@0
-- 008d2710 OsOutputDebugString
-- 008d44c0 SndInterfacePlaySound
-- 008d5a50 WorldTextUpdate
-- 008d5f10 _FSOUND_Stream_Open@16
-- 008d63d0 Script_PickupBankGenericItem
+- 008c36d0 Unwind@008008d0
+- 008c3830 Unwind@008008b0
+- 008c3cf0 _D3DXCompileShaderFromResourceA@40
+- 008c49c0 _D3DXCompileShaderFromResourceW@40
+- 008c6390 OsNetAddrMake
+- 008c8050 acos
+- 008d0b40 _SBigGcd@12
+- 008d0e00 __CIfmod
+- 008d0e30 ParseFormatSpecifier
+- 008d0f20 RemoveOrderingFromFormatSpecifier
+- 008d0f60 FixUpLongLongFormatSpecifier
+- 008d18b0 Script_IsTrainerServiceTradeSkill
+- 008d19a0 CrcBuffer
+- 008d1cd0 _DirectCall_SetPropA@0
+- 008d2680 _floor
+- 008d4d20 OsOutputDebugString
+- 008d5a50 Script_GetCraftIcon
+- 008d63d0 ScrnPerfRemoteLogPerfCounters
 - 008d67d0 FilePrintMemDump
 - 008d7ba0 DebugPrintMemDump
-- 008dc340 _FSOUND_Stream_SetEndCallback@12
-- 008dc370 _FSOUND_SetMute@8
-- 008e4a90 _FSOUND_SetPaused@8
-- 008e4ad0 _FSOUND_Stream_SetLoopCount@8
-- 008e7b10 Script_GetCraftIcon
-- 008e9770 Script_CollapseCraftSkillLine
-- 008eb9b0 ModelGetVertexAlpha
-- 008ebac0 Script_IsTrainerServiceTradeSkill
-- 008ec5c0 EventInputProcess
-- 008ecef0 FrameScript_Execute
-- 008efca0 Script_GetCraftSkillLine
-- 008f0530 Script_GetCraftNumReagents
-- 008f08a0 Script_PutItemInBankBag
-- 008f5ee0 AnimResetCameraOrdering
-- 008f8e40 _SBigGcd@12
-- 008f9c00 _SBigInvMod@12
-- 008f9ef0 _SBigToStrArray@12
-- 008fadd0 _floor
-- 008fc430 _SBigIsPrime@4
-- 0090e2e0 _SBigMulMod@16
-- 0090ebc0 _SBigRand@12
+- 008dc340 GetSpellAuraEffectName
+- 008dc370 ?Link@?$TSList@UDBCACHEHASH@?$DBCache@VPetNameCache@@HVHASHKEY_INT@@@@V?$TSGetExplicitLink@UDBCACHEHASH@?$DBCache@VPetNameCache@@HVHASHKEY_INT@@@@@@@@ABEPAV?$TSLink@UDBCACHEHASH@?$DBCache@VPetNameCache@@HVHASHKEY_INT@@@@@@PBUDBCACHEHASH@?$DBCache@0c965d2f
+- 008e4a90 GetDamageClassRecord
+- 008e4ad0 DetermineResultType
+- 008e52a0 GxuFontGetStringWidth
+- 008e6220 Script_SelectCraft
+- 008e7ee0 _SRgnGetBoundingRecti@8
+- 008eaf20 Script_SplitBankGenericItem
+- 008eb2c0 Script_PitchDownStart
+- 008ec300 SpellProcEclipseHandler
+- 008ec900 WorldTextUpdate
+- 008ecef0 EventInputProcess
+- 008ef6a0 FrameScript_GetVariable
+- 008f5090 EventInputSetMousePosition
+- 008f5340 _SBigRand@12
+- 008f5410 _SBigToStrArray@12
+- 008f5440 _SBigFindPrime@16
+- 008f5760 _SBigInvMod@12
+- 008f5c70 ProfileGetValue
+- 0090e2e0 _SBigIsPrime@4
+- 0090ebc0 _SBigMulMod@16
 - 0090f650 ReadSingleLightGroup
-- 0090fd10 _SBigToStrPtr@8
-- 00912ec0 Script_InviteByName
-- 0091633d ScrnPerfRemoteLogString
-- 0091c3c0 Script_SplitBankGenericItem
-- 00927400 _SRgnGetBoundingRecti@8
-- 00927470 Script_CancelPlayerBuff
-- 00927600 Script_GetPlayerBuffTimeLeft
-- 009287f0 Script_PitchDownStop
-- 00929d00 _SRgnGetRectsi@12
-- 00929df0 _SBigCopy@8
-- 0092a670 GxuTexScale
+- 0090fd10 _SBigToStrBuffer@12
+- 00910570 Script_GetCraftNumReagents
+- 009190a0 Script_PickupBankGenericItem
+- 0091c3c0 ScrnPerfRemoteLogString
+- 0091c7c9 _SBigSquare@8
+- 00927470 Script_Jump
+- 009274c0 Script_PrecacheSpellArt
+- 00927600 SpellProcWeaponTrailHandler
+- 00927950 Script_CancelPlayerBuff
+- 00929d00 Script_DoCraft
+- 00929df0 _SBigPow@12
+- 0092a670 ModelEnableRibbons
+- 0092b3f0 ClientServices_AccountLogout
 - 00932f90 CheckInitialized
-- 00933f40 Script_SelectCraft
-- 00934300 Script_DoCraft
+- 00933f40 Script_PitchDownStop
+- 00934300 Script_PitchUpStop
 - 00934520 SStrToDouble
-- 00934cd0 Script_PrecacheSpellArt
-- 00935520 Script_ExpandCraftSkillLine
-- 00935e90 SpellProcColorHandler
-- 00936970 Script_PitchDownStart
-- 0093cb10 SetGameTimeForcedChangeCallback
-- 0093cb50 GxuFontGetStringHeight
+- 00934fb0 Script_PitchUpStart
+- 00935e90 Script_GetCraftSkillLine
+- 009448f0 SpellProcEmissiveHandler
 - 00948a90 SpellProcStandWalkAnimHandler
+- 00948d30 _luaL_checkudata
 - 0094bd50 OnPetSpells
-- 0094dd00 SpellProcEmissiveHandler
-- 0094e130 _luaL_checkudata
+- 0094dd00 _SRgnGetRectsi@12
+- 0094e130 FrameScript_Execute
 - 00956960 CompUtilGetObjComponents
 - 0095c190 ConsoleCommand_TypeExec
-- 0095c450 ProfileGetValue
-- 0095c730 _DirectCall_FindResourceW@0
+- 0095c730 _DirectCall_RemovePropA@0
 - 00983990 ComputeBoundingBox
+- 00986c90 UnitEffectGetSpecialVisual
+- 009876b0 WVLog
 - 009a9490 GxXformIdentity
-- 009c1d20 Script_JoinChannelByName
-- 009c4e36 _GodotFailFindResourceExW@16
-- 009c58c0 ModelGetVertexColor
+- 009c4e36 _GodotFailSHChangeNotify@16
 - 009c5ab1 @z_adler32@12
-- 009c6001 CheckFileExists
-- 009c68a0 _D3DXGetTargetDescByName@12
+- 009c6001 Hash
+- 009c6720 _D3DXGetTargetDescByName@12
 - 009c68f8 _atoi
-- 009c6f50 OptimizeFormat
-- 009c70cb __CIsinh
+- 009c6e07 ResetAsyncState
+- 009c6f50 HandleInitialize
+- 009c6f88 CheckFileExists
+- 009c71e8 @SSignatureVerifyStream_GetSignatureLength@4
+- 009c7ae0 Unwind@008009b0
 - 009c7b10 DxtDecompress
 - 009caea0 GxEnumFormats
-- 009d0db0 _SUniConvertUTF16ToMac@12
+- 009d0db0 _SUniConvertUTF16ToWin@12
 - 009d3970 EventProcessDone
 - 009d3980 ScrnPerfRemoteShutdown
 - 009dc770 IGxuLightShutdown
