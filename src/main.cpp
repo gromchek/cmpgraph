@@ -547,6 +547,15 @@ int main( int argc, char *argv[] )
 	transformer.addRule( "@z_deflateEnd@4", "_deflateEnd" );
 	transformer.addRule( "@zcalloc@12", "_zcalloc" );
 	transformer.addRule( "_SCrcBuffer@16", "_SCrcBuffer" );
+	transformer.addRule( "operator.new", "operator_new" );
+	transformer.addRule( "operator.delete", "operator_delete" );
+	transformer.addRule( "OpenGl_I", "OpenGl_" );
+	transformer.addRule( "Blizzard_Lock_MutexLeave", "LeaveCriticalSection" );
+	transformer.addRule( "Blizzard_Lock_MutexEnter", "EnterCriticalSection" );
+	transformer.addRule( "Blizzard_Process_Sleep", "Sleep" );
+	transformer.addRule( "Blizzard_Lock_MutexDestroy", "DeleteCriticalSection" );
+	transformer.addRule( "Blizzard_Lock_MutexCreate", "InitializeCriticalSection" );
+	transformer.addRule( "Blizzard_Mopaq_SFileCreateFile", "SFileCreateFile" );
 
 
 	transformer.addRule( []( const std::string &input ) {
