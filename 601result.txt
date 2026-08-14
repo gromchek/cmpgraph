@@ -18,7 +18,6 @@
 - 0040bc70 MacAssert_HandleFailure
 - 00417a07 _imap_statemach_act
 - 0041d2a0 CGCharacterModelBase::ApplySpellVisualKit
-- 0041d770 WowDownloadManager::StartDownload
 - 0041dda0 _FNT_Face_Init
 - 0041e5f0 WowBrowser::CDomainAccess::DomainIndexEntry::DomainIndexEntry
 - 00420980 CharSelectIsStartRaceComplete
@@ -57,7 +56,6 @@
 - 004443e0 CCaptions::Open
 - 004480b0 Creep::Layer::Profile::OnProfileReadResponse
 - 0044b7b0 _ftp_state_type_resp
-- 0044b860 Crypto::SecureRandom::Private::SeedFallback<Crypto::SHA1>
 - 0044ea50 _jinit_master_decompress
 - 00450b80 _imap_sendf
 - 00450ef0 CLCDConnection::InitializeConnection
@@ -87,7 +85,6 @@
 - 0047c0a0 CASUnloadFile
 - 0047cbe0 PropDestroy
 - 0047ccc0 TSFixedArray<void*>::ReallocData
-- 0047d7b0 TInstanceIdTable<EvtContext,8>::~TInstanceIdTable
 - 0047d840 AgentConnection::AgentConnection
 - 0047d950 ShutdownThreadProc
 - 0047dc90 _SErrIsDisplayingError
@@ -106,7 +103,6 @@
 - 00487090 CSimpleFontString::FlushRefreshOnFontLoadList
 - 004879d0 CLayoutFrame::Clear
 - 00487ce0 CSimpleRegion::AnimDeactivated
-- 00488940 CScriptRegion::~CScriptRegion
 - 00488d90 CLayoutFrame::FlattenFrame
 - 0048f070 CSimpleFrame::RunOnSizeChangedScript
 - 0048f0f0 CSimpleFrame::RunOnEnterScript
@@ -145,6 +141,7 @@
 - 004bc1c0 CDataStore::PutArray
 - 004be0e0 TSHashTable<FONTHASHOBJ,HASHKEY_STR>::Ptr
 - 004bec40 DebugDraw::Line
+- 004bf450 CTgaFile::ImageBGRA32Pixel
 - 004bff30 CTextureBlob::~CTextureBlob
 - 004c02f0 CTextureBlob::GetTexture
 - 004c0330 CTextureBlob::RemoveTextures
@@ -273,7 +270,6 @@
 - 00524b10 CGGameUI::ClientAreaSpiritHealerTimeHandler
 - 0052a160 TSHashObject<UnitThreat,CHashKeyGUID>::~TSHashObject
 - 0052b370 CGGameUI::CheckThreatTutorial
-- 0052c9a0 CGUnit_C::UnitReaction
 - 0052e730 CGBarberShop::GetFacialHairCustomization
 - 0052f190 TSHashObject<USEABLESTYLE,HASHKEY_NONE>::~TSHashObject
 - 00530100 UserClientTutorial::UserClientTutorial
@@ -347,9 +343,6 @@
 - 0055e5e0 TSHashTable<OVERRIDEKEYBINDING,HASHKEY_STRI>::Ptr
 - 00560300 OVERRIDEKEYBINDING::~OVERRIDEKEYBINDING
 - 005603d0 OVERRIDEKEYBINDING::SetOverrideBinding
-- 005628d0 CGUIBindings::Bind
-- 00562930 TSHashTable<KEYCOMMAND,HASHKEY_STRI>::Ptr
-- 00562960 TSHashTable<MOUSELOOKBINDING,HASHKEY_STRI>::Ptr
 - 005661c0 TSHashTable<MACRONODE,CHashKeyGUID>::InternalNewNode
 - 00566dc0 CGUIMacros::RunMacro
 - 005684b0 CGCommentator::Script_SetCamera
@@ -472,12 +465,11 @@
 - 00635d90 LossOfControl::CVarSetCallback
 - 00635e70 WowClientDB2<ItemExtendedCostRec_C>::DBCACHE::~DBCACHE
 - 00636190 WowClientDB2<LocationRec_C>::DBCACHE::~DBCACHE
-- 00636410 WowClientDB2<ItemRec_C>::DBCACHE::~DBCACHE
+- 00636410 WowClientDB2<ItemEffectRec_C>::DBCACHE::~DBCACHE
 - 006366c0 WowClientDB2<LocaleRec_C>::DBCACHE::~DBCACHE
 - 00636910 WowClientDB2<SpellVisualKitRec_C>::DBCACHE::~DBCACHE
 - 00636990 WowClientDB2<SpellVisualRec_C>::DBCACHE::~DBCACHE
 - 00636a10 WowClientDB2<MountRec_C>::DBCACHE::~DBCACHE
-- 00636c90 WowClientDB2<ItemBonusRec_C>::DBCACHE::~DBCACHE
 - 00668590 PetNameCache::operator=
 - 0066a310 DBCache<GameObjectStats_C,int,HASHKEY_DWORD,NullXInfo>::ClearPending
 - 00679d90 DBCache<CreatureStats_C,int,HASHKEY_DWORD,NullXInfo>::Invalidate
@@ -587,6 +579,7 @@
 - 0070fd50 CGGameObject_C_Type_Door::IsDoorAtRest
 - 00710820 DBCache<WardenCachedModule,CWardenKey,CWardenKey,NullXInfo>::InvalidateIntKey
 - 00712870 SE3SoundEmitter::~SE3SoundEmitter
+- 00712980 CGGameObject_C_Type_DestructibleBuilding::~CGGameObject_C_Type_DestructibleBuilding
 - 00714a80 CGParty::HasSubgroupMemberPet
 - 00714b60 World::DNIntersect
 - 00714c10 CMovement_C::OnSetPitchLocal
@@ -596,6 +589,7 @@
 - 00715930 CUnitDisplay::MirrorComponentData
 - 00715d00 CUnitDisplay::IsPlayingUnarmedCombatAnim
 - 00715dd0 CGUnit_C::ShowFactionTooltip
+- 00715f90 CGUnit_C::UnitReaction
 - 00716110 CUnitDisplay::PlayDeathAnimKit
 - 00716160 CGUnit_C::CheckStealthRules
 - 00716190 UnitDisplayCallbacks::WoundAnimKitStopCallback
@@ -692,7 +686,6 @@
 - 00791240 CWorldView::CullModel
 - 00791910 CGxDevice::ShaderRelease
 - 007927e0 CMapObjDef::UpdateLoaded
-- 00792fa0 CDetailDoodad::CreateChunk
 - 00799310 CMapObj::UpdateSceneMaterials
 - 0079b440 CMap::QueryGroundTypeTerrain
 - 0079b590 MapObjGroupLiquidQuery::QueryCircle
@@ -718,6 +711,7 @@
 - 007b0690 TSCArray<CMapObjGroup*,512>::FatalArraySize
 - 007b30d0 CWorldMap::UpdateEntityLinks
 - 007b47f0 World::GetTerrainTextureLod
+- 007b50b0 CWorldMap::PreloadCountMapObjGroupTextures
 - 007b5870 CWorldMap::LinkEntity
 - 007b74a0 PrepareAlphaShadowRow8888
 - 007b84a0 UnpackAlphaShadowBitsUnfixed4444Mip0Row
@@ -725,7 +719,6 @@
 - 007bdd80 CMapDoodadDef::DefaultBounds
 - 007c2040 CWorldMap::LinkObjectToMapExterior
 - 007c3e70 CMapArea::PurgeRenderChunk
-- 007c5440 CDetailDoodadChunk::CreateBatches
 - 007c6710 CAaBsp_Query_Segment<BspQuery_SegmentLink>::GetFaceIndices
 - 007c7710 World::GetEnables
 - 007c78e0 CAaBsp_Query_Segment<BspQuery_Segment>::GetFaceIndices
@@ -761,7 +754,6 @@
 - 007e8bd0 PassNetherBlur::PassNetherBlur
 - 007e9b10 PassNetherBlur::Execute
 - 007eb060 CCommand_DumpDBCs
-- 007eb1b0 WowClientDB2<SpellPowerRec_C>::DBCACHE::~DBCACHE
 - 007ed2d0 DayNight::InterpColor
 - 007ee750 DayNight::CDayNightObjectInt::SetLightColors
 - 007f10a0 CObjectSelection::InitTargetChangedTime
@@ -776,7 +768,7 @@
 - 007fa4d0 Script_ToggleCollision
 - 007fb4b0 WowClientDB2<SpellVisualKitAreaModelRec_C>::GetRecord
 - 007fbc20 SpellVisualsCleanUpObituary
-- 007fc010 CSimpleModel::~CSimpleModel
+- 007fc010 CGlueMgr::CharacterEmoteKitFinished
 - 007fcc30 SpellWorldObject::~SpellWorldObject
 - 007fcc70 CGUnit_C::SpellHasteCooldowns
 - 007fdfa0 Spell_C_SpellCancelsAura
@@ -818,7 +810,6 @@
 - 0086bca0 RunSystemSurvey
 - 0086bd60 OsPathReplaceExtension
 - 0086cc20 PopMessageBox
-- 0086d4c0 NOsSecureRandom::FallbackRandom
 - 0086e850 NetConnection::WRITEBLOCK::~WRITEBLOCK
 - 00870840 OsJoystickOpen
 - 00870890 OsJoystickGetName
@@ -928,12 +919,12 @@
 - 00963b10 CSimpleEditBox::DeleteBackwardWord
 - 00963cd0 CSimpleEditBox::Move
 - 00963d80 CSimpleEditBox::MoveLine
+- 00965260 CSimpleEditBox::~CSimpleEditBox
 - 009653a0 CSimpleFrame::RunOnCharScript
 - 009681c0 CSimpleMessageFrame::~CSimpleMessageFrame
 - 009691f0 TSGrowableArray<CSimpleMessageFrameLine>::SetCount
 - 00969c30 CSimpleMessageScrollFrame::~CSimpleMessageScrollFrame
 - 009748f0 GetTextType
-- 009785d0 CSimpleHyperlinkedFrame::~CSimpleHyperlinkedFrame
 - 00979250 CParticleBuffer::CParticleBuffer
 - 009793b0 GetInterpPercent
 - 0097a130 CDetailDoodadBatch::FillInstanceBuf
@@ -963,6 +954,7 @@
 - 009d66d0 World::FacetData::~FacetData
 - 009d6870 ___cxx_global_array_dtor
 - 009dc510 CWorldMap::~CWorldMap
+- 009dc770 CSimpleModel::~CSimpleModel
 - 009dcd40 DayNight::CDayNightObjectInt::~CDayNightObjectInt
 - 009dd180 TAllocatorHashTable<SKILLLINEREC,HASHKEY_SKILLLINEREC,2048>::~TAllocatorHashTable
 - 009dd270 TSGrowableArray<CRibbonMat>::~TSGrowableArray
