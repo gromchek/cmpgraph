@@ -131,12 +131,9 @@
 - 004e6f90 CCharacterComponent::SetAllDirty
 - 004e6fb0 CCharacterComponent::CreateTexture
 - 004e7af0 CCharacterComponent::GetItemSlotForInvSlot
-- 004e82d0 CCharacterComponent::FillColor
-- 004e84f0 CCharacterComponent::PastePALScale
-- 004ea880 CCharacterComponent::UpdateItem
+- 004ed8c0 CCharacterComponent::SetDirtySectionFlags
 - 004eefa0 CCharacterComponent::ComposeHelmModelFilePath
 - 004ef300 CCharacterComponent::BuildBeltBuckleModelPath
-- 004f01a0 CCharacterComponent::CreateRequestEX
 
 [CCharacterCreation]
 - 004dfe90 CCharacterCreation::StartAnimation
@@ -158,8 +155,14 @@
 [CDataStore]
 - 004bc1c0 CDataStore::PutArray
 
+[CDetailDoodad]
+- 00792fa0 CDetailDoodad::CreateChunk
+
 [CDetailDoodadBatch]
 - 0097a130 CDetailDoodadBatch::FillInstanceBuf
+
+[CDetailDoodadChunk]
+- 007c5440 CDetailDoodadChunk::CreateBatches
 
 [CEffect]
 - 004cfb70 CEffect::DestroyLightning
@@ -255,6 +258,9 @@
 [CGCurrencyTypes]
 - 005b04f0 CGCurrencyTypes::GetTypeUnused
 
+[CGDressUpModelFrame]
+- 00599120 CGDressUpModelFrame::IsA
+
 [CGEquipmentManager]
 - 005ae530 CGEquipmentManager::HasSet
 - 007540b0 CGEquipmentManager::GetSetStatus
@@ -345,7 +351,6 @@
 [CGParty]
 - 005130d0 CGParty::HasSubgroupMember
 - 00714a80 CGParty::HasSubgroupMemberPet
-- 00715440 CGParty::HasMemberPet
 
 [CGPartyMember]
 - 00549600 CGPartyMember::GetName
@@ -379,10 +384,6 @@
 [CGReputationInfo]
 - 005cfee0 CGReputationInfo::SaveCollapsedHeaders
 - 005d0500 CGReputationInfo::HeaderFactionHasReputation
-
-[CGSkillInfo]
-- 00519df0 CGSkillInfo::EnterWorld
-- 005cd9b0 CGSkillInfo::UpdateAllSkillLines
 
 [CGSpellBook]
 - 0053d680 CGSpellBook::CanStealOrDispelEnemyAura
@@ -418,11 +419,12 @@
 - 006ceb10 CGUnit_C::IsAlteredFormTransitionPreventingAction
 - 006cf3a0 CGUnit_C::OnSetPitchLocal
 - 006e9a70 CGUnit_C::MoveEventJumped
+- 00715440 CGUnit_C::UnitReaction
 - 00715dd0 CGUnit_C::ShowFactionTooltip
-- 00715f90 CGUnit_C::UnitReaction
 - 00716160 CGUnit_C::CheckStealthRules
 - 007167c0 CGUnit_C::GetControllingPlayer
 - 0071df30 CGUnit_C::SyncLandingAnimation
+- 00720b30 CGUnit_C::CanLearnSpell
 - 00721290 CGUnit_C::ClientMoveSplineStopSwimHandler
 - 0072fe00 CGUnit_C::~CGUnit_C
 - 00735ef0 CGUnit_C::UpdatePassengerSmoothFacing
@@ -549,6 +551,7 @@
 - 005ae760 CMapMem::FreeAreaLow
 
 [CMapObj]
+- 00799310 CMapObj::UpdateSceneMaterials
 - 007b0560 CMapObj::DestroyMaterial
 
 [CMapObjDef]
@@ -610,6 +613,7 @@
 - 00522270 CObjectDisplay::ShowHighlightType
 - 006f7a00 CObjectDisplay::LinkToEffectList
 - 0071a940 CObjectDisplay::CreateProceduralEffect
+- 0071d2e0 CObjectDisplay::IsActivePlayerDisplay
 - 007431e0 CObjectDisplay::RemoveModel
 
 [CObjectEffectGroupDef]
@@ -668,6 +672,7 @@
 [CSimpleEditBox]
 - 00963cd0 CSimpleEditBox::Move
 - 00963d80 CSimpleEditBox::MoveLine
+- 00965260 CSimpleEditBox::~CSimpleEditBox
 
 [CSimpleFont]
 - 004964d0 CSimpleFont::~CSimpleFont
@@ -709,9 +714,6 @@
 [CSimpleSortedArray<FRAMEPRIORITY*>]
 - 00495670 CSimpleSortedArray<FRAMEPRIORITY*>::Insert
 
-[CSimpleStatusBar]
-- 009615c0 CSimpleStatusBar::~CSimpleStatusBar
-
 [CSimpleTexture]
 - 00483220 CSimpleTexture::OnFrameSizeChanged
 - 00483460 CSimpleTexture::PreOnAnimUpdate
@@ -739,7 +741,6 @@
 - 0071c110 CUnitDisplay::GetPCScale
 - 0071de90 CUnitDisplay::UpdateDeathAnimKit
 - 007224d0 CUnitDisplay::CreateMissile
-- 00726090 CUnitDisplay::UpdateWeaponVisibilityFromAnimChange
 - 00756040 CUnitDisplay::PlayRangedItemPull
 
 [CUnitDisplayTransition_C]
@@ -832,6 +833,9 @@
 - 00689a70 Creep::ClientSideCache::VerifyFileContext::VerifyNextChunk
 - 00871d20 Creep::ClientSideCache::IndexComplete
 - 008c4380 Creep::ClientSideCache::~ClientSideCache
+
+[Crypto]
+- 0044b860 Crypto::SecureRandom::Private::SeedFallback<Crypto::SHA1>
 
 [DBCache<CreatureStats_C,int,HASHKEY_DWORD,NullXInfo>]
 - 00679d90 DBCache<CreatureStats_C,int,HASHKEY_DWORD,NullXInfo>::Invalidate
@@ -962,7 +966,6 @@
 - 0079f2b0 Liquid::DestroyProceduralTextures
 - 007ce180 Liquid::GetExistsTable
 - 008a2780 Liquid::CSettingsBank::Purge
-- 008a2bf0 Liquid::ExtWaterDepthTexCallback
 - 008a38b0 Liquid::SetShaderLighting
 
 [LoginResponse]
@@ -976,6 +979,9 @@
 
 [MovementForces]
 - 0075cf80 MovementForces::CollideMovementForce
+
+[NOsSecureRandom]
+- 0086d4c0 NOsSecureRandom::FallbackRandom
 
 [NTempest]
 - 00790900 NTempest::Intersect
@@ -1130,14 +1136,17 @@
 [THROTTLEDCHAT]
 - 005016b0 THROTTLEDCHAT::~THROTTLEDCHAT
 
+[TInstanceIdTable<EvtContext,8>]
+- 0047d7b0 TInstanceIdTable<EvtContext,8>::~TInstanceIdTable
+
 [TObjectAlloc<CGxTex>]
 - 00685dc0 TObjectAlloc<CGxTex>::Delete
 
 [TObjectAlloc<CMapBaseObjLink>]
 - 006bb6d0 TObjectAlloc<CMapBaseObjLink>::Delete
 
-[TSCArray<CMapObjGroup*,512>]
-- 007b0690 TSCArray<CMapObjGroup*,512>::FatalArraySize
+[TSCArray<CTexture*,64>]
+- 004b5210 TSCArray<CTexture*,64>::FatalArrayBounds
 
 [TSCArray<float,64>]
 - 00786880 TSCArray<float,64>::FatalArraySize
@@ -1182,12 +1191,6 @@
 
 [TSFixedArray<unsigned_short>]
 - 005c5b70 TSFixedArray<unsigned_short>::ReallocData
-
-[TSFixedArray<void(*)()>]
-- 004b9c00 TSFixedArray<void(*)()>::ReallocData
-
-[TSFixedArray<void*>]
-- 0047ccc0 TSFixedArray<void*>::ReallocData
 
 [TSGrowableArray<CArgb>]
 - 009de2a0 TSGrowableArray<CArgb>::~TSGrowableArray
@@ -1237,26 +1240,17 @@
 [TSHashTable<CGAutoCompleteName]
 - 0057ae80 TSHashTable<CGAutoCompleteName::AUTOCOMPLETE_CHARACTER_HASHNODE,CHashKeyGUID>::Ptr
 
-[TSHashTable<CGxShader,HASHKEY_STRI>]
-- 00687870 TSHashTable<CGxShader,HASHKEY_STRI>::Ptr
-
 [TSHashTable<CMapObj,HASHKEY_NONE>]
 - 00685230 TSHashTable<CMapObj,HASHKEY_NONE>::Unlink
 
 [TSHashTable<CVar,HASHKEY_STRI>]
 - 00767000 TSHashTable<CVar,HASHKEY_STRI>::Unlink
 
-[TSHashTable<DECLINEDWORD,HASHKEY_CONSTSTR>]
-- 007e0250 TSHashTable<DECLINEDWORD,HASHKEY_CONSTSTR>::Ptr
-
 [TSHashTable<DSP_CHAIN_HEAD_LOOKUP,HASHKEY_STRI>]
 - 004cd9d0 TSHashTable<DSP_CHAIN_HEAD_LOOKUP,HASHKEY_STRI>::Ptr
 
 [TSHashTable<DYNAMICHOLIDAYHASH,HASHKEY_NONE>]
 - 005be220 TSHashTable<DYNAMICHOLIDAYHASH,HASHKEY_NONE>::InternalClear
-
-[TSHashTable<FACEDATA,HASHKEY_STRI>]
-- 006c8100 TSHashTable<FACEDATA,HASHKEY_STRI>::Ptr
 
 [TSHashTable<FONTHASHOBJ,HASHKEY_STR>]
 - 004be0e0 TSHashTable<FONTHASHOBJ,HASHKEY_STR>::Ptr
@@ -1437,11 +1431,11 @@
 [WowConfigureFileSystem]
 - 005f36d0 WowConfigureFileSystem::ReadBuildKeyFromFile
 
+[WowConnection]
+- 00468d00 WowConnection::Connect
+
 [WowConnectionNet]
 - 00469220 WowConnectionNet::SignalWorker
-
-[WowDownload]
-- 004284e0 WowDownload::~WowDownload
 
 [WowDownloadManager]
 - 00469860 WowDownloadManager::CurlMultiSocketCB
@@ -1482,7 +1476,6 @@
 - 00450b80 _imap_sendf
 - 00451ee0 CCommand_LagTest
 - 00453ab0 SendAccountDataToServer
-- 00463440 _tt_face_build_cmaps
 - 004669a0 s_GetLocalizedWdbDir
 - 00469060 MainProc
 - 00469300 WorkerProc
@@ -1500,7 +1493,6 @@
 - 004b6550 AsyncAllocCallback
 - 004b7f10 TextureFileChanged
 - 004c1600 SStrPrintf<260ul>
-- 004c66b0 _HandleSoundDeviceChange
 - 004c6700 _SoundDevicesChangedCallback
 - 004d0b70 _ScriptMusicDelayedPlaybackCallback
 - 004d0bc0 _EnableReverb_CVarCallback
@@ -1523,6 +1515,7 @@
 - 00514410 SetTooltipItemForComparsion
 - 00530c60 _strtoull
 - 0053ba40 QSortSpellBookItems
+- 0053c5f0 GetAbilitiesFromService
 - 0053c680 QSortShapeshiftForms
 - 00547e20 QSortOrphans
 - 0054ea30 SetupRefreshRates
@@ -1575,13 +1568,12 @@
 - 006c8190 HandleDuplicate
 - 006cbcb0 ClientQuestPOIQueryResponseHandler
 - 006cd770 ClientPartyMemberStateHandler
-- 006cddf0 OnUpdateCombatRatings
 - 006ce470 ClientForcedDeathUpdateHandler
+- 006d1bc0 SkillModifierChangeHandler
 - 006d49c0 Spell_C_SetFeedPetSpell
 - 006e9360 _ValidateDivision
 - 00705630 OnFacetQueryValidCallback
 - 00716810 UnitAuraStateUpdateHandler
-- 0071a390 EvaluateCombat
 - 0071b580 _asinf
 - 0071c640 Spell_C_GetAppropriateStateKit
 - 007235c0 UnitDisplayPowerUpdateHandler
@@ -1644,7 +1636,6 @@
 - 0082b270 M2AnimateTrack<unsigned_char,unsigned_char>
 - 0082b340 M2AnimateTrack<float,float>
 - 00865020 _inflateReset2
-- 00865170 _updatewindow
 - 00868c70 CocoaToQuartzScreenPointInPoints
 - 0086bca0 RunSystemSurvey
 - 0086bd60 OsPathReplaceExtension

@@ -13,159 +13,158 @@
 
 [BSN]
 - 00457d00 BSN::BSNPrimitiveEncoder::GetBlob
-- 004af500 BSN::Adapter::Optional::GetElement<Battlenet::Account::FullName>
-- 004af600 BSN::Adapter::Array::SetLength<BSN::FixedBlob<40ul>,10ul>
+- 004ae930 BSN::BSNEncodedObjectPtr<Battlenet::Event::Header,Protocol,1>::Destroy
+- 004af500 BSN::Adapter::Optional::GetElement<BSN::Array<BSN::String<80ul>,16ul>>
+- 004af600 BSN::Adapter::Array::SetLength<Battlenet::Client::Stats::S2Stat,127ul>
 - 00530a20 BSN::BSNEncodedObject<Battlenet::Event::Larva::Invoke,Protocol>::GetEncoder
 - 00531cf0 BSN::BSNEncodedObject<Battlenet::Presence::FieldVal,Protocol>::GetContext
 - 00531db0 BSN::BSNEncodedObject<Battlenet::Presence::BlockList,Protocol>::GetContext
 - 00531e70 BSN::BSNEncodedObject<Battlenet::Presence::FieldVal,Protocol>::GetEncoder
-- 00532b40 BSN::Protocol::Meta::User::User
-- 00533a20 BSN::BSNEncodedObject<Battlenet::Presence::BlockList,Protocol>::GetEncoder
-- 008889e0 BSN::BSNPrimitiveWalker::AsciiString
+- 005328e0 BSN::Protocol::Meta::User::User
+- 005329b0 BSN::BSNPrimitiveEncoder::GetArrayLength
+- 00533740 BSN::Protocol::Meta::Base::Base
+- 008889e0 BSN::BSNPrimitiveWalker::String
+- 00888a00 BSN::BSNEncodedObject<Battlenet::Event::Larva::Invoke,Protocol>::GetContext
 - 00888a60 BSN::Protocol::Meta::Array::Array
 - 00888ae0 BSN::Protocol::Meta::Choice::GetFieldTag
-- 00888b80 BSN::Encoder::PutLength<BSN::Protocol::Meta::BitArray>
+- 00888b80 BSN::BSNPrimitiveEncoder::GetChoiceName
 - 00888c00 BSN::BSNPrimitiveWalker::Struct
 - 00888c70 BSN::Protocol::Meta::Enum::GetEnumField
 - 00888de0 BSN::BSNPrimitiveWalker::Choice
-- 00889450 BSN::Protocol::Meta::Walker::Walk<BSN::BSNPrimitiveWalker>
+- 00889450 BSN::Protocol::Meta::Walker::Walk<BSN::Encoder>
 - 00889920 BSN::BSNPrimitiveEncoder::SetOptional
-- 00889bc0 BSN::Protocol::Meta::Walker::Walk<BSN::Decoder>
-- 00889cf0 BSN::Protocol::Meta::Walker::Walk<BSN::Encoder>
+- 00889a50 BSN::BSNPrimitiveEncoder::GetOptional
+- 00889bc0 BSN::Protocol::Meta::Walker::Walk<BSN::BSNPrimitiveWalker>
+- 00889cf0 BSN::Encoder::PutLength<BSN::Protocol::Meta::Array>
 - 00889da0 BSN::BSNPrimitiveEncoder::SetArray
-- 0088a180 BSN::Protocol::Type::Bounds::Get
+- 0088a100 BSN::Protocol::Type::Bounds::Get
 - 0088a2f0 BSN::BSNPrimitiveWalker::Optional
-- 0088a470 BSN::BSNPrimitiveWalker::String
-- 0088a4e0 BSN::BSNPrimitiveWalker::Blob
-- 0088a550 BSN::BSNPrimitiveWalker::BitArray
+- 0088a470 BSN::BSNPrimitiveWalker::Blob
+- 0088a4e0 BSN::BSNPrimitiveWalker::BitArray
+- 0088a550 BSN::BSNPrimitiveWalker::AsciiString
 - 0088a590 BSN::BSNPrimitiveWalker::Array
-- 008be5e0 BSN::Adapter::Array::SetLength<Battlenet::Attribute::Visual,64ul>
-- 008be880 BSN::Adapter::Array::SetLength<Battlenet::Event::News::Link,16ul>
-- 008be920 BSN::Adapter::Array::SetLength<Battlenet::S2Master::OGLFilter,4ul>
-- 008bea60 BSN::Adapter::Array::SetLength<Battlenet::Version::Key,63ul>
-- 008beaf0 BSN::Adapter::Array::SetLength<Battlenet::Client::ComSat::OutputDevice,8ul>
-- 008bec40 BSN::Adapter::Optional::GetElement<Battlenet::Attribute::ArtId>
-- 008becc0 BSN::Adapter::AsciiString::SetLength<64ul>
-- 008bf050 BSN::Adapter::Array::SetLength<Battlenet::Profile::RecordAddress,11ul>
-- 008bf2a0 BSN::Adapter::Array::SetLength<Battlenet::Profanity::Substring,50ul>
-- 008bf410 BSN::Adapter::Array::SetLength<BSN::String<248ul>,16ul>
-- 008bf5e0 BSN::Adapter::Array::SetLength<unsigned_char,16384ul>
-- 008bf730 BSN::Adapter::Optional::GetElement<unsigned_long_long>
-- 008bf880 BSN::Adapter::Optional::GetElement<Battlenet::WoW::RealmHandle>
-- 008bf9e0 BSN::Adapter::Optional::GetElement<BSN::Array<unsigned_long_long,8ul>>
-- 008bfa70 BSN::Adapter::Array::SetLength<Battlenet::Attribute::Definition,64ul>
-- 008bfba0 BSN::Adapter::Array::SetLength<BSN::AsciiString<128ul>,95ul>
+- 008be500 BSN::Adapter::Array::SetLength<Battlenet::Statistics::ReportValue,63ul>
+- 008be5e0 BSN::Adapter::Array::SetLength<Battlenet::Client::S2GameDefines::ClientProfileData,16ul>
+- 008be6e0 BSN::BSNPrimitiveEncoder::SetString
+- 008be7c0 BSN::Adapter::Optional::GetElement<Battlenet::Presence::S2GameInfo>
+- 008be800 BSN::Adapter::Array::SetLength<Battlenet::Client::S2GameDefines::PlayerResult,16ul>
+- 008be9e0 BSN::Adapter::Array::SetLength<Battlenet::Chat::Session,255ul>
+- 008bea60 BSN::Adapter::Blob::SetLength<512ul>
+- 008bebc0 BSN::Adapter::AsciiString::SetLength<80ul>
+- 008bec40 BSN::Adapter::Blob::SetLength<127ul>
+- 008bed90 BSN::Adapter::Optional::GetElement<Battlenet::Event::UserInterface::AspectRatio>
+- 008bedd0 BSN::Adapter::Array::SetLength<unsigned_long,3ul>
+- 008bf050 BSN::Adapter::Array::SetLength<Battlenet::Attribute::DefinitionHandle,64ul>
+- 008bf1a0 BSN::Adapter::FixedBlob::SetLength<2ul>
+- 008bf390 BSN::Adapter::Array::SetLength<Battlenet::Ladder::Member,100ul>
+- 008bf410 BSN::Adapter::Array::SetLength<unsigned_long,16ul>
+- 008bf560 BSN::Adapter::Array::SetLength<Battlenet::MatchMaker::LeagueConfig,384ul>
+- 008bf5e0 BSN::Adapter::Array::SetLength<Battlenet::Cache::ResolvedStreamItem,8ul>
 - 008c63c0 BSN::AsciiStringCopy
-- 008c63f0 BSN::BSNEncodedObject<Battlenet::Toon::FullName,Protocol>::GetContext
-- 008c6a40 BSN::Protocol::Meta::Base::Base
-- 008c6c90 BSN::BSNEncodedObject<Battlenet::Toon::FullName,Protocol>::GetEncoder
-- 008c6cb0 BSN::BSNEncodedObject<Battlenet::Friends::FriendsOfFriendList,Protocol>::GetContext
+- 008c6480 BSN::BSNEncodedObject<Battlenet::Toon::FullName,Protocol>::GetContext
+- 008c6a40 BSN::Protocol::Protocol::TypeInfo
+- 008c6c90 BSN::BSNEncodedObject<Battlenet::Friends::FriendsOfFriendList,Protocol>::GetContext
+- 008c6cb0 BSN::BSNEncodedObject<Battlenet::Toon::FullName,Protocol>::GetEncoder
 - 008c6cd0 BSN::BSNEncodedObject<Battlenet::Friends::FriendsOfFriendList,Protocol>::GetEncoder
 - 008c6fd0 BSN::Protocol::Protocol::DumpInfo
-- 008c7000 BSN::Protocol::Protocol::TypeInfo
-- 0093db9f BSN::Encoder::PutLength<BSN::Protocol::Meta::Array>
-- 0093e00a BSN::Adapter::Optional::GetElement<BSN::Array<Battlenet::Toon::UnlockDefinitionFile,16ul>>
-- 0095c3f0 BSN::Adapter::FixedBlob::SetLength<64ul>
-- 0095cb10 BSN::Adapter::Array::SetLength<Battlenet::Attribute::NearInstance,16ul>
-- 009bff00 BSN::Adapter::String::SetSize<12ul>
-- 009c05e0 BSN::Adapter::Array::SetLength<unsigned_long,3ul>
+- 0095bf30 BSN::Adapter::Array::SetLength<Battlenet::Version::Record,63ul>
+- 0095cb10 BSN::Adapter::String::SetSize<25ul>
+- 009bff00 BSN::Adapter::AsciiString::SetLength<255ul>
+- 009c2530 BSN::BSNPrimitiveEncoder::GetMemberContext
+- 009c2760 BSN::BSNPrimitiveEncoder::GetElementContext
 - 009c2a90 BSN::Encoder::SetData
 - 009c2b70 BSN::Encoder::PutBitsPtr
 - 009c2e70 BSN::Encoder::PutBlob
-- 009c5090 BSN::Adapter::Optional::GetElement<BSN::Array<Battlenet::Event::OfflineDataStore::OfflineCacheStream,8ul>>
-- 009c5110 BSN::Adapter::Array::SetLength<Battlenet::Attribute::Arbitration::Enum,64ul>
 
 [BackgroundCache]
 - 00432c70 BackgroundCache::CacheManager::ResolveUpdatePath
 
 [Battlenet]
-- 00864510 Battlenet::Account::FullName::SetDefault_givenName
-- 00864890 Battlenet::Account::FullName::SetDefault_surname
-- 00882950 Battlenet::S2Map::BnetHeader::SetDefault_name
-- 008899a0 Battlenet::Cache::ResolvedStreamItem::SetDefault_path
-- 008beab0 Battlenet::Tumor::Adapter::SendDatagram
-- 009bfea0 Battlenet::TumorManagerImplementation::UnregisterFunction
-- 009c1d20 Battlenet::CreepTendril::Instance::Resolved
-- 009c1db0 Battlenet::CreepTendril::Instance::Connected
-- 009c1e40 Battlenet::CreepTendril::Instance::RecvDatagram
+- 00864510 Battlenet::S2Map::Header::SetDefault_bnet
+- 0086ebd0 Battlenet::Account::FullName::SetDefault_surname
+- 00882950 Battlenet::Cache::ResolvedStreamItem::SetDefault_path
+- 008899a0 Battlenet::S2Map::BnetHeader::SetDefault_name
+- 009c1e40 Battlenet::CreepTendril::Instance::Connected
+- 009c1ed0 Battlenet::CreepTendril::Instance::Resolved
+- 009c1f50 Battlenet::CreepTendril::Instance::RecvDatagram
 - 009c2010 Battlenet::Library::LoadApplicationBundle
-- 009c2040 Battlenet::CreepTendril::Instance::ProcessEventData<Battlenet::Event::S2GameEngine::Response>
-- 009c20a0 Battlenet::CreepTendril::Instance::ProcessEventData<Battlenet::Event::DatagramConnection::Request>
-- 009c2100 Battlenet::CreepTendril::Instance::ProcessEventData<Battlenet::Event::UserInterface::FromUI>
-- 009c2160 Battlenet::CreepTendril::Instance::ProcessEventData<Battlenet::Event::DatagramConnection::Response>
-- 009c21c0 Battlenet::CreepTendril::Instance::ProcessEventData<Battlenet::Event::Starcraft2::ToApp>
-- 009c2220 Battlenet::CreepTendril::Instance::ProcessEventData<Battlenet::Event::Creep::Invoke>
-- 009c22e0 Battlenet::CreepTendril::Instance::ProcessEventData<Battlenet::Event::Larva::Invoke>
-- 009c2340 Battlenet::CreepTendril::Instance::ProcessEventData<Battlenet::Event::Starcraft2::FromApp>
+- 009c2040 Battlenet::CreepTendril::Instance::ProcessEventData<Battlenet::Event::UserInterface::FromUI>
+- 009c20a0 Battlenet::CreepTendril::Instance::ProcessEventData<Battlenet::Event::DatagramConnection::Response>
+- 009c2100 Battlenet::CreepTendril::Instance::ProcessEventData<Battlenet::Event::S2GameEngine::Request>
+- 009c2160 Battlenet::CreepTendril::Instance::ProcessEventData<Battlenet::Event::S2GameEngine::Response>
+- 009c21c0 Battlenet::CreepTendril::Instance::ProcessEventData<Battlenet::Event::Larva::Invoke>
+- 009c2220 Battlenet::CreepTendril::Instance::ProcessEventData<Battlenet::Event::Starcraft2::FromApp>
+- 009c2340 Battlenet::CreepTendril::Instance::ProcessEventData<Battlenet::Event::DatagramConnection::Request>
 - 009c23a0 Battlenet::CreepTendril::Instance::ProcessEventData<Battlenet::Event::UserInterface::ToUI>
-- 009c2400 Battlenet::CreepTendril::Instance::ProcessEventData<Battlenet::Event::S2GameEngine::Request>
+- 009c2400 Battlenet::CreepTendril::Instance::ProcessEventData<Battlenet::Event::Starcraft2::ToApp>
 - 009c5610 Battlenet::CreepTendril::Instance::ProcessEventData<Battlenet::Event::Update::Invoke>
-- 009d1800 Battlenet::S2Map::InfoBase::SetDefaults
-- 009d1880 Battlenet::S2Map::Header::SetDefault_bnet
-
-[BattlenetAllocator]
-- 008be800 BattlenetAllocator::AllocInfo
+- 009d1800 Battlenet::Result::Definition::SetDefault_name
+- 009d1880 Battlenet::S2Map::InfoBase::SetDefault_authorToonName
 
 [BattlenetApplication]
+- 00887590 BattlenetApplication::Connect
 - 008c5210 BattlenetApplication::~BattlenetApplication
 - 008c6a10 BattlenetApplication::~BattlenetApplication
 - 008c8730 BattlenetApplication::WCConnected
 - 008c87b0 BattlenetApplication::WCDataReady
-- 008c8800 BattlenetApplication::WCConnected
-- 008c8820 BattlenetApplication::WCDataReady
+- 008c8800 BattlenetApplication::WCDataReady
+- 008c8820 BattlenetApplication::WCConnected
 
 [BattlenetLogin]
-- 008a34b0 BattlenetLogin::GetOutOfBandTimer
+- 00889e00 BattlenetLogin::SendSurveyInfoToModule
+- 008bf800 BattlenetLogin::LogonResult
 - 008c6420 BattlenetLogin::SetAuthModulePinInfo
 - 008cf940 BattlenetLogin::BuildRealmListResult
 
 [BattlenetUI]
+- 0041d1a0 BattlenetUI::ChatWhisperReceivedCB
 - 00530c60 BattlenetUI::BattlenetFeaturesEnabled
 - 00530ce0 BattlenetUI::FeaturesEnabledAndConnected
 - 00530dc0 BattlenetUI::GetNameForPresenceIdHelper
-- 005325a0 BattlenetUI::ChatChannelCreationResultCB
-- 005329b0 BattlenetUI::FriendInviteListInitializedCB
+- 005325a0 BattlenetUI::NewPresenceCB
 - 00532bf0 BattlenetUI::SavePrescenceID
-- 00532cc0 BattlenetUI::ChatChannelInviteResultCB
+- 00532cc0 BattlenetUI::RequestFofInfoResultCB
 - 00532d70 BattlenetUI::TokenCallback
-- 00537a60 BattlenetUI::NewPresenceCB
+- 00537a60 BattlenetUI::ChatChannelInviteResultCB
 - 00538290 BattlenetUI::ChatWhisperSentCB
 - 00538c40 BattlenetUI::ChatChannelMessageReceivedCB
-- 0053af70 BattlenetUI::RequestFofInfoResultCB
-- 00778500 BattlenetUI::FriendInviteRemovedCB
-- 00889420 BattlenetUI::CustomMessageChangedCB
-- 00889730 BattlenetUI::FactionUpdateCB
-- 00889a50 BattlenetUI::ChatChannelJoinedCB
-- 00889a90 BattlenetUI::ChatWhisperReceivedCB
-- 00889e00 BattlenetUI::GetSelfRealmID
-- 008be7c0 BattlenetUI::ChatWhisperUndeliverableCB
-- 008bf8c0 BattlenetUI::FriendInviteSentCB::Call
+- 0053af70 BattlenetUI::ChatChannelCreationResultCB
+- 005cd970 BattlenetUI::FriendInviteAddedCB
+- 007701c0 BattlenetUI::ChatChannelMessageUndeliverableCB
+- 00889420 BattlenetUI::FriendInviteListInitializedCB
+- 008896c0 BattlenetUI::GetPresenceFieldValueText
+- 00889730 BattlenetUI::ChatChannelJoinedCB
+- 00889a90 BattlenetUI::ToonNameUpdateCB
+- 008be920 BattlenetUI::FactionUpdateCB
 - 008c6330 BattlenetUI::SetDisconnectedFromBattlenet
-- 009c2530 BattlenetUI::ToonNameUpdateCB
-- 009c2760 BattlenetUI::OnlineTimeChangedCB
-- 009d1480 BattlenetUI::FriendListInitializedCB
-- 009d1580 BattlenetUI::FriendRemovedCB
+- 009d1580 BattlenetUI::FriendListInitializedCB
+- 009d15e0 BattlenetUI::FriendRemovedCB
+
+[BigBuffer]
+- 0095c000 BigBuffer::operator[]
 
 [Blizzard]
+- 0041d120 Blizzard::Mopaq::OnDiskEnumerator::Initialize
+- 0041d9e0 Blizzard::Util::ThreadSafeQueue<Blizzard::Jobs::Job*>::Push
+- 00421820 Blizzard::Mopaq::SFileMakeFileLocal
 - 00422330 Blizzard::Mopaq::SFileOpenFileEx
 - 00427de0 Blizzard::Streaming::Transport::TransportHttpCallback::~TransportHttpCallback
 - 004283d0 Blizzard::Mopaq::SFileCloseFile
 - 004284e0 Blizzard::Process::Sleep
 - 00428620 Blizzard::String::FindExtensionWithLeadingDot
 - 00429a60 Blizzard::Storage::StorageUnit::ReserveChunks
-- 0042aa50 Blizzard::String::Find
-- 0042b320 Blizzard::Lock::MutexLeave
+- 0042aa50 Blizzard::String::FindReverse
 - 0042b670 Blizzard::File::GetFreeSpace
 - 0042d5c0 Blizzard::Streaming::FileThread
-- 0042e5a0 Blizzard::String::FindReverse
+- 0042e5a0 Blizzard::String::Find
 - 0042e5d0 Blizzard::String::FindReverse
 - 00431fd0 Blizzard::Mopaq::SetupHashEntry
 - 004321a0 Blizzard::Lock::MutexDestroy
 - 004327d0 Blizzard::Lock::MutexCreate
 - 00432a40 Blizzard::Storage::GetRange
-- 00434e00 Blizzard::Util::ThreadSafeQueue<Blizzard::Jobs::Job*>::Push
 - 00435c20 Blizzard::Process::GetProcessPath
 - 00435fc0 Blizzard::URL::DownloadURL
+- 00438300 Blizzard::Lock::ConstructOnce<Blizzard::Lock::RMutex>::Construct
 - 00439b20 Blizzard::Streaming::Transport::GetSplitFileURL
 - 0043aa30 Blizzard::Mopaq::SFileOpenFileEx
 - 0043ae10 Blizzard::Streaming::SourceManifest::SplitItem
@@ -173,37 +172,39 @@
 - 00440bd0 Blizzard::Storage::PartialFile::CreateShared
 - 00444aa0 Blizzard::Mopaq::SFileMakeFileLocal
 - 00445c80 Blizzard::Streaming::Transport::TransportHttpCallback::ShouldBlock
-- 00445ef0 Blizzard::Mopaq::DeltaCompletionCallback::Callback
-- 00447480 Blizzard::Mopaq::MpqHandleRecord::Release
+- 00445ef0 Blizzard::Mopaq::MPQEnumeratorBlockOrder::Enumerate
+- 00445f60 Blizzard::Mopaq::MpqRepairOnDemandErrorHandler::HandleNonStreamableFileError
+- 00447480 Blizzard::Mopaq::SFileLoadFile
 - 0044c630 Blizzard::Streaming::Transport::SplitItem
 - 0044efb0 Blizzard::Streaming::GetIsLocalAmount
 - 0044fff0 Blizzard::Lock::ConstructOnce<System_MPQGlobals::Globals>::Construct
 - 00450b80 Blizzard::Storage::Initialize
+- 00451b40 Blizzard::Mopaq::MPQEnumerator::Enumerate
+- 00451e80 Blizzard::Mopaq::MPQEnumerator::Initialize
 - 00452610 Blizzard::Streaming::ManifestInfo::GetParameter
 - 004526f0 Blizzard::Streaming::FileManifest::SplitItem
 - 00452970 Blizzard::Streaming::FileManifest::SplitServerItem
 - 00452d70 Blizzard::Streaming::ManifestInfo::GetRemotePath
-- 004541d0 Blizzard::Mopaq::MPQEnumeratorBlockOrder::Enumerate
+- 004541d0 Blizzard::Mopaq::OnDiskEnumerator::~OnDiskEnumerator
 - 004572c0 Blizzard::Storage::PartialFile::RebuildHeader
 - 0045a610 Blizzard::Mopaq::SFileFileIsLocal
 - 0045f4f0 Blizzard::Mopaq::SFileSetChecksumFlags
 - 00460f00 Blizzard::Mopaq::SFileGetFileDetails
 - 00462240 Blizzard::Hardware::GetFingerprint
 - 004625a0 Blizzard::Lock::EventDestroy
-- 004a9c00 Blizzard::Storage::PartialFile::ParseFile
 - 00635f60 Blizzard::Mopaq::Enumerator::~Enumerator
 - 006f7520 Blizzard::Storage::PartialFile::IsMatch
-- 007685c0 Blizzard::Mopaq::SetPatchCompleteCallback
 - 00773cc0 Blizzard::String::Translate
 - 0077e040 Blizzard::Debug::StackCrawlWithSymbols
-- 008896c0 Blizzard::Storage::PartialFile::Read
+- 00817d00 Blizzard::Repair::SetRepairReportCallbacks
+- 00889ad0 Blizzard::Storage::PartialFile::ParseFile
+- 008bf8c0 Blizzard::Mopaq::MpqRepairOnDemandErrorHandler::HandleInitSectorTableError
 - 008c3b10 Blizzard::Streaming::MakeLocal
 - 008c4380 Blizzard::Storage::StorageUnit::FetchDeferData
-- 009c62fb Blizzard::Debug::AmIBeingDebugged
 - 009c6818 Blizzard::Util::CryptoSHA1::Process
 - 009c7361 Blizzard::Streaming::ManifestInfo::SetFileItem
+- 009c7516 Blizzard::Debug::AmIBeingDebugged
 - 009d0740 Blizzard::Streaming::ManifestRandomNumberGenerator::RandomGenerator
-- 009d14a0 Blizzard::Storage::CacheSource::Read
 
 [BspQuery_Segment]
 - 007c6c30 BspQuery_Segment::GetFaceIndicesUsingCache
@@ -216,7 +217,7 @@
 
 [C33Matrix]
 - 004c1d20 C33Matrix::Determinant
-- 004c5280 C33Matrix::Scale
+- 004c52e0 C33Matrix::Scale
 
 [C3Spline_Bezier3]
 - 004c4930 C3Spline_Bezier3::IVelParametric
@@ -245,7 +246,7 @@
 
 [CAnimKitInst]
 - 004cfb70 CAnimKitInst::Release
-- 006cf2e0 CAnimKitInst::GetSegmentCount
+- 0071d510 CAnimKitInst::GetSegmentCount
 
 [CBLPFile]
 - 006af660 CBLPFile::DecompPalDither
@@ -254,18 +255,11 @@
 - 0078fbd0 CBarrier::Clear
 
 [CCameraManager]
-- 004cb3b0 CCameraManager::~CCameraManager
 - 0053b8c0 CCameraManager::CCameraManager
 - 0074cc40 CCameraManager::Update
 
 [CCameraMode]
 - 00811cc0 CCameraMode::AllocInstance
-
-[CCameraModeAnimated]
-- 008a3de0 CCameraModeAnimated::FreeInstance
-
-[CCameraModeLocked]
-- 008a4050 CCameraModeLocked::FreeInstance
 
 [CCameraShot]
 - 0071b600 CCameraShot::CCameraShot
@@ -277,31 +271,15 @@
 - 004e01b0 CCharacterComponent::CheckForComponentChanges
 - 004e6fb0 CCharacterComponent::ItemsLoaded
 - 004e7af0 CCharacterComponent::GetItemSlotForInvSlot
-- 004e82d0 CCharacterComponent::PasteOpaqueScale
-- 004e83a0 CCharacterComponent::PasteTransparent8BitScale
-- 004e84f0 CCharacterComponent::PasteTransparent8Bit
-- 004e8660 CCharacterComponent::PasteTransparent4Bit
-- 004e8840 CCharacterComponent::PasteTransparent4BitScale
-- 004ea880 CCharacterComponent::UpdateItem
-- 004ecc20 CCharacterComponent::PasteTransparent1BitScale
-- 004ee380 CCharacterComponent::UpdateItemDisplay
+- 004ed8c0 CCharacterComponent::UpdateItemDisplay
 - 004eefa0 CCharacterComponent::ComposeHelmModelFilePath
 - 004ef970 CCharacterComponent::RemoveItemByType
-- 004f01a0 CCharacterComponent::UpdateItemTL
-- 004f0200 CCharacterComponent::UpdateItemAU
-- 004f0280 CCharacterComponent::UpdateItemAL
-- 004f02e0 CCharacterComponent::UpdateItemTU
-- 004f0340 CCharacterComponent::UpdateItemLL
-- 004f03a0 CCharacterComponent::UpdateItemLU
-- 004f0400 CCharacterComponent::UpdateItemHA
-- 004f0420 CCharacterComponent::UpdateItemFO
-- 006f6020 CCharacterComponent::GetNumBeards
-- 00879440 CCharacterComponent::GetInvSlotForInvType
+- 00878580 CCharacterComponent::GetInvSlotForInvType
 
 [CCharacterCreation]
 - 004dfe90 CCharacterCreation::StartAnimation
 - 004e7e90 CCharacterCreation::RandomizeCharCustomization
-- 004e8050 CCharacterCreation::InitCharacterComponents
+- 004e7f20 CCharacterCreation::InitCharacterComponents
 
 [CCharacterSelection]
 - 004e3ca0 CCharacterSelection::EnumerateCharactersCallback
@@ -315,6 +293,8 @@
 - 0047aef0 CDataStore::Put
 - 0047af90 CDataStore::Set
 - 004fb7e0 CDataStore::Get
+- 0056d8e0 CDataStore::Get
+- 0056d920 CDataStore::Put
 - 006fb100 CDataStore::Get
 - 008cbfb0 CDataStore::GetByte
 
@@ -322,12 +302,13 @@
 - 008ccf30 CDataStoreCache<1024>::InternalInitialize
 
 [CDetailDoodad]
+- 0055e610 CDetailDoodad::GetMinMaxDensity
 - 007b10e0 CDetailDoodad::UpdateWind
-- 007b12b0 CDetailDoodad::FillVerticesInstanced
+- 007b12b0 CDetailDoodad::FillIndicesInstanced
 - 007b29b0 CDetailDoodad::FreeGxBufMat
 
 [CDetailDoodadInst]
-- 00792f60 CDetailDoodadInst::FlagVisible
+- 00792f80 CDetailDoodadInst::FlagVisible
 
 [CDetailDoodadInstBatch]
 - 007ced30 CDetailDoodadInstBatch::Free
@@ -342,7 +323,6 @@
 [CEzLcd]
 - 0084b400 CEzLcd::~CEzLcd
 - 008c4ee0 CEzLcd::~CEzLcd
-- 00958f10 CEzLcd::SetSize
 
 [CEzLcdPage]
 - 0095ae00 CEzLcdPage::SetBitmap
@@ -351,12 +331,15 @@
 - 0049c830 CFramePoint::GetRelativeRect
 
 [CFrameXMLStatus]
-- 0055f830 CFrameXMLStatus::~CFrameXMLStatus
-- 0076ee60 CFrameXMLStatus::Add
+- 009d3910 CFrameXMLStatus::~CFrameXMLStatus
+- 009d4720 CFrameXMLStatus::~CFrameXMLStatus
+
+[CFrustum]
+- 00983fb0 CFrustum::Cull
 
 [CGActionBar]
 - 005a7920 CGActionBar::GetFlyout
-- 005a80e0 CGActionBar::ClearOverrideSpellclass
+- 005a7a40 CGActionBar::ClearOverrideSpellclass
 - 005ae4f0 CGActionBar::PickupActionInternal
 
 [CGAutoCompleteName]
@@ -366,8 +349,11 @@
 
 [CGBattlefieldInfo]
 - 00513a80 CGBattlefieldInfo::OnBattlefieldStatus_NeedConfirmation
+- 00525530 CGBattlefieldInfo::OnBattlefieldPlayerLeft
+- 00549500 CGBattlefieldInfo::GetWorldPVPAreaName
+- 0054a530 CGBattlefieldInfo::OnBattlefieldPlayerJoined
 - 0054abf0 CGBattlefieldInfo::OnArenaUnitOutOfRange
-- 0054b1c0 CGBattlefieldInfo::OnBattlefieldPlayerLeft
+- 0054b1c0 CGBattlefieldInfo::OnWargameRequestSuccessfullySentToOpponent
 - 0054b510 CGBattlefieldInfo::OnBattlefieldStatus_Failed
 - 007f11a0 CGBattlefieldInfo::OnBattlefieldStatus_Queued
 
@@ -393,34 +379,33 @@
 - 004c11f0 CGCamera::UpdateFromModelCamera
 - 005fe910 CGCamera::SetVehicleTrackingStyle
 - 005fee10 CGCamera::SetDesiredGroundOffset
+- 005ff3e0 CGCamera::InitializeView
 - 00714b60 CGCamera::BumpCameraPositionFromLiquid
 
 [CGCharacterModelBase]
 - 005970b0 CGCharacterModelBase::~CGCharacterModelBase
-- 00597280 CGCharacterModelBase::~CGCharacterModelBase
 - 005990c0 CGCharacterModelBase::~CGCharacterModelBase
+- 008a4150 CGCharacterModelBase::~CGCharacterModelBase
 
 [CGChatBubbleFrame]
 - 0056c1c0 CGChatBubbleFrame::ParseRaidIcons
-- 008a4150 CGChatBubbleFrame::~CGChatBubbleFrame
+- 009213db CGChatBubbleFrame::~CGChatBubbleFrame
 
 [CGCommentator]
 - 005684b0 CGCommentator::Script_SetCamera
-- 0077a0c0 CGCommentator::Script_StartInstance
-- 00887520 CGCommentator::Script_RequestSkirmishMode
-- 008be500 CGCommentator::Script_RemovePlayer
-- 008bed90 CGCommentator::Script_GetSkirmishQueueCount
+- 006bb550 CGCommentator::Script_GetSkirmishQueueCount
+- 008bf2e0 CGCommentator::Script_SetCameraCollision
 
 [CGCooldown]
 - 005eb0c0 CGCooldown::LoadXML
 
 [CGCurrencyTypes]
-- 004cfb80 CGCurrencyTypes::LeaveWorld
 - 005b04f0 CGCurrencyTypes::GetCurrencyIcon
 
 [CGDressUpModelFrame]
-- 00811c90 CGDressUpModelFrame::~CGDressUpModelFrame
-- 008879b0 CGDressUpModelFrame::GetDuplicateUnitCharacterModel
+- 00597c50 CGDressUpModelFrame::TryOn
+- 00597d10 CGDressUpModelFrame::~CGDressUpModelFrame
+- 008bed00 CGDressUpModelFrame::GetDuplicateUnitCharacterModel
 
 [CGEquipmentManager]
 - 004d4090 CGEquipmentManager::OnEquipmentSetID
@@ -428,6 +413,7 @@
 - 007540b0 CGEquipmentManager::GetSetStatus
 
 [CGGMSurveyInfo]
+- 004cfb80 CGGMSurveyInfo::EnterWorld
 - 005cd3a0 CGGMSurveyInfo::ShutdownGame
 
 [CGGameObject_C]
@@ -440,10 +426,12 @@
 
 [CGGameObject_C_Type_DestructibleBuilding]
 - 00712980 CGGameObject_C_Type_DestructibleBuilding::~CGGameObject_C_Type_DestructibleBuilding
-- 008a4260 CGGameObject_C_Type_DestructibleBuilding::PostInitWithStats
+- 00713d70 CGGameObject_C_Type_DestructibleBuilding::~CGGameObject_C_Type_DestructibleBuilding
+- 008a3f50 CGGameObject_C_Type_DestructibleBuilding::PostInitWithStats
 
 [CGGameObject_C_Type_Transport]
 - 00710780 CGGameObject_C_Type_Transport::UpdateState
+- 007f04b0 CGGameObject_C_Type_Transport::PostReenable
 
 [CGGameObject_C_Type_TransportBase]
 - 0070c650 CGGameObject_C_Type_TransportBase::MarkTransportLoaded
@@ -456,15 +444,14 @@
 - 00519680 CGGameUI::GetCurrentDungeonDifficulty
 - 0052b370 CGGameUI::CheckThreatTutorial
 - 00706ec0 CGGameUI::HandleMouseUp
-- 00824a00 CGGameUI::GetUIScale
+- 0077f9a0 CGGameUI::ClearHiddenHostiles
+- 008260c0 CGGameUI::GetUIScale
 - 0084a570 CGGameUI::UpdatePlayerAFK
 
 [CGGuildInfo]
+- 0049c350 CGGuildInfo::Script_InGuildParty
 - 0050f420 CGGuildInfo::OnGuildEventLog
-- 00538dd0 CGGuildInfo::Script_InGuildParty
-- 005cd5e0 CGGuildInfo::SetMemberOnlineStatus
 - 0070af00 CGGuildInfo::GetGuildMemberRecipes
-- 008889b0 CGGuildInfo::ClearGuildInfo
 
 [CGInputControl]
 - 006cf3a0 CGInputControl::CanTurn
@@ -482,41 +469,40 @@
 [CGItem_C]
 - 005e8290 CGItem_C::GetEnchantmentTimeLeft
 - 0061f940 CGItem_C::GetRandomPropertyOverrideAmountEx
-- 007073e0 CGItem_C::IsInstanceBound
 
 [CGLCD]
 - 00848100 CGLCD::SetPvPMap
 
 [CGLFGuildInfo]
-- 004965d0 CGLFGuildInfo::Script_GetNumGuildApplicants
+- 0053b0d0 CGLFGuildInfo::Script_GetGuildApplicantSelection
 
 [CGLookingForGroup]
 - 005589d0 CGLookingForGroup::ReadLFGPlayer
 - 005599f0 CGLookingForGroup::UpdateAvailableRandomSlots
 - 00559da0 CGLookingForGroup::UpdateBestRandomSlot
+- 00719980 CGLookingForGroup::GetSlotLootInfo
 
 [CGLootInfo]
-- 004cfb90 CGLootInfo::EnterWorld
 - 005124f0 CGLootInfo::ChangedSlot
+- 0054b3f0 CGLootInfo::OnCurrencyLootRemoved
+- 007073e0 CGLootInfo::GetLootSeed
+- 00707650 CGLootInfo::GetLootRandomPropertiesID
 
 [CGMerchantInfo]
-- 005882d0 CGMerchantInfo::FindItem
-
-[CGMinigameInfo]
-- 005a1f50 CGMinigameInfo::EnterWorld
+- 00588250 CGMerchantInfo::FindItem
 
 [CGMinimapFrame]
-- 0057d860 CGMinimapFrame::RenderPartyRaidBlips
-- 0057e540 CGMinimapFrame::RenderVehicleBlips
+- 0057d860 CGMinimapFrame::RenderPOIArrows
+- 0057e540 CGMinimapFrame::RenderObjectBlips
 - 0057ea30 CGMinimapFrame::UpdateTrackingSpell
 - 0057ff70 CGMinimapFrame::RenderPings
-- 00580380 CGMinimapFrame::RenderObjectBlips
+- 00580380 CGMinimapFrame::RenderPartyRaidBlips
 - 00580720 CGMinimapFrame::RenderQuestCompletionNPC
 - 00580ae0 CGMinimapFrame::RenderPartyArrows
 - 00580ec0 CGMinimapFrame::RenderRaidArrows
 - 00728b90 CGMinimapFrame::AddShapeshiftTrackingSpell
 - 00744400 CGMinimapFrame::IsTrackingTrivialQuests
-- 007f4b60 CGMinimapFrame::RenderPOIArrows
+- 007f4b60 CGMinimapFrame::RenderSuperTrackedQuestArrow
 
 [CGObject_C]
 - 004e60b0 CGObject_C::PrepareToFade
@@ -525,20 +511,18 @@
 [CGPartyInfo]
 - 0052c860 CGPartyInfo::GetRolesAssigned
 - 0052c9a0 CGPartyInfo::GetPartyAssignments
-- 005ff3e0 CGPartyInfo::EnterWorld
 
 [CGPetInfo]
-- 0071b700 CGPetInfo::PetFollow
+- 005d3340 CGPetInfo::PetFollow
 - 00804420 CGPetInfo::ClearActions
-- 0080c790 CGPetInfo::ClearPetOrderMoveTo
 
 [CGPlayer_C]
 - 0050f590 CGPlayer_C::IsInArena
 - 0058bcb0 CGPlayer_C::CheckForQuestAutoComplete
-- 00591990 CGPlayer_C::GlobalShutdown
+- 005993b0 CGPlayer_C::ApplyGuildTabard
 - 006e73b0 CGPlayer_C::GetTradeSkills
 - 007075a0 CGPlayer_C::GetPlayerGuildNameTextWithTitle
-- 00801120 CGPlayer_C::ModifyCategoryCooldown
+- 0080e060 CGPlayer_C::ModifyCategoryCooldown
 
 [CGQuestInfo]
 - 0058a660 CGQuestInfo::IsTrivialQuest
@@ -547,7 +531,7 @@
 - 005dec40 CGQuestLog::IsQuestComplete
 - 005e3b90 CGQuestLog::GetQuestDistSqr
 - 005e7370 CGQuestLog::OnQuestPOIResponse
-- 00715e30 CGQuestLog::GetQuestID
+- 0071acf0 CGQuestLog::GetQuestID
 - 0071ffc0 CGQuestLog::IsQuestComplete
 - 0086c090 CGQuestLog::AddQuestCompletionNPC
 
@@ -557,20 +541,17 @@
 - 00767350 CGQuestPOIFrame::DestroyScriptMetaTable
 
 [CGRaidInfo]
-- 0054b3f0 CGRaidInfo::OnRaidInstanceInfo
+- 00401190 CGRaidInfo::OnRaidInstanceInfo
 
-[CGSkillInfo]
-- 00519df0 CGSkillInfo::EnterWorld
-- 005946c0 CGSkillInfo::UpdateAllSkillLines
+[CGRuneInfo]
+- 004cfb90 CGRuneInfo::EnterWorld
 
 [CGSpellBook]
-- 004ccaa0 CGSpellBook::PickupSpell
 - 0053b3f0 CGSpellBook::AddPetActions
+- 0053c5f0 CGSpellBook::GetRealSpellBookSkillLine
 - 0053e810 CGSpellBook::MakeKnownSpellModelsLocal
 - 0053eaa0 CGSpellBook::MakeSpellModelsLocal
-- 005cd9b0 CGSpellBook::GetRealSpellBookSkillLine
 - 00811f20 CGSpellBook::InitFutureSpells
-- 009d15c0 CGSpellBook::AddFlyout
 
 [CGStableInfo]
 - 007199e0 CGStableInfo::GetNumActivePets
@@ -578,14 +559,8 @@
 
 [CGTalentGroup_C]
 - 005c7010 CGTalentGroup_C::ResetPreviewTalentPoints
-- 005c7070 CGTalentGroup_C::ResetAllPreviewTalentPoints
 - 005c76fb CGTalentGroup_C::CanAddPreviewTalentPoints
 - 005c9450 CGTalentGroup_C::AddPreviewTalentPoints
-- 009d6260 CGTalentGroup_C::~CGTalentGroup_C
-
-[CGTalentInfo]
-- 005c5be0 CGTalentInfo::GetAllGroupPreviewTalentPointsSpent
-- 005c70d0 CGTalentInfo::ResetAllGroupPreviewPrimaryTalentTree
 
 [CGTalentInfo_Inspect]
 - 005c6980 CGTalentInfo_Inspect::ResetTabInfo
@@ -593,13 +568,13 @@
 
 [CGTaxiMap]
 - 005920d0 CGTaxiMap::ShutdownGame
+- 005a1f50 CGTaxiMap::EnterWorld
 
 [CGTooltip]
-- 0061a1c0 CGTooltip::SetPetAction
+- 0061a1f0 CGTooltip::SetPetAction
 
 [CGTradeInfo]
 - 00586390 CGTradeInfo::DenyPlayerItem
-- 005e8300 CGTradeInfo::RemovePlayerItem
 
 [CGTradeSkillInfo]
 - 005dae00 CGTradeSkillInfo::GetSkillMaxRank
@@ -610,10 +585,9 @@
 
 [CGUIBindingsStatus]
 - 00733820 CGUIBindingsStatus::~CGUIBindingsStatus
-- 009dd190 CGUIBindingsStatus::~CGUIBindingsStatus
 
 [CGUnit]
-- 0077f8b0 CGUnit::CanSwim
+- 004f53d0 CGUnit::CanSwim
 
 [CGUnit_C]
 - 004c1cf0 CGUnit_C::GetModelScale
@@ -627,7 +601,6 @@
 - 00601550 CGUnit_C::GetCanFly
 - 006ceb10 CGUnit_C::IsBowRifleThrownAnim
 - 006fc150 CGUnit_C::GetSelectionRadius
-- 006feda0 CGUnit_C::GetNextAreaEffectInstanceID
 - 0070f850 CGUnit_C::CanInteractWhileDead
 - 00715dd0 CGUnit_C::ShowFactionTooltip
 - 00716040 CGUnit_C::CGUnit_C
@@ -644,28 +617,25 @@
 - 0071a940 CGUnit_C::UpdateAlphaEffectAlpha
 - 0071c8b0 CGUnit_C::PlayMovementAnimKit
 - 0071c8f0 CGUnit_C::CheckMountRules
-- 0071d940 CGUnit_C::DebugAttackIndicatorList
 - 0071de90 CGUnit_C::UpdateAttackIndicatorList
 - 0071df30 CGUnit_C::ProcessEmoteQueue
 - 00721290 CGUnit_C::UpdateSwimmingStatus
 - 00723300 CGUnit_C::IsTreatAsRaidUnit
 - 00724500 CGUnit_C::ShouldKneelForLoot
-- 00726090 CGUnit_C::UpdateWeaponVisibilityFromAnimChange
 - 00733e20 CGUnit_C::SetManaRegenInterrupt
 - 00735dd0 CGUnit_C::AnimKitMgrExpressionCallback
 - 00735ef0 CGUnit_C::UpdatePassengerSmoothFacing
 - 0073b050 CGUnit_C::ProcessPlayFlagsForAnimKit
 - 00755050 CGUnit_C::IsTracking
 - 00756040 CGUnit_C::PlayRangedItemPull
+- 007571c0 CGUnit_C::DebugAttackIndicatorList
+- 0076bf80 CGUnit_C::GetNextAreaEffectInstanceID
 - 007ffde0 CGUnit_C::RemoveHealPrediction
 - 00800120 CGUnit_C::CreateMissile
-- 00800a00 CGUnit_C::GetObjectBeingLooted
 - 00804b20 CGUnit_C::CreateMissile
-- 00805f30 CGUnit_C::LookupAbility
-- 00806700 CGUnit_C::SetPredictedPower
+- 0080c790 CGUnit_C::GetObjectBeingLooted
 - 00878560 CGUnit_C::GetSoundCategory
-- 008be9a0 CGUnit_C::GetVirtualItemDisplayRec
-- 009d60b0 CGUnit_C::GetRawFacing
+- 009d60b0 CGUnit_C::GetVirtualItemDisplayRec
 
 [CGWorldFrame]
 - 004f6f90 CGWorldFrame::UpdateScreenEffectParams
@@ -681,19 +651,17 @@
 
 [CGlueMgr]
 - 004d8ba0 CGlueMgr::PollDeleteCharacter
-- 004dfed0 CGlueMgr::GetTotemDisplayId
 - 004ef900 CGlueMgr::AddItemsFromCharInfo
 - 006b0810 CGlueMgr::PollEnterWorld
 
 [CGxDevice]
+- 00401ff0 CGxDevice::DeviceSystemGamma
 - 00408c30 CGxDevice::RsSet
-- 004bf450 CGxDevice::ValidateTarget
-- 004cd4a0 CGxDevice::DeviceSystemGamma
 - 00636270 CGxDevice::ShaderRelease
-- 0069e7d0 CGxDevice::IShaderBind
-- 006a7940 CGxDevice::IOnAcquireCPUTex
-- 007d5150 CGxDevice::PrimVertexFormat
-- 008bf1e0 CGxDevice::FrameBufferDelete
+- 0068c810 CGxDevice::DeviceSetCurWindow
+- 0069faa0 CGxDevice::IOnAcquireCPUTex
+- 00886b80 CGxDevice::FrameBufferCreate
+- 008c48f0 CGxDevice::IVertexAttribToShAttrib
 
 [CGxDeviceOpenGl]
 - 0068b880 CGxDeviceOpenGl::IDeviceSetRenderTargetFBO
@@ -705,11 +673,12 @@
 - 00695640 CGxDeviceOpenGl::IStateSyncXforms
 - 0069785d CGxDeviceOpenGl::ISetTexGen
 - 00698e36 CGxDeviceOpenGl::IStateSyncIndexPtr
-- 00698ef9 CGxDeviceOpenGl::Draw
+- 00698ef9 CGxDeviceOpenGl::TexCopy
 - 0069e140 CGxDeviceOpenGl::ISceneBegin
+- 0069e7d0 CGxDeviceOpenGl::mglGenProgramsARB
 - 0069e8c0 CGxDeviceOpenGl::mglDeleteProgramsARB
 - 0069f3b0 CGxDeviceOpenGl::ShaderConstantsFlush
-- 0069f610 CGxDeviceOpenGl::DrawNonIndexed
+- 0069f610 CGxDeviceOpenGl::Draw
 - 0069f760 CGxDeviceOpenGl::IShaderBindPixel
 - 0069f8d0 CGxDeviceOpenGl::IShaderBindVertex
 - 0069f9b0 CGxDeviceOpenGl::mglResetUnmapBufferLogic
@@ -721,30 +690,30 @@
 - 00689b60 CGxShader::~CGxShader
 
 [CGxVboBroker2]
-- 00695fd0 CGxVboBroker2::~CGxVboBroker2
-- 0069793e CGxVboBroker2::~CGxVboBroker2
+- 0069793e CGxVboBroker2::SelectVbo
+- 0069a423 CGxVboBroker2::~CGxVboBroker2
+- 0069b883 CGxVboBroker2::~CGxVboBroker2
 - 0076e4e0 CGxVboBroker2::CGxVboBroker2
 
 [CGxVboBroker4]
 - 00693730 CGxVboBroker4::~CGxVboBroker4
 
 [CGxVboBroker5]
-- 0069a423 CGxVboBroker5::~CGxVboBroker5
-- 0069b883 CGxVboBroker5::~CGxVboBroker5
+- 00695fd0 CGxVboBroker5::~CGxVboBroker5
+- 008beb60 CGxVboBroker5::~CGxVboBroker5
 
 [CHMMgr]
 - 0070b7a0 CHMMgr::Invalidate
 
 [CKBPage]
-- 006f1820 CKBPage::Initialize
-- 009d3950 CKBPage::~CKBPage
+- 009dc830 CKBPage::~CKBPage
 
 [CLCDCollection]
 - 00636570 CLCDCollection::~CLCDCollection
 
 [CLCDConnection]
 - 004396e0 CLCDConnection::_OnConfigureCallback
-- 00776f90 CLCDConnection::InitializeConnection
+- 006bc960 CLCDConnection::InitializeConnection
 - 009591b0 CLCDConnection::ColorOutput
 - 00959d70 CLCDConnection::OnDeviceRemoval
 - 0095a4b0 CLCDConnection::~CLCDConnection
@@ -755,7 +724,7 @@
 - 00959f80 CLCDOutput::Shutdown
 
 [CLayoutFrame]
-- 004834f0 CLayoutFrame::ScaleBy
+- 004834c0 CLayoutFrame::ScaleBy
 - 004879b0 CLayoutFrame::CanBeAnchorFor
 - 00488d90 CLayoutFrame::FlattenFrame
 - 0048ebd0 CLayoutFrame::GetSize
@@ -774,13 +743,16 @@
 - 004079d0 CM2Model::TexturesAreLocal
 - 004e26f0 CM2Model::SetSequenceStartCallback
 - 00716450 CM2Model::GetAttachmentPivot
+- 007c0ae0 CM2Model::~CM2Model
 - 008240f0 CM2Model::ReplaceTextureByIndex
 - 008248c0 CM2Model::CM2Model
 - 00824980 CM2Model::GetCombinedBounds
 - 00831e20 CM2Model::DeactivateModel
+- 008ceec0 CM2Model::PickSequenceVariation
+- 009c2ea0 CM2Model::GetSequenceDuration
 
 [CM2Scene]
-- 007968d0 CM2Scene::BeginDraw
+- 00794250 CM2Scene::BeginDraw
 
 [CM2SceneRender]
 - 0081f620 CM2SceneRender::SetupTextureTransforms
@@ -798,15 +770,14 @@
 - 007a4af0 CMap::GetDoodadDefFacets
 - 007a4b80 CMap::GetEntityFacets
 - 007a50c0 CMap::GetMapObjDefFacets
+- 007abac0 CMap::RenderFlightBounds
 - 007ada80 CMap::GetHeightMapObjDef
 - 007bd540 CMap::LoadTextureBlob
 - 007bd8a0 CMap::CreateAreaTable
 - 007cc0b0 CMap::Gather
-- 007d4370 CMap::TestQueryReset
 - 007d5d50 CMap::Destroy
-
-[CMapArea]
-- 00877480 CMapArea::Destroy
+- 00872e40 CMap::TestQueryReset
+- 008a2980 CMap::UnloadXXX
 
 [CMapAreaLow]
 - 008a4170 CMapAreaLow::~CMapAreaLow
@@ -819,13 +790,13 @@
 - 007a1150 CMapEntity::QueryCameraFog
 
 [CMapLowDetail]
-- 007c0ae0 CMapLowDetail::Unload
 - 007d55b0 CMapLowDetail::Purge
 
 [CMapObj]
 - 004b9970 CMapObj::Update
 - 007a6d70 CMapObj::GetGroupMaterial
 - 007e87b0 CMapObj::RenderGroupTexture
+- 00834b50 CMapObj::RenderGroupDebug
 
 [CMapObjDef]
 - 0078f370 CMapObjDef::CanLinkTo
@@ -834,7 +805,7 @@
 - 009cb800 CMapObjDef::GetFacets
 
 [CMapObjDefGroup]
-- 007d72a0 CMapObjDefGroup::~CMapObjDefGroup
+- 008a4050 CMapObjDefGroup::~CMapObjDefGroup
 
 [CMapObjRender]
 - 007a8320 CMapObjRender::RenderMaterialElements
@@ -860,10 +831,13 @@
 [CModelBlob]
 - 004bbb20 CModelBlob::Load
 
+[CMovementData_C]
+- 004bf5d0 CMovementData_C::~CMovementData_C
+
 [CMovementShared]
-- 004f53d0 CMovementShared::IsJumpingUp
 - 006e9320 CMovementShared::ProcessFallReset
 - 006ec170 CMovementShared::UpgradePendingRoot
+- 0077f8b0 CMovementShared::IsJumpingUp
 
 [CMovement_C]
 - 006e9a70 CMovement_C::UpdateCollisionBox
@@ -872,13 +846,6 @@
 - 006ef7a0 CMovement_C::InsertTurnToAngleStop
 - 00714c10 CMovement_C::OnSetPitchLocal
 - 0075ee00 CMovement_C::ShouldSimulateCollision
-
-[CNullStatus]
-- 009d5530 CNullStatus::~CNullStatus
-- 009da720 CNullStatus::~CNullStatus
-
-[CParticleEmitter2]
-- 0097bb80 CParticleEmitter2::~CParticleEmitter2
 
 [CPassenger]
 - 0079f820 CPassenger::Disable
@@ -890,6 +857,7 @@
 - 004c1680 CRandom::C3Vector_
 
 [CRibbonEmitter]
+- 004f5d90 CRibbonEmitter::CRibbonEmitter
 - 0097f900 CRibbonEmitter::~CRibbonEmitter
 
 [CSRWLock]
@@ -897,7 +865,7 @@
 - 00878ce0 CSRWLock::Enter
 
 [CScriptObject]
-- 009d54b0 CScriptObject::~CScriptObject
+- 004bf450 CScriptObject::~CScriptObject
 
 [CScriptRegion]
 - 004887f0 CScriptRegion::HasActiveAnimGroup
@@ -905,7 +873,6 @@
 
 [CShaderEffect]
 - 0079e470 CShaderEffect::TerrainDisplEnabled
-- 008a20c0 CShaderEffect::SetClipEnabled
 
 [CShadowCache]
 - 0070b760 CShadowCache::GetShadowMode
@@ -929,12 +896,11 @@
 [CSimpleEditBox]
 - 00963cd0 CSimpleEditBox::Move
 - 00963d80 CSimpleEditBox::MoveLine
-- 00963e40 CSimpleEditBox::MoveForwardWord
-- 00964000 CSimpleEditBox::MoveBackwardWord
+- 00963e40 CSimpleEditBox::MoveBackwardWord
+- 00964200 CSimpleEditBox::MoveForwardWord
 - 00965260 CSimpleEditBox::~CSimpleEditBox
 
 [CSimpleFont]
-- 00487ce0 CSimpleFont::FontObjectUpdated
 - 004964d0 CSimpleFont::~CSimpleFont
 - 009652b0 CSimpleFont::~CSimpleFont
 
@@ -944,14 +910,19 @@
 - 004842a0 CSimpleFontString::PreOnAnimUpdate
 - 00484300 CSimpleFontString::StoreAnimPosition
 - 004851b0 CSimpleFontString::~CSimpleFontString
-- 0062c1bc CSimpleFontString::GetWidth
-- 0095c450 CSimpleFontString::FontObjectUpdated
-- 009c58c0 CSimpleFontString::AddAnimAlpha
+- 00488000 CSimpleFontString::LoadXML
+- 00811c90 CSimpleFontString::~CSimpleFontString
+- 008a3de0 CSimpleFontString::~CSimpleFontString
+- 008a3f30 CSimpleFontString::~CSimpleFontString
+
+[CSimpleFontable]
+- 0062c1bc CSimpleFontable::~CSimpleFontable
 
 [CSimpleFontedFrameFont]
 - 00963560 CSimpleFontedFrameFont::~CSimpleFontedFrameFont
 
 [CSimpleFrame]
+- 00487ce0 CSimpleFrame::LoadXML
 - 0056cdb0 CSimpleFrame::~CSimpleFrame
 - 0061eb20 CSimpleFrame::HideThis
 
@@ -962,8 +933,7 @@
 - 009681c0 CSimpleMessageFrame::~CSimpleMessageFrame
 
 [CSimpleMessageScrollFrame]
-- 007d6210 CSimpleMessageScrollFrame::~CSimpleMessageScrollFrame
-- 008a3f30 CSimpleMessageScrollFrame::~CSimpleMessageScrollFrame
+- 00969c30 CSimpleMessageScrollFrame::~CSimpleMessageScrollFrame
 
 [CSimpleMessageScrollFrameDisplayNode]
 - 00487090 CSimpleMessageScrollFrameDisplayNode::CSimpleMessageScrollFrameDisplayNode
@@ -971,13 +941,13 @@
 [CSimpleModel]
 - 004e13a0 CSimpleModel::GetScene
 - 00823d90 CSimpleModel::~CSimpleModel
-- 008bf390 CSimpleModel::~CSimpleModel
+
+[CSimpleModelFFX]
+- 008a4260 CSimpleModelFFX::~CSimpleModelFFX
 
 [CSimpleMovieFrame]
-- 00878730 CSimpleMovieFrame::UpdateTiming
-- 00878cf0 CSimpleMovieFrame::AudioDeviceChanged_ShutDown
 - 0095e090 CSimpleMovieFrame::Cleanup
-- 0095e1c0 CSimpleMovieFrame::DecodeFrame
+- 0095e1c0 CSimpleMovieFrame::UpdateTiming
 - 0095e350 CSimpleMovieFrame::StartMovie
 
 [CSimplePathAnim]
@@ -989,12 +959,13 @@
 [CSimpleRender]
 - 00482f00 CSimpleRender::CalcBatchCounts
 
-[CSimpleScrollFrame]
-- 008a3f50 CSimpleScrollFrame::~CSimpleScrollFrame
+[CSimpleStatusBar]
+- 009615c0 CSimpleStatusBar::~CSimpleStatusBar
 
 [CSimpleTexture]
 - 00483460 CSimpleTexture::PreOnAnimUpdate
 - 00488060 CSimpleTexture::LoadXML
+- 004af290 CSimpleTexture::~CSimpleTexture
 
 [CSimpleTop]
 - 00493e90 CSimpleTop::ValidateDeletedFrame
@@ -1004,6 +975,10 @@
 
 [CSortTable]
 - 00681530 CSortTable::Clear
+- 007d43e0 CSortTable::CSortTable
+
+[CSplineParticleEmitter]
+- 008c22b0 CSplineParticleEmitter::~CSplineParticleEmitter
 
 [CStatus]
 - 0047c0a0 CStatus::~CStatus
@@ -1028,9 +1003,11 @@
 
 [CUnitDisplayTransition_C]
 - 004e2fd0 CUnitDisplayTransition_C::HandleComponentRenderPrep
-- 005993b0 CUnitDisplayTransition_C::ApplyGuildColor
 - 00715080 CUnitDisplayTransition_C::MirrorTransformToSwapWorldObject
 - 00715a50 CUnitDisplayTransition_C::HandleAnimSwapEvent
+
+[CVar]
+- 004bc410 CVar::~CVar
 
 [CVehicleCamera_C]
 - 006feca0 CVehicleCamera_C::ConvertFromRawOrOffsetToWorld
@@ -1041,6 +1018,7 @@
 - 00756e10 CVehiclePassenger_C::StopMirroringVehicleAnims
 
 [CVehicle_C]
+- 004f6210 CVehicle_C::HasHighPriorityAnim
 - 00715ba0 CVehicle_C::HasHighPriorityCastingAnim
 - 007479e0 CVehicle_C::RecHasVehicleEnterAnim
 - 00747a30 CVehicle_C::OnPassengerStopMirroringAnims
@@ -1048,7 +1026,10 @@
 - 00756ca0 CVehicle_C::CanPlayBoneAnim
 - 00756df0 CVehicle_C::OnPassengerStartMirroringAnims
 - 007570f0 CVehicle_C::HandleBoneAnimThrowEvent
-- 007571c0 CVehicle_C::HasHighPriorityAnim
+
+[CWOWClientStatus]
+- 009d5530 CWOWClientStatus::~CWOWClientStatus
+- 009da720 CWOWClientStatus::~CWOWClientStatus
 
 [CWorldMap]
 - 004665d0 CWorldMap::UpdateRipples
@@ -1065,95 +1046,92 @@
 - 007c2bf0 CWorldMap::LinkStaticEntityMultiple2ToMapObjDefExterior
 
 [CWorldOccluder]
-- 0078f6a0 CWorldOccluder::Free
+- 00790620 CWorldOccluder::Free
 - 00791910 CWorldOccluder::Destroy
 
 [CWorldOcclusion]
+- 0078f6a0 CWorldOcclusion::QueryBuffer
 - 0078fc40 CWorldOcclusion::QueryVolumes
 - 00791120 CWorldOcclusion::QueryBuffer
-- 007d5240 CWorldOcclusion::Update
+- 007ccd20 CWorldOcclusion::ClearVolumes
 - 007f9650 CWorldOcclusion::AddVolume
-- 00872e40 CWorldOcclusion::ClearVolumes
 
 [CWorldParam]
 - 00986420 CWorldParam::WaterDetailCallback
 
 [CWorldQuery]
-- 007babc0 CWorldQuery::CWorldQuery
+- 007baba0 CWorldQuery::CWorldQuery
 
 [CWorldScene]
-- 00763c70 CWorldScene::RenderReflection
 - 00790a80 CWorldScene::RenderAlphaWater
 - 007a2aa0 CWorldScene::RenderLowDetailMapObjDefs
-- 007cc880 CWorldScene::CreateClipVolumes
+- 008a20c0 CWorldScene::RenderSetFog
 
 [CWorldView]
-- 00431f30 CWorldView::ClearLists
 - 0078fb60 CWorldView::UpdateOcclusion
 - 00790520 CWorldView::CullChunkReflection
 - 007911d0 CWorldView::CullModel
 - 00791240 CWorldView::CullModel
 - 00793450 CWorldView::UpdateNonVisEntitys
-- 00794250 CWorldView::Cull
 - 00796c10 CWorldView::Render
 - 00799310 CWorldView::CullMapObjDefGroup
 - 007a6e00 CWorldView::SetupMapObjDefCull
 - 007a7210 CWorldView::TransformPortal
-- 007d5e70 CWorldView::RenderAlpha
+- 007ad1f0 CWorldView::UpdateViewMat
+- 007cc810 CWorldView::Cull
+- 007cc880 CWorldView::CullLowDetail
+- 007d5e70 CWorldView::RenderOpaque
 
 [CharacterSelectionDisplay]
 - 004e3080 CharacterSelectionDisplay::~CharacterSelectionDisplay
 
-[ClientGameTable<gtChanceToSpellCritBaseRec>]
-- 008bee50 ClientGameTable<gtChanceToSpellCritBaseRec>::EvaluateTable
+[ClientGameTable<gtBarberShopCostBaseRec>]
+- 008bf7c0 ClientGameTable<gtBarberShopCostBaseRec>::EvaluateTable
 
-[ClientGameTable<gtOCTHpPerStaminaRec>]
-- 004a98f0 ClientGameTable<gtOCTHpPerStaminaRec>::EvaluateTable
+[ClientGameTable<gtOCTClassCombatRatingScalarRec>]
+- 008bf0e0 ClientGameTable<gtOCTClassCombatRatingScalarRec>::EvaluateTable
 
 [ClientMessageBox]
 - 004f4a50 ClientMessageBox::ClientMessageBox
-- 00887840 ClientMessageBox::~ClientMessageBox
+- 008876f0 ClientMessageBox::~ClientMessageBox
 
 [ClientServices]
-- 00496630 ClientServices::RealmEnumCallback
 - 00530100 ClientServices::Send2
 
 [ComSat]
-- 0087fa60 ComSat::Sound::CODECIPMR6000::RemoveLocalPlayer
-- 0087fa90 ComSat::Manager::LocalTalkerSetSessionVolume
-- 0087fac0 ComSat::Manager::LocalTalkerSetSessionPriority
+- 0087fa60 ComSat::Manager::IsTalkerMuted
+- 0087fa90 ComSat::Manager::LocalTalkerSetSessionPriority
+- 0087fac0 ComSat::Sound::CODECIPMR6000::~CODECIPMR6000
+- 0087fba0 ComSat::Manager::LocalTalkerSetRemoteTalkerVolume
+- 0087fc50 ComSat::Sound::CODECIPMR6000::~CODECIPMR6000
 - 00880eb0 ComSat::Sound::Manager::RegisterLocalTalkerForSession
-- 008816c0 ComSat::BitUnpacker::BitUnpacker
+- 00881260 ComSat::RunningAverageCalculator::Init
+- 008816c0 ComSat::RunningAverageCalculator::RunningAverageCalculator
 - 00881950 ComSat::Sound::CODEC::MinimumSafeFramesBetweenResets
-- 00881bc0 ComSat::RunningAverageCalculator::RunningAverageCalculator
-- 00881ec0 ComSat::Manager::IsTalkerMuted
+- 00881ec0 ComSat::Manager::MuteTalker
 - 008825d0 ComSat::Sound::Manager::PlayVoiceDataForLocalPlayer
 - 00882700 ComSat::Sound::Manager::GenerateAndWriteSilenceToHeadsetDeviceBuffer
 - 00882780 ComSat::Sound::CODECIPMR6000::Shutdown
 - 008828e0 ComSat::Sound::Manager::AssignTalkersToChannelsForLocalPlayer
-- 00882a00 ComSat::Manager::MuteSession
-- 00882b20 ComSat::Manager::MuteTalker
-- 008835e0 ComSat::RunningAverageCalculator::Init
+- 00882a00 ComSat::Sound::CODECIPMR6000::RemoveLocalPlayer
 - 00883770 ComSat::Sound::Manager::SessionDestroy
-- 00883a90 ComSat::Sound::CODECIPMR6000::~CODECIPMR6000
-- 00883b30 ComSat::Manager::IsSessionMuted
-- 00884030 ComSat::Sound::CODECIPMR6000::ResetPlayerChannelDecoder
 - 00884ca0 ComSat::Sound::Manager::PlayScheduledVoiceData
 - 00885e80 ComSat::Network::Session::SetTalkerNetworkIdLocal
 - 00885ed0 ComSat::Network::Session::SetTalkerNetworkIdRemote
 - 00886a50 ComSat::Sound::CODECIPMR6000::DecompressEncodedData
 - 00886b40 ComSat::Sound::CODECIPMR6000::Init
-- 00886da0 ComSat::Sound::CODECIPMR6000::ResetPlayerChannelEncoder
+- 00886d10 ComSat::Sound::CODECIPMR6000::ResetPlayerChannelEncoder
+- 00886da0 ComSat::Sound::CODECIPMR6000::ResetPlayerChannelDecoder
 - 00886e90 ComSat::Sound::Manager::DeviceError
-- 008870f0 ComSat::Sound::CODECIPMR6000::~CODECIPMR6000
+- 008870f0 ComSat::Manager::MuteSession
 - 00887280 ComSat::Manager::LocalTalkerEnableVoiceLevelCallback
-- 00887300 ComSat::Manager::LocalTalkerSetRemoteTalkerVolume
-- 008879f0 ComSat::Sound::IOSoundEngine::~IOSoundEngine
-- 00887d50 ComSat::Sound::CODECIPMR6000::GenerateSilence
-- 009d38b0 ComSat::Sound::OutputChannel::~OutputChannel
-- 009d3920 ComSat::Sound::OutputChannel::~OutputChannel
-- 009d4580 ComSat::Sound::CaptureChannel::~CaptureChannel
-- 009da750 ComSat::Sound::CaptureChannel::~CaptureChannel
+- 00887300 ComSat::Manager::IsSessionMuted
+- 008bef70 ComSat::Sound::IO::~IO
+- 009c7ce0 ComSat::Sound::CODECIPMR6000::GenerateSilence
+- 009d3920 ComSat::Sound::CaptureChannel::~CaptureChannel
+- 009d3960 ComSat::Sound::OutputChannel::~OutputChannel
+- 009d4500 ComSat::Sound::CaptureChannel::~CaptureChannel
+- 009d4580 ComSat::Sound::OutputChannel::~OutputChannel
 
 [ComSatThread]
 - 007dc950 ComSatThread::Work
@@ -1187,16 +1165,16 @@
 
 [DayNight]
 - 0041c7a1 DayNight::BlendOutputs
-- 00482e60 DayNight::GetMinimapLightInfo
 - 0048ed60 DayNight::DNSky::Render
 - 004e2730 DayNight::GetDeathLightInfo
+- 0057c400 DayNight::GetSunGlareOpacity
 - 006171b0 DayNight::DNClouds::SetLOD
+- 006f2b40 DayNight::Destroy
 - 0077eed0 DayNight::FindAndAddZoneLight
-- 007d43e0 DayNight::SetExteriorUnderwater
 - 007e99a0 DayNight::DNClouds::Render
 - 007eb180 DayNight::BlendColors
-- 007ebff0 DayNight::DNInfo::ClearZoneLights
 - 007ecc90 DayNight::DNClouds::SetFullUpdate
+- 007ed0a0 DayNight::DNInfo::ClearZoneLights
 - 007ed2d0 DayNight::InterpColor
 - 007ed910 DayNight::SetLightColors
 - 007f1280 DayNight::DoAreaLights
@@ -1206,11 +1184,12 @@
 [DefaultShaders]
 - 0058eb20 DefaultShaders::SetFogParams
 - 00616af0 DefaultShaders::SetFogEnabled
+- 00776260 DefaultShaders::SetDefaultShaders
 
 [DepthCache]
+- 00431f30 DepthCache::DepthRangeDumpEnabled
 - 007cd910 DepthCache::DrawDepthRangeDump
 - 007e2c80 DepthCache::Reset
-- 009a80c0 DepthCache::DepthRangeDumpEnabled
 
 [EffectDeath]
 - 007e8920 EffectDeath::EffectDeath
@@ -1226,7 +1205,12 @@
 - 005b7af0 EventListInfo::SetAlertTime
 
 [EvtContext]
-- 0047d7b0 EvtContext::~EvtContext
+- 008a34b0 EvtContext::EvtContext
+- 009d3f40 EvtContext::~EvtContext
+- 009da750 EvtContext::~EvtContext
+
+[EvtIdTable<EvtTimer*>]
+- 009d54b0 EvtIdTable<EvtTimer*>::Free
 
 [FFX]
 - 0055f4d0 FFX::InitCVars
@@ -1238,12 +1222,11 @@
 - 008c15f0 FFX::AllocTex
 
 [FMOD]
-- 00869640 FMOD::SoundI::validate
+- 007dba00 FMOD::SoundI::validate
 - 008e1920 FMOD::SoundI::getNumTags
 - 008e1fc0 FMOD::SoundI::release
-- 008e4226 FMOD::ChannelEmulated::stop
 - 008e4485 FMOD::OutputCoreAudio::recordGetDriverNameCallback
-- 0090610b FMOD::OutputPolled::threadFunc
+- 0090bc3b FMOD::OutputPolled::threadFunc
 - 0094aa85 FMOD::OutputCoreAudio::renderProc
 
 [FONTHASHOBJ]
@@ -1257,31 +1240,42 @@
 
 [FriendList]
 - 00608180 FriendList::IsIgnoredOrMuted
+- 008889b0 FriendList::AddOrDelMute
 
 [GameMovie]
+- 00882a70 GameMovie::DSPWavWriter
 - 008a32f0 GameMovie::IsCursorRecordingSupported
 
 [Grunt]
-- 008bf0a0 Grunt::Command<Grunt::ClientLink>::Process
 - 008ce6d0 Grunt::ClientLink::~ClientLink
 
 [GruntFileDownload]
-- 006ba930 GruntFileDownload::StopDownload
-- 006ba9d0 GruntFileDownload::CompleteDownload
+- 006ba930 GruntFileDownload::Destroy
+- 006ba9d0 GruntFileDownload::StopDownload
 - 006bad70 GruntFileDownload::~GruntFileDownload
-- 00887590 GruntFileDownload::~GruntFileDownload
+- 0087eda0 GruntFileDownload::~GruntFileDownload
 
 [GruntLogin]
-- 008bedd0 GruntLogin::GetOutOfBandTarget
+- 008bf320 GruntLogin::GetOutOfBandSecret
+- 008bf6a0 GruntLogin::GetOutOfBandTarget
 
 [GuildStats_C]
 - 004f6250 GuildStats_C::GetRankIndexFromRankID
 
+[GxuDebugShapeRenderStateBlockNoDepth]
+- 00778500 GxuDebugShapeRenderStateBlockNoDepth::Apply
+
 [GxuDebugTextureDrawer]
 - 00408e10 GxuDebugTextureDrawer::Draw
 
-[GxuTriangleShapeFactory]
-- 008be520 GxuTriangleShapeFactory::CreateIndexBuffer
+[GxuDirectionalDiamondShapeFactory]
+- 0077a0c0 GxuDirectionalDiamondShapeFactory::CreateVertexBuffer
+
+[GxuRotationRingShapeFactory]
+- 0095b430 GxuRotationRingShapeFactory::CreateIndexBuffer
+
+[GxuScene]
+- 007d5240 GxuScene::Render
 
 [HttpDownload]
 - 008a1530 HttpDownload::TargetName
@@ -1289,14 +1283,14 @@
 [IOFileUnit]
 - 0077a450 IOFileUnit::Create
 
+[IOPOSIXFileUnit]
+- 0041d300 IOPOSIXFileUnit::~IOPOSIXFileUnit
+
 [IOsVersionHashCallback2<HMAC<SHA1>>]
 - 006b9ce0 IOsVersionHashCallback2<HMAC<SHA1>>::Process
 
 [ItemRecSparse_C]
 - 005c48d0 ItemRecSparse_C::GetNonSparse
-
-[LFG_STATUS]
-- 008c48f0 LFG_STATUS::operator=
 
 [LightningObject]
 - 007fa4d0 LightningObject::InitializeBolts
@@ -1305,41 +1299,38 @@
 - 004b50d0 Liquid::UpdateProceduralTextures
 - 004b6700 Liquid::CacheProceduralTextures
 - 006bbdb0 Liquid::CRenderer::Flush
-- 00720db0 Liquid::HasDynamicDisplMap
-- 007749f0 Liquid::CMaterialMercury::SetupRender
+- 0071a9a0 Liquid::HasDynamicDisplMap
+- 00763c70 Liquid::UpdateDisplMap
 - 00780650 Liquid::Object::SetReflectionPlane
 - 00783780 Liquid::RemoveConfigChangedCallback
 - 00784a30 Liquid::SetDisplMapInfo
+- 0078f2f0 Liquid::CameraSubmerged
 - 0078f900 Liquid::CRenderer::Draw
 - 00790570 Liquid::SetCamPos
-- 00790620 Liquid::GetWaterDetail
 - 007906c0 Liquid::RendererValidate
-- 00792bd0 Liquid::GetRealReflectionFB
 - 00793760 Liquid::ClearEventPerturbations
 - 007982a0 Liquid::RendererDestroy
 - 0079bad0 Liquid::GetExistsTable
-- 007a8a60 Liquid::GetBlurredBackBuffer
+- 007a8430 Liquid::GetClosestReflectionHeight
 - 007a8b10 Liquid::CMaterialWater::SetupLighting
-- 007abac0 Liquid::PerturbDisplMap
 - 007b3b20 Liquid::HasRealReflection
 - 007c5530 Liquid::GetInstanceVertices
-- 007d4360 Liquid::GetReflectionMode
-- 007ece00 Liquid::GetFakeReflectionFB
-- 00834b50 Liquid::CMaterialMagma::SetupLighting
-- 0086bec0 Liquid::UpdateDisplMap
-- 008876f0 Liquid::CMaterialWater::SetupRender
+- 007cca90 Liquid::GetRealReflectionFB
+- 007ce390 Liquid::HasData
+- 007cfb10 Liquid::GetWaterDetail
+- 007d4370 Liquid::GetFakeReflectionFB
+- 007d5150 Liquid::GetBlurredReflectionBuffer
+- 0086bec0 Liquid::PerturbDisplMap
+- 00887520 Liquid::CMaterialMagma::SetupRender
 - 008a1720 Liquid::PurgeMaterialBank
 - 008a2780 Liquid::CSettingsBank::Purge
-- 008a2980 Liquid::DestroyProceduralTextures
-- 008a2bf0 Liquid::ExtWaterDepthTexCallback
 - 008a38b0 Liquid::SetShaderLighting
-- 008bec80 Liquid::CMaterialDebug::SetupRender
-- 008bef70 Liquid::CMaterialWater::~CMaterialWater
 - 008c0ec0 Liquid::PropagateDisplMap
 - 008c1520 Liquid::KawaseBlur
+- 009c58e0 Liquid::CMaterialMagma::SetupLighting
 
 [LoginResponse]
-- 006bb520 LoginResponse::HandleRealmData
+- 00774b20 LoginResponse::HandleRealmData
 
 [Mists]
 - 00512bd0 Mists::InitMist
@@ -1348,6 +1339,9 @@
 - 0041f460 MovieStreaming::PreloadMovie
 - 00565030 MovieStreaming::ShutdownGame
 - 0095eb30 MovieStreaming::CancelPreloadingMovie
+
+[MusicPlayerImpl]
+- 008a3710 MusicPlayerImpl::Limiter
 
 [MusicPlayerInterface]
 - 00532890 MusicPlayerInterface::Shutdown
@@ -1358,92 +1352,78 @@
 [NTempest]
 - 0078f480 NTempest::Intersect
 - 00790900 NTempest::Intersect
-- 007ed150 NTempest::DistanceSquaredFromEdge
-
-[NetClient]
-- 009d4500 NetClient::~NetClient
+- 007f9c90 NTempest::DistanceSquaredFromEdge
 
 [NetConnection]
 - 0086e850 NetConnection::DoWrite
+- 009d3830 NetConnection::Close
 
 [NetListener]
 - 0087ecf0 NetListener::AcceptConnections
 
-[OVERRIDEKEYBINDING]
-- 008be9e0 OVERRIDEKEYBINDING::SetOverrideBinding
-
 [OggToWavConversion]
 - 00420cb0 OggToWavConversion::OggConverterJob::ConvertToOgg
 
-[OpenGLGameFrame]
-- 007701c0 OpenGLGameFrame::CopyTex
-
 [OpenGLMovieFrameSettings]
 - 0069a359 OpenGLMovieFrameSettings::Create
-
-[PCResultsIterator]
-- 007a7920 PCResultsIterator::Next
-
-[PassDeath]
-- 008beb60 PassDeath::Execute
 
 [PassFogCombine]
 - 007e81b0 PassFogCombine::PassFogCombine
 - 007e9080 PassFogCombine::Execute
 
+[PassFogSeed]
+- 008879b0 PassFogSeed::Execute
+
 [PassGauss4]
 - 008c1c20 PassGauss4::Execute
 
 [PassGlowFade]
-- 008bed50 PassGlowFade::Execute
+- 004307a0 PassGlowFade::Execute
+- 009c05e0 PassGlowFade::PassGlowFade
 
 [PassGlowWave]
 - 008bfe30 PassGlowWave::PassGlowWave
-- 008c22b0 PassGlowWave::~PassGlowWave
 
 [PassNetherBlur]
 - 007e8bd0 PassNetherBlur::PassNetherBlur
 - 007e9b10 PassNetherBlur::Execute
 
-[PassNetherCombine]
-- 006bb550 PassNetherCombine::~PassNetherCombine
-
 [PassPropagateFog]
 - 007e80b0 PassPropagateFog::PassPropagateFog
 
+[PassUnderwater]
+- 008bf2a0 PassUnderwater::Execute
+
 [PatchOnDemand]
 - 0044e580 PatchOnDemand::PoDWriteJob::PoDWriteJob
-
-[PlayerSetTradeItem]
-- 0059a2b0 PlayerSetTradeItem::PlayerSetTradeItem
 
 [ProfileInternal]
 - 004bbcb0 ProfileInternal::STRINGBLOCK::FreeString
 
 [ProtocolHard]
-- 00445e20 ProtocolHard::TypeInfoOf<Battlenet::Event::Larva::Invoke>::Decode
+- 00429ac0 ProtocolHard::TypeInfoOf<Battlenet::Event::Starcraft2::ToApp::S2GameLobby>::Decode
+- 0042a860 ProtocolHard::TypeInfoOf<Battlenet::Event::Creep::Invoke>::Decode
+- 0042a8d0 ProtocolHard::TypeInfoOf<Battlenet::Event::Larva::Invoke>::Decode
+- 00445e20 ProtocolHard::TypeInfoOf<Battlenet::Event::S2GameEngine::Response::Event>::Decode
 - 00448ce0 ProtocolHard::TypeInfoOf<Battlenet::Event::DatagramConnection::Request::Event>::Decode
 - 004490b0 ProtocolHard::TypeInfoOf<Battlenet::Presence::FieldVal>::Decode
-- 00449300 ProtocolHard::TypeInfoOf<Battlenet::Event::Creep::Invoke>::Decode
-- 0044ad00 ProtocolHard::TypeInfoOf<Battlenet::Event::Starcraft2::ToApp::S2GameLobby>::Decode
-- 004a95c0 ProtocolHard::TypeInfoOf<Battlenet::Event::UserInterface::ToUI::Requests>::Encode
-- 004b03b0 ProtocolHard::TypeInfoOf<Battlenet::Event::Creep::Invoke>::Encode
-- 00778290 ProtocolHard::TypeInfoOf<Battlenet::Profile::Operation>::Encode
-- 00889ad0 ProtocolHard::TypeInfoOf<Battlenet::Event::ComSat::Response::ComSat>::Decode
-- 008be6e0 ProtocolHard::TypeInfoOf<Battlenet::Event::UserInterface::FromUI::Requests>::Encode
-- 008be8e0 ProtocolHard::TypeInfoOf<Battlenet::Event::UserInterface::ToUI::Requests>::Decode
-- 008beeb0 ProtocolHard::TypeInfoOf<Battlenet::Event::DatagramConnection::Response::Event>::Encode
-- 008bf120 ProtocolHard::TypeInfoOf<Battlenet::Client::ComSat::SessionFilterFlags::Enum>::Decode
-- 008bf260 ProtocolHard::TypeInfoOf<Battlenet::Event::Starcraft2::ToApp::S2GameLobby>::Encode
-- 008bf2e0 ProtocolHard::TypeInfoOf<Battlenet::Event::Creep::Invoke>::Encode
-- 008bf490 ProtocolHard::TypeInfoOf<Battlenet::Event::Larva::Invoke::S2Map::ListFileDependenciesSuccess>::Encode
-- 008bf660 ProtocolHard::TypeInfoOf<Battlenet::Event::UserInterface::ToUI::Requests>::Encode
-- 008bf780 ProtocolHard::TypeInfoOf<Battlenet::Event::Larva::PartyReadyProcessNotify>::Encode
-- 008bf7c0 ProtocolHard::TypeInfoOf<Battlenet::Event::DatagramConnection::Request::Event>::Encode
-- 008bf920 ProtocolHard::TypeInfoOf<Battlenet::Event::Larva::Invoke::S2Map::Info>::Encode
-- 008bfb60 ProtocolHard::TypeInfoOf<Battlenet::Event::Starcraft2::FromApp::S2GameLobby>::Decode
-- 008e38bc ProtocolHard::TypeInfoOf<Battlenet::Event::UserInterface::FromUI::Responses>::Encode
-- 009c50c0 ProtocolHard::TypeInfoOf<Battlenet::Client::ComSat::SessionFilterFlags::Enum>::Encode
+- 00449300 ProtocolHard::TypeInfoOf<Battlenet::Event::ComSat::Response::ComSat>::Decode
+- 0044ad00 ProtocolHard::TypeInfoOf<Battlenet::Event::DatagramConnection::Response::Event>::Decode
+- 004b03b0 ProtocolHard::TypeInfoOf<Battlenet::Event::Larva::Invoke::S2Map::VersionList::Result>::Encode
+- 008be880 ProtocolHard::TypeInfoOf<Battlenet::Event::Larva::Invoke::S2Map::PrePublish::Result>::Encode
+- 008bf1e0 ProtocolHard::TypeInfoOf<Battlenet::Achievement::CriteriaFlag::Enum>::Encode
+- 008bf260 ProtocolHard::TypeInfoOf<Battlenet::Chat::MemberStatusSingle>::Decode
+- 008bf730 ProtocolHard::TypeInfoOf<Battlenet::Event::ComSat::Request>::Encode
+- 008bf780 ProtocolHard::TypeInfoOf<Battlenet::Event::UserInterface::FromUI::Responses>::Encode
+- 008bf880 ProtocolHard::TypeInfoOf<Battlenet::Event::DatagramConnection::Request::Event>::Encode
+- 008bf9e0 ProtocolHard::TypeInfoOf<Battlenet::Event::Larva::Invoke::S2Map::UnlinkMap::Result>::Encode
+- 008bfa30 ProtocolHard::TypeInfoOf<Battlenet::Event::Creep::Invoke>::Encode
+- 008bfb30 ProtocolHard::TypeInfoOf<Battlenet::Event::UserInterface::ToUI::Requests>::Encode
+- 008bfb60 ProtocolHard::TypeInfoOf<Battlenet::Client::ComSat::SessionFilterFlags::Enum>::Encode
+- 0093e00a ProtocolHard::TypeInfoOf<Battlenet::Event::Starcraft2::FromApp::S2GameLobby>::Decode
+- 0095c3f0 ProtocolHard::TypeInfoOf<Battlenet::Profile::Operation>::Decode
+- 009c5090 ProtocolHard::TypeInfoOf<Battlenet::Event::UserInterface::FromUI::Responses>::Decode
+- 009c50c0 ProtocolHard::TypeInfoOf<Battlenet::Event::ComSat::Response::ComSat>::Encode
 - 009c5400 ProtocolHard::TypeInfoOf<Battlenet::Authentication::Settings>::Encode
 
 [QUADDATA]
@@ -1455,7 +1435,7 @@
 
 [RealmConnection]
 - 00464460 RealmConnection::HandleLogoutResponse
-- 008a3710 RealmConnection::~RealmConnection
+- 009d4750 RealmConnection::~RealmConnection
 
 [RecordLoopbackCallbacksClass]
 - 009869f0 RecordLoopbackCallbacksClass::CaptureSamples
@@ -1466,26 +1446,26 @@
 [SE3]
 - 004217a0 SE3::GetSoundKitDef
 - 0047c600 SE3::SoundEndedCallback
-- 004a8480 SE3::Init
 - 004a8f00 SE3::ProcessFadeList
-- 004a93b0 SE3::ProcessSoundKitObjectDeleteList
+- 004a93b0 SE3::WaveData_PutOnDeleteList
+- 004c5b60 SE3::SoundBusIsEnabled
 - 004c5d40 SE3::SoundBusIsFull
 - 004c6330 SE3::ResetSoundKitOrder
-- 004c6500 SE3::SoundBusIsEnabled
-- 004c92f0 SE3::SoundBusSetVolume
+- 004c92f0 SE3::SoundBusMute
 - 004cb160 SE3::EmitterManagerInit
+- 004ccaa0 SE3::GetSoundKitID
 - 004cecb0 SE3::Log_Write
 - 004d0b70 SE3::SetDeviceChangeCallback
-- 0054a430 SE3::FindAndReferenceWaveDataNodeInCache
-- 0056d390 SE3::FindAndReferenceWaveDataNodeLoadingInCache
+- 005c4470 SE3::FindAndReferenceWaveDataNodeInCache
 - 00871980 SE3::InitSoundKitDefArray
-- 00878290 SE3::SoundBusMute
+- 00878290 SE3::SoundBusSetVolume
 - 008785a0 SE3::ProcessGoGoGoList
 - 00878630 SE3::GetPositionInMS
 - 00878660 SE3::PlaySoundFromMemory
 - 008786e0 SE3::CreateNewSoundKitObject
 - 008787b0 SE3::UpdateAdvancedProperties
 - 00878ad0 SE3::InsertSoundKitDef
+- 00878cf0 SE3::GetCurrentGameOutputDeviceName
 - 00879350 SE3::GetListenerPosition
 - 00879840 SE3::StopOrFadeOut
 - 0087ace0 SE3::SoundBusIncrementChannelCount
@@ -1512,13 +1492,14 @@
 
 [SFile]
 - 0041e820 SFile::FileGetIsLocalAmount
-- 00421820 SFile::FileIsLocal
 - 00426fd0 SFile::Initialize
 - 00431db0 SFile::FileHasHigherPriority
 - 00433420 SFile::GetActualFileName
 - 004ba530 SFile::PauseBackgroundStreaming
+- 0059b320 SFile::ConvertOggToWavInBackground
 - 00776ab0 SFile::Destroy
 - 007b1000 SFile::LogFileAccess
+- 007eb010 SFile::EnableHash
 
 [SHA1]
 - 00465870 SHA1::Process
@@ -1527,29 +1508,23 @@
 - 00401220 SI3::FreeZoneIntros
 - 004c8630 SI3::ReverbUnderwaterChanged
 - 004c86b0 SI3::SetZoneIntroMusicID
-- 004c86d0 SI3::GetPhaseShiftZoneSoundOverride
+- 004c86d0 SI3::SetZoneUnderwaterReverb
 - 004c8830 SI3::GetDesiredMusicKitID
 - 004c8d80 SI3::SetZoneMusicID
 - 004c8fa0 SI3::SetScreenEffect
-- 004c92b0 SI3::PlayAIMusic
 - 004c9bd0 SI3::InitZoneSoundsHandler
-- 004c9bf0 SI3::ShutdownZoneSoundsHandler
-- 004c9d50 SI3::PlayLuaMusic
 - 004ca4e0 SI3::PosToWorldChunkCoords
 - 004cb220 SI3::OnFocusChanged
 - 004cbe70 SI3::GetWorldStateZoneSoundOverride
 - 004cdd40 SI3::DSP_ShutDown
 - 004cfb50 SI3::VoiceChat_SetFrequencyScale
+- 004cfbb0 SI3::PlayAIMusic
 - 004d2050 SI3::UpdateReverb
 - 004d2750 SI3::WaterShutdown
 - 007dade0 SI3::ShutDown
-- 00878580 SI3::SignalRestart
+- 00878270 SI3::SignalRestart
 - 0087f890 SI3::VoiceChat_PlayLoopbackSound
-- 0095e130 SI3::VoiceChat_StopPlayingLoopbackSound
 - 009c8880 SI3::InitZoneSoundOverrides
-
-[SSyncObject]
-- 007df410 SSyncObject::Close
 
 [SWING]
 - 007e4ce0 SWING::Draw
@@ -1562,11 +1537,10 @@
 - 006bfb60 SunShafts::IsEnabled
 
 [System_File]
-- 0041d120 System_File::Stacked::stream_dirwalk
 - 00437a50 System_File::GetInode
-- 00438300 System_File::Stacked::stream_shutdown
 - 00447810 System_File::Stacked::stream_close
 - 00458c50 System_File::Stacked::stream_open
+- 0045a6f0 System_File::Stacked::stream_dirwalk
 - 009c5fdb System_File::Stacked::Move
 - 009c7016 System_File::Stacked::CreateDirectory
 
@@ -1579,33 +1553,36 @@
 - 00429260 System_Memory::ShutdownProc
 
 [System_Mopaq]
-- 0040ceb2 System_Mopaq::base_open
-- 0041d9e0 System_Mopaq::lock_operation
-- 0042b5c0 System_Mopaq::base_read
-- 0042b600 System_Mopaq::md5verify_open
+- 0040ceb2 System_Mopaq::verify_open
+- 00426e40 System_Mopaq::IOHandler::WriteData
+- 004280c0 System_Mopaq::null_close
+- 004296a0 System_Mopaq::IOHandler::ReadData
+- 0042b5c0 System_Mopaq::base_setposition
+- 0042b600 System_Mopaq::base_setfilesize
 - 0042b9c0 System_Mopaq::CreateDiskFile
+- 00430b90 System_Mopaq::base_getfilesize
 - 00430dd0 System_Mopaq::md5verify_write
-- 00431fa0 System_Mopaq::SectorReadWriteHandler::WriteChecksumTable
+- 00431fa0 System_Mopaq::SectorInPlaceReadWriteHandler::WriteChecksumTable
+- 00434e00 System_Mopaq::base_flush
 - 00439c40 System_Mopaq::DeltaData::PatchIntoBuffer
 - 0043f470 System_Mopaq::FindIOStackManager
 - 004437a0 System_Mopaq::cache_close
 - 00443a90 System_Mopaq::cache_flush
-- 00443ac0 System_Mopaq::CreateArchiveFile
 - 00446f20 System_Mopaq::SectorReadHandler::PkwareDecompressWrapper
 - 004480b0 System_Mopaq::OpenArchiveFile
-- 00451e80 System_Mopaq::delta_close
 - 00454060 System_Mopaq::mopaq_close
 - 004541b0 System_Mopaq::checksum_open
 - 00457e50 System_Mopaq::SectorReadHandler::ProcessSectors
 - 00459ce0 System_Mopaq::SectorReadWriteHandler::PrepareSector
-- 0045a6f0 System_Mopaq::base_close
-- 008bf9a0 System_Mopaq::base_reload
+- 008bf120 System_Mopaq::delta_close
+- 0093db9f System_Mopaq::mopaq_open
 - 0095c390 System_Mopaq::SectorReadWriteHandler::AdjustSectorTable
-- 009c7488 System_Mopaq::IOHandler::ReadData
+- 009d14a0 System_Mopaq::MopaqReadWriteHandler::Flush
 
 [System_SFile]
 - 0041da00 System_SFile::ARCHIVEREC::AcquireListfileCompressedBlockHash
 - 0041ea20 System_SFile::PrepareArchiveForWriting
+- 0042b320 System_SFile::BlockEntryTable::UnpackEntry
 - 0042c680 System_SFile::BlockEntryTable::SetMD5Check
 - 0042ecc0 System_SFile::SignatureHashTable::DelEntry
 - 00431800 System_SFile::ARCHIVEREC::FillNewHashTable
@@ -1613,6 +1590,7 @@
 - 0043ab40 System_SFile::SignatureHashTable::AddEntry
 - 004414a0 System_SFile::DigitalSignatureKey::~DigitalSignatureKey
 - 00441b80 System_SFile::ClearTables
+- 00443ac0 System_SFile::ARCHIVEREC::WriteExtendedBlockTable
 - 00444550 System_SFile::BlockEntryTable::CreateBlockTableFromBuffer
 - 004473a0 System_SFile::ARCHIVEREC::ConvertToNewBlockTableFormat
 - 00449af0 System_SFile::ARCHIVEREC::~ARCHIVEREC
@@ -1622,6 +1600,8 @@
 
 [System_StackCrawl]
 - 004031c0 System_StackCrawl::FormatFrames
+- 0041f300 System_StackCrawl::CacheSymbolsWithMachHeader<System_StackCrawl::NativeEndian>
+- 0077d0f0 System_StackCrawl::FasterBacktraceMachSelf
 - 0077e2b0 System_StackCrawl::MoreBacktraceMachSelf
 - 00870910 System_StackCrawl::StackCrawlNoSymbols
 
@@ -1635,61 +1615,78 @@
 - 00429220 System_Using::RegisterNull
 
 [TEXTURECACHE]
-- 006c8e70 TEXTURECACHE::WriteGlyphToTexture
-- 006c9330 TEXTURECACHE::PasteGlyph
+- 006c9330 TEXTURECACHE::WriteGlyphToTexture
+- 006c9420 TEXTURECACHE::PasteGlyph
 
-[TSCGrowableArray<SortedAuraInfo,16>]
-- 0041d1a0 TSCGrowableArray<SortedAuraInfo,16>::SetCount
+[TSCGrowableArray<AnimKitSegmentInst*,3>]
+- 008bf660 TSCGrowableArray<AnimKitSegmentInst*,3>::BecomeDynamic
 
-[TSCGrowableArray<int,16>]
-- 009c0210 TSCGrowableArray<int,16>::SetCount
+[TSCGrowableArray<CAnimKitInst*,4>]
+- 008beaf0 TSCGrowableArray<CAnimKitInst*,4>::BecomeDynamic
 
-[TSCGrowableArray<unsigned_short,4>]
-- 008bf350 TSCGrowableArray<unsigned_short,4>::SetCount
+[TSExportTableSimpleReuse<RGN,HSRGN__*>]
+- 00776f30 TSExportTableSimpleReuse<RGN,HSRGN__*>::~TSExportTableSimpleReuse
 
-[TSHashTable<CCameraModeEntry,HASHKEY_NONE>]
-- 009dd0e0 TSHashTable<CCameraModeEntry,HASHKEY_NONE>::Ptr
+[TSGrowableArray<AnimKitDeferredCommand>]
+- 00778290 TSGrowableArray<AnimKitDeferredCommand>::Reserve
 
-[TSHashTable<CGGuildInfo]
-- 008bebc0 TSHashTable<CGGuildInfo::SKILLLINESPELLS,HASHKEY_NONE>::InternalNew
+[TSGrowableArray<DayNight]
+- 008beeb0 TSGrowableArray<DayNight::CZoneLight>::SetCount
 
-[TSHashTable<CTextureBlobTexture,HASHKEY_TEXTUREBLOBFILE>]
-- 0095bf30 TSHashTable<CTextureBlobTexture,HASHKEY_TEXTUREBLOBFILE>::Ptr
+[TSGrowableArray<Liquid]
+- 008bf490 TSGrowableArray<Liquid::DisplMapPerturbationMesh*>::Reserve
 
-[TSHashTable<CVar,HASHKEY_STRI>]
-- 009213db TSHashTable<CVar,HASHKEY_STRI>::InternalNew
+[TSGrowableArray<ShipPath]
+- 004a98f0 TSGrowableArray<ShipPath::Leg>::SetCount
 
-[TSHashTable<DBCache<ArenaTeamCache,int,HASHKEY_INT>]
-- 0095bf00 TSHashTable<DBCache<ArenaTeamCache,int,HASHKEY_INT>::DBCACHEHASH,HASHKEY_INT>::InternalNewNode
+[TSGrowableArray<_SOURCE>]
+- 004a9c00 TSGrowableArray<_SOURCE>::Reserve
 
-[TSHashTable<DBCache<CGPetition,int,HASHKEY_INT>]
-- 008bf450 TSHashTable<DBCache<CGPetition,int,HASHKEY_INT>::DBCACHEHASH,HASHKEY_INT>::InternalNewNode
+[TSHashTable<CGQuestLog]
+- 006bb520 TSHashTable<CGQuestLog::QUESTCOMPLETIONNPC,HASHKEY_NONE>::InternalNew
+
+[TSHashTable<CShaderEffect,HASHKEY_STRI>]
+- 0087a8a0 TSHashTable<CShaderEffect,HASHKEY_STRI>::New
+
+[TSHashTable<DBCache<GuildStats_C,unsigned_long_long,CHashKeyGUID>]
+- 009c0210 TSHashTable<DBCache<GuildStats_C,unsigned_long_long,CHashKeyGUID>::DBCACHEHASH,CHashKeyGUID>::New
 
 [TSHashTable<DBCache<NameCache,unsigned_long_long,CHashKeyGUID>]
-- 008beef0 TSHashTable<DBCache<NameCache,unsigned_long_long,CHashKeyGUID>::DBCACHEHASH,CHashKeyGUID>::New
-
-[TSHashTable<DBCache<WardenCachedModule,CWardenKey,CWardenKey>]
-- 008bf840 TSHashTable<DBCache<WardenCachedModule,CWardenKey,CWardenKey>::DBCACHEHASH,CWardenKey>::New
+- 008bee50 TSHashTable<DBCache<NameCache,unsigned_long_long,CHashKeyGUID>::DBCACHEHASH,CHashKeyGUID>::New
 
 [TSHashTable<EVENTDATEHASH,HASHKEY_NONE>]
 - 005bdde0 TSHashTable<EVENTDATEHASH,HASHKEY_NONE>::InternalDelete
 
-[TSHashTable<LCDHANDLE,HASHKEY_CONSTSTRI>]
-- 0087a8a0 TSHashTable<LCDHANDLE,HASHKEY_CONSTSTRI>::New
+[TSHashTable<KNOWNDANCES,HASHKEY_STR>]
+- 007cc2c0 TSHashTable<KNOWNDANCES,HASHKEY_STR>::New
+
+[TSHashTable<MODIFIEDCLICK,HASHKEY_STRI>]
+- 00443e60 TSHashTable<MODIFIEDCLICK,HASHKEY_STRI>::Ptr
+
+[TSHashTable<OVERRIDE_SPELL_BY_NAME_NODE,HASHKEY_UTF8I>]
+- 008beef0 TSHashTable<OVERRIDE_SPELL_BY_NAME_NODE,HASHKEY_UTF8I>::InternalNew
 
 [TSHashTable<RegistryEntry,HASHKEY_STRI>]
-- 008bfaf0 TSHashTable<RegistryEntry,HASHKEY_STRI>::Ptr
+- 008bf3d0 TSHashTable<RegistryEntry,HASHKEY_STRI>::New
+
+[TSHashTable<UIADDON,HASHKEY_STRI>]
+- 009dd0e0 TSHashTable<UIADDON,HASHKEY_STRI>::Ptr
 
 [TSHashTable<WriteRegistryEntry,HASHKEY_STRI>]
-- 004bf5d0 TSHashTable<WriteRegistryEntry,HASHKEY_STRI>::InternalDelete
+- 004bc290 TSHashTable<WriteRegistryEntry,HASHKEY_STRI>::InternalDelete
 
 [TSHashTableReuse<CTexture,HASHKEY_TEXTUREFILE>]
 - 004b9240 TSHashTableReuse<CTexture,HASHKEY_TEXTUREFILE>::InternalNew
-- 009c7db0 TSHashTableReuse<CTexture,HASHKEY_TEXTUREFILE>::InternalDelete
+- 00887d50 TSHashTableReuse<CTexture,HASHKEY_TEXTUREFILE>::InternalDelete
 
 [TSHashTableReuse<RGN,HASHKEY_NONE>]
-- 00776f30 TSHashTableReuse<RGN,HASHKEY_NONE>::~TSHashTableReuse
 - 009db380 TSHashTableReuse<RGN,HASHKEY_NONE>::~TSHashTableReuse
+
+[TSHashTableReuse<SE3COMBINABLESOUNDLIST,HASHKEY_NONE>]
+- 007d6210 TSHashTableReuse<SE3COMBINABLESOUNDLIST,HASHKEY_NONE>::InternalDelete
+
+[TSList<BATCHEDRENDERFONTDESC,TSGetExplicitLink<BATCHEDRENDERFONTDESC>>]
+- 008bf510 TSList<BATCHEDRENDERFONTDESC,TSGetExplicitLink<BATCHEDRENDERFONTDESC>>::NewNode
 
 [TalentGroupTab_C]
 - 005c8de0 TalentGroupTab_C::AddTierItem
@@ -1699,8 +1696,13 @@
 - 00462200 Tracker::GetPeerID
 - 00462e20 Tracker::SendToTracker
 
+[UserLFGuildAddRecruit]
+- 0076ee60 UserLFGuildAddRecruit::Put
+
 [ViewSettings]
-- 0078f2f0 ViewSettings::SetSubmerged
+- 004c2270 ViewSettings::GetFog
+- 00792bd0 ViewSettings::CalculateParams
+- 007a8a60 ViewSettings::GetSubmerged
 
 [WDataStore]
 - 004662f0 WDataStore::InternalFetchWrite
@@ -1712,135 +1714,125 @@
 - 007e7390 WORLDTEXTSTRING::Render
 
 [WardenCachedModule]
-- 00668800 WardenCachedModule::Version
-
-[WardenClient]
-- 008bf160 WardenClient::OurLibrary::ModuleUse
+- 00668720 WardenCachedModule::Version
 
 [Weather]
 - 00784ab0 Weather::Weather
 - 008a1770 Weather::InitializeCVars
 
 [World]
-- 004c1830 World::SetActivePlayerPos
+- 004c1830 World::SetObjectRenderCallback
 - 004c55b0 World::GetFlightBoundsLower
 - 004f5240 World::IsFacetQueryValid
-- 0055e610 World::SetEnables
-- 0057c400 World::GetCamDepth
+- 004f6a90 World::SetActivePlayerPos
 - 006eaba0 World::GetMaxTeleport
 - 0070c8c0 World::QueryLiquid
-- 00717870 World::GetWeatherSplineDuration
-- 00717890 World::GetWeatherSplineElapsedTime
+- 00717870 World::GetWeatherSplineElapsedTime
 - 007178b0 World::GetWeatherSpline
 - 0071dd80 World::GetScene
 - 0077f2a0 World::ObjectCreate
 - 0077f8d0 World::GetNearClip
 - 0077f900 World::Update
-- 00780620 World::SetObjectRenderCallback
-- 00792f80 World::GetHorizonFarClip
-- 007b4830 World::GetGuardBandPosition
-- 007bb670 World::GetM2PassEnables
+- 00784010 World::GetWeatherSplineDuration
+- 00792f60 World::GetHorizonFarClip
+- 007a2070 World::ClearLastCollisionGUID
+- 007b53b0 World::GetGuardBandPosition
+- 007b5870 World::ObjectUpdate
 - 007c7710 World::GetEnables
 - 007cd4e0 World::AddAaBoxFacets
-
-[WowClientDB2<ItemRecSparse_C>]
-- 008a3620 WowClientDB2<ItemRecSparse_C>::Idle
-- 008cbf10 WowClientDB2<ItemRecSparse_C>::DBReplyHandler
-- 008ceec0 WowClientDB2<ItemRecSparse_C>::GetRecord
+- 00872698 World::GetM2PassEnables
 
 [WowClientDB2<ItemRec_C>]
 - 00847d00 WowClientDB2<ItemRec_C>::DBReplyHandler
-- 008bf960 WowClientDB2<ItemRec_C>::AppendDBRequest
 
 [WowClientDB2<KeyChainRec_C>]
-- 004bc290 WowClientDB2<KeyChainRec_C>::DBReplyHandler
+- 008cbf10 WowClientDB2<KeyChainRec_C>::DBReplyHandler
 
 [WowClientDB2_Base]
 - 005f3750 WowClientDB2_Base::WriteHotfixes
+- 007554f0 WowClientDB2_Base::LoadRecord
 
-[WowClientDB<AchievementRec>]
-- 009c0b70 WowClientDB<AchievementRec>::GetRecordByIndex
-
-[WowClientDB<AnimKitPriorityRec>]
-- 00437370 WowClientDB<AnimKitPriorityRec>::GetRecordByIndex
+[WowClientDB<AnimKitConfigRec>]
+- 008be840 WowClientDB<AnimKitConfigRec>::GetRecordByIndex
 
 [WowClientDB<AnimKitRec>]
-- 009c58e0 WowClientDB<AnimKitRec>::GetRecordByIndex
+- 004b02d0 WowClientDB<AnimKitRec>::GetRecordByIndex
 
-[WowClientDB<AuctionHouseRec>]
-- 008bf6e0 WowClientDB<AuctionHouseRec>::GetRecordByIndex
-
-[WowClientDB<BannedAddOnsRec>]
-- 004b02d0 WowClientDB<BannedAddOnsRec>::GetRecordByIndex
-
-[WowClientDB<CharBaseInfoRec>]
-- 007cc2c0 WowClientDB<CharBaseInfoRec>::GetRecordByIndex
-
-[WowClientDB<DeathThudLookupsRec>]
-- 008bea20 WowClientDB<DeathThudLookupsRec>::GetRecordByIndex
-
-[WowClientDB<DeclinedWordRec>]
-- 008befb0 WowClientDB<DeclinedWordRec>::GetRecordByIndex
+[WowClientDB<CharTitlesRec>]
+- 008bf220 WowClientDB<CharTitlesRec>::GetRecordByIndex
 
 [WowClientDB<DestructibleModelDataRec>]
-- 0095c000 WowClientDB<DestructibleModelDataRec>::GetRecordByIndex
+- 00437370 WowClientDB<DestructibleModelDataRec>::GetRecordByIndex
 
-[WowClientDB<EmotesRec>]
-- 008bed00 WowClientDB<EmotesRec>::GetRecordByIndex
+[WowClientDB<DungeonMapChunkRec>]
+- 008bef30 WowClientDB<DungeonMapChunkRec>::GetRecordByIndex
 
-[WowClientDB<ItemGroupSoundsRec>]
-- 008be840 WowClientDB<ItemGroupSoundsRec>::GetRecordByIndex
+[WowClientDB<GMSurveyQuestionsRec>]
+- 008bfc40 WowClientDB<GMSurveyQuestionsRec>::GetRecordByIndex
 
-[WowClientDB<MaterialRec>]
-- 009c0af0 WowClientDB<MaterialRec>::GetRecordByIndex
+[WowClientDB<GuildColorBorderRec>]
+- 008be9a0 WowClientDB<GuildColorBorderRec>::GetRecordByIndex
 
-[WowClientDB<ObjectEffectGroupRec>]
-- 008bfab0 WowClientDB<ObjectEffectGroupRec>::GetRecordByIndex
+[WowClientDB<ItemDamageOneHandRec>]
+- 008bfaf0 WowClientDB<ItemDamageOneHandRec>::GetRecordByIndex
 
-[WowClientDB<ObjectEffectModifierRec>]
-- 008be780 WowClientDB<ObjectEffectModifierRec>::GetRecordByIndex
+[WowClientDB<ItemPurchaseGroupRec>]
+- 008bf620 WowClientDB<ItemPurchaseGroupRec>::GetRecordByIndex
 
-[WowClientDB<ObjectEffectPackageRec>]
-- 009d1510 WowClientDB<ObjectEffectPackageRec>::GetRecordByIndex
+[WowClientDB<ItemRandomSuffixRec>]
+- 0095bf00 WowClientDB<ItemRandomSuffixRec>::GetRecordByIndex
 
-[WowClientDB<PowerDisplayRec>]
-- 008bf3d0 WowClientDB<PowerDisplayRec>::GetRecordByIndex
+[WowClientDB<LoadingScreensRec>]
+- 008bf350 WowClientDB<LoadingScreensRec>::GetRecordByIndex
 
-[WowClientDB<SpellAuraRestrictionsRec>]
-- 008be4e0 WowClientDB<SpellAuraRestrictionsRec>::GetRecordByIndex
+[WowClientDB<MountCapabilityRec>]
+- 008bf9a0 WowClientDB<MountCapabilityRec>::GetRecordByIndex
 
-[WowClientDB<SpellChainEffectsRec>]
-- 00779fb0 WowClientDB<SpellChainEffectsRec>::GetRecordByIndex
+[WowClientDB<QuestFactionRewardRec>]
+- 008be600 WowClientDB<QuestFactionRewardRec>::GetRecordByIndex
 
-[WowClientDB<SpellClassOptionsRec>]
-- 008be960 WowClientDB<SpellClassOptionsRec>::GetRecordByIndex
+[WowClientDB<ResearchFieldRec>]
+- 008bf840 WowClientDB<ResearchFieldRec>::GetRecordByIndex
 
-[WowClientDB<SpellVisualKitRec>]
-- 008bf220 WowClientDB<SpellVisualKitRec>::GetRecordByIndex
+[WowClientDB<ResistancesRec>]
+- 008beab0 WowClientDB<ResistancesRec>::GetRecordByIndex
 
-[WowClientDB<Startup_StringsRec>]
-- 008bfb30 WowClientDB<Startup_StringsRec>::GetRecordByIndex
+[WowClientDB<SoundEntriesFallbacksRec>]
+- 009c0b70 WowClientDB<SoundEntriesFallbacksRec>::GetRecordByIndex
 
-[WowClientDB<TerrainTypeRec>]
-- 008bee10 WowClientDB<TerrainTypeRec>::GetRecordByIndex
+[WowClientDB<SoundFilterElemRec>]
+- 008bfba0 WowClientDB<SoundFilterElemRec>::GetRecordByIndex
 
-[WowClientDB<TransportAnimationRec>]
-- 008bfbf0 WowClientDB<TransportAnimationRec>::GetRecordByIndex
+[WowClientDB<SpellDescriptionVariablesRec>]
+- 008bf6e0 WowClientDB<SpellDescriptionVariablesRec>::GetRecordByIndex
 
-[WowClientDB<TransportRotationRec>]
-- 004307a0 WowClientDB<TransportRotationRec>::GetRecordByIndex
+[WowClientDB<SpellEffectCameraShakesRec>]
+- 008bf450 WowClientDB<SpellEffectCameraShakesRec>::GetRecordByIndex
+
+[WowClientDB<SpellInterruptsRec>]
+- 009c5110 WowClientDB<SpellInterruptsRec>::GetRecordByIndex
+
+[WowClientDB<SpellTargetRestrictionsRec>]
+- 009c30f0 WowClientDB<SpellTargetRestrictionsRec>::GetRecordByIndex
 
 [WowClientDB<VideoHardwareRec>]
-- 008bef30 WowClientDB<VideoHardwareRec>::GetRecordByIndex
+- 008bf0a0 WowClientDB<VideoHardwareRec>::GetRecordByIndex
 
-[WowClientDB<WorldMapAreaRec>]
-- 0095b430 WowClientDB<WorldMapAreaRec>::GetRecordByIndex
+[WowClientDB<VocalUISoundsRec>]
+- 008be8e0 WowClientDB<VocalUISoundsRec>::GetRecordByIndex
 
-[WowClientDB<gtOCTClassCombatRatingScalarRec>]
-- 008bf5a0 WowClientDB<gtOCTClassCombatRatingScalarRec>::GetRecordByIndex
+[WowClientDB<WorldMapContinentRec>]
+- 009d1510 WowClientDB<WorldMapContinentRec>::GetRecordByIndex
+
+[WowClientDB<WorldSafeLocsRec>]
+- 009bfea0 WowClientDB<WorldSafeLocsRec>::GetRecordByIndex
+
+[WowClientDB<gtChanceToMeleeCritRec>]
+- 008bec80 WowClientDB<gtChanceToMeleeCritRec>::GetRecordByIndex
 
 [WowClientDB_Common]
 - 00634ba0 WowClientDB_Common::Load
+- 0077f8f0 WowClientDB_Common::Unload
 
 [WowConnection]
 - 00467130 WowConnection::NewSendNodePacket
@@ -1851,73 +1843,74 @@
 - 00469220 WowConnectionNet::SignalWorker
 - 00469860 WowConnectionNet::PlatformRun
 
+[WowEditSync]
+- 00591990 WowEditSync::Destroy
+- 006b0930 WowEditSync::Update
+
 [__jump_table]
 - 0040c67a __jump_table::_execl
-- 0040ddc9 __jump_table::_pthread_attr_setstacksize
-- 0040e70b __jump_table::_setsockopt
-- 0041d03c __jump_table::_fgetc
-- 0041d048 __jump_table::_FSFindFolder
-- 0041e530 __jump_table::__ZNSt6vectorISbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEESaIS6_EEaSERKS8_
+- 0040ddc9 __jump_table::_pthread_key_create
+- 0040e70b __jump_table::_listen
+- 0041d03c __jump_table::__ZN11TSHashTableI13RegistryEntry12HASHKEY_STRIE3PtrEPKc
+- 0041e530 __jump_table::__ZNSt3mapISbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEENS2_9Streaming9Manifests13ParameterItemESt4lessIS6_ESaISt4pairIKS6_S9_EEEixERSD_
 - 0041e720 __jump_table::__ZNSt8_Rb_treeISbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEESt4pairIKS6_jESt10_Select1stIS9_ENS2_3STL15CaseInsensitiveESaIS9_EE8_M_eraseEPSt13_Rb_tree_nodeIS9_E
 - 0041e8f0 __jump_table::__ZNSt3mapISbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEENS2_9Streaming9Manifests10ServerItemESt4lessIS6_ESaISt4pairIKS6_S9_EEEixERSD_
 - 0041eb30 __jump_table::__ZNSbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEE6assignERKS5_
-- 0041f850 __jump_table::__ZNSt3mapISbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEENS2_9Streaming9Manifests8FileItemESt4lessIS6_ESaISt4pairIKS6_S9_EEEixERSD_
+- 0041f850 __jump_table::__ZNSt3mapISbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEENS2_9Streaming9Manifests12TimeslotItemESt4lessIS6_ESaISt4pairIKS6_S9_EEEixERSD_
 - 00423cb0 __jump_table::__ZN9__gnu_cxx9hashtableISt4pairIKSs12FileMapEntryESsN8Blizzard3STL21CaseInsensitiveHashFnISsEESt10_Select1stIS4_ENS6_22CaseInsensitiveEqualFnISsEESaIS1_ISsS3_EEE5eraseENS_19_Hashtable_iteratorIS4_SsS8_SA_SC_SE_EESH_
-- 00426e40 __jump_table::__ZNSt6vectorIcN8Blizzard6Memory8AllocSTLIcEEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorIPKcSbIcSt11char_traitsIcES3_EEEEEvNS7_IPcS4_EET_SG_St20forward_iterator_tag
-- 00427330 __jump_table::__ZSt28_Rb_tree_rebalance_for_erasePSt18_Rb_tree_node_baseRS_
-- 00427b30 __jump_table::__ZStplIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEESbIT_T0_T1_EPKS6_RKS9_
-- 00427b90 __jump_table::__ZNSt8_Rb_treeISbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEESt4pairIKS6_S6_ESt10_Select1stIS9_ESt4lessIS6_ESaIS9_EE13insert_uniqueESt17_Rb_tree_iteratorIS9_ERKS9_
+- 00427330 __jump_table::__ZStplIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEESbIT_T0_T1_EPKS6_RKS9_
+- 00427ad0 __jump_table::__ZNSt8_Rb_treeISbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEESt4pairIKS6_S6_ESt10_Select1stIS9_ESt4lessIS6_ESaIS9_EE13insert_uniqueESt17_Rb_tree_iteratorIS9_ERKS9_
+- 00427b30 __jump_table::__ZNSt8_Rb_treeISbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEESt4pairIKS6_PNS2_7Storage11StorageUnitEESt10_Select1stISC_ESt4lessIS6_ESaISC_EE13insert_uniqueESt17_Rb_tree_iteratorISC_ERKSC_
+- 00427b90 __jump_table::__ZSt28_Rb_tree_rebalance_for_erasePSt18_Rb_tree_node_baseRS_
 - 00427d60 __jump_table::__ZN8Blizzard9Streaming9Manifests8FileItemD2Ev
-- 004280c0 __jump_table::__ZSt17__throw_bad_allocv
 - 00428310 __jump_table::_AddAtomic
 - 00428380 __jump_table::__ZNSt5dequeIPN8Blizzard5Mopaq11HSARCHIVE__ESaIS3_EE5clearEv
-- 00428cb0 __jump_table::_pthread_join
-- 00429380 __jump_table::_sscanf
+- 00428cb0 __jump_table::__ZNSt8_Rb_treeIPN8Blizzard6Thread12ThreadRecordES3_St9_IdentityIS3_ESt4lessIS3_ENS0_6Memory12AllocSTL_rawIS3_EEE5eraseERKS3_
 - 00429580 __jump_table::_sem_close
 - 00429640 __jump_table::__ZNSt8_Rb_treeISbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEESt4pairIKS6_jESt10_Select1stIS9_ENS2_3STL15CaseInsensitiveESaIS9_EE13insert_uniqueERKS9_
-- 004296a0 __jump_table::__ZNSt6vectorIN12System_SFile10BLOCKENTRYESaIS1_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS1_S3_EERKS1_
-- 0042b980 __jump_table::__ZNSt6vectorIcN8Blizzard6Memory8AllocSTLIcEEE7reserveEm
 - 0042bba0 __jump_table::_longjmp
-- 0042c7b0 __jump_table::__ZNSt8_Rb_treeIjSt4pairIKjjESt10_Select1stIS2_ESt4lessIjESaIS2_EE13insert_uniqueERKS2_
+- 0042c050 __jump_table::__ZNSt6vectorIjSaIjEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPjS1_EERKj
+- 0042c7b0 __jump_table::__ZNSt6vectorIN12System_SFile10BLOCKENTRYESaIS1_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS1_S3_EERKS1_
 - 0042d500 __jump_table::_sem_trywait
 - 0042d7a0 __jump_table::__ZNSbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEE6appendEPKcm
 - 0042e700 __jump_table::_pthread_attr_init
 - 00431a20 __jump_table::__ZN8Blizzard6String11QuickFormatILi24EEC1EPKcz
-- 00434480 __jump_table::__ZNSt3mapISbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEENS2_9Streaming9Manifests12TimeslotItemESt4lessIS6_ESaISt4pairIKS6_S9_EEEixERSD_
+- 00434480 __jump_table::__ZN8Blizzard9Streaming9Manifests8FileItemC2Ev
+- 00434680 __jump_table::_pthread_join
 - 004346d0 __jump_table::__ZN8Blizzard6String11QuickFormatILi40EEC1EPKcz
-- 00434730 __jump_table::__ZNSt8_Rb_treeIjSt4pairIKjjESt10_Select1stIS2_ESt4lessIjESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E
-- 004349a0 __jump_table::__ZNSt6vectorIjSaIjEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPjS1_EERKj
+- 00434730 __jump_table::__ZNSt6vectorIcN8Blizzard6Memory8AllocSTLIcEEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorIPKcSbIcSt11char_traitsIcES3_EEEEEvNS7_IPcS4_EET_SG_St20forward_iterator_tag
 - 00435e20 __jump_table::_vfprintf
 - 00435ea0 __jump_table::_NSSelectorFromString
 - 004360a0 __jump_table::_pthread_detach
+- 00437d70 __jump_table::__ZNSt6vectorIN8Blizzard9Streaming9Manifests10ServerItem9UsageSlotESaIS4_EEaSERKS6_
 - 00438b30 __jump_table::__ZNSbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEE7reserveEm
 - 00438c40 __jump_table::__ZN8Blizzard4Lock13ConstructOnceIN17System_MPQGlobals7GlobalsEE9ConstructEPv
 - 0043e4c0 __jump_table::__ZNSt8_Rb_treeIPN8Blizzard6Thread12ThreadRecordES3_St9_IdentityIS3_ESt4lessIS3_ENS0_6Memory12AllocSTL_rawIS3_EEE13insert_uniqueERKS3_
 - 0043e6a0 __jump_table::__ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_
-- 00443770 __jump_table::__ZN8Blizzard9Streaming9Manifests8FileItemC2Ev
+- 00443770 __jump_table::_sscanf
 - 004440a0 __jump_table::__ZNSt6vectorIN8Blizzard9Streaming9Manifests10ServerItem9UsageSlotESaIS4_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS4_S6_EERKS4_
 - 00444c60 __jump_table::__ZNSt6vectorIN8Blizzard5Mopaq20CompressionAlgorithmESaIS2_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS2_S4_EERKS2_
 - 00444f70 __jump_table::_pthread_mutexattr_settype
 - 00473d40 __jump_table::_fputc
+- 0047bf20 __jump_table::__ZN14TSExplicitListI12FILENAMEHASHLin572662307EEC1Ev
 - 00482a60 __jump_table::_floorf
-- 004963c0 __jump_table::__ZN11TSHashTableI10HashedNode12HASHKEY_STRIE3PtrEPKc
+- 00496390 __jump_table::__ZN11TSHashTableI10HashedNode12HASHKEY_STRIE3PtrEPKc
 - 00497680 __jump_table::__ZN12TSFixedArrayIP14TradeSkillInfoEixEj
-- 004ab2b0 __jump_table::_GraphicsExportSetOutputFile
+- 004ab150 __jump_table::_GraphicsExportSetCompressionQuality
+- 004ab2b0 __jump_table::_OpenADefaultComponent
 - 004ace30 __jump_table::_GraphicsExportSetInputGWorld
 - 004acea0 __jump_table::_GetPixBaseAddr
 - 004b61c0 __jump_table::__ZN11TSHashTableI17RegistryFileEntry12HASHKEY_STRIE11InternalNewEP14TSExplicitListIS0_Lin572662307EEmm
-- 004b6230 __jump_table::_fscanf
+- 004b6230 __jump_table::__ZN6TSListI17RegistryFileEntry17TSGetExplicitLinkIS0_EED2Ev
 - 004b6d90 __jump_table::_strncasecmp
 - 004c31b0 __jump_table::_sinf
-- 004c9fd0 __jump_table::__ZN11TSHashTableI16CCameraModeEntry12HASHKEY_NONEE14InternalDeleteEPS0_
+- 004c92b0 __jump_table::__ZN6TSLinkI11ACHIEVEMENTE6UnlinkEv
+- 004c9fd0 __jump_table::__ZN11TSHashTableIN18CGAutoCompleteName31AUTOCOMPLETE_BATTLENET_HASHNODEE12HASHKEY_NONEE14InternalDeleteEPS1_
 - 004cb2d0 __jump_table::__ZN11TSHashTableI24SE3SOUNDKITOBJECT_LOOKUP12HASHKEY_NONEE3PtrEjRKS1_
-- 004cb4e0 __jump_table::__ZN11TSHashTableI21OBJ_EFFECT_REF_LOOKUP12HASHKEY_NONEE13InternalClearEi
-- 004cfbb0 __jump_table::__ZN14TSExplicitListI16PROFICIENCYSPELLLin572662307EEC1Ev
-- 004cfd20 __jump_table::__ZN6TSListI14TRADESKILLLINE17TSGetExplicitLinkIS0_EED2Ev
+- 004cfd20 __jump_table::__ZN6TSListI14TRADESKILLLINE17TSGetExplicitLinkIS0_EE9UnlinkAllEv
 - 004cfd90 __jump_table::__ZN6TSListI12INVENTORYART17TSGetExplicitLinkIS0_EED2Ev
 - 004e6f90 __jump_table::_strcpy
 - 004e7800 __jump_table::__ZN11SStrQPrintfILi260EEC1EPKcz
-- 004ed8c0 __jump_table::_pthread_cond_init
 - 004fb1a0 __jump_table::_time
 - 004fb8f0 __jump_table::__ZN11TSHashTableI12CHATTHROTTLE11HASHKEY_STRE3PtrEPKc
 - 004fcf90 __jump_table::_CFCharacterSetGetPredefined
@@ -1927,36 +1920,39 @@
 - 00531580 __jump_table::_strtoull
 - 00533130 __jump_table::_strtoll
 - 00533560 __jump_table::__ZN11TSHashTableI14ACCOUNTIDCACHE13HASHKEY_DWORDE14InternalDeleteEPS0_
-- 0053b900 __jump_table::__ZN6TSListI14TRADESKILLLINE17TSGetExplicitLinkIS0_EE9UnlinkAllEv
+- 0053b900 __jump_table::__ZN14TSExplicitListI16PROFICIENCYSPELLLin572662307EEC1Ev
 - 00546100 __jump_table::__ZN10CGWorldMap19GetCurrentMapAreaIDEv
 - 00549580 __jump_table::__ZN11TSHashTableI9LCDHANDLE17HASHKEY_CONSTSTRIE3PtrEPKc
-- 0054a700 __jump_table::__ZN14TSExplicitListI22SE3COMBINABLESOUNDLISTLin572662307EEC1Ev
+- 0054a430 __jump_table::__ZN6TSListI22SE3COMBINABLESOUNDLIST17TSGetExplicitLinkIS0_EE9UnlinkAllEv
+- 0054a450 __jump_table::__ZN11TSHashTableIN7DBCacheI9NameCachey12CHashKeyGUIDE11DBCACHEHASHES2_E3NewEjRKS2_mm
+- 0054a700 __jump_table::__ZN6TSLinkI22SE3COMBINABLESOUNDLISTE6UnlinkEv
 - 00552870 __jump_table::__ZN17CGLookingForGroup10DebugPrintEPKcz
-- 00553490 __jump_table::__ZN14TSExplicitListI14PROFANITYCHECKLin572662307EEC1Ev
-- 005534c0 __jump_table::__ZN11TSHashTableIN7DBCacheI9NameCachey12CHashKeyGUIDE11DBCACHEHASHES2_E3NewEjRKS2_mm
-- 005570c0 __jump_table::__ZN13LFG_SLOT_INFOD2Ev
-- 00558200 __jump_table::__ZN15TSGrowableArrayIP12LFGListPartyE8SetCountEj
+- 00553490 __jump_table::__ZN6TSListI14PROFANITYCHECK17TSGetExplicitLinkIS0_EED2Ev
+- 005534c0 __jump_table::__ZN14TSExplicitListI14PROFANITYCHECKLin572662307EEC1Ev
+- 005570c0 __jump_table::__ZN14LFG_PARTY_INFO5ClearEv
+- 00558200 __jump_table::__ZN14TSExplicitListI12LFGListPartyLin572662307EEC1Ev
 - 00559d40 __jump_table::__ZN10LFG_STATUS5ClearEv
+- 0055ae60 __jump_table::__ZN13LFG_SLOT_INFOD2Ev
 - 0055e5e0 __jump_table::__ZN11TSHashTableI10KEYBINDING12HASHKEY_STRIE3PtrEPKc
 - 00560300 __jump_table::__ZN18OVERRIDEKEYBINDINGD2Ev
 - 00564d90 __jump_table::__ZN15TSGrowableArrayIPcE7ReserveEji
 - 00565ad0 __jump_table::__ZN11TSHashTableI9MACRONODE12HASHKEY_NONEE3PtrEjRKS1_
 - 005661c0 __jump_table::__ZN11TSHashTableI9MACRONODE12HASHKEY_NONEE15InternalNewNodeEjmm
-- 0056d290 __jump_table::__ZN12TSHashObjectI24SE3SOUNDKITOBJECT_LOOKUP12HASHKEY_NONEED2Ev
+- 0056d290 __jump_table::__ZN14TSExplicitListI22SE3COMBINABLESOUNDLISTLin572662307EEC1Ev
+- 0056d390 __jump_table::__ZN12TSHashObjectI24SE3SOUNDKITOBJECT_LOOKUP12HASHKEY_NONEED2Ev
+- 005723e0 __jump_table::__Z15RawMillisecondsPmS_
 - 00576ae0 __jump_table::_fmod
-- 0057c260 __jump_table::__ZN10CGPlayer_C12GetActivePtrEv
-- 0057e480 __jump_table::__ZN15TSGrowableArrayItE8SetCountEj
-- 00588250 __jump_table::_floor
+- 005773b0 __jump_table::__ZN14TSExplicitListI8KERNNODELin572662307EEC1Ev
+- 0057e480 __jump_table::__ZN10CGPlayer_C12GetActivePtrEv
+- 00588290 __jump_table::__ZN12WowClientDB2I9ItemRec_CE15AppendDBRequestEiyb
 - 00590c30 __jump_table::__ZN12TSFixedArrayI12TaxiWaypointEixEj
 - 0059b2a0 __jump_table::__ZN12TSFixedArrayI15AuctionItemInfoEixEj
-- 0059b2e0 __jump_table::__ZN6TSListI22SE3COMBINABLESOUNDLIST17TSGetExplicitLinkIS0_EE9UnlinkAllEv
-- 0059b320 __jump_table::__ZN6TSListI22SE3COMBINABLESOUNDLIST17TSGetExplicitLinkIS0_EED2Ev
-- 0059b360 __jump_table::__ZN6TSLinkI22SE3COMBINABLESOUNDLISTE6UnlinkEv
-- 005a4780 __jump_table::__ZN17SE3SoundKitObjectC2Ev
+- 0059b2e0 __jump_table::__ZN6TSListI29SE3CombinableSoundKitPosition9TSGetLinkIS0_EE8LinkNodeEPS0_mS4_
+- 0059b360 __jump_table::__ZN6TSListI22SE3COMBINABLESOUNDLIST17TSGetExplicitLinkIS0_EED2Ev
+- 005a0e40 __jump_table::__ZN11TSHashTableIN7DBCacheI15CreatureStats_Ci11HASHKEY_INTE11DBCACHEHASHES2_E3PtrEjRKS2_
 - 005b2380 __jump_table::__ZN11TSHashTableI11ACHIEVEMENT12HASHKEY_NONEE3PtrEjRKS1_
-- 005b80b0 __jump_table::__ZN6TSListI14PROFANITYCHECK17TSGetExplicitLinkIS0_EED2Ev
-- 005c4470 __jump_table::__ZN6TSListI17SE3SoundKitObject17TSGetExplicitLinkIS0_EE10LinkToTailEPS0_
-- 005c6800 __jump_table::__ZN12TSHashObjectI23OBJ_EFFECT_GROUP_LOOKUP12HASHKEY_NONEED2Ev
+- 005b4960 __jump_table::__ZN12TSHashObjectI26OBJ_EFFECT_REF_LIST_LOOKUP12HASHKEY_NONEED2Ev
+- 005c6800 __jump_table::__ZN12TSLinkedNodeI23CObjectEffectPackageDefED2Ev
 - 005c77b0 __jump_table::__ZN11TSHashTableI17TalentGroupItem_C12HASHKEY_NONEE3PtrEjRKS1_
 - 005ca950 __jump_table::__ZN12TSFixedArrayIP15GuildMemberInfoEixEj
 - 005d0550 __jump_table::__ZN12TSFixedArrayIP14ReputationInfoEixEj
@@ -1965,247 +1961,242 @@
 - 005f3eb0 __jump_table::__ZN11TSHashTableI12_BANNEDADDON12HASHKEY_NONEE14InternalDeleteEPS0_
 - 005fe950 __jump_table::_atan2f
 - 006004b0 __jump_table::_powf
-- 00668720 __jump_table::__ZN11TSHashTableIN7DBCacheI18WardenCachedModule10CWardenKeyS2_E11DBCACHEHASHES2_E3NewEjRKS2_mm
-- 006792e0 __jump_table::__ZN11TSHashTableI13LFGListPlayer12CHashKeyGUIDE3PtrEjRKS1_
-- 00679350 __jump_table::__ZN6TSListIN7DBCacheI18WardenCachedModule10CWardenKeyS2_E11DBCACHEHASHE17TSGetExplicitLinkIS4_EED2Ev
-- 00679f80 __jump_table::__ZN11TSHashTableIN7DBCacheI7NPCTexti11HASHKEY_INTE11DBCACHEHASHES2_E3PtrEjRKS2_
-- 0067ae60 __jump_table::__ZN11TSHashTableIN7DBCacheI10DanceCachei11HASHKEY_INTE11DBCACHEHASHES2_E3PtrEjRKS2_
-- 00682d90 __jump_table::_glBindTexture
+- 00668800 __jump_table::__ZN11TSHashTableIN7DBCacheI18WardenCachedModule10CWardenKeyS2_E11DBCACHEHASHES2_E3NewEjRKS2_mm
+- 006792e0 __jump_table::__ZN6TSListI12LFGListParty17TSGetExplicitLinkIS0_EE9UnlinkAllEv
+- 00679f80 __jump_table::__ZN11TSHashTableIN7DBCacheI12PetNameCachei11HASHKEY_INTE11DBCACHEHASHES2_E3PtrEjRKS2_
+- 0067abb0 __jump_table::__ZN6TSListIN7DBCacheI18WardenCachedModule10CWardenKeyS2_E11DBCACHEHASHE17TSGetExplicitLinkIS4_EED2Ev
+- 00682d90 __jump_table::_glMatrixMode
 - 00683f60 __jump_table::_CFNumberGetValue
-- 0068c810 __jump_table::_glGenTextures
 - 006908a0 __jump_table::_SetRect
-- 0069e660 __jump_table::_glTexGeni
-- 0069e6e0 __jump_table::_glClientActiveTextureARB
+- 0069e660 __jump_table::_glEnableClientState
+- 0069e6e0 __jump_table::_glFinalCombinerInputNV
 - 0069e930 __jump_table::_glDeleteProgramsARB
-- 006ad440 __jump_table::__Z6Dxt3A8j
-- 006ada10 __jump_table::__Z17Blit_DxtUnalignedI9Dxt5Block9CArgb4444EvRK9C2iVectorPKT_jPT0_j
-- 006adae0 __jump_table::__Z17Blit_DxtUnalignedI9Dxt5Block9CImVectorEvRK9C2iVectorPKT_jPT0_j
+- 006ad7d0 __jump_table::__Z6Dxt3A8j
+- 006ada10 __jump_table::__Z6Dxt5A8j
+- 006adae0 __jump_table::__Z17Blit_DxtUnalignedI9Dxt5Block9CArgb4444EvRK9C2iVectorPKT_jPT0_j
+- 006ae110 __jump_table::__Z17Blit_DxtUnalignedI9Dxt5Block9CImVectorEvRK9C2iVectorPKT_jPT0_j
+- 006ae1d0 __jump_table::__Z6Dxt3A4j
 - 006b38d0 __jump_table::__ZN11TSHashTableIN18CGAutoCompleteName31AUTOCOMPLETE_CHARACTER_HASHNODEE12CHashKeyGUIDE3PtrEjRKS2_
-- 006b3f90 __jump_table::__ZN6TSLinkI17SPECIFIC_CRITERIAE6UnlinkEv
+- 006b3f90 __jump_table::__ZN12TSFixedArrayI21WorldMapContinentInfoEixEj
 - 006bbd40 __jump_table::__ZN6TSListI21BATCHEDRENDERFONTDESC17TSGetExplicitLinkIS0_EED2Ev
 - 006bcd60 __jump_table::__Z11GxRsDefault14EGxRenderState
-- 006c2a00 __jump_table::__ZN12TSFixedArrayI14TSExplicitListI8KERNNODELin572662307EEEixEj
-- 006c2a50 __jump_table::__ZN14TSExplicitListI8KERNNODELin572662307EEC1Ev
-- 006d49c0 __jump_table::__ZN14TSExplicitListI14TRADESKILLLINELin572662307EEC1Ev
+- 006c2a00 __jump_table::__ZN6TSListI8KERNNODE17TSGetExplicitLinkIS0_EED2Ev
+- 006c2a50 __jump_table::__ZN12TSFixedArrayI14TSExplicitListI8KERNNODELin572662307EEEixEj
 - 006e97d0 __jump_table::__Z16SErrAddFrameTextPKcz
 - 006f1790 __jump_table::__ZN14TSExplicitListI23OBJ_EFFECT_GROUP_LOOKUPLin572662307EEC1Ev
-- 006f2b40 __jump_table::__ZN11TSHashTableI10CLightList13HASHKEY_DWORDE13InternalClearEi
+- 006f6020 __jump_table::__ZN6TSListI16PROFICIENCYSPELL17TSGetExplicitLinkIS0_EED2Ev
+- 00708140 __jump_table::_floor
+- 00717890 __jump_table::__ZN6PacketIN4Snow5FlakeELj6144ELj1EEC2Ev
 - 0071b580 __jump_table::_cosf
-- 0071d510 __jump_table::__ZN16TSCGrowableArrayIP18AnimKitSegmentInstLi3EEixEj
 - 00728b10 __jump_table::__ZN16TSCGrowableArrayIiLi16EE8SetCountEj
-- 007554f0 __jump_table::__ZN12WowClientDB2I9ItemRec_CE15AppendDBRequestEiyb
 - 0075c6f0 __jump_table::__ZN5World9FacetData4ZeroEv
+- 007685c0 __jump_table::_RunStandardAlert
 - 0076c1b0 __jump_table::_localtime
 - 0076f930 __jump_table::_pow
 - 00773a60 __jump_table::_pthread_mutex_unlock
-- 00774770 __jump_table::__Z15RawMillisecondsPmS_
+- 00774770 __jump_table::_pthread_cond_init
 - 00776070 __jump_table::__ZN22TSExportTableSyncReuseI3RGNP7HSRGN__P12HLOCKEDRGN__9CCritSectE4LockES2_PS4_i
 - 00776140 __jump_table::__ZN12TSFixedArrayI7_SOURCEEixEj
-- 0077d0f0 __jump_table::__ZN8Blizzard6String11QuickFormatILi64EEC1EPKcz
-- 0077ecb0 __jump_table::_NXCloseEventStatus
-- 00783b30 __jump_table::__ZN14TSExplicitListIN17WowClientDB2_Base7DBTABLEELin572662307EEC1Ev
-- 00784010 __jump_table::__ZN6PacketIN4Snow5FlakeELj6144ELj1EEC2Ev
+- 00779cd0 __jump_table::_open
 - 007a0f50 __jump_table::__ZN3blz8internal11adjust_heapIP23CSortableParticleRecordiS2_NS_4lessIS2_EEEEvT_T0_S7_RKT1_T2_
-- 007a8430 __jump_table::__ZN5CMath5sqrt_Ef
 - 007ae2b0 __jump_table::_log10
 - 007c78e0 __jump_table::__ZN20CAaBsp_Query_SegmentI16BspQuery_SegmentE14GetFaceIndicesEjRK9C3SegmentRK6CAaBox
-- 007c9a60 __jump_table::__ZN18CAaBsp_Query_AaBoxI15BspQuery_VolumeI8CFrustumEE14GetFaceIndicesEjRK6CAaBoxS6_
-- 007c9b10 __jump_table::__ZN18CAaBsp_Query_AaBoxI15BspQuery_VolumeI6CAaBoxEE14GetFaceIndicesEjRKS1_S5_
-- 007d66d0 __jump_table::__ZN11TSHashTableI10DDMaterial12HASHKEY_NONEE11InternalNewEP14TSExplicitListIS0_Lin572662307EEmm
-- 007dba00 __jump_table::_pthread_cond_timedwait
+- 007ca920 __jump_table::__ZN18CAaBsp_Query_AaBoxI15BspQuery_VolumeI6CAaBoxEE14GetFaceIndicesEjRKS1_S5_
+- 007d4360 __jump_table::__ZN11TSHashTableI10DDMaterial12HASHKEY_NONEE14InternalDeleteEPS0_
 - 007dd720 __jump_table::__ZN11TSHashTableIN7DBCacheI9NameCachey12CHashKeyGUIDE11DBCACHEHASHES2_E3PtrEjRKS2_
-- 007e01b0 __jump_table::__ZN11TSHashTableI12FILENAMEHASH11HASHKEY_STRE14InternalDeleteEPS0_
+- 007df410 __jump_table::_pthread_cond_signal
+- 007e01b0 __jump_table::__ZN11TSHashTableI10ADDONSTATE12HASHKEY_STRIE13InternalClearEi
 - 007eae70 __jump_table::__Z14M2AnimateTrackI7fixed16fEvP8CM2ModelP11M2ModelBoneRK7M2TrackIT_ER12M2ModelTrackIT0_ERKSB_
-- 007eaf60 __jump_table::__ZN6TSListIN17WowClientDB2_Base7DBTABLEE17TSGetExplicitLinkIS1_EED2Ev
-- 007eb010 __jump_table::__ZN11TSHashTableIN17WowClientDB2_Base7DBTABLEE12HASHKEY_NONEE11InternalNewEP14TSExplicitListIS1_Lin572662307EEmm
+- 007eaf60 __jump_table::__ZN6TSListIN17WowClientDB2_Base7DBTABLEE17TSGetExplicitLinkIS1_EE9UnlinkAllEv
 - 007ebf90 __jump_table::__ZN3blz8internal9push_heapIPN8DayNight7LightQEEiS3_NS_4lessIS3_EEEEvT_T0_S8_RKT1_T2_
 - 007f7ad0 __jump_table::__ZN15TSGrowableArrayIN8ShipPath3LegEE8SetCountEj
-- 007fe1a0 __jump_table::__ZN15TSGrowableArrayIiE7ReserveEji
-- 0080e060 __jump_table::_shutdown
-- 00810ed0 __jump_table::__ZN15TSGrowableArrayI15SpellUsableInfoE7ReserveEji
-- 00814650 __jump_table::_CFURLGetFileSystemRepresentation
+- 007fe1a0 __jump_table::__ZN6TSLinkI14TRADESKILLLINEE6UnlinkEv
+- 00814650 __jump_table::__ZN10linkObject7getSizeEv
 - 0081f800 __jump_table::__Z17GxDebugGroupBeginPKcz
-- 0082e840 __jump_table::__ZN3blz8internal14introsort_loopIP11CModelBatchi19SModelBatchLessThanEEvT_S5_T0_T1_
+- 008247a0 __jump_table::__ZN3blz8internal14introsort_loopIP11CModelBatchi19SModelBatchLessThanEEvT_S5_T0_T1_
 - 00868c70 __jump_table::_CGWarpMouseCursorPosition
 - 008691c0 __jump_table::_GetKeys
-- 0086bcc0 __jump_table::_CFURLCreateFromFileSystemRepresentation
+- 00869640 __jump_table::_pthread_mutex_trylock
+- 0086bcc0 __jump_table::_CFStringGetTypeID
 - 0086bf80 __jump_table::__ZN11TSHashTableIN10CGQuestLog18QUESTCOMPLETIONNPCE12HASHKEY_NONEE11InternalNewEP14TSExplicitListIS1_Lin572662307EEmm
-- 0086c900 __jump_table::_CFStringGetTypeID
+- 0086c900 __jump_table::_CFDictionaryGetValue
 - 008715b0 __jump_table::_CFBundleGetMainBundle
-- 00872698 __jump_table::__ZN11TSHashTableI10DDMaterial12HASHKEY_NONEE14InternalDeleteEPS0_
-- 008726a4 __jump_table::__ZN11TSHashTableIN10CGQuestLog18QUESTCOMPLETIONNPCE12HASHKEY_NONEE3PtrEjRKS2_
-- 008726c8 __jump_table::__ZN6TSListIN10CGQuestLog18QUESTCOMPLETIONNPCE17TSGetExplicitLinkIS1_EED2Ev
-- 00878610 __jump_table::__ZN6TSListI10DBCALLBACK9TSGetLinkIS0_EE7NewNodeEmmm
-- 00883860 __jump_table::_timelocal
-- 00886600 __jump_table::_strptime
-- 00886630 __jump_table::_vm_deallocate
-- 00886f80 __jump_table::_CFRelease
-- 00887010 __jump_table::_CFArrayGetCount
+- 008726c8 __jump_table::__ZN11TSHashTableIN10CGQuestLog18QUESTCOMPLETIONNPCE12HASHKEY_NONEE3PtrEjRKS2_
+- 008726d4 __jump_table::__ZN6TSListIN10CGQuestLog18QUESTCOMPLETIONNPCE17TSGetExplicitLinkIS1_EED2Ev
+- 00877480 __jump_table::__ZN6TSListI10ADDONSTATE17TSGetExplicitLinkIS0_EED2Ev
+- 00878590 __jump_table::__ZN6TSListI10DBCALLBACK9TSGetLinkIS0_EE7NewNodeEmmm
+- 00879440 __jump_table::__ZN16TSCGrowableArrayIP18AnimKitSegmentInstLi3EEixEj
+- 0087ad40 __jump_table::_shutdown
+- 00886f80 __jump_table::_CFAbsoluteTimeGetCurrent
+- 00887010 __jump_table::_thread_resume
 - 00888790 __jump_table::_socket
 - 0088abd0 __jump_table::__ZN3BSN8Protocol4Meta6Walker4WalkINS_18BSNPrimitiveWalkerEEENT_6ResultERS5_RKNS5_7ContextE
 - 00895da1 __jump_table::_CGGetDisplaysWithRect
 - 00895dc6 __jump_table::_ReleaseEvent
 - 00895deb __jump_table::_CFURLCreateWithFileSystemPath
-- 00895e10 __jump_table::_CFUserNotificationDisplayAlert
+- 00895e10 __jump_table::_FSFindFolder
 - 00895e35 __jump_table::_FSRefMakePath
-- 00895e5a __jump_table::__ZN11TSHashTableI13RegistryEntry12HASHKEY_STRIE3NewEPKcmm
-- 00895e7f __jump_table::__ZN11TSHashTableI13RegistryEntry12HASHKEY_STRIE3PtrEPKc
+- 00895e5a __jump_table::_fscanf
+- 00895e7f __jump_table::__ZN11TSHashTableI13RegistryEntry12HASHKEY_STRIE3NewEPKcmm
 - 00895ea4 __jump_table::_CFStringCreateWithCharacters
-- 00895eee __jump_table::_CFBundleGetIdentifier
-- 00895f13 __jump_table::_mach_thread_self
-- 00895fa7 __jump_table::_CFDictionaryGetValue
+- 00895eee __jump_table::_thread_suspend
+- 00895fa7 __jump_table::_CFURLGetFileSystemRepresentation
 - 00895ff1 __jump_table::_SetWindowTitleWithCFString
 - 00896016 __jump_table::_CFRetain
 - 0089603b __jump_table::_clock
-- 00896060 __jump_table::_task_threads
+- 00896060 __jump_table::_vm_deallocate
 - 00896280 __jump_table::_exp
 - 0089df30 __jump_table::_expf
 - 008a1740 __jump_table::_glGetIntegerv
-- 008a1760 __jump_table::_thread_suspend
-- 008a2ac0 __jump_table::__ZN15TSGrowableArrayIPN6Liquid20DisplMapPerturbationEE7ReserveEji
-- 008a3050 __jump_table::_thread_resume
-- 008a3f70 __jump_table::_CFBundleCopyExecutableURL
+- 008a1760 __jump_table::_strerror
+- 008a3050 __jump_table::_CFGetTypeID
+- 008a3f70 __jump_table::_CFBundleGetIdentifier
+- 008a4070 __jump_table::_task_threads
+- 008a4190 __jump_table::_dladdr
 - 008c0290 __jump_table::__Z7GxRsSet14EGxRenderStateP9CGxShaderj
 - 008c6b30 __jump_table::__ZNSs6assignEPKcm
 - 009793b0 __jump_table::__ZN5CMath17ftol_round_0_255_Ef
 - 0097d7b0 __jump_table::__ZN15TSGrowableArrayIjE7ReserveEji
+- 009c56a0 __jump_table::__ZN11TSHashTableIN18CGAutoCompleteName31AUTOCOMPLETE_BATTLENET_HASHNODEE12HASHKEY_NONEE3PtrEjRKS2_
 - 009c5ddc __jump_table::__ZN9__gnu_cxx9hashtableISt4pairIKSs12FileMapEntryESsN8Blizzard3STL21CaseInsensitiveHashFnISsEESt10_Select1stIS4_ENS6_22CaseInsensitiveEqualFnISsEESaIS1_ISsS3_EEE22insert_unique_noresizeERKS4_
-- 009c61a0 __jump_table::_sem_open
-- 009c61c8 __jump_table::_dlsym
+- 009c61a0 __jump_table::__ZNSbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEE9_M_mutateEmmm
 - 009c61e0 __jump_table::__ZNSt6vectorIN12System_SFile10BLOCKENTRYESaIS1_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS1_S3_EEmRKS1_
-- 009c62b1 __jump_table::_pthread_setspecific
-- 009c641e __jump_table::_mach_timebase_info
+- 009c62b1 __jump_table::_pthread_self
+- 009c62fb __jump_table::_CFRelease
+- 009c641e __jump_table::_usleep
 - 009c64e2 __jump_table::__ZNSt6vectorIPN13System_Thread12ThreadWorkerESaIS2_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS2_S4_EERKS2_
-- 009c65e9 __jump_table::__ZNSt6vectorIjSaIjEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPjS1_EEmRKj
+- 009c65e9 __jump_table::__ZNSt6vectorIhSaIhEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPhS1_EEmRKh
 - 009c66dc __jump_table::__ZNSt8_Rb_treeIN8Blizzard4Util6DigestILi16EEESt4pairIKS3_jESt10_Select1stIS6_ESt4lessIS3_ESaIS6_EE8_M_eraseEPSt13_Rb_tree_nodeIS6_E
-- 009c66f8 __jump_table::__ZNSt8_Rb_treeIPN12System_SFile10ARCHIVERECES2_St9_IdentityIS2_ENS0_18PrioritizeArchivesESaIS2_EE5eraseERKS2_
-- 009c67a0 __jump_table::_munmap
-- 009c6846 __jump_table::__ZNSt8_Rb_treeIPN8Blizzard6Thread12ThreadRecordES3_St9_IdentityIS3_ESt4lessIS3_ENS0_6Memory12AllocSTL_rawIS3_EEE5eraseERKS3_
-- 009c6863 __jump_table::__ZNSt3mapISbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEENS2_9Streaming9Manifests14ServerPathItemESt4lessIS6_ESaISt4pairIKS6_S9_EEEixERSD_
+- 009c66f8 __jump_table::__ZNSt6vectorIjSaIjEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPjS1_EEmRKj
+- 009c67a0 __jump_table::_pthread_mutex_destroy
+- 009c6846 __jump_table::_pthread_mutex_lock
+- 009c6863 __jump_table::__ZNSt6vectorISbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEESaIS6_EEaSERKS8_
 - 009c6883 __jump_table::_mach_absolute_time
 - 009c68a0 __jump_table::__ZNSbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEE6assignEPKcm
 - 009c68c0 __jump_table::__ZNSbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEEC1EPKcRKS4_
-- 009c68f8 __jump_table::__ZNSbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEEC2ERKS5_
+- 009c68f8 __jump_table::__ZNSbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEED1Ev
 - 009c6974 __jump_table::_Debugger
 - 009c69ea __jump_table::_mmap
-- 009c6a29 __jump_table::__ZNSt11_Deque_baseIN8Blizzard7Storage11STORAGE_CMDESaIS2_EE17_M_initialize_mapEm
-- 009c6a48 __jump_table::_pthread_mutexattr_init
-- 009c6ab0 __jump_table::__ZN9__gnu_cxx18__exchange_and_addEPVii
-- 009c6ad8 __jump_table::_pthread_mutex_lock
-- 009c6b06 __jump_table::__ZNSbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEED1Ev
+- 009c6a29 __jump_table::_mach_timebase_info
+- 009c6a48 __jump_table::__ZNSbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEEC2ERKS5_
+- 009c6ab0 __jump_table::__ZNSt8_Rb_treeIPN12System_SFile10ARCHIVERECES2_St9_IdentityIS2_ENS0_18PrioritizeArchivesESaIS2_EE5eraseERKS2_
+- 009c6ad8 __jump_table::__ZN9__gnu_cxx18__exchange_and_addEPVii
 - 009c6b26 __jump_table::__ZN8Blizzard9Streaming9Manifests10ServerItemD1Ev
-- 009c6b89 __jump_table::_usleep
-- 009c6c1c __jump_table::__ZNSt3mapISbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEENS2_9Streaming9Manifests13ParameterItemESt4lessIS6_ESaISt4pairIKS6_S9_EEEixERSD_
-- 009c6d13 __jump_table::_sysconf
-- 009c6e33 __jump_table::_sem_unlink
+- 009c6b89 __jump_table::_objc_msgSend
+- 009c6c1c __jump_table::__ZNSt3mapISbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEENS2_9Streaming9Manifests8FileItemESt4lessIS6_ESaISt4pairIKS6_S9_EEEixERSD_
+- 009c6e33 __jump_table::_dlsym
 - 009c6e48 __jump_table::_memcmp
-- 009c6f50 __jump_table::_realpath
+- 009c6f50 __jump_table::__dyld_get_image_name
 - 009c6f68 __jump_table::_chdir
 - 009c702b __jump_table::_rmdir
 - 009c7058 __jump_table::__ZNSt3mapISbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEENS2_9Streaming9Manifests13TransportItemESt4lessIS6_ESaISt4pairIKS6_S9_EEEixERSD_
 - 009c70b4 __jump_table::__ZNSt6vectorIN8Blizzard9Streaming9Transport8URL_INFOESaIS3_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS3_S5_EERKS3_
-- 009c70cb __jump_table::__ZNSbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEE9_M_mutateEmmm
-- 009c7116 __jump_table::__ZNSt6vectorIN8Blizzard9Streaming9Manifests10ServerItem9UsageSlotESaIS4_EEaSERKS6_
+- 009c70cb __jump_table::_pthread_setspecific
+- 009c7116 __jump_table::__ZNSt3mapISbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEENS2_9Streaming9Manifests14ServerPathItemESt4lessIS6_ESaISt4pairIKS6_S9_EEEixERSD_
 - 009c7128 __jump_table::_pthread_getspecific
-- 009c714b __jump_table::_sched_yield
-- 009c7190 __jump_table::__ZNSt6vectorIN8Blizzard7Storage11StorageUnit9ChunkInfoESaIS3_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS3_S5_EEmRKS3_
-- 009c7208 __jump_table::__ZNSt8_Rb_treeISbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEESt4pairIKS6_PNS2_7Storage11StorageUnitEESt10_Select1stISC_ESt4lessIS6_ESaISC_EE13insert_uniqueESt17_Rb_tree_iteratorISC_ERKSC_
-- 009c72f8 __jump_table::_pthread_self
+- 009c7190 __jump_table::__ZNSt11_Deque_baseIN8Blizzard7Storage11STORAGE_CMDESaIS2_EE17_M_initialize_mapEm
+- 009c7208 __jump_table::__ZNSt6vectorIN8Blizzard7Storage11StorageUnit9ChunkInfoESaIS3_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS3_S5_EEmRKS3_
+- 009c72f8 __jump_table::_sched_yield
+- 009c73a0 __jump_table::__ZSt17__throw_bad_allocv
 - 009c7458 __jump_table::__ZNSt8_Rb_treeISbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEESt4pairIKS6_jESt10_Select1stIS9_ENS2_3STL15CaseInsensitiveESaIS9_EE5eraseERS8_
+- 009c7488 __jump_table::_munmap
 - 009c74a8 __jump_table::__ZN8Blizzard6String11QuickFormatILi32EEC1EPKcz
-- 009c74f6 __jump_table::__ZNSt5dequeIN8Blizzard9Streaming15FILE_THREAD_CMDESaIS2_EE17_M_push_front_auxERKS2_
-- 009c7516 __jump_table::_CFAbsoluteTimeGetCurrent
+- 009c74f6 __jump_table::_sysconf
 - 009c7591 __jump_table::__ZNSs4_Rep10_M_destroyERKSaIcE
 - 009c7634 __jump_table::__ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EPKS3_RKS6_
-- 009c7650 __jump_table::_objc_msgSend
+- 009c7650 __jump_table::__ZNSs6appendEPKcm
 - 009c767d __jump_table::__ZNSt8_Rb_treeISbIcSt11char_traitsIcEN8Blizzard6Memory8AllocSTLIcEEESt4pairIKS6_PNS2_4File12StreamRecordEESt10_Select1stISC_ESt4lessIS6_ESaISC_EE5eraseERS8_
-- 009c76a8 __jump_table::_dladdr
+- 009c76a8 __jump_table::_CFBundleCopyExecutableURL
 - 009c775e __jump_table::_CFTimeZoneCopyAbbreviation
-- 009dcadc __jump_table::__ZN11TSHashTableIN18CGAutoCompleteName31AUTOCOMPLETE_BATTLENET_HASHNODEE12HASHKEY_NONEE3PtrEjRKS2_
+- 009dcadc __jump_table::__ZN11TSHashTableIN18CGAutoCompleteName31AUTOCOMPLETE_BATTLENET_HASHNODEE12HASHKEY_NONEE11InternalNewEP14TSExplicitListIS1_Lin572662307EEmm
+
+[iTunes]
+- 0095c450 iTunes::DisplayTrackNameIfPlaying
 
 [linkObject]
 - 0048f380 linkObject::Recycle
 
 [unnamed namespace]
 - 00401260 _SErrDisplayErrorFmt
+- 004020e0 EngineDBInitialize
 - 00403320 ConsoleInitializeClientCVar
-- 00405dd0 ConsoleLoadClientCVar
-- 004064a0 BGLoadingThrottleCVarInitialize
 - 00408050 GxXformIsValidViewport
-- 0041a839 _FT_Stream_ReleaseFrame
-- 0041a83f _FT_Stream_Seek
-- 0041a845 _FT_Stream_ReadShort
+- 0041a839 _FT_Stream_ReadChar
+- 0041a83f _ft_mem_free
+- 0041a845 _FT_Stream_Skip
 - 0041d970 _zipClose
 - 004215d0 CharSelectIsStartRaceComplete
 - 00421800 OsPathCheckExtension
 - 004229e0 DecomposePath
-- 004294c0 AcceptArchive
+- 00430b50 GetInstallLocationRegKeyName
 - 00430cf0 _unzReadCurrentFile
 - 00433a90 FileVersion
-- 00443e60 Script_GetPreviewPrimaryTalentTree
 - 004508b0 OsFileFreeSpace
 - 00451ee0 _zipOpenNewFileInZip3
+- 00462350 ProfileClose
 - 00463440 _blast
-- 00464560 operator>>
 - 00468ee0 _ConvertLongLongToBinary
 - 0047cbe0 PropDestroy
 - 0047d0a0 AsyncFileGetCurrentObject
 - 0047d4c0 EventInputProcess
 - 0047dc90 _SErrIsDisplayingError
 - 00482200 GxuFontRemoveShadow
+- 00482900 Spell_C_SpellScalingCastTime
 - 00482dc0 HandleClose
+- 00482e60 MinimapGetPOI
 - 004830a0 OsIMESync
-- 00483510 Script_QuestGetAutoLaunched
-- 004872f0 Script_GetNumMapDebugObjects
-- 00488890 Script_GetCurrentEventID
-- 0048a160 CGTooltip_SetSpellBookItem
+- 00483510 Script_IsTradeSkillGuild
+- 004872f0 Script_GetTimeToWellRested
+- 00487990 Script_IsLinuxClient
+- 00488890 Script_HasAlteredForm
+- 0048a160 CSimpleFrame_GetPropagateKeyboardInput
 - 0048f3b0 Script_GetWarGameQueueStatus
-- 00497b00 Script_GetNumberOfDetailTiles
-- 0049b470 Script_IsGMClient
-- 0049c350 Script_MovieRecording_GetProgress
-- 0049c760 Script_MovieRecording_IsCompressing
+- 004965d0 Script_GetNumMapDebugObjects
+- 00497b00 Script_GetGuildLevel
+- 0049b470 Script_IsInFakeRaid
+- 0049c760 Script_GetNumRewardCurrencies
 - 004a9d30 WriteJPEGImage
 - 004ab4e0 _fwrite_file_func
-- 004ae930 _SErrGetLogLastPath
-- 004af290 Blit_DxtUnaligned<Dxt5Block,CImVector>
 - 004b4ff0 SysMsgPrintf
 - 004b5430 TextureSetUserData
-- 004b58d0 SetPortraitTexture
 - 004b6c50 TextureForceLoadForDiskOnly
 - 004b70a0 TextureFreeGxTex
 - 004b9420 TextureCacheGetTexture
-- 004bbd40 IsoLocaleStringToWowEnum
+- 004bbd40 ConsoleInitializeDebugCommand
 - 004bec40 MovementGetTransportMtxSafe
-- 004c66b0 _HandleSoundDeviceChange
+- 004d2230 _OkToQueryLiquidSounds
+- 004dfed0 ComponentValidateFacialFeature
 - 004e59c0 ClientContinueInitializingArchives
 - 004ed640 TextureCacheGetInfo
 - 004f6370 Spell_C_CanTargetUntargetable
-- 004f6a90 GxXformViewProj
-- 004f7290 MinimapSetUnderWaterStatus
 - 004f72e0 SpellIsAreaAuraEffect
 - 004f77c0 SmartScreenRectInitialize
 - 0050f470 SpellGetEffects
 - 00513960 SetPhaseShift
 - 00531ad0 GxuFontSetTokenCallback
 - 00532850 AsyncFileReadUpdateStreamingObjectList
-- 00533740 Script_CastGlyphByID
-- 00539a20 Script_GuildUIEnabled
-- 0053a750 Script_HasAlteredForm
-- 0053aa70 Script_GetGuildNewsSort
+- 00538dd0 Script_MovieRecording_IsCompressing
+- 00539320 Script_IsChatDND
+- 005395c0 Script_IsGMClient
+- 005398b0 Script_GetGuildNewsSort
+- 00539910 Script_GuildUIEnabled
+- 0053a750 Script_MovieRecording_IsRecording
+- 0053aa70 Script_MovieRecording_GetProgress
 - 0053adc0 Script_GetGuildNewsFilters
-- 0053b0d0 Script_IsViewingAlteredForm
-- 0053c5f0 _OkToQueryLiquidSounds
 - 0053c680 SpellIsTrackingAura
-- 00554170 Script_GetSavedInstanceInfo_1
+- 00554170 Script_GetWorldPVPAreaInfo
 - 00577260 EnchantmentParserParseText
 - 005774b0 Spell_C_GetSpellScalingMultiplier
-- 0057eb00 Script_SetTracking
+- 0057e980 Script_ClearAllTracking
 - 00584150 operator+
+- 005882d0 GetDamageClassFromBonusStat
 - 00597e10 SetPortraitTextureFromDisplayID
-- 005a2120 SpellActivationOverlayUnregisterScriptFunctions
+- 0059a2b0 SpellIsDamageEffect
+- 005a2120 BattlenetUI_UnRegisterScriptFunctions
+- 005a4780 round
 - 005b92b0 Script_CalendarContextEventCanRemove
 - 005cd220 PetitionVendorUnregisterScriptFunctions
-- 005cd970 Script_UnitIsQuestBoss
+- 005eed70 Script_UnitGetGuildLevel
 - 005f3940 DestroyBannedAddOns
 - 005f4aa0 SaveBannedAddOns
 - 005f7570 GetCurrentEnableStates
@@ -2213,92 +2204,92 @@
 - 006081d0 Script_GetItemStatSummary
 - 006157c0 TextureGetObjectName
 - 0061a960 Spell_C_GetMinMaxPoints
-- 0061dc90 GetDamageClassFromBonusStat
 - 0062c077 Script_MovieRecording_ToggleGUI
 - 0062c0ae Script_MovieRecording_Toggle
 - 00636120 AsyncFileReadAddStreamingObject
+- 00681260 FillMapObjVertex<13u,1>
 - 00681580 GxTexReusable
 - 006a2660 Carbon_OsInputRemoveGameWindowHandlers
-- 006b0930 ClientDBIdle
 - 006bb5b0 ZoneDebugInitialize
 - 006c2280 PixelToScreenHeight
 - 006c6af0 InternalWipeUntilNameTokenStop
 - 006c8190 HandleDuplicate
+- 006d49c0 Spell_C_SetFeedPetSpell
+- 006f1820 SysMsgSetCallback
 - 0070d900 Spell_C_Destroy
 - 00718b70 Spell_C_CancelSpellBySpellID
 - 0071c390 SpellGetNumEffects
 - 0071dcc0 PlayerNameUpdateDrawCallback
 - 007222a0 Spell_C_GetStatTargetUnit
 - 0072bc20 Spell_C_AuraStateValid
-- 00746280 GetFidgetDelaySecondsMin
-- 007462a0 GetFidgetDelaySecondsMax
-- 007462c0 GetFidgetSoundID
+- 00746280 GetFidgetSoundID
+- 007462a0 GetFidgetDelaySecondsMin
+- 007462c0 GetFidgetDelaySecondsMax
 - 00748810 Script_SendUnitSignal
+- 0074d070 CanPlaySpellVisualKit
 - 00750210 UnitCombatLogDurabilityDamage
 - 00751920 UnitCombatLogCastGo
 - 007519e0 UnitCombatLogCastStart
 - 007522a0 UnitCombatLogDurabilityDamageAll
-- 00752340 UnitCombatLogExtraAttacks
+- 00752340 UnitCombatLogResurrect
 - 00752520 UnitCombatLogSummon
-- 00752680 UnitCombatLogResurrect
+- 00752680 UnitCombatLogExtraAttacks
 - 00752860 UnitCombatLogAuraRefreshed
-- 00752a40 UnitCombatLogAuraBroken
+- 00752930 UnitCombatLogDispelled
 - 00752ba0 UnitCombatLogAuraModifiedApplications
-- 0075cf80 MovementNotifyZoneMgr
 - 00769d30 ConsoleDeviceGetDefaultSettings
 - 0076aab0 AddConsoleDeviceDefaultCallback
+- 0076dc80 operator<<
 - 0076e490 _main
 - 00770c90 _LongFromBinary
 - 00770f30 _SSignatureVerify
 - 007717e0 ModelBlobInitialize
+- 00771960 BGLoadingThrottleCVarInitialize
 - 00773a40 StormExit
-- 00774b20 Script_StartWarGame
+- 007749f0 Script_GetGuildMemberRecipes
 - 00775550 _SErrReportResourceLeak
 - 00779c30 MakeUpperCaseName
-- 0077e940 ConsoleCommandDestroy
-- 0077f8f0 ProfileClose
-- 0077f9a0 PlayerNameUpdateEarly
+- 00780620 MinimapSetUnderWaterStatus
 - 00792e60 AsyncFileReadClearStreamingObjectList
-- 0079b870 FillMapObjVertex<9u,1>
 - 0079e4f0 ConsoleDeviceGetVideoOptionsVersion
 - 0079f100 TextureCacheClear
 - 007b7420 _ft_glyphslot_alloc_bitmap
-- 007c8b90 AsyncFileReadLinkToPriority
+- 007d66d0 TextureIsBlob
 - 007d9330 FillMapObjVertex<7u,1>
-- 007d97c0 _ft_mem_free
 - 007da190 operator<<
 - 007daf30 _UpdateGameSoundOutputDevice
 - 007db560 ComSatClient_DoesSessionExist
-- 007db770 ComSatClient_IsTalkerEnabledInChannel
-- 007db830 ComSatClient_IsTalkerActiveInChannel
+- 007db770 ComSatClient_IsTalkerActiveInChannel
+- 007db830 ComSatClient_IsTalkerEnabledInChannel
 - 007dc9c0 ProcessComSatEvents
 - 007dca40 DoComSatWork
 - 007de2b0 ProcessComSatCallbacks
 - 007e2d20 operator*
 - 007e5080 WeaponTrailSetDrawing
-- 007ed250 CGCharacterModelBase_SetDisplayInfo
-- 007f04b0 _zipOpenNewFileInZip
+- 007ed250 _zipOpenNewFileInZip
 - 007f3b70 GxPrimUnlockVertexPtrs
-- 007f4810 MinimapUpdateWorldState
 - 007f4e50 MinimapShutdown
 - 007f6d10 GetRandomValue
 - 007f9f10 SpellVisualsGetMountTransitionAlpha
 - 007fc950 SpellVisualGetLightning
 - 007fcc70 SpellGetEffect
+- 007fdc60 operator>>
 - 007fdec0 SpellMatchesAuraSpellClass
 - 007fdf20 SpellIsApplyAuraEffect
 - 00801880 Spell_C_CanTargetGlyphSlot
 - 008018f0 Spell_C_WaitingForStringInput
 - 00802bf0 Spell_C_CooldownEventTriggered
 - 00804d20 Spell_C_CleanUpProcessedDestLocSpellCasts
+- 00805f30 SpellHasAuraEffect
 - 008061a0 Spell_C_GetCastingSpellCast
 - 00806620 Spell_C_CancelCastingSpellByMovement
+- 00810410 SpellTableLookupPetAbility
 - 00810970 SpellTableLookupInfo
-- 00817650 Script_GetNumFlyouts
-- 00817d00 ConsoleInitializeDebugCommand
+- 00817650 Script_QuestGetAutoLaunched
 - 00828680 M2AnimateTrack<M2CompQuat,C4Quaternion>
 - 0082ad50 M2AnimateTrack<C4Quaternion,C4Quaternion>
 - 00847d70 Script_GetGuildCategoryList
+- 00864890 _FLAC__fixed_compute_residual
 - 00869670 OsInputIsMouseButtonDown
 - 0086bca0 LoadDivxDecoder
 - 0086bd60 OsPathReplaceExtension
@@ -2306,14 +2297,13 @@
 - 0086cc20 s_CarbonIMEEventHandler
 - 00870730 PopMessageBox
 - 00870890 OsJoystickGetName
-- 008708d0 vsnoprintf
+- 00870b00 vsnoprintf
 - 008742e0 NullGxTexCallback
 - 00878170 SECloseCallback
 - 00878360 _DeviceChangedCallback
 - 00878540 AsyncFileReadEnterQueueLock
 - 00878550 AsyncFileReadLeaveQueueLock
 - 008799e0 _OutWithTheOldInWithTheNew
-- 0087ad40 _SErrGetLastError
 - 0087b180 SEOpenCallback
 - 0087ebc0 DoneLoadingCallback
 - 00895ec9 IOsGetPrimaryExecutableFromBundle
@@ -2322,37 +2312,47 @@
 - 00897370 __i686.get_pc_thunk.bx
 - 00897690 _SPIRIT_IP_MR_V3_NAME_113
 - 008976e0 _SPIRIT_IP_MR_V3_NAME_63
-- 00897840 __i686.get_pc_thunk.cx
-- 008978a0 _SPIRIT_IP_MR_V3_NAME_138
+- 00897840 _SPIRIT_IP_MR_V3_NAME_138
 - 008985e0 _SPIRIT_IP_MR_V3_NAME_302
 - 00899a10 _SPIRIT_IP_MR_V3_NAME_118
 - 0089b450 _SPIRIT_IP_MR_V3_NAME_217
 - 0089bc30 _SPIRIT_IP_MR_V3_NAME_78
-- 0089bfa0 _SPIRIT_IP_MR_V3_NAME_104
 - 0089c020 _SPIRIT_IP_MR_V3_NAME_203
 - 0089d3b0 _SPIRIT_IP_MR_V3_NAME_37
+- 0089f470 _SPIRIT_IP_MR_V3_NAME_104
+- 0089f580 __i686.get_pc_thunk.cx
 - 0089fae0 _SPIRIT_IP_MR_V3_NAME_14
 - 008a2a10 CreateReflectionBuffer
-- 008bf010 GetInstallLocationRegKeyName
-- 008bf1a0 Script_GetQuestLogRewardCurrencyInfo
-- 008bf510 Script_IsRatedBattleground
-- 008bf560 Script_GetPetMeleeHaste
-- 008bfc40 _zipCloseFileInZip
+- 008a3620 CGTooltip_SetSpellBookItem
+- 008be4e0 _unzOpen
+- 008be780 AdvanceAndParse<CheckButton,Region>
+- 008be960 CGTooltip_SetQuestCurrency
+- 008bea20 _zipCloseFileInZip
+- 008beb20 Script_GetCallPetSpellInfo
+- 008bec00 Script_StartWarGame
+- 008bf160 RawMicroseconds
+- 008bf4d0 Script_GetToolTipInfo
+- 008bf5a0 _FSGetParentRef
+- 008bf960 Script_PitchDownStart
+- 008bfbf0 Script_IsSelectedSpellBookItem
 - 008bfd00 GetInstallLocation
 - 008c0590 IsUsingGLL
+- 008c7000 vFrameScript_PushEventArgs
 - 008cbbf0 WLog
+- 008e38bc Script_SetSelectedAuctionItem_1
 - 00959e50 _lgLcdOpen
 - 0095d2f0 operator*
-- 0095d590 Spell_C_ModifyHealingAndDamage
+- 0095d590 Spell_C_ModifySpellValue
 - 00979250 _vc_rand
 - 009866e0 _MonitorDSPCallback
 - 00986c90 ZoneDebugReset
+- 009c0af0 Script_GetProfessions
 - 009c0e60 FaultNoNoReturn
-- 009c2ea0 Script_GetLocale
-- 009c30f0 _unzGoToFilePos
 - 009c4f9d _lgLcdEnumerate
 - 009c4fb6 _lgLcdClose
 - 009c71e8 SSignatureVerifyStream_ProvideData
+- 009d15c0 Script_GetSavedInstanceInfo_1
+- 009d46f0 CGCharacterModelBase_SetBarberShopAlternateForm
 
 [unreal]
 - 0095d5c0 unreal::fromInt
