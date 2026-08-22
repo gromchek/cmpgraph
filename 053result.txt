@@ -329,7 +329,6 @@
 - 00501600 TSList<struct_PENDINGUSERLIST,class_TSGetLink<struct_PENDINGUSERLIST>_>::Link
 - 005017a0 TSLink<struct_PENDINGTEXTEMOTE>::Unlink
 - 00502360 TSList<struct_WORDLIST,class_TSGetExplicitLink<struct_WORDLIST>_>::Link
-- 00509720 UpdateSubComponentPathNames
 - 0050f470 Spell_C_GetModalSpell
 - 0050f4d0 CGCraftInfo::SetCraftType
 - 00510ef0 CGActionBar::PrecacheButtonArt
@@ -580,7 +579,6 @@
 - 006f1240 TSFixedArray<float>::operator=
 - 006f13e0 CMovement::MoversOnList
 - 006f1820 _FSOUND_GetDriverCaps@8
-- 006f6020 CurrencyAbbreviation
 - 006f66b0 SndInterfaceInitialize
 - 006f7d60 CGGameObject_C::PostPostInit
 - 006feae0 NTempest::C4Vector::operator*=

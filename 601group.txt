@@ -44,7 +44,7 @@
 
 [Battlenet]
 - 00430c10 Battlenet::Event::S2Maps::S2MapInfo::~S2MapInfo
-- 00558d70 Battlenet::Client::S2GameDefines::GamePhaseInfo::Release
+- 00636570 Battlenet::Client::S2GameDefines::GamePhaseInfo::Release
 - 008c4250 Battlenet::Event::Creep::Invoke::S2Map::ListFileDependencies::Link::operator=
 - 008c6f70 Battlenet::TumorManager::SendEvent<Battlenet::Event::Creep::Invoke>
 - 008c6fd0 Battlenet::Event::Creep::Invoke::Authentication::SetModule
@@ -155,14 +155,8 @@
 [CDataStore]
 - 004bc1c0 CDataStore::PutArray
 
-[CDetailDoodad]
-- 00792fa0 CDetailDoodad::CreateChunk
-
 [CDetailDoodadBatch]
 - 0097a130 CDetailDoodadBatch::FillInstanceBuf
-
-[CDetailDoodadChunk]
-- 007c5440 CDetailDoodadChunk::CreateBatches
 
 [CEffect]
 - 004cfb70 CEffect::DestroyLightning
@@ -187,6 +181,9 @@
 
 [CFrameStrataNode]
 - 00495c50 CFrameStrataNode::~CFrameStrataNode
+
+[CFrustum]
+- 007c7790 CFrustum::Cull
 
 [CGAchievementInfo]
 - 005b2350 CGAchievementInfo::FindCriteriaNodeByIndex
@@ -272,9 +269,6 @@
 - 0070eef0 CGGameObject_C::GetPropertyValueByID
 - 007bdb10 CGGameObject_C::PostDisplayInfoUpdate
 
-[CGGameObject_C_Type_DestructibleBuilding]
-- 00712980 CGGameObject_C_Type_DestructibleBuilding::~CGGameObject_C_Type_DestructibleBuilding
-
 [CGGameObject_C_Type_Door]
 - 0070fd50 CGGameObject_C_Type_Door::IsDoorAtRest
 
@@ -323,7 +317,6 @@
 - 00554170 CGLookingForGroup::GetLFGProposal
 - 00554610 CGLookingForGroup::GetLFGRoleUpdate
 - 00558c30 CGLookingForGroup::LeaveWorld
-- 00559340 CGLookingForGroup::ClearAllLFGDungeons
 
 [CGLootDisplay]
 - 006cec70 CGLootDisplay::operator[]
@@ -551,7 +544,6 @@
 - 005ae760 CMapMem::FreeAreaLow
 
 [CMapObj]
-- 00799310 CMapObj::UpdateSceneMaterials
 - 007b0560 CMapObj::DestroyMaterial
 
 [CMapObjDef]
@@ -650,9 +642,6 @@
 - 006e9050 CPlayerMoveQueue::Enqueue
 - 006eb590 CPlayerMoveQueue::Discard
 
-[CScriptRegion]
-- 00488940 CScriptRegion::~CScriptRegion
-
 [CShaderEffect]
 - 007a84d0 CShaderEffect::SetModelFXShaders
 
@@ -672,7 +661,6 @@
 [CSimpleEditBox]
 - 00963cd0 CSimpleEditBox::Move
 - 00963d80 CSimpleEditBox::MoveLine
-- 00965260 CSimpleEditBox::~CSimpleEditBox
 
 [CSimpleFont]
 - 004964d0 CSimpleFont::~CSimpleFont
@@ -703,6 +691,9 @@
 
 [CSimpleModel]
 - 009dc770 CSimpleModel::~CSimpleModel
+
+[CSimpleModelFFX]
+- 004e6180 CSimpleModelFFX::~CSimpleModelFFX
 
 [CSimpleRegion]
 - 004816a0 CSimpleRegion::OnDelayedLoad
@@ -770,7 +761,6 @@
 - 0079f100 CWorldMap::DestroyOccluders
 - 007a2c60 CWorldMap::SetHitTestDebug
 - 007b30d0 CWorldMap::UpdateEntityLinks
-- 007b50b0 CWorldMap::PreloadCountMapObjGroupTextures
 - 007b5870 CWorldMap::LinkEntity
 - 007c2040 CWorldMap::LinkObjectToMapExterior
 - 009dc510 CWorldMap::~CWorldMap
@@ -833,9 +823,6 @@
 - 00689a70 Creep::ClientSideCache::VerifyFileContext::VerifyNextChunk
 - 00871d20 Creep::ClientSideCache::IndexComplete
 - 008c4380 Creep::ClientSideCache::~ClientSideCache
-
-[Crypto]
-- 0044b860 Crypto::SecureRandom::Private::SeedFallback<Crypto::SHA1>
 
 [DBCache<CreatureStats_C,int,HASHKEY_DWORD,NullXInfo>]
 - 00679d90 DBCache<CreatureStats_C,int,HASHKEY_DWORD,NullXInfo>::Invalidate
@@ -979,9 +966,6 @@
 
 [MovementForces]
 - 0075cf80 MovementForces::CollideMovementForce
-
-[NOsSecureRandom]
-- 0086d4c0 NOsSecureRandom::FallbackRandom
 
 [NTempest]
 - 00790900 NTempest::Intersect
@@ -1136,17 +1120,11 @@
 [THROTTLEDCHAT]
 - 005016b0 THROTTLEDCHAT::~THROTTLEDCHAT
 
-[TInstanceIdTable<EvtContext,8>]
-- 0047d7b0 TInstanceIdTable<EvtContext,8>::~TInstanceIdTable
-
 [TObjectAlloc<CGxTex>]
 - 00685dc0 TObjectAlloc<CGxTex>::Delete
 
 [TObjectAlloc<CMapBaseObjLink>]
 - 006bb6d0 TObjectAlloc<CMapBaseObjLink>::Delete
-
-[TSCArray<CTexture*,64>]
-- 004b5210 TSCArray<CTexture*,64>::FatalArrayBounds
 
 [TSCArray<float,64>]
 - 00786880 TSCArray<float,64>::FatalArraySize
@@ -1191,6 +1169,9 @@
 
 [TSFixedArray<unsigned_short>]
 - 005c5b70 TSFixedArray<unsigned_short>::ReallocData
+
+[TSFixedArray<void(*)()>]
+- 004b9c00 TSFixedArray<void(*)()>::ReallocData
 
 [TSGrowableArray<CArgb>]
 - 009de2a0 TSGrowableArray<CArgb>::~TSGrowableArray
@@ -1241,7 +1222,10 @@
 - 0057ae80 TSHashTable<CGAutoCompleteName::AUTOCOMPLETE_CHARACTER_HASHNODE,CHashKeyGUID>::Ptr
 
 [TSHashTable<CMapObj,HASHKEY_NONE>]
-- 00685230 TSHashTable<CMapObj,HASHKEY_NONE>::Unlink
+- 008764d0 TSHashTable<CMapObj,HASHKEY_NONE>::Unlink
+
+[TSHashTable<CTexture,HASHKEY_TEXTUREFILE>]
+- 004b6d90 TSHashTable<CTexture,HASHKEY_TEXTUREFILE>::Ptr
 
 [TSHashTable<CVar,HASHKEY_STRI>]
 - 00767000 TSHashTable<CVar,HASHKEY_STRI>::Unlink
@@ -1251,9 +1235,6 @@
 
 [TSHashTable<DYNAMICHOLIDAYHASH,HASHKEY_NONE>]
 - 005be220 TSHashTable<DYNAMICHOLIDAYHASH,HASHKEY_NONE>::InternalClear
-
-[TSHashTable<FONTHASHOBJ,HASHKEY_STR>]
-- 004be0e0 TSHashTable<FONTHASHOBJ,HASHKEY_STR>::Ptr
 
 [TSHashTable<FrameScript_EventObject,HASHKEY_CONSTSTRI>]
 - 0087a6f0 TSHashTable<FrameScript_EventObject,HASHKEY_CONSTSTRI>::Ptr
@@ -1270,17 +1251,11 @@
 [TSHashTable<OVERRIDEKEYBINDING,HASHKEY_STRI>]
 - 0055e5e0 TSHashTable<OVERRIDEKEYBINDING,HASHKEY_STRI>::Ptr
 
-[TSHashTable<PROFANITYCHECK,HASHKEY_STR>]
-- 005097a0 TSHashTable<PROFANITYCHECK,HASHKEY_STR>::Ptr
-
 [TSHashTable<SIMPLEFONT,HASHKEY_STRI>]
 - 00496390 TSHashTable<SIMPLEFONT,HASHKEY_STRI>::Ptr
 
 [TSHashTable<SOUNDKITLOOKUP,HASHKEY_CONSTSTRI>]
 - 004217a0 TSHashTable<SOUNDKITLOOKUP,HASHKEY_CONSTSTRI>::Ptr
-
-[TSHashTable<TALENT,HASHKEY_NONE>]
-- 009d49c0 TSHashTable<TALENT,HASHKEY_NONE>::~TSHashTable
 
 [TSHashTableReuse<CLightList,HASHKEY_DWORD>]
 - 006bc830 TSHashTableReuse<CLightList,HASHKEY_DWORD>::~TSHashTableReuse
@@ -1381,14 +1356,8 @@
 [WowClientCompressedDBCache<SpellEffectRec>]
 - 00723490 WowClientCompressedDBCache<SpellEffectRec>::Discard
 
-[WowClientDB2<CreatureRec_C>]
-- 00636570 WowClientDB2<CreatureRec_C>::DBCACHE::~DBCACHE
-
 [WowClientDB2<GarrBuildingRec_C>]
 - 00433e80 WowClientDB2<GarrBuildingRec_C>::EnumRecords
-
-[WowClientDB2<ItemBonusRec_C>]
-- 00636c90 WowClientDB2<ItemBonusRec_C>::DBCACHE::~DBCACHE
 
 [WowClientDB2<ItemExtendedCostRec_C>]
 - 00635e70 WowClientDB2<ItemExtendedCostRec_C>::DBCACHE::~DBCACHE
@@ -1430,9 +1399,6 @@
 
 [WowConfigureFileSystem]
 - 005f36d0 WowConfigureFileSystem::ReadBuildKeyFromFile
-
-[WowConnection]
-- 00468d00 WowConnection::Connect
 
 [WowConnectionNet]
 - 00469220 WowConnectionNet::SignalWorker
@@ -1499,6 +1465,7 @@
 - 004d3bf0 GetObjectMirrorHandlers
 - 004d43f0 GetDataBaseOffset
 - 004d7100 ObjectUpdateHandlerInternal
+- 004e82d0 TextureCacheGetAlphaSize
 - 004ea050 GetConditionalGeoset
 - 004f5f00 CheckSpellAttribute
 - 004f72e0 SpellIsAreaAuraEffect
@@ -1582,7 +1549,6 @@
 - 00747d70 _cosf
 - 0074d280 GetSubTableRec<SpellMiscRec>
 - 0074d3f0 IsSpellCastQuiet
-- 0074d4c0 SendDamageEvent
 - 00751920 UnitCombatLogAuraModifiedApplications
 - 007525e0 ClientProcResistHandler
 - 00752ba0 UnitCombatLogAuraRefreshed
@@ -1655,6 +1621,7 @@
 - 008c0c90 ProjectTexRenderVerticesPN
 - 008c5270 InternalCompilerTrap_<0>
 - 008cd610 PacketUtils_SendFormatted
+- 00955530 _FLAC__stream_decoder_process_single
 - 009748f0 GetTextType
 - 009793b0 GetInterpPercent
 - 00985580 BuildPerlinNoiseTex

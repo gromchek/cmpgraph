@@ -1479,7 +1479,6 @@
 - 004f4a50 SkipSetOfObjects
 - 004fcf40 @regexec@20
 - 004fe260 Warning
-- 00509720 UpdateSubComponentPathNames
 - 0050f470 Spell_C_GetModalSpell
 - 00530dc7 ?InternalNew@?$TSHashTable@UDBCACHEHASH@?$DBCache@VPageTextCache_C@@HVHASHKEY_INT@@@@VHASHKEY_INT@@@@EAEPAUDBCACHEHASH@?$DBCache@VPageTextCache_C@@HVHASHKEY_INT@@@@PAV?$TSExplicitList@UDBCACHEHASH@?$DBCache@VPageTextCache_C@@HVHASHKEY_INT@@@@$0?CCe8c6b840
 - 00532650 UglifyMapTexture
@@ -1565,7 +1564,6 @@
 - 006d49c0 BotClientAddKnownSpell
 - 006e97d0 MovementNotifyZoneMgr
 - 006f1820 _FSOUND_GetDriverCaps@8
-- 006f6020 CurrencyAbbreviation
 - 006f66b0 SndInterfaceInitialize
 - 00703cc0 Trade_C_GetTargetTradeGold
 - 00703e70 CCommand_TradeGold
