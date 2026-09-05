@@ -466,6 +466,52 @@ int main( int argc, char *argv[] )
 	filter.addPartial( "tact::" );
 	filter.addPartial( "Borg::" );
 	filter.addPartial( "_Curl_" );
+	filter.addPartial( "AccountObjectSetProfile" );
+	filter.addPartial( "AIObstacleMgr" );
+	filter.addPartial( "AgentConnection" );
+	filter.addPartial( "BodyCount" );
+	filter.addPartial( "CAnimKitInst" );
+	filter.addPartial( "CAnimatedDisplay" );
+	filter.addPartial( "CCharacterServices" );
+	filter.addPartial( "CClippedTriangle" );
+	filter.addPartial( "CGChallengeModeInfo" );
+	filter.addPartial( "CGCinematicModelFrame" );
+	filter.addPartial( "CGSpecGroup_C" );
+	filter.addPartial( "CGVignetteInfo" );
+	filter.addPartial( "CPerf" );
+	filter.addPartial( "CScriptUnitDisplay" );
+	filter.addPartial( "CSimpleBrowser" );
+	filter.addPartial( "CUnitDisplayTransition_C" );
+	filter.addPartial( "CVideoDecoderVPX" );
+	filter.addPartial( "CWOWClientStatus" );
+	filter.addPartial( "CXpcMessage" );
+	filter.addPartial( "Chaser<" );
+	filter.addPartial( "ClientBattlenetChallengeStart" );
+	filter.addPartial( "ClientClientHandlerReporter" );
+	filter.addPartial( "ClientDispelFailed" );
+	filter.addPartial( "ClientGuildEventTabModified" );
+	filter.addPartial( "ClientLfgPlayerInfo" );
+	filter.addPartial( "ClientLogoutComplete" );
+	filter.addPartial( "ClientLossOfControlAuraUpdate" );
+	filter.addPartial( "ClientMessageBox" );
+	filter.addPartial( "ClientMoveUpdatePitchRate" );
+	filter.addPartial( "ClientServerBuckData" );
+	filter.addPartial( "DebugChallengeCreateCallback" );
+	filter.addPartial( "DebugClientCommands" );
+	filter.addPartial( "DebugDraw" );
+	filter.addPartial( "DefaultTextureCache" );
+	filter.addPartial( "EffectAntiSpoof" );
+	filter.addPartial( "FourCC" );
+	filter.addPartial( "IMoviePlayer" );
+	filter.addPartial( "::Jam" );
+	filter.addPartial( "NewsDownloadTask" );
+	filter.addPartial( "PCResultsIterator" );
+	filter.addPartial( "PassCMAADbgShowEdges" );
+	filter.addPartial( "PerfMgr" );
+	filter.addPartial( "PlayerMove" );
+	filter.addPartial( "PlayerMove" );
+	filter.addPartial( "UserClient" );
+	filter.addPartial( "ViewSettings" );
 
 	transformer.addRule( "__jump_table::_strcasecmp", "SStrCmp" );
 	transformer.addRule( "__jump_table::strchr", "SStrChr" );
@@ -556,6 +602,7 @@ int main( int argc, char *argv[] )
 	transformer.addRule( "Blizzard_Lock_MutexDestroy", "DeleteCriticalSection" );
 	transformer.addRule( "Blizzard_Lock_MutexCreate", "InitializeCriticalSection" );
 	transformer.addRule( "Blizzard_Mopaq_SFileCreateFile", "SFileCreateFile" );
+	transformer.addRule( "CObjectDisplay", "CGObject_C" );
 
 
 	transformer.addRule( []( const std::string &input ) {
