@@ -20,9 +20,11 @@ void printFunctions( const std::vector<Function> &baseFuncs, const std::vector<F
 					 const std::string &fileName )
 {
 	std::ofstream out( fileName );
+	std::vector<std::pair<std::string, int>> result;
+	result.reserve(refFuncs.size());
 	for( const auto &refFunc : refFuncs )
 	{
-		if( refFunc.baseName.rfind( "FUN_", 0 ) == 0 )
+		if( refFunc.baseName.rfind( "FUN_", 0 ) == 0 || (refFunc.size < 150 || refFunc.size > 1500) )
 		{
 			continue;
 		}
@@ -34,7 +36,16 @@ void printFunctions( const std::vector<Function> &baseFuncs, const std::vector<F
 			continue;
 		}
 
-		out << refFunc.baseName << ' ' << refFunc.name << '\n';
+		result.push_back({refFunc.baseName, refFunc.size});
+	}
+
+	std::sort(result.begin(), result.end(), [](const auto& a, const auto& b) {
+		return a.second < b.second;
+	});
+
+	for (const auto& [name, value] : result)
+	{
+		out << "- " << value << ' ' << name << '\n';
 	}
 }
 
@@ -81,6 +92,7 @@ std::vector<Function> load_functions_from_json( const json &data )
 		Function func;
 		func.baseName = item.value( "name", "" );
 		func.name = item.value( "name", "" );
+		func.size = item.value( "size", 0u );
 
 		if( item.contains( "called_names" ) )
 		{
@@ -133,6 +145,7 @@ std::vector<Function> load_functions_from_json_with_processing( const json &data
 	{
 		Function func;
 		func.baseName = item.value( "name", "" );
+		func.size = item.value( "size", 0u );
 
 		if( filter.match( func.baseName ) )
 		{
@@ -550,6 +563,7 @@ int main( int argc, char *argv[] )
 	transformer.addRule( ">_", "_" );
 	transformer.addRule( "*", "" );
 	transformer.addRule( "_lua", "lua" );
+	transformer.addRule( "_Storm", "Storm" );
 	transformer.addRule( "unsigned int", "uint32" );
 	transformer.addRule( "unsigned char", "uint8" );
 	transformer.addRule( "signed char", "int8" );
@@ -578,7 +592,6 @@ int main( int argc, char *argv[] )
 	transformer.addRule( "unsigned_long_long_int", "uint64" );
 	transformer.addRule( "FrameTime_GetCurTimeMs", "OsGetAsyncTimeMs" );
 	transformer.addRule( "FID_conflict:", "" );
-	transformer.addRule( "CMovement_C", "CMovement" );
 	transformer.addRule( "_zlib_uncompress@16", "_zlib_uncompress" );
 	transformer.addRule( "_zlib_compress@20", "_zlib_compress" );
 	transformer.addRule( "@z_inflateEnd@4", "_inflateEnd" );

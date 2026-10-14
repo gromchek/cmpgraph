@@ -14,6 +14,7 @@ struct Function
 	std::string baseName;
 	std::vector<std::string> callees;
 	std::vector<std::string> callers;
+	unsigned int size{};
 };
 
 class FunctionMatcher
